@@ -1,0 +1,494 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<title class=pjax-title>CSS学习 - Braindance</title><meta name=Description content="Braindance's blog"><meta property="og:title" content="CSS学习">
+<meta property="og:description" content="选择器 element p 选择所有 <p> 元素。 element.class p.intro 选择 class=&ldquo;intro&rdquo; 的所有 <p> 元素。 element,element div, p 选择所有 <div> 元素和所有 <p> 元素。 element element div p 选择 <div> 元素内的所有 <p> 元素。 element>element div > p 选择父元素是 <div>">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.braindance.top/posts/css%E5%AD%A6%E4%B9%A0/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-02-15T09:28:06+08:00">
+<meta property="article:modified_time" content="2022-02-15T09:28:06+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="CSS学习">
+<meta name=twitter:description content="选择器 element p 选择所有 <p> 元素。 element.class p.intro 选择 class=&ldquo;intro&rdquo; 的所有 <p> 元素。 element,element div, p 选择所有 <div> 元素和所有 <p> 元素。 element element div p 选择 <div> 元素内的所有 <p> 元素。 element>element div > p 选择父元素是 <div>">
+<meta name=application-name content="Braindance">
+<meta name=apple-mobile-web-app-title content="Braindance">
+<meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/css%E5%AD%A6%E4%B9%A0/><link rel=prev href=https://www.braindance.top/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"CSS学习","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.braindance.top\/posts\/css%E5%AD%A6%E4%B9%A0\/"},"genre":"posts","wordcount":3054,"url":"https:\/\/www.braindance.top\/posts\/css%E5%AD%A6%E4%B9%A0\/","datePublished":"2022-02-15T09:28:06+08:00","dateModified":"2022-02-15T09:28:06+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Braindance>Braindance</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜些什么 id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Braindance>Braindance</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜些什么 id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto><nav id=TableOfContents>
+<ul>
+<li><a href=#选择器>选择器</a></li>
+<li><a href=#选择器的权重>选择器的权重</a></li>
+<li><a href=#像素和百分比>像素和百分比</a>
+<ul>
+<li><a href=#像素>像素</a></li>
+<li><a href=#百分比>百分比</a></li>
+<li><a href=#em>em</a></li>
+<li><a href=#rem>rem</a></li>
+</ul>
+</li>
+<li><a href=#rgb值>RGB值</a>
+<ul>
+<li><a href=#rgba>RGBA</a></li>
+<li><a href=#十六进制的rgb值>十六进制的RGB值</a></li>
+<li><a href=#hsl值>HSL值</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href=#文档流normal-flow>文档流(normal flow)</a></li>
+<li><a href=#盒子模型box-model>盒子模型(box model)</a>
+<ul>
+<li><a href=#内容区content>内容区(content)</a></li>
+<li><a href=#边框border>边框(border)</a></li>
+<li><a href=#内边距padding>内边距(padding)</a></li>
+<li><a href=#外边距margin>外边距(margin)</a></li>
+</ul>
+</li>
+<li><a href=#水平方向的布局>水平方向的布局</a></li>
+<li><a href=#垂直方向的布局>垂直方向的布局</a></li>
+<li><a href=#垂直外边距折叠>垂直外边距折叠</a></li>
+<li><a href=#行内元素盒模型>行内元素盒模型</a></li>
+<li><a href=#浏览器默认样式>浏览器默认样式</a></li>
+<li><a href=#盒子的尺寸>盒子的尺寸</a></li>
+<li><a href=#轮廓阴影和圆角>轮廓阴影和圆角</a></li>
+</ul>
+</nav></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CSS学习</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>Braindance</a>
+</span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-15>2022-02-15</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2022-02-15>2022-02-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3054 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id=/posts/css%E5%AD%A6%E4%B9%A0/ class=leancloud_visitors data-flag-title=CSS学习>
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#选择器>选择器</a></li>
+<li><a href=#选择器的权重>选择器的权重</a></li>
+<li><a href=#像素和百分比>像素和百分比</a>
+<ul>
+<li><a href=#像素>像素</a></li>
+<li><a href=#百分比>百分比</a></li>
+<li><a href=#em>em</a></li>
+<li><a href=#rem>rem</a></li>
+</ul>
+</li>
+<li><a href=#rgb值>RGB值</a>
+<ul>
+<li><a href=#rgba>RGBA</a></li>
+<li><a href=#十六进制的rgb值>十六进制的RGB值</a></li>
+<li><a href=#hsl值>HSL值</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href=#文档流normal-flow>文档流(normal flow)</a></li>
+<li><a href=#盒子模型box-model>盒子模型(box model)</a>
+<ul>
+<li><a href=#内容区content>内容区(content)</a></li>
+<li><a href=#边框border>边框(border)</a></li>
+<li><a href=#内边距padding>内边距(padding)</a></li>
+<li><a href=#外边距margin>外边距(margin)</a></li>
+</ul>
+</li>
+<li><a href=#水平方向的布局>水平方向的布局</a></li>
+<li><a href=#垂直方向的布局>垂直方向的布局</a></li>
+<li><a href=#垂直外边距折叠>垂直外边距折叠</a></li>
+<li><a href=#行内元素盒模型>行内元素盒模型</a></li>
+<li><a href=#浏览器默认样式>浏览器默认样式</a></li>
+<li><a href=#盒子的尺寸>盒子的尺寸</a></li>
+<li><a href=#轮廓阴影和圆角>轮廓阴影和圆角</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=选择器 class=headerLink>
+<a href=#%e9%80%89%e6%8b%a9%e5%99%a8 class=header-mark></a>选择器</h2><table>
+<thead>
+<tr>
+<th>element</th>
+<th>p</th>
+<th>选择所有 &lt;p> 元素。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element.class</td>
+<td>p.intro</td>
+<td>选择 class=&ldquo;intro&rdquo; 的所有 &lt;p> 元素。</td>
+</tr>
+<tr>
+<td>element,element</td>
+<td>div, p</td>
+<td>选择所有 &lt;div> 元素和所有 &lt;p> 元素。</td>
+</tr>
+<tr>
+<td>element element</td>
+<td>div p</td>
+<td>选择 &lt;div> 元素内的所有 &lt;p> 元素。</td>
+</tr>
+<tr>
+<td>element>element</td>
+<td>div > p</td>
+<td>选择父元素是 &lt;div> 的所有 &lt;p> 元素。</td>
+</tr>
+<tr>
+<td>element+element</td>
+<td>div + p</td>
+<td>选择紧跟 &lt;div> 元素的首个 &lt;p> 元素。</td>
+</tr>
+<tr>
+<td>element1~element2</td>
+<td>p ~ ul</td>
+<td>选择前面有 &lt;p> 元素的每个 &lt;ul> 元素。</td>
+</tr>
+</tbody>
+</table>
+<h2 id=选择器的权重 class=headerLink>
+<a href=#%e9%80%89%e6%8b%a9%e5%99%a8%e7%9a%84%e6%9d%83%e9%87%8d class=header-mark></a>选择器的权重</h2><p>选择器权重（从上往下优先级变低）：</p>
+<ul>
+<li>
+<p>内联样式</p>
+</li>
+<li>
+<p>id选择器</p>
+</li>
+<li>
+<p>类和伪类选择器</p>
+</li>
+<li>
+<p>元素选择器</p>
+</li>
+<li>
+<p>通配选择器</p>
+</li>
+<li>
+<p>继承优先级（没有优先级）</p>
+</li>
+</ul>
+<p>比较优先级时，需要将所有选择器的优先级相加计算，最后优先级越高的优先显示（分组选择器是单独计算的）</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=nt>div</span><span class=p>#</span><span class=nn>box</span>     <span class=o>(</span><span class=nt>相加计算</span><span class=o>)</span>
+<span class=nt>div</span><span class=o>,</span><span class=nt>p</span><span class=o>,</span><span class=nt>span</span>	<span class=o>(</span><span class=nt>单独计算</span><span class=o>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果优先级计算后相同，则根据代码最后设置的样式显示。</p>
+<p>可以在样式后后面添加<code>!important</code>，可以获得最高优先级（慎用）</p>
+<p>a标签样式顺序：https://www.cnblogs.com/Yirannnnnn/p/4540061.html</p>
+<h2 id=像素和百分比 class=headerLink>
+<a href=#%e5%83%8f%e7%b4%a0%e5%92%8c%e7%99%be%e5%88%86%e6%af%94 class=header-mark></a>像素和百分比</h2><h3 id=像素 class=headerLink>
+<a href=#%e5%83%8f%e7%b4%a0 class=header-mark></a>像素</h3><p>屏幕实际是由一个一个的小像素点组成，不同的屏幕像素大小不同，像素越小的屏幕像素点密集，图像效果显示越清晰，所以同样写200px在不同的屏幕显示的效果不一样。</p>
+<h3 id=百分比 class=headerLink>
+<a href=#%e7%99%be%e5%88%86%e6%af%94 class=header-mark></a>百分比</h3><p>相对于父元素属性的百分比，设置百分比可以使子元素跟随父元素改变。</p>
+<h3 id=em class=headerLink>
+<a href=#em class=header-mark></a>em</h3><p>相对元素字体大小计算的单位，1em = 1 font-size。会跟随字体的大小改变而改变。</p>
+<h3 id=rem class=headerLink>
+<a href=#rem class=header-mark></a>rem</h3><p>相对根元素（html字体大小）字体大小计算。</p>
+<h2 id=rgb值 class=headerLink>
+<a href=#rgb%e5%80%bc class=header-mark></a>RGB值</h2><p>RGB通过三种颜色的不同浓度来调配出不同的颜色</p>
+<p>R red, G green,B blue</p>
+<p>每一种颜色的范围在0 - 255 (0% - 100%) 之间，语法: RGB(红色，绿色,蓝色)</p>
+<h3 id=rgba class=headerLink>
+<a href=#rgba class=header-mark></a>RGBA</h3><p>就是在rgb的基础上增加了一个a表示不透明度，需要四个值，前三个和rgb一样，第四个表示不透明度（最大值1），1表示完全不透明0表示完全 透明5 半透明。</p>
+<h3 id=十六进制的rgb值 class=headerLink>
+<a href=#%e5%8d%81%e5%85%ad%e8%bf%9b%e5%88%b6%e7%9a%84rgb%e5%80%bc class=header-mark></a>十六进制的RGB值</h3><p>#红色绿色蓝色</p>
+<p>两位重复可以缩写</p>
+<h3 id=hsl值 class=headerLink>
+<a href=#hsl%e5%80%bc class=header-mark></a>HSL值</h3><p>H 色相（0-360）</p>
+<p>S 饱和度，颜色的浓度（0-100%）</p>
+<p>L 亮度，颜色的亮度（0-100%）</p>
+<p>HSLA</p>
+<h1 id=布局 class=headerLink>
+<a href=#%e5%b8%83%e5%b1%80 class=header-mark></a>布局</h1><h2 id=文档流normal-flow class=headerLink>
+<a href=#%e6%96%87%e6%a1%a3%e6%b5%81normal-flow class=header-mark></a>文档流(normal flow)</h2><p>网页是一个多层的结构，一层摞着一层通过CSS可以分别为每一层来设置样式，作为用户来讲只能看到最顶上一层，这些层中，最底下的一层称为文档流，文档流是网页的基础，我们所创建的元素默认都是在文档流中进行排列，对于我们来元素主要有两个状态：</p>
+<ul>
+<li>在文档流中</li>
+<li>不在文档流中(脱离文档流)</li>
+</ul>
+<p>元素在文档流中有什么特点:</p>
+<ul>
+<li>块元素
+<ul>
+<li>块元素会在页面中独占一行(自上向下垂直排列)</li>
+<li>默认宽度是父元素的全部(会把父元素撑满)</li>
+<li>默认高度是被内容撑开(子元素)</li>
+</ul>
+</li>
+<li>行内元素
+<ul>
+<li>行内元素不会独占页面的一行，只占自身的大小</li>
+<li>行内元素在页面中左向右水平排列，如果行之中不能则元素 会换到第二行继续自左向右排列(书写习惯一样)</li>
+<li>行内元素的默认宽度和高度都是被内容撑开</li>
+</ul>
+</li>
+</ul>
+<h2 id=盒子模型box-model class=headerLink>
+<a href=#%e7%9b%92%e5%ad%90%e6%a8%a1%e5%9e%8bbox-model class=header-mark></a>盒子模型(box model)</h2><p>CSS页面将所有的元素设置为了一个<strong>矩形</strong>的盒子，对页面的布局就变成了将不同的盒子摆放到不同的位置。每一个盒子都有一下几个部分组成：</p>
+<ul>
+<li>内容区(content)</li>
+<li>内边距(padding)</li>
+<li>边框(border)</li>
+<li>外边距(margin)</li>
+</ul>
+<p><img class=lazyload data-src=https://www.w3school.com.cn/i/css/boxmodel.gif data-srcset="https://www.w3school.com.cn/i/css/boxmodel.gif, https://www.w3school.com.cn/i/css/boxmodel.gif 1.5x, https://www.w3school.com.cn/i/css/boxmodel.gif 2x" data-sizes=auto alt=https://www.w3school.com.cn/i/css/boxmodel.gif title=https://www.w3school.com.cn/i/css/boxmodel.gif></p>
+<h3 id=内容区content class=headerLink>
+<a href=#%e5%86%85%e5%ae%b9%e5%8c%bacontent class=header-mark></a>内容区(content)</h3><p>内容区大小由 width 和 height 两个属性来设置。</p>
+<h3 id=边框border class=headerLink>
+<a href=#%e8%be%b9%e6%a1%86border class=header-mark></a>边框(border)</h3><p><strong>盒子的边缘</strong>，边框里面是盒子内部，外面是盒子外部，边框的大小会影响到盒子的大小。边框至少需要设置三个样式：</p>
+<ul>
+<li>边框的宽度 border-width</li>
+</ul>
+<p>默认3px。简写值可有四个：</p>
+<p>四个值：上、下、左、右</p>
+<p>三个值：上、左右、下</p>
+<p>两个：上下、左右</p>
+<p>一个值：上下左右</p>
+<p>还可以写成border-xxx-width，其中xxx可选top、right、bottom、left指定某一个边的宽度</p>
+<ul>
+<li>边框的颜色 border-color</li>
+</ul>
+<p>规则同边框的宽度 border-width，如果忽略自动使用color颜色</p>
+<ul>
+<li>边框的样式 border-style</li>
+</ul>
+<p>规则同边框的宽度 border-width，默认值是none，solid表示实线、dotted点状虚线、dashed虚线、double双线</p>
+<p>边框可以简写一个属性border按以上三个属性值顺序使用</p>
+<h3 id=内边距padding class=headerLink>
+<a href=#%e5%86%85%e8%be%b9%e8%b7%9dpadding class=header-mark></a>内边距(padding)</h3><p>四个方向：top、right、bottom、left。内边距设置会影响<strong>盒子大小</strong>，背景颜色会延伸到内边距上。一个盒子的可见框大小由内容区、内边距、边框共同决定，计算时都要加上。padding简写形式同 边框的宽度 border-width。</p>
+<h3 id=外边距margin class=headerLink>
+<a href=#%e5%a4%96%e8%be%b9%e8%b7%9dmargin class=header-mark></a>外边距(margin)</h3><p>外边距不会影响盒子可见框大小，影响<strong>盒子位置</strong>，一个四个方向同padding，通常是设置左上外边距，右下外边距会移动其他元素，bottom的值会影响下方元素移动。简写同上</p>
+<h2 id=水平方向的布局 class=headerLink>
+<a href=#%e6%b0%b4%e5%b9%b3%e6%96%b9%e5%90%91%e7%9a%84%e5%b8%83%e5%b1%80 class=header-mark></a>水平方向的布局</h2><p>元素在其父元素水平方向的位置由以下七个属性共同决定</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 其父 元素内容区的宽度(必须满足)
+</code></pre></td></tr></table>
+</div>
+</div><p>如果等式不成立，则成为<strong>过度约束</strong>，等式会自动调整。调整情况：</p>
+<ul>
+<li>
+<p>如果七个值<strong>没有</strong>值为auto的情况，浏览器会调整margin</p>
+</li>
+<li>
+<p>如果某<strong>一个</strong>属性值为auto，则调整此属性的值使等式成立</p>
+</li>
+<li>
+<p>如果将一个<strong>宽度</strong>和一个<strong>外边距</strong>设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0</p>
+</li>
+<li>
+<p>如果将<strong>三个值</strong>都设置为auto，则外边距都是0，宽度最大</p>
+</li>
+<li>
+<p>如果将<strong>两个外边距</strong>设置为auto，<strong>宽度固定值</strong>，则会将外边距设置为相同的值所以我们经常利用这个特点来使一个元素 在其父元素中水平居中</p>
+<blockquote>
+<p>示例:
+width:xxxpx;
+margin:0 auto;</p>
+</blockquote>
+</li>
+</ul>
+<h2 id=垂直方向的布局 class=headerLink>
+<a href=#%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e7%9a%84%e5%b8%83%e5%b1%80 class=header-mark></a>垂直方向的布局</h2><p>子元素在父元素内容区排列，如果子元素大小超过了父元素，则会从父元素中溢出(overflow)，使用overflow属性设置父元素对溢出子元素的处理。可选值：</p>
+<ul>
+<li>visible 默认值子元素会从父元素中溢出，在父元素外部的位置显示</li>
+<li>hidden 溢出内容将会被裁剪不会显示</li>
+<li>scroll 生成<strong>两个滚动条</strong>，通过滚动条来查看完整的内容</li>
+<li>auto <strong>根据需要</strong>生成滚动条</li>
+</ul>
+<h2 id=垂直外边距折叠 class=headerLink>
+<a href=#%e5%9e%82%e7%9b%b4%e5%a4%96%e8%be%b9%e8%b7%9d%e6%8a%98%e5%8f%a0 class=header-mark></a>垂直外边距折叠</h2><p>相邻的垂直方向外边距会发生重叠现象。有以下两种情况</p>
+<ol>
+<li>
+<p>兄弟元素之间
+兄弟元素间的相邻垂直外边距会取两者之间的较大值(两者都是正值)
+特殊情况:</p>
+<ul>
+<li>如果相邻的外边距一正一负，则取两者的和。</li>
+<li>如果相邻的外边距都是负值，则取两者中绝对值较大的</li>
+</ul>
+<p>同号折叠(取最大值)，异号相加。兄弟元素之间的外边距的重叠，对于开发是有利的，所以不需要进行处理</p>
+</li>
+<li>
+<p>父子元素
+父子元素间相邻外边距，子元素的会传递给父元素(上外边距) ，父子外边距的折叠会影响到页面的布局，必须要进行处理</p>
+</li>
+</ol>
+<h2 id=行内元素盒模型 class=headerLink>
+<a href=#%e8%a1%8c%e5%86%85%e5%85%83%e7%b4%a0%e7%9b%92%e6%a8%a1%e5%9e%8b class=header-mark></a>行内元素盒模型</h2><p>行内元素不支持设置宽度和高度，但是可以设置padding、border、margin，设置属性后不垂直方向不会影响页面布局。</p>
+<p><code>display</code>用来设置元素显示类型，可选值：</p>
+<ul>
+<li>inline 将元素设置为行内元素</li>
+<li>block 将元素设置为块元素</li>
+<li>inline-block 将元素设置为行内元素，行内块，既可以设置高宽又不会独占一行</li>
+<li>table 将元素设置为一个表格</li>
+<li>none 元素不在页面中显示</li>
+</ul>
+<p><code>visibility</code>用来设置元素的显示状态，可选值：</p>
+<ul>
+<li>visible 默认值，元素在页面中正常显示</li>
+<li>hidden 元素在页面中隐藏不显示，但是<strong>占据页面位置</strong></li>
+</ul>
+<h2 id=浏览器默认样式 class=headerLink>
+<a href=#%e6%b5%8f%e8%a7%88%e5%99%a8%e9%bb%98%e8%ae%a4%e6%a0%b7%e5%bc%8f class=header-mark></a>浏览器默认样式</h2><p>通常情况，浏览器都会为元素设置一些默认样式，默认样式会影响页面布局，需要去除浏览器默认样式。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>*{
+	margin: 0;
+	padding: 0;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>真正项目还是需要一个一个标签清除标签。</p>
+<p>清除默认样式表</p>
+<p><a href=https://github.com/necolas/normalize.css target=_blank rel="noopener noreffer">normalize.css</a> 对默认样式进行了统一</p>
+<p><a href=https://meyerweb.com/eric/tools/css/reset/reset.css target=_blank rel="noopener noreffer">reset.css</a> 直接去除了浏览器的默认样式</p>
+<h2 id=盒子的尺寸 class=headerLink>
+<a href=#%e7%9b%92%e5%ad%90%e7%9a%84%e5%b0%ba%e5%af%b8 class=header-mark></a>盒子的尺寸</h2><p>默认情况下，盒子可见框大小由内容区、内边距、边框共同决定。可以设置<code>box-sizing</code>属性值设置盒子尺寸计算方式：</p>
+<ul>
+<li>content-box 默认值，宽度高度设置内容区大小</li>
+<li>border-box 宽度高度值设置整个盒子可见框大小，即会调整自动调整内容区大小</li>
+</ul>
+<h2 id=轮廓阴影和圆角 class=headerLink>
+<a href=#%e8%bd%ae%e5%bb%93%e9%98%b4%e5%bd%b1%e5%92%8c%e5%9c%86%e8%a7%92 class=header-mark></a>轮廓阴影和圆角</h2><p><code>box-shadow</code>设置元素阴影样式，阴影不会影响页面布局。缩写格式</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>box-shadow: 水平偏移量 垂直偏移量 阴影的模糊半径 阴影的颜色
+</code></pre></td></tr></table>
+</div>
+</div><p><code>outline</code>属性用来设置元素的轮廓线，用法和<code>border</code>一样，区别是轮廓线不会影响可见框大小，边框占用可见框大小。</p>
+<p><code>border-radius</code>属性设置圆角，圆角设置园的半径大小</p>
+</div>
+<div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2022-02-15</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/ class=prev rel=prev title=博客搬迁><i class="fas fa-angle-left fa-fw"></i>博客搬迁</a></div>
+</div>
+<div id=comments><div id=valine class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+<div class=footer-line></div>
+<div class=footer-line>
+</div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div class=assets><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/topbar@1.0.1/topbar.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/@sliphua/pjax@2.4.0/dist/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-176925141-1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></div>
+<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"shaenDlkzwy9NvdCNJVrJspu-MdYXbMMI",appKey:"e074xMKoSw3B9kWmBediaBE9",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/gh/guobang-yoo/CDN@master/emoji/",emojiMaps:{"2233_卖萌":"2233/卖萌n.png","2233_吃惊":"2233/吃惊n.png","2233_吐魂":"2233/吐魂.png","2233_喝水":"2233/喝水.png","2233_困惑":"2233/困惑n.png","2233_大哭":"2233/大哭.png","2233_大笑":"2233/大笑n.png","2233_委屈":"2233/委屈.png","2233_怒":"2233/怒.png","2233_无言":"2233/无言.png","2233_汗":"2233/汗n.png","2233_疑问":"2233/疑问n.png","2233_第一":"2233/第一.png","2233_耶":"2233/耶.png","2233_郁闷":"2233/郁闷.png",tv_doge:"xiaodianshi/doge.gif","tv_亲亲":"xiaodianshi/亲亲.gif","tv_偷笑":"xiaodianshi/偷笑.gif","tv_再见":"xiaodianshi/再见.gif","tv_发怒":"xiaodianshi/发怒.gif","tv_发财":"xiaodianshi/发财.gif","tv_可爱":"xiaodianshi/可爱.gif","tv_吐血":"xiaodianshi/吐血.gif","tv_呆":"xiaodianshi/呆.gif","tv_呕吐":"xiaodianshi/呕吐.gif","tv_困":"xiaodianshi/困.gif","tv_坏笑":"xiaodianshi/坏笑.gif","tv_大佬":"xiaodianshi/大佬.gif","tv_大哭":"xiaodianshi/大哭.gif","tv_委屈":"xiaodianshi/委屈.gif","tv_害羞":"xiaodianshi/害羞.gif","tv_尴尬":"xiaodianshi/尴尬.gif","tv_微笑":"xiaodianshi/微笑.gif","tv_思考":"xiaodianshi/思考.gif","tv_打脸":"xiaodianshi/打脸.gif","tv_抓狂":"xiaodianshi/抓狂.gif","tv_抠鼻子":"xiaodianshi/抠鼻子.gif","tv_斜眼笑":"xiaodianshi/斜眼笑.gif","tv_晕":"xiaodianshi/晕.gif","tv_流汗":"xiaodianshi/流汗.gif","tv_流鼻血":"xiaodianshi/流鼻血.gif","tv_点赞":"xiaodianshi/点赞.gif","tv_生气":"xiaodianshi/生气.gif","tv_生病":"xiaodianshi/生病.gif","tv_疑问":"xiaodianshi/疑问.gif","tv_白眼":"xiaodianshi/白眼.gif","tv_睡着":"xiaodianshi/睡着.gif","tv_笑哭":"xiaodianshi/笑哭.gif","tv_腼腆":"xiaodianshi/腼腆.gif","tv_色":"xiaodianshi/色.gif","tv_调皮":"xiaodianshi/调皮.gif","tv_鄙视":"xiaodianshi/鄙视.gif","tv_闭嘴":"xiaodianshi/闭嘴.gif","tv_难过":"xiaodianshi/难过.gif","tv_馋":"xiaodianshi/馋.gif","tv_黑人问号":"xiaodianshi/黑人问号.gif","tv_鼓掌":"xiaodianshi/鼓掌.gif","蛆音娘_OK":"quyinniang/OK.png","蛆音娘_die":"quyinniang/die.png","蛆音娘_偷看":"quyinniang/偷看.png","蛆音娘_卖萌":"quyinniang/卖萌.png","蛆音娘_吃惊":"quyinniang/吃惊q.png","蛆音娘_吃瓜群众":"quyinniang/吃瓜群众.png","蛆音娘_吐血":"quyinniang/吐血.png","蛆音娘_哭泣":"quyinniang/哭泣q.png","蛆音娘_哼":"quyinniang/哼.png","蛆音娘_大笑":"quyinniang/大笑.png","蛆音娘_害怕":"quyinniang/害怕.png","蛆音娘_扶额":"quyinniang/扶额.png","蛆音娘_摇头":"quyinniang/摇头.png","蛆音娘_无语":"quyinniang/无语q.png","蛆音娘_机智":"quyinniang/机智.png","蛆音娘_滑稽":"quyinniang/滑稽.png","蛆音娘_生气":"quyinniang/生气.png","蛆音娘_疑问":"quyinniang/疑问.png","蛆音娘_睡觉觉":"quyinniang/睡觉觉.png","蛆音娘_肥皂":"quyinniang/肥皂.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:5,placeholder:"Just go go",recordIP:!0,visitor:!0}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},twemoji:!0}</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js defer></script><script type=text/javascript src=/js/valine.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css></div>
+</body>
+</html>
