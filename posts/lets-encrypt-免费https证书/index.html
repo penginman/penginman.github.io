@@ -1,246 +1,32 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<title class=pjax-title>Let_s_Encrypt 免费Https证书 - Braindance</title><meta name=Description content="Braindance's blog"><meta property="og:title" content="Let_s_Encrypt 免费Https证书">
-<meta property="og:description" content="参考文章:Let&rsquo;s Encrypt，免费好用的 HTTPS 证书 先放官网Let&rsquo;s Encrypt Let&rsquo;s Encrypt 是免费、自动化、开放的证书签发服务, 它得">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.braindance.top/posts/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-09-03T15:30:37+08:00">
-<meta property="article:modified_time" content="2020-09-03T15:30:37+08:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Let_s_Encrypt 免费Https证书">
-<meta name=twitter:description content="参考文章:Let&rsquo;s Encrypt，免费好用的 HTTPS 证书 先放官网Let&rsquo;s Encrypt Let&rsquo;s Encrypt 是免费、自动化、开放的证书签发服务, 它得">
-<meta name=application-name content="Braindance">
-<meta name=apple-mobile-web-app-title content="Braindance">
-<meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/><link rel=prev href=https://www.braindance.top/posts/%E6%90%AD%E7%AA%9D%E8%BF%87%E7%A8%8B%E4%BA%8C/><link rel=next href=https://www.braindance.top/posts/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css>
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css>
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Let_s_Encrypt 免费Https证书","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.braindance.top\/posts\/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6\/"},"genre":"posts","wordcount":1909,"url":"https:\/\/www.braindance.top\/posts\/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6\/","datePublished":"2020-09-03T15:30:37+08:00","dateModified":"2020-09-03T15:30:37+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
-<div id=back-to-top></div>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=Braindance>Braindance</a>
-</div>
-<div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>Let_s_Encrypt 免费Https证书 - Braindance</title><meta name=Description content="Braindance's blog"><meta property="og:title" content="Let_s_Encrypt 免费Https证书"><meta property="og:description" content="参考文章:Let&rsquo;s Encrypt，免费好用的 HTTPS 证书 先放官网Let&rsquo;s Encrypt Let&rsquo;s Encrypt 是免费、自动化、开放的证书签发服务, 它得"><meta property="og:type" content="article"><meta property="og:url" content="https://www.braindance.top/posts/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-09-03T15:30:37+08:00"><meta property="article:modified_time" content="2020-09-03T15:30:37+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Let_s_Encrypt 免费Https证书"><meta name=twitter:description content="参考文章:Let&rsquo;s Encrypt，免费好用的 HTTPS 证书 先放官网Let&rsquo;s Encrypt Let&rsquo;s Encrypt 是免费、自动化、开放的证书签发服务, 它得"><meta name=application-name content="Braindance"><meta name=apple-mobile-web-app-title content="Braindance"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/><link rel=prev href=https://www.braindance.top/posts/%E6%90%AD%E7%AA%9D%E8%BF%87%E7%A8%8B%E4%BA%8C/><link rel=next href=https://www.braindance.top/posts/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Let_s_Encrypt 免费Https证书","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.braindance.top\/posts\/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6\/"},"genre":"posts","wordcount":1909,"url":"https:\/\/www.braindance.top\/posts\/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6\/","datePublished":"2020-09-03T15:30:37+08:00","dateModified":"2020-09-03T15:30:37+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e)}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(t){const e=document.getElementsByTagName("meta");for(let n=0;n<e.length;n++)if(e[n].getAttribute("name")===t)return e[n];return''}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?setTheme("dark"):setTheme("light")}else''==="light"||''==="dark"||''==="black"?(setTheme(''),saveTheme('')):(saveTheme("auto"),window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?setTheme("dark"):setTheme("light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder=搜些什么 id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题><i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜些什么 id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
 <i class="fas fa-adjust fa-fw"></i>
-<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
-</a></div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=Braindance>Braindance</a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder=搜些什么 id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div>
-<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
-取消
-</a>
-</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>目录</h2>
-<div class=toc-content id=toc-content-auto><nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#先放官网>先放官网</a></li>
-<li><a href=#开工>开工</a></li>
-<li><a href=#创建账号>创建账号</a></li>
-<li><a href=#创建csr文件>创建CSR文件</a></li>
-<li><a href=#配置验证服务>配置验证服务</a></li>
-<li><a href=#获取网站证书>获取网站证书</a></li>
-<li><a href=#证书自动更新-计划任务>证书自动更新 计划任务</a></li>
-<li><a href=#完工>完工</a></li>
-</ul>
-</li>
-</ul>
-</nav></div>
-</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Let_s_Encrypt 免费Https证书</h1><div class=post-meta>
-<div class=post-meta-line>
-<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>Braindance</a>
-</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/><i class="far fa-folder fa-fw"></i>服务器</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1909 字&nbsp;
+<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><ul><li><a href=#先放官网>先放官网</a></li><li><a href=#开工>开工</a></li><li><a href=#创建账号>创建账号</a></li><li><a href=#创建csr文件>创建CSR文件</a></li><li><a href=#配置验证服务>配置验证服务</a></li><li><a href=#获取网站证书>获取网站证书</a></li><li><a href=#证书自动更新-计划任务>证书自动更新 计划任务</a></li><li><a href=#完工>完工</a></li></ul></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Let_s_Encrypt 免费Https证书</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=author class=author>Braindance</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/><i class="far fa-folder fa-fw"></i>服务器</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1909 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id=/posts/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/ class=leancloud_visitors data-flag-title="Let_s_Encrypt 免费Https证书">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-</span>&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#先放官网>先放官网</a></li>
-<li><a href=#开工>开工</a></li>
-<li><a href=#创建账号>创建账号</a></li>
-<li><a href=#创建csr文件>创建CSR文件</a></li>
-<li><a href=#配置验证服务>配置验证服务</a></li>
-<li><a href=#获取网站证书>获取网站证书</a></li>
-<li><a href=#证书自动更新-计划任务>证书自动更新 计划任务</a></li>
-<li><a href=#完工>完工</a></li>
-</ul>
-</li>
-</ul>
-</nav></div>
-</div><div class=content id=content><div class="details admonition warning open">
-<div class="details-summary admonition-title">
-<i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-</div>
-<div class=details-content>
-<div class=admonition-content>
-本文最后更新于 <span class=timeago datetime=2020-09-03T15:30:37 title="September 3, 2020">2020-09-03</span>，文中内容可能已过时。</div>
-</div>
-</div><p>参考文章:<a href=https://imququ.com/post/letsencrypt-certificate.html target=_blank rel="noopener noreffer">Let&rsquo;s Encrypt，免费好用的 HTTPS 证书</a></p>
-<h3 id=先放官网 class=headerLink>
-<a href=#%e5%85%88%e6%94%be%e5%ae%98%e7%bd%91 class=header-mark></a>先放官网</h3><p><a href=https://letsencrypt.org/ target=_blank rel="noopener noreffer">Let&rsquo;s Encrypt</a></p>
-<blockquote>
-<p><a href=https://letsencrypt.org/ target=_blank rel="noopener noreffer">Let&rsquo;s Encrypt</a> 是免费、自动化、开放的证书签发服务, 它得到了 Mozilla、Cisco、Akamai、Electronic Frontier Foundation 和 Chrome 等众多公司和机构的支持，发展十分迅猛</p>
-</blockquote>
-<hr>
-<h4 id=所需环境 class=headerLink>
-<a href=#%e6%89%80%e9%9c%80%e7%8e%af%e5%a2%83 class=header-mark></a>所需环境</h4><ul>
-<li>
-<p>一个 HTTP 服务，以 Nginx 为例</p>
-</li>
-<li>
-<p>python</p>
-</li>
-<li>
-<p>两个目录:</p>
-<blockquote>
-<p>/site 网站目录</p>
-<p>/site_site_cert 保存证书的目录</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>证书的颁发有两种方式：</strong></p>
-<h4 id=通过在线生成 class=headerLink>
-<a href=#%e9%80%9a%e8%bf%87%e5%9c%a8%e7%ba%bf%e7%94%9f%e6%88%90 class=header-mark></a>通过在线生成</h4><p>通过网址在线生成，需要验证文件</p>
-<h4 id=通过程序生成 class=headerLink>
-<a href=#%e9%80%9a%e8%bf%87%e7%a8%8b%e5%ba%8f%e7%94%9f%e6%88%90 class=header-mark></a>通过程序生成</h4><p>通过本地 IIS，生成后会自动绑定本地 IIS 站点上的HTTPS 域名。</p>
-<p>我使用的是第一种方法：在线生成，原理是：先在你的服务器上传一个密钥，然后Let&rsquo;s Encrypt会对网站进行访问，下载密钥进行验证。</p>
-<hr>
-<h3 id=开工 class=headerLink>
-<a href=#%e5%bc%80%e5%b7%a5 class=header-mark></a>开工</h3><h3 id=创建账号 class=headerLink>
-<a href=#%e5%88%9b%e5%bb%ba%e8%b4%a6%e5%8f%b7 class=header-mark></a>创建账号</h3><p>首先创建一个目录，我是在根目录下创建文件夹site_cert</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>mkdir /site_cert
-</code></pre></td></tr></table>
-</div>
-</div><p>这个文件夹用来存放各种临时文件和最后的证书文件。进入这个目录，创建一个RSA私钥，用于Let&rsquo;s Encrypt识别你的身份</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>openssl genrsa <span class=m>4096</span> &gt; account.key
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=创建csr文件 class=headerLink>
-<a href=#%e5%88%9b%e5%bb%bacsr%e6%96%87%e4%bb%b6 class=header-mark></a>创建CSR文件</h3><p>在这之前，还需要创建域名私钥（一定不要使用上面的账户私钥）</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>openssl genrsa <span class=m>4096</span> &gt; domain.key
-</code></pre></td></tr></table>
-</div>
-</div><p>我参考的文章提到了两种私钥RSA和ECC，我现在也还不懂什么原理，把两种区别放出来吧</p>
-<blockquote>
-<p>RSA 私钥：兼容性好</p>
-<p>ECC 私钥：部分老旧操作系统、浏览器不支持。优点是证书体积小</p>
-</blockquote>
-<p>两个用于身份身份验证的私钥文件创建好，就可以生成CSR（Certificate Signing Request，证书签名请求）文件了，申请时可以把域名带 <code>www</code> 和不带 <code>www</code> 的两种情况都加进去，一张证书最多可以包含100个域名。</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>openssl req -new -sha256 -key domain.key -subj <span class=s2>&#34;/&#34;</span> -reqexts SAN -config &lt;<span class=o>(</span>cat /etc/ssl/openssl.cnf &lt;<span class=o>(</span><span class=nb>printf</span> <span class=s2>&#34;[SAN]\nsubjectAltName=DNS:yoursite.com,DNS:www.yoursite.com&#34;</span><span class=o>))</span> &gt; domain.csr
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>其中DNS的<code>yoursite.com</code>和<code>www.yoursite.com</code>记得要换成自己的域名</li>
-</ul>
-<p>我在这里遇到了问题提示找不到<code>/etc/ssl/openssl.cnf</code>文件，在网上找的的<a href=https://blog.csdn.net/hjxdreamer/article/details/103296944 target=_blank rel="noopener noreffer">解决办法</a>是</p>
-<p>执行 :</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>openssl version -a
-</code></pre></td></tr></table>
-</div>
-</div><p>会输出openssl的信息，其中<code>OPENSSLDIR</code>对应的路径就是<code>openssl.cnf</code>文件的地址，自行将上面的<code>cat /etc/ssl/openssl.cnf</code>,改为自己的路径运行。</p>
-<h3 id=配置验证服务 class=headerLink>
-<a href=#%e9%85%8d%e7%bd%ae%e9%aa%8c%e8%af%81%e6%9c%8d%e5%8a%a1 class=header-mark></a>配置验证服务</h3><p>前面介绍过了Let&rsquo;s Encrypt验证的原理是在你的服务器上生成一个随机文件，在通过创建CSR时的域名进行访问下载，如果成功表明你对这个域名的拥有权。</p>
-<p>创建用于存放网站的目录site以及用于验证文件存放的子目录</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>mkdir -p /site/.well-known/acme-challenge/
-</code></pre></td></tr></table>
-</div>
-</div><p>然后再Nginx中配置:</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#先放官网>先放官网</a></li><li><a href=#开工>开工</a></li><li><a href=#创建账号>创建账号</a></li><li><a href=#创建csr文件>创建CSR文件</a></li><li><a href=#配置验证服务>配置验证服务</a></li><li><a href=#获取网站证书>获取网站证书</a></li><li><a href=#证书自动更新-计划任务>证书自动更新 计划任务</a></li><li><a href=#完工>完工</a></li></ul></li></ul></nav></div></div><div class=content id=content><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>本文最后更新于 <span class=timeago datetime=2020-09-03T15:30:37 title="September 3, 2020">2020-09-03</span>，文中内容可能已过时。</div></div></div><p>参考文章:<a href=https://imququ.com/post/letsencrypt-certificate.html target=_blank rel="noopener noreffer">Let&rsquo;s Encrypt，免费好用的 HTTPS 证书</a></p><h3 id=先放官网 class=headerLink><a href=#%e5%85%88%e6%94%be%e5%ae%98%e7%bd%91 class=header-mark></a>先放官网</h3><p><a href=https://letsencrypt.org/ target=_blank rel="noopener noreffer">Let&rsquo;s Encrypt</a></p><blockquote><p><a href=https://letsencrypt.org/ target=_blank rel="noopener noreffer">Let&rsquo;s Encrypt</a> 是免费、自动化、开放的证书签发服务, 它得到了 Mozilla、Cisco、Akamai、Electronic Frontier Foundation 和 Chrome 等众多公司和机构的支持，发展十分迅猛</p></blockquote><hr><h4 id=所需环境 class=headerLink><a href=#%e6%89%80%e9%9c%80%e7%8e%af%e5%a2%83 class=header-mark></a>所需环境</h4><ul><li><p>一个 HTTP 服务，以 Nginx 为例</p></li><li><p>python</p></li><li><p>两个目录:</p><blockquote><p>/site 网站目录</p><p>/site_site_cert 保存证书的目录</p></blockquote></li></ul><p><strong>证书的颁发有两种方式：</strong></p><h4 id=通过在线生成 class=headerLink><a href=#%e9%80%9a%e8%bf%87%e5%9c%a8%e7%ba%bf%e7%94%9f%e6%88%90 class=header-mark></a>通过在线生成</h4><p>通过网址在线生成，需要验证文件</p><h4 id=通过程序生成 class=headerLink><a href=#%e9%80%9a%e8%bf%87%e7%a8%8b%e5%ba%8f%e7%94%9f%e6%88%90 class=header-mark></a>通过程序生成</h4><p>通过本地 IIS，生成后会自动绑定本地 IIS 站点上的HTTPS 域名。</p><p>我使用的是第一种方法：在线生成，原理是：先在你的服务器上传一个密钥，然后Let&rsquo;s Encrypt会对网站进行访问，下载密钥进行验证。</p><hr><h3 id=开工 class=headerLink><a href=#%e5%bc%80%e5%b7%a5 class=header-mark></a>开工</h3><h3 id=创建账号 class=headerLink><a href=#%e5%88%9b%e5%bb%ba%e8%b4%a6%e5%8f%b7 class=header-mark></a>创建账号</h3><p>首先创建一个目录，我是在根目录下创建文件夹site_cert</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>mkdir /site_cert
+</span></span></code></pre></td></tr></table></div></div><p>这个文件夹用来存放各种临时文件和最后的证书文件。进入这个目录，创建一个RSA私钥，用于Let&rsquo;s Encrypt识别你的身份</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>openssl genrsa <span class=m>4096</span> &gt; account.key
+</span></span></code></pre></td></tr></table></div></div><h3 id=创建csr文件 class=headerLink><a href=#%e5%88%9b%e5%bb%bacsr%e6%96%87%e4%bb%b6 class=header-mark></a>创建CSR文件</h3><p>在这之前，还需要创建域名私钥（一定不要使用上面的账户私钥）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>openssl genrsa <span class=m>4096</span> &gt; domain.key
+</span></span></code></pre></td></tr></table></div></div><p>我参考的文章提到了两种私钥RSA和ECC，我现在也还不懂什么原理，把两种区别放出来吧</p><blockquote><p>RSA 私钥：兼容性好</p><p>ECC 私钥：部分老旧操作系统、浏览器不支持。优点是证书体积小</p></blockquote><p>两个用于身份身份验证的私钥文件创建好，就可以生成CSR（Certificate Signing Request，证书签名请求）文件了，申请时可以把域名带 <code>www</code> 和不带 <code>www</code> 的两种情况都加进去，一张证书最多可以包含100个域名。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>openssl req -new -sha256 -key domain.key -subj <span class=s2>&#34;/&#34;</span> -reqexts SAN -config &lt;<span class=o>(</span>cat /etc/ssl/openssl.cnf &lt;<span class=o>(</span><span class=nb>printf</span> <span class=s2>&#34;[SAN]\nsubjectAltName=DNS:yoursite.com,DNS:www.yoursite.com&#34;</span><span class=o>))</span> &gt; domain.csr
+</span></span></code></pre></td></tr></table></div></div><ul><li>其中DNS的<code>yoursite.com</code>和<code>www.yoursite.com</code>记得要换成自己的域名</li></ul><p>我在这里遇到了问题提示找不到<code>/etc/ssl/openssl.cnf</code>文件，在网上找的的<a href=https://blog.csdn.net/hjxdreamer/article/details/103296944 target=_blank rel="noopener noreffer">解决办法</a>是</p><p>执行 :</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>openssl version -a
+</span></span></code></pre></td></tr></table></div></div><p>会输出openssl的信息，其中<code>OPENSSLDIR</code>对应的路径就是<code>openssl.cnf</code>文件的地址，自行将上面的<code>cat /etc/ssl/openssl.cnf</code>,改为自己的路径运行。</p><h3 id=配置验证服务 class=headerLink><a href=#%e9%85%8d%e7%bd%ae%e9%aa%8c%e8%af%81%e6%9c%8d%e5%8a%a1 class=header-mark></a>配置验证服务</h3><p>前面介绍过了Let&rsquo;s Encrypt验证的原理是在你的服务器上生成一个随机文件，在通过创建CSR时的域名进行访问下载，如果成功表明你对这个域名的拥有权。</p><p>创建用于存放网站的目录site以及用于验证文件存放的子目录</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>mkdir -p /site/.well-known/acme-challenge/
+</span></span></code></pre></td></tr></table></div></div><p>然后再Nginx中配置:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -252,81 +38,33 @@
 </span><span class=lnt>10
 </span><span class=lnt>11
 </span><span class=lnt>12
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=k>server</span> <span class=p>{</span>
-    <span class=kn>server_name</span> <span class=s>www.yoursite.com</span> <span class=s>yoursite.com</span><span class=p>;</span>
-
-    <span class=kn>location</span> <span class=s>^~</span> <span class=s>/.well-known/acme-challenge/</span> <span class=p>{</span>
-        <span class=kn>alias</span> <span class=s>/home/xxx/www/challenges/</span><span class=p>;</span>
-        <span class=kn>try_files</span> <span class=nv>$uri</span> <span class=p>=</span><span class=mi>404</span><span class=p>;</span>
-    <span class=p>}</span>
-
-    <span class=kn>location</span> <span class=s>/</span> <span class=p>{</span>
-        <span class=kn>rewrite</span> <span class=s>^/(.*)</span>$ <span class=s>https://yoursite.com/</span><span class=nv>$1</span> <span class=s>permanent</span><span class=p>;</span>
-    <span class=p>}</span>
-<span class=p>}</span>
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>别忘了改<code>yoursite</code></li>
-</ul>
-<p>这个配置会优先查找<code>/site</code>目录下的网站，建议保留以后证书认证还可以用到，因为颁发的证书一次可以使用90天。</p>
-<h3 id=获取网站证书 class=headerLink>
-<a href=#%e8%8e%b7%e5%8f%96%e7%bd%91%e7%ab%99%e8%af%81%e4%b9%a6 class=header-mark></a>获取网站证书</h3><p>先下载<code>acme-tiny</code>脚本到之前的site_cert目录：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>wget https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py
-</code></pre></td></tr></table>
-</div>
-</div><p>指定账户私钥、CSR以及网站上验证文件的目录，执行脚本:</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>python acme_tiny.py --account-key ./account.key --csr ./domain.csr --acme-dir /fakesite/.well-known/acme-challenge/ &gt; ./signed.crt
-</code></pre></td></tr></table>
-</div>
-</div><p>执行成功的话会在当前目录生成一个<code>signed.crt</code>文件，这个文件就是申请好的证书文件。</p>
-<p>我在这里出现了错误提示</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ValueError: Wrote file to /site/.well-known/acme-challenge/blablabla, but couldn&#39;t download http://www.yoursite.com/.well-known/acme-challenge/blablabla
-</code></pre></td></tr></table>
-</div>
-</div><p>大概的意思就是，在网站目录里写入了一个验证文件，但是Let&rsquo;s Encrypt的服务器访问不到你的网站，建议先去看一看Nginx配置是否出错，再有可能是自己的域名无法在国外解析，建议暂时使用国外的DNS解析商。推荐的有：</p>
-<blockquote>
-<p><a href=https://dns.he.net/ target=_blank rel="noopener noreffer">Hurricane Electric Free DNS</a></p>
-<p><a href=https://www.zoneedit.com/ target=_blank rel="noopener noreffer">ZoneEdit</a></p>
-<p><a href=https://www.cloudflare.com/ target=_blank rel="noopener noreffer">CloudFlare</a></p>
-</blockquote>
-<p>这些都是免费的，但是因为我自己的域名后缀为.tk，上面第一个DNS解析商警告因为.tk域名滥用，不给解析。</p>
-<p>网站证书到手以后，还要下载 Let&rsquo;s Encrypt 的中间证书。证书链中大部分都是「站点证书 – 中间证书 – 根证书」这样三级。服务端只需要发送前两个证书即可。我们需要把中间证书和网站证书合在一起：</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=line><span class=cl><span class=k>server</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kn>server_name</span> <span class=s>www.yoursite.com</span> <span class=s>yoursite.com</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kn>location</span> <span class=s>^~</span> <span class=s>/.well-known/acme-challenge/</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kn>alias</span> <span class=s>/home/xxx/www/challenges/</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kn>try_files</span> <span class=nv>$uri</span> <span class=p>=</span><span class=mi>404</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kn>location</span> <span class=s>/</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kn>rewrite</span> <span class=s>^/(.*)</span>$ <span class=s>https://yoursite.com/</span><span class=nv>$1</span> <span class=s>permanent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>别忘了改<code>yoursite</code></li></ul><p>这个配置会优先查找<code>/site</code>目录下的网站，建议保留以后证书认证还可以用到，因为颁发的证书一次可以使用90天。</p><h3 id=获取网站证书 class=headerLink><a href=#%e8%8e%b7%e5%8f%96%e7%bd%91%e7%ab%99%e8%af%81%e4%b9%a6 class=header-mark></a>获取网站证书</h3><p>先下载<code>acme-tiny</code>脚本到之前的site_cert目录：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>wget https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py
+</span></span></code></pre></td></tr></table></div></div><p>指定账户私钥、CSR以及网站上验证文件的目录，执行脚本:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>python acme_tiny.py --account-key ./account.key --csr ./domain.csr --acme-dir /fakesite/.well-known/acme-challenge/ &gt; ./signed.crt
+</span></span></code></pre></td></tr></table></div></div><p>执行成功的话会在当前目录生成一个<code>signed.crt</code>文件，这个文件就是申请好的证书文件。</p><p>我在这里出现了错误提示</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ValueError: Wrote file to /site/.well-known/acme-challenge/blablabla, but couldn&#39;t download http://www.yoursite.com/.well-known/acme-challenge/blablabla
+</span></span></code></pre></td></tr></table></div></div><p>大概的意思就是，在网站目录里写入了一个验证文件，但是Let&rsquo;s Encrypt的服务器访问不到你的网站，建议先去看一看Nginx配置是否出错，再有可能是自己的域名无法在国外解析，建议暂时使用国外的DNS解析商。推荐的有：</p><blockquote><p><a href=https://dns.he.net/ target=_blank rel="noopener noreffer">Hurricane Electric Free DNS</a></p><p><a href=https://www.zoneedit.com/ target=_blank rel="noopener noreffer">ZoneEdit</a></p><p><a href=https://www.cloudflare.com/ target=_blank rel="noopener noreffer">CloudFlare</a></p></blockquote><p>这些都是免费的，但是因为我自己的域名后缀为.tk，上面第一个DNS解析商警告因为.tk域名滥用，不给解析。</p><p>网站证书到手以后，还要下载 Let&rsquo;s Encrypt 的中间证书。证书链中大部分都是「站点证书 – 中间证书 – 根证书」这样三级。服务端只需要发送前两个证书即可。我们需要把中间证书和网站证书合在一起：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>wget -O - https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem &gt; intermediate.pem
-
-
-cat signed.crt intermediate.pem &gt; chained.pem
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>最终</strong>，在Nginx中添加证书配置，并reload，我的部分配置如下</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>wget -O - https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem &gt; intermediate.pem
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>cat signed.crt intermediate.pem &gt; chained.pem
+</span></span></code></pre></td></tr></table></div></div><p><strong>最终</strong>，在Nginx中添加证书配置，并reload，我的部分配置如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -337,125 +75,39 @@ cat signed.crt intermediate.pem &gt; chained.pem
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=k>server</span> <span class=p>{</span>
-   <span class=kn>listen</span> <span class=mi>443</span> <span class=s>ssl</span><span class=p>;</span>
-   <span class=kn>ssl_certificate</span>       <span class=s>/site_cert/chained.pem</span><span class=p>;</span>
-   <span class=kn>ssl_certificate_key</span>   <span class=s>/site_cert/domain.key</span><span class=p>;</span>
-   <span class=kn>ssl_protocols</span>         <span class=s>TLSv1</span> <span class=s>TLSv1.1</span> <span class=s>TLSv1.2</span><span class=p>;</span>
-   <span class=kn>ssl_ciphers</span>           <span class=s>HIGH:!aNULL:!MD5</span><span class=p>;</span>
-   <span class=kn>server_name</span>           <span class=s>braindance.tk</span><span class=p>;</span>
-   <span class=kn>index</span> <span class=s>index.html</span> <span class=s>index.htm</span><span class=p>;</span>
-   <span class=kn>root</span> 
-        <span class=s>…………………………</span>
-<span class=err>}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>执行</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>nginx -s reload
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=证书自动更新-计划任务 class=headerLink>
-<a href=#%e8%af%81%e4%b9%a6%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0-%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1 class=header-mark></a>证书自动更新 计划任务</h3><p>​ 至此我们已经成功的获取到了Https证书，但是获取到的Https证书只有90天的时效，到期的话还需要使用相同的方法进行更新，为了避免某次忘记更新导致网站出现问题，我们可以使用linux中的crond服务为我们自动更新证书。</p>
-<p>用 <code>vi</code> 在 <code>/site_cert</code> 文件夹 创建 计划任务脚本 <code>renew_cert.sh</code></p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>vi /site_cert/renew_cert.sh
-</code></pre></td></tr></table>
-</div>
-</div><p>通过<code>vi</code>输入以下内容</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-nginx data-lang=nginx><span class=line><span class=cl><span class=k>server</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=kn>listen</span> <span class=mi>443</span> <span class=s>ssl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>ssl_certificate</span>       <span class=s>/site_cert/chained.pem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>ssl_certificate_key</span>   <span class=s>/site_cert/domain.key</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>ssl_protocols</span>         <span class=s>TLSv1</span> <span class=s>TLSv1.1</span> <span class=s>TLSv1.2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>ssl_ciphers</span>           <span class=s>HIGH:!aNULL:!MD5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>server_name</span>           <span class=s>braindance.tk</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>index</span> <span class=s>index.html</span> <span class=s>index.htm</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=kn>root</span> 
+</span></span><span class=line><span class=cl>        <span class=s>…………………………</span>
+</span></span><span class=line><span class=cl><span class=err>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>执行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>nginx -s reload
+</span></span></code></pre></td></tr></table></div></div><h3 id=证书自动更新-计划任务 class=headerLink><a href=#%e8%af%81%e4%b9%a6%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0-%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1 class=header-mark></a>证书自动更新 计划任务</h3><p>​ 至此我们已经成功的获取到了Https证书，但是获取到的Https证书只有90天的时效，到期的话还需要使用相同的方法进行更新，为了避免某次忘记更新导致网站出现问题，我们可以使用linux中的crond服务为我们自动更新证书。</p><p>用 <code>vi</code> 在 <code>/site_cert</code> 文件夹 创建 计划任务脚本 <code>renew_cert.sh</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>vi /site_cert/renew_cert.sh
+</span></span></code></pre></td></tr></table></div></div><p>通过<code>vi</code>输入以下内容</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=cp>#!/bin/bash
-</span><span class=cp></span>
-<span class=nb>cd</span> /fakesite_cert/
-python acme_tiny.py --account-key ./account.key --csr ./domain.csr --acme-dir /fakesite/.well-known/acme-challenge/ &gt; ./signed.crt <span class=o>||</span> <span class=nb>exit</span>
-wget -O - https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem &gt; intermediate.pem
-cat signed.crt intermediate.pem &gt; chained.pem
-nginx -s reload
-</code></pre></td></tr></table>
-</div>
-</div><p>更新的大致过程是，运行python脚本再次更新<code>signed.crt</code>申请证书文件，再进行证书合并写入<code>chained.pem</code>文件。</p>
-<p>然后给这个文件赋予 可执行 属性</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>chmod +x /fakesite_cert/renew_cert.sh
-</code></pre></td></tr></table>
-</div>
-</div><p>使用<code>crontab -e</code>指令打开定时任务配置文件，并加入以下内容。</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>0 0 1 * * /home/xxx/shell/renew_cert.sh &gt;/dev/null 2&gt;&amp;1
-</code></pre></td></tr></table>
-</div>
-</div><p>对于上面指令的具体意思请自行搜索<code>crontab</code>命令</p>
-<h3 id=完工 class=headerLink>
-<a href=#%e5%ae%8c%e5%b7%a5 class=header-mark></a>完工</h3></div>
-<div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>更新于 2020-09-03</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
-<div class=post-info-md></div>
-<div class=post-info-share>
-<span></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags></section>
-<section>
-<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
-</section>
-</div>
-<div class=post-nav><a href=/posts/%E6%90%AD%E7%AA%9D%E8%BF%87%E7%A8%8B%E4%BA%8C/ class=prev rel=prev title=搭窝过程(二)><i class="fas fa-angle-left fa-fw"></i>搭窝过程(二)</a>
-<a href=/posts/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/ class=next rel=next title=Chevereto-搭建一个自己的图床>Chevereto-搭建一个自己的图床<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=valine class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>
-由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-<div class=footer-line></div>
-<div class=footer-line>
-</div>
-</div></footer></div>
-<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论>
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><div class=assets><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/topbar@1.0.1/topbar.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/@sliphua/pjax@2.4.0/dist/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-176925141-1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></div>
-<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"shaenDlkzwy9NvdCNJVrJspu-MdYXbMMI",appKey:"e074xMKoSw3B9kWmBediaBE9",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/gh/guobang-yoo/CDN@master/emoji/",emojiMaps:{"2233_卖萌":"2233/卖萌n.png","2233_吃惊":"2233/吃惊n.png","2233_吐魂":"2233/吐魂.png","2233_喝水":"2233/喝水.png","2233_困惑":"2233/困惑n.png","2233_大哭":"2233/大哭.png","2233_大笑":"2233/大笑n.png","2233_委屈":"2233/委屈.png","2233_怒":"2233/怒.png","2233_无言":"2233/无言.png","2233_汗":"2233/汗n.png","2233_疑问":"2233/疑问n.png","2233_第一":"2233/第一.png","2233_耶":"2233/耶.png","2233_郁闷":"2233/郁闷.png",tv_doge:"xiaodianshi/doge.gif","tv_亲亲":"xiaodianshi/亲亲.gif","tv_偷笑":"xiaodianshi/偷笑.gif","tv_再见":"xiaodianshi/再见.gif","tv_发怒":"xiaodianshi/发怒.gif","tv_发财":"xiaodianshi/发财.gif","tv_可爱":"xiaodianshi/可爱.gif","tv_吐血":"xiaodianshi/吐血.gif","tv_呆":"xiaodianshi/呆.gif","tv_呕吐":"xiaodianshi/呕吐.gif","tv_困":"xiaodianshi/困.gif","tv_坏笑":"xiaodianshi/坏笑.gif","tv_大佬":"xiaodianshi/大佬.gif","tv_大哭":"xiaodianshi/大哭.gif","tv_委屈":"xiaodianshi/委屈.gif","tv_害羞":"xiaodianshi/害羞.gif","tv_尴尬":"xiaodianshi/尴尬.gif","tv_微笑":"xiaodianshi/微笑.gif","tv_思考":"xiaodianshi/思考.gif","tv_打脸":"xiaodianshi/打脸.gif","tv_抓狂":"xiaodianshi/抓狂.gif","tv_抠鼻子":"xiaodianshi/抠鼻子.gif","tv_斜眼笑":"xiaodianshi/斜眼笑.gif","tv_晕":"xiaodianshi/晕.gif","tv_流汗":"xiaodianshi/流汗.gif","tv_流鼻血":"xiaodianshi/流鼻血.gif","tv_点赞":"xiaodianshi/点赞.gif","tv_生气":"xiaodianshi/生气.gif","tv_生病":"xiaodianshi/生病.gif","tv_疑问":"xiaodianshi/疑问.gif","tv_白眼":"xiaodianshi/白眼.gif","tv_睡着":"xiaodianshi/睡着.gif","tv_笑哭":"xiaodianshi/笑哭.gif","tv_腼腆":"xiaodianshi/腼腆.gif","tv_色":"xiaodianshi/色.gif","tv_调皮":"xiaodianshi/调皮.gif","tv_鄙视":"xiaodianshi/鄙视.gif","tv_闭嘴":"xiaodianshi/闭嘴.gif","tv_难过":"xiaodianshi/难过.gif","tv_馋":"xiaodianshi/馋.gif","tv_黑人问号":"xiaodianshi/黑人问号.gif","tv_鼓掌":"xiaodianshi/鼓掌.gif","蛆音娘_OK":"quyinniang/OK.png","蛆音娘_die":"quyinniang/die.png","蛆音娘_偷看":"quyinniang/偷看.png","蛆音娘_卖萌":"quyinniang/卖萌.png","蛆音娘_吃惊":"quyinniang/吃惊q.png","蛆音娘_吃瓜群众":"quyinniang/吃瓜群众.png","蛆音娘_吐血":"quyinniang/吐血.png","蛆音娘_哭泣":"quyinniang/哭泣q.png","蛆音娘_哼":"quyinniang/哼.png","蛆音娘_大笑":"quyinniang/大笑.png","蛆音娘_害怕":"quyinniang/害怕.png","蛆音娘_扶额":"quyinniang/扶额.png","蛆音娘_摇头":"quyinniang/摇头.png","蛆音娘_无语":"quyinniang/无语q.png","蛆音娘_机智":"quyinniang/机智.png","蛆音娘_滑稽":"quyinniang/滑稽.png","蛆音娘_生气":"quyinniang/生气.png","蛆音娘_疑问":"quyinniang/疑问.png","蛆音娘_睡觉觉":"quyinniang/睡觉觉.png","蛆音娘_肥皂":"quyinniang/肥皂.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:5,placeholder:"Just go go",recordIP:!0,visitor:!0}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},twemoji:!0}</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js defer></script><script type=text/javascript src=/js/valine.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css></div>
-</body>
-</html>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> /fakesite_cert/
+</span></span><span class=line><span class=cl>python acme_tiny.py --account-key ./account.key --csr ./domain.csr --acme-dir /fakesite/.well-known/acme-challenge/ &gt; ./signed.crt <span class=o>||</span> <span class=nb>exit</span>
+</span></span><span class=line><span class=cl>wget -O - https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem &gt; intermediate.pem
+</span></span><span class=line><span class=cl>cat signed.crt intermediate.pem &gt; chained.pem
+</span></span><span class=line><span class=cl>nginx -s reload
+</span></span></code></pre></td></tr></table></div></div><p>更新的大致过程是，运行python脚本再次更新<code>signed.crt</code>申请证书文件，再进行证书合并写入<code>chained.pem</code>文件。</p><p>然后给这个文件赋予 可执行 属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>chmod +x /fakesite_cert/renew_cert.sh
+</span></span></code></pre></td></tr></table></div></div><p>使用<code>crontab -e</code>指令打开定时任务配置文件，并加入以下内容。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>0 0 1 * * /home/xxx/shell/renew_cert.sh &gt;/dev/null 2&gt;&amp;1
+</span></span></code></pre></td></tr></table></div></div><p>对于上面指令的具体意思请自行搜索<code>crontab</code>命令</p><h3 id=完工 class=headerLink><a href=#%e5%ae%8c%e5%b7%a5 class=header-mark></a>完工</h3></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2020-09-03</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/%E6%90%AD%E7%AA%9D%E8%BF%87%E7%A8%8B%E4%BA%8C/ class=prev rel=prev title=搭窝过程(二)><i class="fas fa-angle-left fa-fw"></i>搭窝过程(二)</a>
+<a href=/posts/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/ class=next rel=next title=Chevereto-搭建一个自己的图床>Chevereto-搭建一个自己的图床<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/topbar@1.0.1/topbar.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/@sliphua/pjax@2.4.0/dist/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-176925141-1",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var e=document.createElement("script"),t;e.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></div><div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"shaenDlkzwy9NvdCNJVrJspu-MdYXbMMI",appKey:"e074xMKoSw3B9kWmBediaBE9",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/gh/guobang-yoo/CDN@master/emoji/",emojiMaps:{"2233_卖萌":"2233/卖萌n.png","2233_吃惊":"2233/吃惊n.png","2233_吐魂":"2233/吐魂.png","2233_喝水":"2233/喝水.png","2233_困惑":"2233/困惑n.png","2233_大哭":"2233/大哭.png","2233_大笑":"2233/大笑n.png","2233_委屈":"2233/委屈.png","2233_怒":"2233/怒.png","2233_无言":"2233/无言.png","2233_汗":"2233/汗n.png","2233_疑问":"2233/疑问n.png","2233_第一":"2233/第一.png","2233_耶":"2233/耶.png","2233_郁闷":"2233/郁闷.png",tv_doge:"xiaodianshi/doge.gif","tv_亲亲":"xiaodianshi/亲亲.gif","tv_偷笑":"xiaodianshi/偷笑.gif","tv_再见":"xiaodianshi/再见.gif","tv_发怒":"xiaodianshi/发怒.gif","tv_发财":"xiaodianshi/发财.gif","tv_可爱":"xiaodianshi/可爱.gif","tv_吐血":"xiaodianshi/吐血.gif","tv_呆":"xiaodianshi/呆.gif","tv_呕吐":"xiaodianshi/呕吐.gif","tv_困":"xiaodianshi/困.gif","tv_坏笑":"xiaodianshi/坏笑.gif","tv_大佬":"xiaodianshi/大佬.gif","tv_大哭":"xiaodianshi/大哭.gif","tv_委屈":"xiaodianshi/委屈.gif","tv_害羞":"xiaodianshi/害羞.gif","tv_尴尬":"xiaodianshi/尴尬.gif","tv_微笑":"xiaodianshi/微笑.gif","tv_思考":"xiaodianshi/思考.gif","tv_打脸":"xiaodianshi/打脸.gif","tv_抓狂":"xiaodianshi/抓狂.gif","tv_抠鼻子":"xiaodianshi/抠鼻子.gif","tv_斜眼笑":"xiaodianshi/斜眼笑.gif","tv_晕":"xiaodianshi/晕.gif","tv_流汗":"xiaodianshi/流汗.gif","tv_流鼻血":"xiaodianshi/流鼻血.gif","tv_点赞":"xiaodianshi/点赞.gif","tv_生气":"xiaodianshi/生气.gif","tv_生病":"xiaodianshi/生病.gif","tv_疑问":"xiaodianshi/疑问.gif","tv_白眼":"xiaodianshi/白眼.gif","tv_睡着":"xiaodianshi/睡着.gif","tv_笑哭":"xiaodianshi/笑哭.gif","tv_腼腆":"xiaodianshi/腼腆.gif","tv_色":"xiaodianshi/色.gif","tv_调皮":"xiaodianshi/调皮.gif","tv_鄙视":"xiaodianshi/鄙视.gif","tv_闭嘴":"xiaodianshi/闭嘴.gif","tv_难过":"xiaodianshi/难过.gif","tv_馋":"xiaodianshi/馋.gif","tv_黑人问号":"xiaodianshi/黑人问号.gif","tv_鼓掌":"xiaodianshi/鼓掌.gif","蛆音娘_OK":"quyinniang/OK.png","蛆音娘_die":"quyinniang/die.png","蛆音娘_偷看":"quyinniang/偷看.png","蛆音娘_卖萌":"quyinniang/卖萌.png","蛆音娘_吃惊":"quyinniang/吃惊q.png","蛆音娘_吃瓜群众":"quyinniang/吃瓜群众.png","蛆音娘_吐血":"quyinniang/吐血.png","蛆音娘_哭泣":"quyinniang/哭泣q.png","蛆音娘_哼":"quyinniang/哼.png","蛆音娘_大笑":"quyinniang/大笑.png","蛆音娘_害怕":"quyinniang/害怕.png","蛆音娘_扶额":"quyinniang/扶额.png","蛆音娘_摇头":"quyinniang/摇头.png","蛆音娘_无语":"quyinniang/无语q.png","蛆音娘_机智":"quyinniang/机智.png","蛆音娘_滑稽":"quyinniang/滑稽.png","蛆音娘_生气":"quyinniang/生气.png","蛆音娘_疑问":"quyinniang/疑问.png","蛆音娘_睡觉觉":"quyinniang/睡觉觉.png","蛆音娘_肥皂":"quyinniang/肥皂.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:5,placeholder:"Just go go",recordIP:!0,visitor:!0}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},twemoji:!0}</script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js defer></script><script type=text/javascript src=/js/valine.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css></div></body></html>
