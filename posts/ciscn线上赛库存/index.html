@@ -136,124 +136,124 @@
 </span><span class=lnt>112
 </span><span class=lnt>113
 </span><span class=lnt>114
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>本题目没有其他代码了噢，就只有这一个文件，虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？
-</span></span><span class=line><span class=cl>&lt;?php
-</span></span><span class=line><span class=cl>class User
-</span></span><span class=line><span class=cl>{
-</span></span><span class=line><span class=cl>    private static $c = 0;
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=nx>本题目没有其他代码了噢，就只有这一个文件，虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>User</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>private</span> <span class=k>static</span> <span class=nv>$c</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function a()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>a</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function b()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>b</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function c()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>c</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function d()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>d</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function e()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>e</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function f()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>f</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function g()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>g</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function h()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>h</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function i()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>i</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function j()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>j</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function k()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>k</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function l()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>l</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function m()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>m</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function n()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>n</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function o()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>o</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function p()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>p</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function q()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>q</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function r()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>r</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function s()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>s</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    function t()
-</span></span><span class=line><span class=cl>    {
-</span></span><span class=line><span class=cl>        return ++self::$c;
-</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    <span class=k>function</span> <span class=nf>t</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>++</span><span class=nx>self</span><span class=o>::</span><span class=nv>$c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>    
-</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>$rc=$_GET[&#34;rc&#34;];
-</span></span><span class=line><span class=cl>$rb=$_GET[&#34;rb&#34;];
-</span></span><span class=line><span class=cl>$ra=$_GET[&#34;ra&#34;];
-</span></span><span class=line><span class=cl>$rd=$_GET[&#34;rd&#34;];
-</span></span><span class=line><span class=cl>$method= new $rc($ra, $rb);
-</span></span><span class=line><span class=cl>var_dump($method-&gt;$rd());
+</span></span><span class=line><span class=cl><span class=nv>$rc</span><span class=o>=</span><span class=nv>$_GET</span><span class=p>[</span><span class=s2>&#34;rc&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nv>$rb</span><span class=o>=</span><span class=nv>$_GET</span><span class=p>[</span><span class=s2>&#34;rb&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nv>$ra</span><span class=o>=</span><span class=nv>$_GET</span><span class=p>[</span><span class=s2>&#34;ra&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nv>$rd</span><span class=o>=</span><span class=nv>$_GET</span><span class=p>[</span><span class=s2>&#34;rd&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nv>$method</span><span class=o>=</span> <span class=k>new</span> <span class=nv>$rc</span><span class=p>(</span><span class=nv>$ra</span><span class=p>,</span> <span class=nv>$rb</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>var_dump</span><span class=p>(</span><span class=nv>$method</span><span class=o>-&gt;</span><span class=nv>$rd</span><span class=p>());</span>
 </span></span></code></pre></td></tr></table></div></div><p>看最后的参数列表，使用参数创建对象，并且创建对象的初始化参数需要有两个<code>$ra</code>、<code>$rb</code></p><p>，源码虽然给出了<code>User</code>类，但是不知道有什么其他的方法，这时候想到了可能使用PHP的原生类。</p><p>根据提示</p><blockquote><p>虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？</p></blockquote><p>应该想到看不完全可能是在代码注释中，百度获取类中的代码注释，可以得到一个<code>ReflectionMethod</code>类，并且<code>ReflectionMethod</code>类中刚好有一个<code>getDocComment</code> 方法可以获得注释：</p><blockquote><p>简介：<strong>ReflectionMethod</strong> 类报告了一个方法的有关信息。类报告了一个方法的有关信息</p><p>ReflectionFunctionAbstract::getDocComment — 获取注释内容</p></blockquote><p>源码中初始化创建对象为<code>new $rc($ra, $rb)</code>，传递了两个参数，<code>ReflectionMethod</code>类的初始化魔术方法也提供了两个参数</p><blockquote><p>public ReflectionMethod::__construct ( <a href=https://www.php.net/manual/zh/language.types.declarations.php#language.types.declarations.mixed target=_blank rel="noopener noreferrer">mixed</a> <code>$class</code> , string <code>$name</code> )</p></blockquote><p>所以构造第一个参数是User，第二个参数为源码里的那些方法名，一个一个尝试，在q方法中找到了flag的注释</p><p>payload</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>?rc=ReflectionMethod&amp;ra=User&amp;rb=q&amp;rd=getDocComment
 </span></span></code></pre></td></tr></table></div></div><p>结果</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>你能发现我吗string(152) &#34;/** * Increment counter * * @final * @static * @access publicCISCN{uLG8v-wGDDi-PfF4M-Pmc2U-uBqB2-} * @return int */&#34;
 </span></span></code></pre></td></tr></table></div></div><p>题外话：在尝试过程中还发现了另一个类<code>ReflectionClass</code></p><blockquote><p>简介：<strong>ReflectionClass</strong> 类报告了一个类的有关信息。</p></blockquote><p>和上面的那个类对比，两个类研究的对象不一样<strong>ReflectionMethod</strong>研究的是类中的方法，<strong>ReflectionClass</strong> 研究的是类。</p><p>这个类中也有一个获得注释的函数ReflectionClass::getDocComment，但是其获得的是文档注释，即文件开头的/**/中内容，但是本题的注释是在函数里的。</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-08-18</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/web/>Web</a>,&nbsp;<a href=/tags/sql%E6%B3%A8%E5%85%A5/>sql注入</a>,&nbsp;<a href=/tags/php%E5%8E%9F%E7%94%9F%E7%B1%BB/>php原生类</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/%E7%94%A8%E7%9A%84%E9%A1%BA%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99/ class=prev rel=prev title=用的顺手的网站><i class="fas fa-angle-left fa-fw"></i>用的顺手的网站</a>
-<a href=/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/ class=next rel=next title=博客搬迁>博客搬迁<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=twikoo></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://twikoo.js.org/>Twikoo</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+<a href=/posts/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/ class=next rel=next title=博客搬迁>博客搬迁<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=twikoo></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://twikoo.js.org/>Twikoo</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.109.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-176925141-1",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script></div><div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{twikoo:{commentCount:!0,el:"#twikoo",envId:"https://twikoo.penginman.com/",lang:"zh-cn"}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},twemoji:!0}</script><script type=text/javascript src=/lib/twikoo/twikoo.all.min.js defer></script><script type=text/javascript src=/js/twikoo.min.js defer></script><script type=text/javascript src=/lib/twemoji/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css></div></body></html>
