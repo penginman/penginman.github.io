@@ -1,1 +1,41 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>DMCTF2020 - 标签 - Braindance</title><link>https://www.braindance.top/tags/dmctf2020/</link><description>DMCTF2020 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 01 Dec 2020 11:20:45 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/dmctf2020/" rel="self" type="application/rss+xml"/><item><title>DMCTF之Misc</title><link>https://www.braindance.top/posts/dmctf%E4%B9%8Bmisc/</link><pubDate>Tue, 01 Dec 2020 11:20:45 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/dmctf%E4%B9%8Bmisc/</guid><description>前言这次比赛是第一次做Mics的题awa。 Misc Check_in真·有手就行 fakezip看到题目fakezip翻译：假的压缩包，所以猜应该是伪</description></item><item><title>DMCTF之Web</title><link>https://www.braindance.top/posts/dmctf%E4%B9%8Bweb/</link><pubDate>Sun, 29 Nov 2020 23:17:50 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/dmctf%E4%B9%8Bweb/</guid><description>前言比赛地址：http://dmctf.vaala.cloud:81 这次先写Web题目部分，我最后的排名： Web weak_type源码： 1 2 3 4</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>DMCTF2020 - 标签 - Braindance</title><link>https://www.braindance.top/tags/dmctf2020/</link><description>DMCTF2020 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 01 Dec 2020 11:20:45 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/dmctf2020/" rel="self" type="application/rss+xml"/><item><title>DMCTF之Misc</title><link>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bmisc/</link><pubDate>Tue, 01 Dec 2020 11:20:45 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bmisc/</guid><description><![CDATA[<h1 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h1><p>这次比赛是第一次做Mics的题awa。</p>
+<h1 id="misc" class="headerLink">
+    <a href="#misc" class="header-mark"></a>Misc</h1><h2 id="check_in" class="headerLink">
+    <a href="#check_in" class="header-mark"></a>Check_in</h2><p>真·有手就行</p>
+<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130102716.png"     ></p>
+<h2 id="fakezip" class="headerLink">
+    <a href="#fakezip" class="header-mark"></a>fakezip</h2><p>看到题目<strong>fakezip</strong>翻译：假的压缩包，所以猜应该是伪加密，贴一个原理的博客：<a href="https://blog.csdn.net/u011377996/article/details/79286958" target="_blank" rel="noopener noreferrer">zip伪加密</a>，使用010 Editor打开压缩包，</p>
+<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130103932.png"     ></p>
+<p>找到01修改为00，再解压压缩包，虽然提示了压缩包错误但是直接无视，获得一个flag.txt</p>]]></description></item><item><title>DMCTF之Web</title><link>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bweb/</link><pubDate>Sun, 29 Nov 2020 23:17:50 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bweb/</guid><description><![CDATA[<h1 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h1><p>比赛地址：<a href="http://dmctf.vaala.cloud:81/" target="_blank" rel="noopener noreferrer">http://dmctf.vaala.cloud:81</a></p>
+<p>这次先写Web题目部分，我最后的排名：</p>
+<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130085338.png"   alt="img"  ></p>
+<h1 id="web" class="headerLink">
+    <a href="#web" class="header-mark"></a>Web</h1><h2 id="weak_type" class="headerLink">
+    <a href="#weak_type" class="header-mark"></a>weak_type</h2><p>源码：</p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">text</p>]]></description></item></channel></rss>

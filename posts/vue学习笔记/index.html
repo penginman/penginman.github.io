@@ -1,37 +1,84 @@
 <!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Vue学习笔记 - Braindance</title><meta name=Description content="Braindance's blog"><meta property="og:url" content="https://www.braindance.top/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-<meta property="og:site_name" content="Braindance"><meta property="og:title" content="Vue学习笔记"><meta property="og:description" content="理解MVVMVue参考的MVVM模型 M：模型(Model) ：data中的数据 V：视图(View) ：模板代码 VM：视图模型(ViewModel"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-07T18:16:47+08:00"><meta property="article:modified_time" content="2022-03-07T18:16:47+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Vue学习笔记"><meta name=twitter:description content="理解MVVMVue参考的MVVM模型 M：模型(Model) ：data中的数据 V：视图(View) ：模板代码 VM：视图模型(ViewModel"><meta name=application-name content="Braindance"><meta name=apple-mobile-web-app-title content="Braindance"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/><link rel=prev href=https://www.braindance.top/posts/css%E5%AD%A6%E4%B9%A0/><link rel=next href=https://www.braindance.top/posts/%E8%8B%B1%E8%AF%AD%E9%97%AE%E7%AD%94/><link rel=stylesheet href=/css/main.css><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/color.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Vue学习笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.braindance.top\/posts\/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"},"genre":"posts","wordcount":4957,"url":"https:\/\/www.braindance.top\/posts\/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished":"2022-03-07T18:16:47+08:00","dateModified":"2022-03-07T18:16:47+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script><script src=//instant.page/5.2.0 defer type=module integrity=sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z></script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"||""==="black"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=文章>文章 </a><a class=menu-item href=/tags/ title=标签>标签 </a><a class=menu-item href=/categories/ title=分类>分类 </a><a class=menu-item href=/about/ title=关于>关于 </a><a class=menu-item href=/friend/ title=友链>友链 </a><a class=menu-item href=https://travellings.cn title=开往 rel="noopener noreferrer" target=_blank>🚇 开往 </a><a class=menu-item href=https://notion.braindance.top title=同步notion笔记 rel="noopener noreferrer" target=_blank><img class=emoji src=/img/notion.ico width=20> 笔记 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<meta property="og:site_name" content="Braindance"><meta property="og:title" content="Vue学习笔记"><meta property="og:description" content=" 理解MVVMVue参考的MVVM模型
+M：模型(Model) ：data中的数据 V：视图(View) ：模板代码 VM：视图模型(ViewModel)：Vue实例 观察发现：
+data中所有的属性，最后都出现在了vm身上。 vm身上所有的属性及Vue原型上所有属性，在Vue模板中都可以直接使用。 数据代理 回顾Object.defineProperty方法 vue"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-07T18:16:47+08:00"><meta property="article:modified_time" content="2022-03-07T18:16:47+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Vue学习笔记"><meta name=twitter:description content=" 理解MVVMVue参考的MVVM模型
+M：模型(Model) ：data中的数据 V：视图(View) ：模板代码 VM：视图模型(ViewModel)：Vue实例 观察发现：
+data中所有的属性，最后都出现在了vm身上。 vm身上所有的属性及Vue原型上所有属性，在Vue模板中都可以直接使用。 数据代理 回顾Object.defineProperty方法 vue"><meta name=application-name content="Braindance"><meta name=apple-mobile-web-app-title content="Braindance"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://www.braindance.top/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/><link rel=prev href=https://www.braindance.top/posts/css%E5%AD%A6%E4%B9%A0/><link rel=next href=https://www.braindance.top/posts/%E8%8B%B1%E8%AF%AD%E9%97%AE%E7%AD%94/><link rel=stylesheet href=/css/main.min.css><link rel=stylesheet href=/css/style.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Vue学习笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.braindance.top/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"genre":"posts","wordcount":4893,"url":"https://www.braindance.top/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","datePublished":"2022-03-07T18:16:47+08:00","dateModified":"2022-03-07T18:16:47+08:00","publisher":{"@type":"Organization","name":"Braindance"},"author":{"@type":"Person","name":"Braindance"},"description":""}</script></head><body data-instant-intensity=viewport><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.className=e,document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),e==="light"?document.documentElement.classList.remove("tw-dark"):document.documentElement.classList.add("tw-dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#161b22"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class="desktop print:!tw-hidden" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=文章>文章 </a><a class=menu-item href=/tags/ title=标签>标签 </a><a class=menu-item href=/categories/ title=分类>分类 </a><a class=menu-item href=/about/ title=关于>关于 </a><a class=menu-item href=/friend/ title=友链>友链 </a><a class=menu-item href=https://travellings.cn title=开往 rel="noopener noreferrer" target=_blank>🚇 开往 </a><a class=menu-item href=https://notion.braindance.top title=同步notion笔记 rel="noopener noreferrer" target=_blank><img class=emoji src=/img/notion.ico width=20> 笔记 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder=搜些什么 id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
-</span></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜些什么 id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title=文章>文章</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title=分类>分类</a><a class=menu-item href=/about/ title=关于>关于</a><a class=menu-item href=/friend/ title=友链>友链</a><a class=menu-item href=https://travellings.cn title=开往 rel="noopener noreferrer" target=_blank>🚇开往</a><a class=menu-item href=https://notion.braindance.top title=同步notion笔记 rel="noopener noreferrer" target=_blank><img class=emoji src=/img/notion.ico width=20>笔记</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#理解mvvm>理解MVVM</a></li><li><a href=#数据代理>数据代理</a><ul><li><a href=#回顾objectdefineproperty方法>回顾Object.defineProperty方法</a></li><li><a href=#数据代理-1>数据代理</a></li></ul></li><li><a href=#事件处理>事件处理</a></li><li><a href=#事件修饰符>事件修饰符</a></li><li><a href=#键盘事件>键盘事件</a><ul><li><a href=#小tips>小tips</a></li></ul></li><li><a href=#计算属性>计算属性</a><ul><li><a href=#简写>简写</a></li></ul></li><li><a href=#监视属性>监视属性</a></li><li><a href=#深度监视>深度监视</a></li><li><a href=#监视属性vs计算属性>监视属性vs计算属性</a></li><li><a href=#绑定样式>绑定样式</a></li><li><a href=#条件渲染>条件渲染</a></li><li><a href=#列表渲染>列表渲染</a></li><li><a href=#列表排序过滤>列表排序&过滤</a></li><li><a href=#监测数据的原理>监测数据的原理</a><ul><li><a href=#对象的检测>对象的检测</a></li><li><a href=#数据的检测>数据的检测</a></li></ul></li><li><a href=#收集表单数据>收集表单数据</a></li><li><a href=#过滤器>过滤器</a></li><li><a href=#内置指令>内置指令</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Vue学习笔记</h1><div class=post-meta><div class=post-meta-line><span class=post-author><span class="author fas fa-user-circle fa-fw"></span><a href=/ title=Author rel=author class=author>Braindance</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-03-07>2022-03-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2022-03-07>2022-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4957 字&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id=/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ class=leancloud_visitors data-flag-title=Vue学习笔记>
-<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count id=twikoo_visitors></span>&nbsp;次阅读
+<button class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<svg class="icon" viewBox="0 0 512 512"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</button>
+<button class="search-button search-clear" id=search-clear-desktop title=清空>
+<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3.0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3.0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3.0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3.0 17L312 256l65.6 65.1z"/></svg>
+</button>
+<span class="search-button search-loading tw-animate-spin" id=search-loading-desktop><svg class="icon" viewBox="0 0 512 512"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49.0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156.0c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg>
+</span></span><button class="menu-item theme-switch" aria-label=切换主题><svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></div></header><header class="mobile print:!tw-hidden" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Braindance>Braindance</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜些什么 id=search-input-mobile>
+<button class="search-button search-toggle tw-h-10" id=search-toggle-mobile title=搜索>
+<svg class="icon" viewBox="0 0 512 512"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</button>
+<button class="search-button search-clear" id=search-clear-mobile title=清空>
+<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3.0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3.0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3.0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3.0 17L312 256l65.6 65.1z"/></svg>
+</button>
+<span class="search-button search-loading tw-animate-spin" id=search-loading-mobile><svg class="icon" viewBox="0 0 512 512"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49.0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156.0c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg></span></div><button class=search-cancel id=search-cancel-mobile>
+取消</button></div><a class=menu-item href=/posts/ title=文章>文章</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title=分类>分类</a><a class=menu-item href=/about/ title=关于>关于</a><a class=menu-item href=/friend/ title=友链>友链</a><a class=menu-item href=https://travellings.cn title=开往 rel="noopener noreferrer" target=_blank>🚇开往</a><a class=menu-item href=https://notion.braindance.top title=同步notion笔记 rel="noopener noreferrer" target=_blank><img class=emoji src=/img/notion.ico width=20>笔记</a><button class="menu-item theme-switch tw-w-full" aria-label=切换主题><svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class="toc print:!tw-hidden" id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#理解mvvm>理解MVVM</a></li><li><a href=#数据代理>数据代理</a><ul><li><a href=#回顾objectdefineproperty方法>回顾Object.defineProperty方法</a></li><li><a href=#数据代理-1>数据代理</a></li></ul></li><li><a href=#事件处理>事件处理</a></li><li><a href=#事件修饰符>事件修饰符</a></li><li><a href=#键盘事件>键盘事件</a><ul><li><a href=#小tips>小tips</a></li></ul></li><li><a href=#计算属性>计算属性</a><ul><li><a href=#简写>简写</a></li></ul></li><li><a href=#监视属性>监视属性</a></li><li><a href=#深度监视>深度监视</a></li><li><a href=#监视属性vs计算属性>监视属性vs计算属性</a></li><li><a href=#绑定样式>绑定样式</a></li><li><a href=#条件渲染>条件渲染</a></li><li><a href=#列表渲染>列表渲染</a></li><li><a href=#列表排序过滤>列表排序&过滤</a></li><li><a href=#监测数据的原理>监测数据的原理</a><ul><li><a href=#对象的检测>对象的检测</a></li><li><a href=#数据的检测>数据的检测</a></li></ul></li><li><a href=#收集表单数据>收集表单数据</a></li><li><a href=#过滤器>过滤器</a></li><li><a href=#内置指令>内置指令</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class=single-title>Vue学习笔记</h1><div class=post-meta><div class=post-meta-line><span class=post-author><img class="tw-inline-block tw-max-h-4 tw-rounded-full tw-translate-y-[-2px] tw-mr-1" src="https://www.gravatar.com/avatar/e318e42514d77554c5887e411e82cd40?s=240&amp;d=mp" alt="Braindance avatar" height=16 width=16><a href=/ title=Author rel=author class=author>Braindance</a></span></div><div class=post-meta-line><svg class="icon" viewBox="0 0 448 512"><path d="M148 288h-40c-6.6.0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h48c26.5.0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3.0 6-2.7 6-6z"/></svg>&nbsp;<time datetime=2022-03-07>2022-03-07</time>&nbsp;<svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime=2022-03-07>2022-03-07</time>&nbsp;<svg class="icon" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3.0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9.0l60.1 60.1c18.8 18.7 18.8 49.1.0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3.0-17l-111-111c-4.8-4.7-12.4-4.7-17.1.0zM124.1 339.9c-5.5-5.5-5.5-14.3.0-19.8l154-154c5.5-5.5 14.3-5.5 19.8.0s5.5 14.3.0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8.0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;约 4893 字&nbsp;<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5.0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6.0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;预计阅读 10 分钟&nbsp;<span id=/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ class=leancloud_visitors data-flag-title=Vue学习笔记>
+<svg class="icon" viewBox="0 0 576 512"><path d="M288 144a110.94 110.94.0 00-31.24 5 55.4 55.4.0 017.24 27 56 56 0 01-56 56 55.4 55.4.0 01-27-7.24A111.71 111.71.0 10288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35.0 000 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35.0 000-29.19zM288 4e2c-98.65.0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 4e2 288 4e2z"/></svg>&nbsp;<span class=leancloud-visitors-count id=twikoo_visitors></span>&nbsp;次阅读
 </span>&nbsp;<span id=/posts/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ class=comment_count data-flag-title=Vue学习笔记>
-<i class="far fa-comments fa-fw"></i>&nbsp;<span class=twikoo-comment-count id=twikoo-comment-count></span>&nbsp;条评论
-</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#理解mvvm>理解MVVM</a></li><li><a href=#数据代理>数据代理</a><ul><li><a href=#回顾objectdefineproperty方法>回顾Object.defineProperty方法</a></li><li><a href=#数据代理-1>数据代理</a></li></ul></li><li><a href=#事件处理>事件处理</a></li><li><a href=#事件修饰符>事件修饰符</a></li><li><a href=#键盘事件>键盘事件</a><ul><li><a href=#小tips>小tips</a></li></ul></li><li><a href=#计算属性>计算属性</a><ul><li><a href=#简写>简写</a></li></ul></li><li><a href=#监视属性>监视属性</a></li><li><a href=#深度监视>深度监视</a></li><li><a href=#监视属性vs计算属性>监视属性vs计算属性</a></li><li><a href=#绑定样式>绑定样式</a></li><li><a href=#条件渲染>条件渲染</a></li><li><a href=#列表渲染>列表渲染</a></li><li><a href=#列表排序过滤>列表排序&过滤</a></li><li><a href=#监测数据的原理>监测数据的原理</a><ul><li><a href=#对象的检测>对象的检测</a></li><li><a href=#数据的检测>数据的检测</a></li></ul></li><li><a href=#收集表单数据>收集表单数据</a></li><li><a href=#过滤器>过滤器</a></li><li><a href=#内置指令>内置指令</a></li></ul></nav></div></div><div class=content id=content><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>本文最后更新于 <span class=timeago datetime=2022-03-07T18:16:47 title="March 7, 2022">2022-03-07</span>，文中内容可能已过时。</div></div></div><h2 id=理解mvvm class=headerLink><a href=#%e7%90%86%e8%a7%a3mvvm class=header-mark></a>理解MVVM</h2><p>Vue参考的MVVM模型</p><p><figure><a class=lightgallery href=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png title=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png data-thumbnail=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png><img loading=lazy src=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png srcset="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png, https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png 1.5x, https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png 2x" sizes=auto alt=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png></a></figure></p><p>M：模型(Model) ：data中的数据
+<svg class="icon" viewBox="0 0 576 512"><path d="M532 386.2c27.5-27.1 44-61.1 44-98.2.0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6.0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5.0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8.0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2.0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5.0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z"/></svg>&nbsp;<span class=twikoo-comment-count id=twikoo-comment-count></span>&nbsp;条评论
+</span>&nbsp;</div></div><div class="details toc print:!tw-block" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span class=details-icon><svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#理解mvvm>理解MVVM</a></li><li><a href=#数据代理>数据代理</a><ul><li><a href=#回顾objectdefineproperty方法>回顾Object.defineProperty方法</a></li><li><a href=#数据代理-1>数据代理</a></li></ul></li><li><a href=#事件处理>事件处理</a></li><li><a href=#事件修饰符>事件修饰符</a></li><li><a href=#键盘事件>键盘事件</a><ul><li><a href=#小tips>小tips</a></li></ul></li><li><a href=#计算属性>计算属性</a><ul><li><a href=#简写>简写</a></li></ul></li><li><a href=#监视属性>监视属性</a></li><li><a href=#深度监视>深度监视</a></li><li><a href=#监视属性vs计算属性>监视属性vs计算属性</a></li><li><a href=#绑定样式>绑定样式</a></li><li><a href=#条件渲染>条件渲染</a></li><li><a href=#列表渲染>列表渲染</a></li><li><a href=#列表排序过滤>列表排序&过滤</a></li><li><a href=#监测数据的原理>监测数据的原理</a><ul><li><a href=#对象的检测>对象的检测</a></li><li><a href=#数据的检测>数据的检测</a></li></ul></li><li><a href=#收集表单数据>收集表单数据</a></li><li><a href=#过滤器>过滤器</a></li><li><a href=#内置指令>内置指令</a></li></ul></nav></div></div><div class=content id=content><div class="details admonition warning open"><div class="details-summary admonition-title"><span class=icon><svg class="icon" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937.0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154.0l239.94 416.028zM288 354c-25.405.0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373.0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884.0-12.356 5.78-11.981 12.654z"/></svg></span>警告<span class=details-icon><svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span></div><div class=details-content><div class=admonition-content>本文最后更新于 <span class=timeago datetime=2022-03-07T18:16:47 title="March 7, 2022">2022-03-07</span>，文中内容可能已过时。</div></div></div><h2 id=理解mvvm class=headerLink><a href=#%e7%90%86%e8%a7%a3mvvm class=header-mark></a>理解MVVM</h2><p>Vue参考的MVVM模型</p><p><img class=tw-inline loading=lazy src=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16466499314121646649931302.png></p><p>M：模型(Model) ：data中的数据
 V：视图(View) ：模板代码
 VM：视图模型(ViewModel)：Vue实例
-观察发现：</p><ol><li>data中所有的属性，最后都出现在了vm身上。</li><li>vm身上所有的属性及Vue原型上所有属性，在Vue模板中都可以直接使用。</li></ol><h2 id=数据代理 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e4%bb%a3%e7%90%86 class=header-mark></a>数据代理</h2><h3 id=回顾objectdefineproperty方法 class=headerLink><a href=#%e5%9b%9e%e9%a1%beobjectdefineproperty%e6%96%b9%e6%b3%95 class=header-mark></a>回顾Object.defineProperty方法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=kd>let</span> <span class=nx>number</span> <span class=o>=</span> <span class=mi>18</span>
+观察发现：</p><ol><li>data中所有的属性，最后都出现在了vm身上。</li><li>vm身上所有的属性及Vue原型上所有属性，在Vue模板中都可以直接使用。</li></ol><h2 id=数据代理 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e4%bb%a3%e7%90%86 class=header-mark></a>数据代理</h2><h3 id=回顾objectdefineproperty方法 class=headerLink><a href=#%e5%9b%9e%e9%a1%beobjectdefineproperty%e6%96%b9%e6%b3%95 class=header-mark></a>回顾Object.defineProperty方法</h3><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">vue</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-1 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl><span class=kd>let</span> <span class=nx>number</span> <span class=o>=</span> <span class=mi>18</span>
 </span></span><span class=line><span class=cl><span class=nx>object</span><span class=p>.</span><span class=nx>defineProperty</span><span class=p>(</span><span class=nx>person</span><span class=p>,</span><span class=s1>&#39;age&#39;</span><span class=p>,{</span>
 </span></span><span class=line><span class=cl> <span class=nx>value</span><span class=o>:</span><span class=mi>18</span><span class=p>,</span>
 </span></span><span class=line><span class=cl> <span class=nx>enumerable</span><span class=o>:</span><span class=kc>true</span><span class=err>，</span><span class=c1>//控制属性是否可以枚举，默认值是false
@@ -45,39 +92,175 @@ VM：视图模型(ViewModel)：Vue实例
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>set</span><span class=p>(</span><span class=nx>value</span><span class=p>){</span>
 </span></span><span class=line><span class=cl>	<span class=nx>number</span> <span class=o>=</span> <span class=nx>value</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>})</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=数据代理-1 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e4%bb%a3%e7%90%86-1 class=header-mark></a>数据代理</h3><p>何为数据代理？通过一个对象来修改另一个对象。</p><p>例如，obj={x:100}</p><p>obj2={y:200}</p><p>使用Object.defineProperty方法，设置obj2的x属性get和set方法与obj绑定</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=nb>Object</span><span class=p>.</span><span class=nx>defineProperty</span><span class=p>(</span><span class=nx>obj2</span><span class=p>,</span><span class=s1>&#39;x&#39;</span><span class=p>,{</span>
+</span></span><span class=line><span class=cl><span class=p>})</span></span></span></code></pre></div><h3 id=数据代理-1 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e4%bb%a3%e7%90%86-1 class=header-mark></a>数据代理</h3><p>何为数据代理？通过一个对象来修改另一个对象。</p><p>例如，obj={x:100}</p><p>obj2={y:200}</p><p>使用Object.defineProperty方法，设置obj2的x属性get和set方法与obj绑定</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">vue</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-2 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl><span class=nb>Object</span><span class=p>.</span><span class=nx>defineProperty</span><span class=p>(</span><span class=nx>obj2</span><span class=p>,</span><span class=s1>&#39;x&#39;</span><span class=p>,{</span>
 </span></span><span class=line><span class=cl><span class=nx>get</span><span class=p>(){</span>
 </span></span><span class=line><span class=cl><span class=k>return</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>x</span>
 </span></span><span class=line><span class=cl><span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=nx>set</span><span class=p>(</span><span class=nx>value</span><span class=p>){</span>
 </span></span><span class=line><span class=cl><span class=nx>obj</span><span class=p>.</span><span class=nx>x</span> <span class=o>=</span> <span class=nx>value</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>})</span>
-</span></span></code></pre></td></tr></table></div></div><p>在script标签里设置的data属性值，绑定的是vm中的_data属性</p><p><figure><a class=lightgallery href=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png title=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png data-thumbnail=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png><img loading=lazy src=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png srcset="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png, https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png 1.5x, https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png 2x" sizes=auto alt=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png></a></figure></p><p><strong>Vue中的数据代理：</strong>
+</span></span><span class=line><span class=cl><span class=p>})</span></span></span></code></pre></div><p>在script标签里设置的data属性值，绑定的是vm中的_data属性</p><p><img class=tw-inline loading=lazy src=https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/16467060352831646706034381.png></p><p><strong>Vue中的数据代理：</strong>
 通过vm对象来代理data对象中属性的操作（读/写）
 <strong>Vue中数据代理的好处：</strong>
 更加方便的操作data中的数据
 <strong>基本原理：</strong>
-通过0bject.defineProperty()把data对象中所有属性添加到vm上。为每一个添加到vm上的属性，都指定一个getter/setter。在getter/setter内部去操作（读/写）data中对应的属性。</p><h2 id=事件处理 class=headerLink><a href=#%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%90%86 class=header-mark></a>事件处理</h2><p>事件的基本使用：</p><ol><li>使用<strong>v-on:xxx</strong> 或 <strong>@xxx</strong> 绑定事件，其中xxx是事件名；</li><li>事件的回调需要配置在methods对象中，最终会在vm上；</li><li>methods中配置的函数，不要用箭头函数！否则this就不是vm了；</li><li>methods中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；</li><li>@click=&ldquo;demo&rdquo; 和 @click=&ldquo;demo($event)&ldquo;效果一致，但后者可以传参；</li><li>@click=&ldquo;yyy&rdquo;，其中yyy可以写一些简单的语句</li></ol><h2 id=事件修饰符 class=headerLink><a href=#%e4%ba%8b%e4%bb%b6%e4%bf%ae%e9%a5%b0%e7%ac%a6 class=header-mark></a>事件修饰符</h2><p>使用示例</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;xxx&#34;</span> <span class=err>@</span><span class=na>click</span><span class=err>.</span><span class=na>prevent</span><span class=o>=</span><span class=s>&#34;showInfo&#34;</span><span class=p>&gt;</span>
-</span></span></code></pre></td></tr></table></div></div><p>event事件中可以使用e.preventDefault()阻止默认事件，vue中可以使用@click.<strong>prevent</strong>=&lsquo;xxx&rsquo;的修饰方式使用该方法。</p><p><strong>扫盲：</strong></p><p>事件冒泡 ：当一个元素接收到事件的时候 会把他接收到的事件传给自己的父级，一直到window 。（注意这里传递的仅仅是事件 并不传递所绑定的事件函数。所以如果父级没有绑定事件函数，就算传递了事件 也不会有什么表现 但事件确实传递了。）</p><p>事件捕获和事件冒泡：DOM2级事件’规定的事件流包含3个阶段，<strong>事件捕获阶段、处于目标阶段、事件冒泡阶段</strong>。首先发生的事件捕获为截获事件提供机会，然后是实际的目标接收事件，最后一个阶段是事件冒泡阶段，可以在这个阶段对事件做出响应。https://www.cnblogs.com/christineqing/p/7607113.html</p><p><figure><a class=lightgallery href=https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png title=https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png data-thumbnail=https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png><img loading=lazy src=https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png srcset="https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png, https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png 1.5x, https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png 2x" sizes=auto alt=https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png></a></figure></p><p><strong>Vue中的事件修饰符：</strong>
+通过0bject.defineProperty()把data对象中所有属性添加到vm上。为每一个添加到vm上的属性，都指定一个getter/setter。在getter/setter内部去操作（读/写）data中对应的属性。</p><h2 id=事件处理 class=headerLink><a href=#%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%90%86 class=header-mark></a>事件处理</h2><p>事件的基本使用：</p><ol><li>使用<strong>v-on:xxx</strong> 或 <strong>@xxx</strong> 绑定事件，其中xxx是事件名；</li><li>事件的回调需要配置在methods对象中，最终会在vm上；</li><li>methods中配置的函数，不要用箭头函数！否则this就不是vm了；</li><li>methods中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；</li><li>@click=&ldquo;demo&rdquo; 和 @click=&ldquo;demo($event)&ldquo;效果一致，但后者可以传参；</li><li>@click=&ldquo;yyy&rdquo;，其中yyy可以写一些简单的语句</li></ol><h2 id=事件修饰符 class=headerLink><a href=#%e4%ba%8b%e4%bb%b6%e4%bf%ae%e9%a5%b0%e7%ac%a6 class=header-mark></a>事件修饰符</h2><p>使用示例</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">html</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-3 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;xxx&#34;</span> <span class=err>@</span><span class=na>click</span><span class=err>.</span><span class=na>prevent</span><span class=o>=</span><span class=s>&#34;showInfo&#34;</span><span class=p>&gt;</span></span></span></code></pre></div><p>event事件中可以使用e.preventDefault()阻止默认事件，vue中可以使用@click.<strong>prevent</strong>=&lsquo;xxx&rsquo;的修饰方式使用该方法。</p><p><strong>扫盲：</strong></p><p>事件冒泡 ：当一个元素接收到事件的时候 会把他接收到的事件传给自己的父级，一直到window 。（注意这里传递的仅仅是事件 并不传递所绑定的事件函数。所以如果父级没有绑定事件函数，就算传递了事件 也不会有什么表现 但事件确实传递了。）</p><p>事件捕获和事件冒泡：DOM2级事件’规定的事件流包含3个阶段，<strong>事件捕获阶段、处于目标阶段、事件冒泡阶段</strong>。首先发生的事件捕获为截获事件提供机会，然后是实际的目标接收事件，最后一个阶段是事件冒泡阶段，可以在这个阶段对事件做出响应。https://www.cnblogs.com/christineqing/p/7607113.html</p><p><img class=tw-inline loading=lazy src=https://images2017.cnblogs.com/blog/1174211/201712/1174211-20171201225153933-1205737719.png></p><p><strong>Vue中的事件修饰符：</strong>
 1.prevent：阻止默认事件（常用）；
 2.stop：阻止事件冒泡（常用）；
 3.once：事件只触发一次（常用）；
 4.capture：使用事件的捕获模式（捕获阶段就执行函数）；
 5.self：只有event.target是当前操作的元素时才触发事件；
-6.passive：事件的默认行为立即执行，无需等待事件回调执行完毕（比如scroll和wheel事件，wheel回调函数很麻烦的时候，可以使用passive优先执行滚轮默认行为）；</p><h2 id=键盘事件 class=headerLink><a href=#%e9%94%ae%e7%9b%98%e4%ba%8b%e4%bb%b6 class=header-mark></a>键盘事件</h2><p>使用方法示例</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=nt>@keydown.enter</span><span class=s>=&#34;showInfo&#34;</span><span class=p>&gt;</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li>Vue中常用的按键别名：
+6.passive：事件的默认行为立即执行，无需等待事件回调执行完毕（比如scroll和wheel事件，wheel回调函数很麻烦的时候，可以使用passive优先执行滚轮默认行为）；</p><h2 id=键盘事件 class=headerLink><a href=#%e9%94%ae%e7%9b%98%e4%ba%8b%e4%bb%b6 class=header-mark></a>键盘事件</h2><p>使用方法示例</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">vue</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-4 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=nt>@keydown.enter</span><span class=s>=&#34;showInfo&#34;</span><span class=p>&gt;</span></span></span></code></pre></div><ul><li>Vue中常用的按键别名：
 回车 => enter
 删除 => delete（捕获“删除”和“退格）
 退出 => esc
@@ -86,36 +269,165 @@ VM：视图模型(ViewModel)：Vue实例
 上 => up
 下 => down
 左 => left
-右 => right</li><li>Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要keyab-case（驼峰命名改为短横线命名）</li><li>系统修饰键（用法特殊）：ctrl、alt、shift、meta</li></ul><ol><li>配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。</li><li>配合keydown使用：正常触发事件。</li></ol><ul><li>也可以使用keyCode去指定具体的按键（不推荐）</li><li>Vue.config.keyCodes.自定义键名 = 键去定制按键别名</li></ul><h3 id=小tips class=headerLink><a href=#%e5%b0%8ftips class=header-mark></a>小tips</h3><p>修饰符可以连续写比如<code>@click.prevent.stop</code>和<code>@keydown.ctrl.y</code></p><h2 id=计算属性 class=headerLink><a href=#%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7 class=header-mark></a>计算属性</h2><p>vue中绑定的数据修改时，vue会重新解析模板。</p><p>使用示例</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>computed{
+右 => right</li><li>Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要keyab-case（驼峰命名改为短横线命名）</li><li>系统修饰键（用法特殊）：ctrl、alt、shift、meta</li></ul><ol><li>配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。</li><li>配合keydown使用：正常触发事件。</li></ol><ul><li>也可以使用keyCode去指定具体的按键（不推荐）</li><li>Vue.config.keyCodes.自定义键名 = 键去定制按键别名</li></ul><h3 id=小tips class=headerLink><a href=#%e5%b0%8ftips class=header-mark></a>小tips</h3><p>修饰符可以连续写比如<code>@click.prevent.stop</code>和<code>@keydown.ctrl.y</code></p><h2 id=计算属性 class=headerLink><a href=#%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7 class=header-mark></a>计算属性</h2><p>vue中绑定的数据修改时，vue会重新解析模板。</p><p>使用示例</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">text</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-5 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl>computed{
 </span></span><span class=line><span class=cl> fullName:{
 </span></span><span class=line><span class=cl> 	get(){
 </span></span><span class=line><span class=cl> 		return firstName + lastName
 </span></span><span class=line><span class=cl> 	}
 </span></span><span class=line><span class=cl> }
-</span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>计算属性<strong>定义</strong>：根据<strong>已有的属性</strong>进行一些计算加工生成的新属性就叫计算属性。使用配置项<code>computed</code>，计算属性最终会在<code>vm</code>对象身上，但是不在<code>_data</code>里。</p><p>原理：底层借助了Objcet.defineproperty方法提供的gtter和setter。</p><p>计算属性的值使用getter调用，多次调用会使用<strong>缓存</strong>，getter什么时候调用？</p><ol><li>初次读取计算属性时</li><li>所依赖的数据发生改变时</li></ol><p>如果计算属性要被修改，必须使用set函数响应修改，切记set函数中要修改依赖的属性</p><h3 id=简写 class=headerLink><a href=#%e7%ae%80%e5%86%99 class=header-mark></a>简写</h3><p>确定只读取不修改可以使用简写模式。示例</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>fullNmae(){
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>计算属性<strong>定义</strong>：根据<strong>已有的属性</strong>进行一些计算加工生成的新属性就叫计算属性。使用配置项<code>computed</code>，计算属性最终会在<code>vm</code>对象身上，但是不在<code>_data</code>里。</p><p>原理：底层借助了Objcet.defineproperty方法提供的gtter和setter。</p><p>计算属性的值使用getter调用，多次调用会使用<strong>缓存</strong>，getter什么时候调用？</p><ol><li>初次读取计算属性时</li><li>所依赖的数据发生改变时</li></ol><p>如果计算属性要被修改，必须使用set函数响应修改，切记set函数中要修改依赖的属性</p><h3 id=简写 class=headerLink><a href=#%e7%ae%80%e5%86%99 class=header-mark></a>简写</h3><p>确定只读取不修改可以使用简写模式。示例</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">text</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-6 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl>fullNmae(){
 </span></span><span class=line><span class=cl>	return 
-</span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><h2 id=监视属性 class=headerLink><a href=#%e7%9b%91%e8%a7%86%e5%b1%9e%e6%80%a7 class=header-mark></a>监视属性</h2><p>配置对象<code>watch:{}</code>，代码示例</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>watch：{
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h2 id=监视属性 class=headerLink><a href=#%e7%9b%91%e8%a7%86%e5%b1%9e%e6%80%a7 class=header-mark></a>监视属性</h2><p>配置对象<code>watch:{}</code>，代码示例</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">text</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-7 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl>watch：{
 </span></span><span class=line><span class=cl>	isHot:{
 </span></span><span class=line><span class=cl>		immediate:true，//初始化时让handler调用一下
 </span></span><span class=line><span class=cl>		//handler什么时候调用？当isHot发生改变时。
@@ -123,14 +435,59 @@ VM：视图模型(ViewModel)：Vue实例
 </span></span><span class=line><span class=cl>			console.log(&#34;isHot被修改了&#39;,newValue,oldValue)
 </span></span><span class=line><span class=cl>			}
 </span></span><span class=line><span class=cl>		}
-</span></span><span class=line><span class=cl>	}
-</span></span></code></pre></td></tr></table></div></div><p>监视属性也可以监视<strong>计算属性</strong>，监视属性的另一种写法</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>vm.$wathc(&#39;变量名&#39;,{配置项同上
+</span></span><span class=line><span class=cl>	}</span></span></code></pre></div><p>监视属性也可以监视<strong>计算属性</strong>，监视属性的另一种写法</p><div class="code-block highlight is-open show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">text</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-8 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl>vm.$wathc(&#39;变量名&#39;,{配置项同上
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>})
-</span></span></code></pre></td></tr></table></div></div><h2 id=深度监视 class=headerLink><a href=#%e6%b7%b1%e5%ba%a6%e7%9b%91%e8%a7%86 class=header-mark></a>深度监视</h2><p>Vue中的watch默认不监测对象内部值的改变，配置<code>deep:true</code>可以监测对象内部值的改变。Vue自身可以监测对象内部值的改变，但是Vue提供的watch默认不可以，使用watch的时候根据数据的具体结构，决定是否采用深度监视。</p><p>有简写形式</p><h2 id=监视属性vs计算属性 class=headerLink><a href=#%e7%9b%91%e8%a7%86%e5%b1%9e%e6%80%a7vs%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7 class=header-mark></a>监视属性vs计算属性</h2><p>还是要看具体需求。</p><ol><li>computed能完成的功能，watch都可以完成。</li><li>watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。</li></ol><p>两个重要的小原则：</p><ol><li>所被Vue管理的函数，最好写成普通函数，这样this的指向才是vm 或 组件实例对象。</li><li>所有不被Vue所管理的函数（定时器的回调函数、ajax的回调函数等），最好写成箭函数，这样this的指向才是vm或组件实例对象。</li></ol><h2 id=绑定样式 class=headerLink><a href=#%e7%bb%91%e5%ae%9a%e6%a0%b7%e5%bc%8f class=header-mark></a>绑定样式</h2><ol><li>class样式
+</span></span><span class=line><span class=cl>})</span></span></code></pre></div><h2 id=深度监视 class=headerLink><a href=#%e6%b7%b1%e5%ba%a6%e7%9b%91%e8%a7%86 class=header-mark></a>深度监视</h2><p>Vue中的watch默认不监测对象内部值的改变，配置<code>deep:true</code>可以监测对象内部值的改变。Vue自身可以监测对象内部值的改变，但是Vue提供的watch默认不可以，使用watch的时候根据数据的具体结构，决定是否采用深度监视。</p><p>有简写形式</p><h2 id=监视属性vs计算属性 class=headerLink><a href=#%e7%9b%91%e8%a7%86%e5%b1%9e%e6%80%a7vs%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7 class=header-mark></a>监视属性vs计算属性</h2><p>还是要看具体需求。</p><ol><li>computed能完成的功能，watch都可以完成。</li><li>watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。</li></ol><p>两个重要的小原则：</p><ol><li>所被Vue管理的函数，最好写成普通函数，这样this的指向才是vm 或 组件实例对象。</li><li>所有不被Vue所管理的函数（定时器的回调函数、ajax的回调函数等），最好写成箭函数，这样this的指向才是vm或组件实例对象。</li></ol><h2 id=绑定样式 class=headerLink><a href=#%e7%bb%91%e5%ae%9a%e6%a0%b7%e5%bc%8f class=header-mark></a>绑定样式</h2><ol><li>class样式
 写法：class=&ldquo;xxx&rdquo; xxx可以是字符串、对象、数组。
 字符串写法适用于：类名不确定，要动态获取。
 对象写法适用于：要绑定多个样式，个数不确定，名字也不确定。
@@ -148,33 +505,57 @@ VM：视图模型(ViewModel)：Vue实例
 key是虚拟DoM对象的标识，当数据发生变化时，Vue会根据<strong>新数据</strong>生成<strong>新的虚拟DoM</strong>,随后Vue进行<strong>新虚拟DoM</strong>与<strong>旧虚拟DoM</strong>的差异比较，比较规则如下：</p><p>对比规则：</p><ol><li><p>旧虚拟DoM中找到了与新虚拟DoM相同的key。</p><p>若虚拟DoM中内容没变，直接使用之前的真实DoM！</p><p>若虚拟DoM中内容变了，则生成新的真实DoM,随后替换掉页面中之前的真实D0M。</p></li><li><p>旧拟DoM中未找到与新虚拟DoM相同的key</p><p>创建新的真实DOM,随后渲染到到页面。</p></li></ol></li><li><p>用index作为key可能会发的问题：
 若对数据进行：逆序添加、逆序明除等破坏顺序操作，会产生没有必要的真实DoM更新==>界面效果没问题，但效率低。</p><p>如果结构中还包含输入类的DoM，会产生错误DoM更新==>界面而有问题。</p></li><li><p>开发中如何选择key？
 最好使用每条数据的唯一标识作为key，比如id、手机号、身份证号、学号等唯一值。
-如果不存在对数据的逆序添加、逆序则除等破坏顺序操作，仅用于渲染列表用于展示，使用index作为key是没有问题的。</p></li></ol><p><figure><a class=lightgallery href=https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png title=https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png data-thumbnail=https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png><img loading=lazy src=https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png srcset="https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png, https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png 1.5x, https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png 2x" sizes=auto alt=https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png></a></figure></p><h2 id=列表排序过滤 class=headerLink><a href=#%e5%88%97%e8%a1%a8%e6%8e%92%e5%ba%8f%e8%bf%87%e6%bb%a4 class=header-mark></a>列表排序&过滤</h2><p>能用computed的就不用watch</p><h2 id=监测数据的原理 class=headerLink><a href=#%e7%9b%91%e6%b5%8b%e6%95%b0%e6%8d%ae%e7%9a%84%e5%8e%9f%e7%90%86 class=header-mark></a>监测数据的原理</h2><h3 id=对象的检测 class=headerLink><a href=#%e5%af%b9%e8%b1%a1%e7%9a%84%e6%a3%80%e6%b5%8b class=header-mark></a>对象的检测</h3><p>首先对data数据进行加工，设置响应式的getter和setter，大概的核心代码如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>data</span> <span class=o>=</span> <span class=p>{</span>
+如果不存在对数据的逆序添加、逆序则除等破坏顺序操作，仅用于渲染列表用于展示，使用index作为key是没有问题的。</p></li></ol><p><img class=tw-inline loading=lazy src=https://img.braindance.top/article/2022/06/15/684dd822cdc7d26d5e587df6a93c9a0d.png></p><h2 id=列表排序过滤 class=headerLink><a href=#%e5%88%97%e8%a1%a8%e6%8e%92%e5%ba%8f%e8%bf%87%e6%bb%a4 class=header-mark></a>列表排序&过滤</h2><p>能用computed的就不用watch</p><h2 id=监测数据的原理 class=headerLink><a href=#%e7%9b%91%e6%b5%8b%e6%95%b0%e6%8d%ae%e7%9a%84%e5%8e%9f%e7%90%86 class=header-mark></a>监测数据的原理</h2><h3 id=对象的检测 class=headerLink><a href=#%e5%af%b9%e8%b1%a1%e7%9a%84%e6%a3%80%e6%b5%8b class=header-mark></a>对象的检测</h3><p>首先对data数据进行加工，设置响应式的getter和setter，大概的核心代码如下</p><div class="code-block highlight is-closed show-line-numbers tw-group tw-my-2"><div class="code-block-title
+tw-flex
+tw-flex-row
+tw-justify-between
+tw-w-full tw-bg-bgColor-secondary"><button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-rotate-90
+tw-transition-[transform]
+tw-duration-500
+tw-ease-in-out
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button><div class="code-block-title-bar tw-w-full"><p class="tw-select-none !tw-my-1">javascript</p></div><div class=tw-flex><button class="line-number-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.show-line-numbers]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+group-[.is-wrap]:tw-text-fgColor-link
+print:!tw-hidden" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw-select-none
+tw-mx-2
+tw-hidden
+group-[.is-open]:tw-block
+hover:tw-text-fgColor-link
+print:!tw-hidden" title="Copy code">
+<span class="copy-icon tw-block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw-hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw-select-none
+tw-mx-2
+tw-block
+group-[.is-open]:tw-hidden
+print:!tw-hidden" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw-block tw-m-0 tw-p-0"><code id=codeblock-id-9 class="chroma
+!tw-block
+tw-p-0
+tw-m-0
+tw-transition-[max-height]
+tw-duration-500
+tw-ease-in-out
+group-[.is-closed]:!tw-max-h-0
+group-[.is-wrap]:tw-text-wrap
+tw-overflow-y-hidden
+tw-overflow-x-auto
+tw-scrollbar-thin"><span class=line><span class=cl><span class=kd>let</span> <span class=nx>data</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=nx>name</span><span class=o>:</span><span class=s2>&#34;xx&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>  <span class=nx>address</span><span class=o>:</span><span class=s2>&#34;dd&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
@@ -199,7 +580,15 @@ key是虚拟DoM对象的标识，当数据发生变化时，Vue会根据<strong>
 </span></span><span class=line><span class=cl>      <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=p>})</span>
 </span></span><span class=line><span class=cl>  <span class=p>});</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>并且Vue底层使用递归的方式对所有嵌套的对象属性都进行了数据监测方法的加工。</p><p>Vue提供了一个API的set方法<code>Vue.set()</code>或<code>vm.$set()</code>，可以为已经创建的对象添加响应式的属性。传入参数列表：target，key，val。局限性：<strong>target对象不能是Vue实例或者Vue实例的根数据对象</strong>。</p><h3 id=数据的检测 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e7%9a%84%e6%a3%80%e6%b5%8b class=header-mark></a>数据的检测</h3><p>通过<strong>包裹</strong>数组中更新元素的方法实现，本质上做了两件事</p><ol><li>调用原型中的数组更新方法</li><li>Vue重新进行模板解析，更新页面</li></ol><p>Vue包裹的7种方法：</p><ul><li><code>push()</code></li><li><code>pop()</code></li><li><code>shift()</code></li><li><code>unshift()</code></li><li><code>splice()</code></li><li><code>sort()</code></li><li><code>reverse()</code></li></ul><p>也可以使用Vue提供的API：<code>Vue.set()</code>或<code>vm.$set()</code></p><h2 id=收集表单数据 class=headerLink><a href=#%e6%94%b6%e9%9b%86%e8%a1%a8%e5%8d%95%e6%95%b0%e6%8d%ae class=header-mark></a>收集表单数据</h2><p>根据<code>&lt;input></code>标签的类型不同，v-model收集的值也不同，分为以下几种情况</p><ul><li>text类型。收集的是value属性</li><li>radio类型。收集的同样是value属性，但是需要给标签配置value值并成组</li><li>checkbox类型。如果没有配置value属性，收集的是选项框的<code>checked</code>属性。如果配置了value属性，根据v-model绑定属性的初始值不同有两种情况：1.绑定属性初始值为<strong>非数组</strong>，收集的是checked属性。2.绑定属性为数组，收集的就是value组成的数组</li></ul><p>v-model的三个常用修饰符：</p><ul><li>lazy。输入框失去焦点时收集数据</li><li>number。输入字符串为有效数字</li><li>trim。过滤首尾空格</li></ul><h2 id=过滤器 class=headerLink><a href=#%e8%bf%87%e6%bb%a4%e5%99%a8 class=header-mark></a>过滤器</h2><p>对数据进行格式化显示。语法：</p><p>注册过滤器：全局注册Vue.filter(name,callback) 或 局部注册new Vue{filters{}}</p><p>使用过滤器：{{xxx | filter}} 或 v-bind:属性 = xxx | filter</p><p>过滤器可以接受多个参数，第一个默认是管道符前的数据。多个管道符可以串联（按顺序调用）</p><h2 id=内置指令 class=headerLink><a href=#%e5%86%85%e7%bd%ae%e6%8c%87%e4%bb%a4 class=header-mark></a>内置指令</h2><p>v-bind：单项绑定解析表达式可以简写为<code>:xxx</code></p><p>v-model：双向绑定数据</p><p>v-for：遍历数组/字符串/对象</p><p>v-on：绑定事件监听，可以简写为<code>@</code></p><p>v-if（v-else）：条件渲染</p><p>v-show：控制节点是否展示</p><p>v-test：所在节点渲染文本内容。和插值语法区别，前者会直接替换掉节点里的内容，插值语法不会。</p><p>v-html：向所在节点渲染包含html结构的内容。指令可以识别html结构。但是要注意XSS攻击</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-03-07</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/css%E5%AD%A6%E4%B9%A0/ class=prev rel=prev title=CSS学习><i class="fas fa-angle-left fa-fw"></i>CSS学习</a>
-<a href=/posts/%E8%8B%B1%E8%AF%AD%E9%97%AE%E7%AD%94/ class=next rel=next title=英语问答>英语问答<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=twikoo></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://twikoo.js.org/>Twikoo</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.128.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/katex/copy-tex.min.css><noscript><link rel=stylesheet href=/lib/katex/copy-tex.min.css></noscript><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{twikoo:{commentCount:!0,el:"#twikoo",envId:"https://twikoo.braindance.top/",lang:"zh-cn"}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},table:{sort:!0},twemoji:!0}</script><script type=text/javascript src=/lib/tablesort/tablesort.min.js></script><script type=text/javascript src=/lib/twemoji/twemoji.min.js defer></script><script type=text/javascript src=/js/twemoji.min.js defer></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js defer></script><script type=text/javascript src=/lib/katex/auto-render.min.js defer></script><script type=text/javascript src=/lib/katex/copy-tex.min.js defer></script><script type=text/javascript src=/lib/katex/mhchem.min.js defer></script><script type=text/javascript src=/js/katex.min.js defer></script><script type=text/javascript src=/js/theme.min.js defer></script><script type=text/javascript src=/lib/twikoo/twikoo.all.min.js defer></script><script type=text/javascript src=/js/twikoo.min.js defer></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-176925141-1",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script></div></body></html>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>并且Vue底层使用递归的方式对所有嵌套的对象属性都进行了数据监测方法的加工。</p><p>Vue提供了一个API的set方法<code>Vue.set()</code>或<code>vm.$set()</code>，可以为已经创建的对象添加响应式的属性。传入参数列表：target，key，val。局限性：<strong>target对象不能是Vue实例或者Vue实例的根数据对象</strong>。</p><h3 id=数据的检测 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e7%9a%84%e6%a3%80%e6%b5%8b class=header-mark></a>数据的检测</h3><p>通过<strong>包裹</strong>数组中更新元素的方法实现，本质上做了两件事</p><ol><li>调用原型中的数组更新方法</li><li>Vue重新进行模板解析，更新页面</li></ol><p>Vue包裹的7种方法：</p><ul><li><code>push()</code></li><li><code>pop()</code></li><li><code>shift()</code></li><li><code>unshift()</code></li><li><code>splice()</code></li><li><code>sort()</code></li><li><code>reverse()</code></li></ul><p>也可以使用Vue提供的API：<code>Vue.set()</code>或<code>vm.$set()</code></p><h2 id=收集表单数据 class=headerLink><a href=#%e6%94%b6%e9%9b%86%e8%a1%a8%e5%8d%95%e6%95%b0%e6%8d%ae class=header-mark></a>收集表单数据</h2><p>根据<code>&lt;input></code>标签的类型不同，v-model收集的值也不同，分为以下几种情况</p><ul><li>text类型。收集的是value属性</li><li>radio类型。收集的同样是value属性，但是需要给标签配置value值并成组</li><li>checkbox类型。如果没有配置value属性，收集的是选项框的<code>checked</code>属性。如果配置了value属性，根据v-model绑定属性的初始值不同有两种情况：1.绑定属性初始值为<strong>非数组</strong>，收集的是checked属性。2.绑定属性为数组，收集的就是value组成的数组</li></ul><p>v-model的三个常用修饰符：</p><ul><li>lazy。输入框失去焦点时收集数据</li><li>number。输入字符串为有效数字</li><li>trim。过滤首尾空格</li></ul><h2 id=过滤器 class=headerLink><a href=#%e8%bf%87%e6%bb%a4%e5%99%a8 class=header-mark></a>过滤器</h2><p>对数据进行格式化显示。语法：</p><p>注册过滤器：全局注册Vue.filter(name,callback) 或 局部注册new Vue{filters{}}</p><p>使用过滤器：{{xxx | filter}} 或 v-bind:属性 = xxx | filter</p><p>过滤器可以接受多个参数，第一个默认是管道符前的数据。多个管道符可以串联（按顺序调用）</p><h2 id=内置指令 class=headerLink><a href=#%e5%86%85%e7%bd%ae%e6%8c%87%e4%bb%a4 class=header-mark></a>内置指令</h2><p>v-bind：单项绑定解析表达式可以简写为<code>:xxx</code></p><p>v-model：双向绑定数据</p><p>v-for：遍历数组/字符串/对象</p><p>v-on：绑定事件监听，可以简写为<code>@</code></p><p>v-if（v-else）：条件渲染</p><p>v-show：控制节点是否展示</p><p>v-test：所在节点渲染文本内容。和插值语法区别，前者会直接替换掉节点里的内容，插值语法不会。</p><p>v-html：向所在节点渲染包含html结构的内容。指令可以识别html结构。但是要注意XSS攻击</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-03-07</span></div><div class=post-info-license></div></div><div class="post-info-line print:!tw-hidden"><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><section class=post-tags></section><section class=print:!tw-hidden><span><button class="tw-text-fgColor-link-muted hover:tw-text-fgColor-link-muted-hover" onclick=window.history.back()>返回</button></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class="post-nav print:tw-hidden"><a href=/posts/css%E5%AD%A6%E4%B9%A0/ class=prev rel=prev title=CSS学习><svg class="icon" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9.0l22.6 22.6c9.4 9.4 9.4 24.6.0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6.0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9.0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>CSS学习</a>
+<a href=/posts/%E8%8B%B1%E8%AF%AD%E9%97%AE%E7%AD%94/ class=next rel=next title=英语问答>英语问答<svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div></div><div id=comments class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id=twikoo></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://twikoo.js.org/>Twikoo</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.134.3">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg> DoIt</a></div><div class=footer-line><svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532.0-2e2-89.451-2e2-2e2.0-110.531 89.451-2e2 2e2-2e2 110.532.0 2e2 89.451 2e2 2e2.0 110.532-89.451 2e2-2e2 2e2zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43.0-140.484-61.425-140.484-141.567.0-79.152 60.275-139.401 139.762-139.401 55.531.0 88.738 26.62 97.593 34.779a11.965 11.965.0 011.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303.0-77.916 35.33-77.916 80.082.0 41.589 26.888 83.692 78.277 83.692 32.657.0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947.0 01-1.152 15.518z"/></svg>2020 - 2024<span class=author>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Braindance</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons class=print:!tw-hidden><a href=#back-to-top id=back-to-top-button class="fixed-button tw-transition-opacity tw-opacity-0" title=回到顶部><svg class="icon" viewBox="0 0 448 512"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
+</a><a href=#comments id=view-comments class=fixed-button title=查看评论><svg class="icon" viewBox="0 0 512 512"><path d="M256 32C114.6 32 0 125.1.0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3.0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4.0 256-93.1 256-208S397.4 32 256 32z"/></svg></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/katex/copy-tex.min.css><noscript><link rel=stylesheet href=/lib/katex/copy-tex.min.css></noscript><script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js",comment:{twikoo:{commentCount:!0,el:"#twikoo",envId:"https://twikoo.braindance.top/",lang:"zh-cn"}},"fuse.min.js":"/lib/fuse/fuse.min.js",lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},table:{sort:!0},twemoji:!0}</script><script src=/lib/tablesort/tablesort.min.js></script><script src=/lib/twemoji/twemoji.min.js defer></script><script src=/js/twemoji.min.js defer></script><script src=/lib/lightgallery/lightgallery.min.js></script><script src=/lib/lightgallery/lg-thumbnail.min.js></script><script src=/lib/lightgallery/lg-zoom.min.js></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script src=/js/katex.min.js defer></script><script src=/js/theme.min.js defer></script><script src=/lib/twikoo/twikoo.all.min.js defer></script><script src=/js/twikoo.min.js defer></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-176925141-1",{anonymize_ip:!0})</script><script src="https://www.googletagmanager.com/gtag/js?id=UA-176925141-1" async></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?3b1ab845351bb3a8ee808b639bca6ce5",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script type=speculationrules>
+        {
+          "prerender": [
+            {
+              "where": { "href_matches": "/*" },
+              "eagerness": "moderate"
+            }
+          ]
+        }
+    </script></body></html>

@@ -1,1 +1,45 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Sql注入 - 标签 - Braindance</title><link>https://www.braindance.top/tags/sql%E6%B3%A8%E5%85%A5/</link><description>Sql注入 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/sql%E6%B3%A8%E5%85%A5/" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>https://www.braindance.top/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description>easy_sql在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是括号单引号闭合</description></item><item><title>极客大挑战 2019 FinalSQL</title><link>https://www.braindance.top/posts/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</link><pubDate>Sun, 18 Apr 2021 19:11:51 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</guid><description>还是同一场比赛的界面 这次测试了下面的登陆框已经不能用了，无论怎么输入都是同一个回显：你可别被我逮住了，臭弟弟，测试上面的序号，注意此时的ur</description></item><item><title>SWPU2019 Web1</title><link>https://www.braindance.top/posts/swpu2019web1/</link><pubDate>Thu, 15 Apr 2021 09:55:17 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/swpu2019web1/</guid><description>一个登陆界面，再看下url地址为login.php，确认了使用的是php 直接查看源码，在源码中找到了register.php。先注册一个进去</description></item><item><title>sql-labs(一)</title><link>https://www.braindance.top/posts/sql-labs1/</link><pubDate>Tue, 22 Sep 2020 10:50:08 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/sql-labs1/</guid><description>前言在线靶机地址：https://buuoj.cn/challenges#sqli-labs less-1​ 首先说明sql注入的大致步骤： 判断</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Sql注入 - 标签 - Braindance</title><link>https://www.braindance.top/tags/sql%E6%B3%A8%E5%85%A5/</link><description>Sql注入 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/sql%E6%B3%A8%E5%85%A5/" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>https://www.braindance.top/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description><![CDATA[<h1 id="easy_sql" class="headerLink">
+    <a href="#easy_sql" class="header-mark"></a>easy_sql</h1><p>在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是<strong>括号单引号闭合</strong></p>
+<blockquote>
+<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &lsquo;1&rsquo;) LIMIT 0,1&rsquo; at line 1</p>
+</blockquote>
+<p>过滤的字符有union，所以尝试报错注入，查询版本号。</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">text</p>]]></description></item><item><title>极客大挑战 2019 FinalSQL</title><link>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</link><pubDate>Sun, 18 Apr 2021 19:11:51 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</guid><description><![CDATA[<p>还是同一场比赛的界面</p>
+<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210416224503.png"     ></p>
+<p>这次测试了下面的登陆框已经不能用了，无论怎么输入都是同一个回显：<strong>你可别被我逮住了，臭弟弟</strong>，测试上面的序号，注意此时的url中有<code>?id=</code>猜测是一个注入点，输入单引号一直报错，但是输入2-1时成功回显，判断是一个<strong>数字型</strong>注入，数字型注入最多遇到的就是结合盲注，接下来是测试盲注的过滤。</p>]]></description></item><item><title>SWPU2019 Web1</title><link>https://www.braindance.top/posts/ctf/swpu2019web1/</link><pubDate>Thu, 15 Apr 2021 09:55:17 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/swpu2019web1/</guid><description><![CDATA[<p>一个登陆界面，再看下url地址为login.php，确认了使用的是php</p>
+<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415091617.png"     ></p>
+<p>直接查看源码，在源码中找到了register.php。先注册一个进去看一看。</p>]]></description></item><item><title>sql-labs(一)</title><link>https://www.braindance.top/posts/ctf/sql-labs1/</link><pubDate>Tue, 22 Sep 2020 10:50:08 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/sql-labs1/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>在线靶机地址：https://buuoj.cn/challenges#sqli-labs</p>
+<h2 id="less-1" class="headerLink">
+    <a href="#less-1" class="header-mark"></a>less-1</h2><p>​	首先说明sql注入的大致步骤：</p>
+<ul>
+<li>判断注入类型。如整型字符型注入等。</li>
+<li>判断列数</li>
+<li>判断数据的回显位</li>
+<li>构造sql语句</li>
+</ul>
+<p>​	根据题目提示，说明是一个单引号注入题目，构造一个带单引号的语句<code>?id=1'</code>，发现数据库报错</p>]]></description></item></channel></rss>
