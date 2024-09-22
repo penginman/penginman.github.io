@@ -2,6 +2,4 @@
     <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>比赛地址：https://hack.lug.ustc.edu.cn/</p>
 <h1 id="web" class="headerLink">
     <a href="#web" class="header-mark"></a>web</h1><h3 id="签到题" class="headerLink">
-    <a href="#%e7%ad%be%e5%88%b0%e9%a2%98" class="header-mark"></a>签到题</h3><p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个<code>进度条</code>和一个<code>提取</code>按钮。</p>
-<p><img class="tw-inline" loading="lazy" src="https://s1.ax1x.com/2020/11/01/BwJbJs.png"   alt="BwJbJs.png"  ></p>
-<p>​	随便拉了拉进度条发现初始是<code>0</code>末尾是<code>1.5</code>，然后中间的数值都是小数</p>]]></description></item></channel></rss>
+    <a href="#%e7%ad%be%e5%88%b0%e9%a2%98" class="header-mark"></a>签到题</h3><p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个<code>进度条</code>和一个<code>提取</code>按钮。</p>]]></description></item></channel></rss>

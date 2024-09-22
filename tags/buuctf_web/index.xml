@@ -28,5 +28,4 @@
 
     <div class="code-block-title-bar tw-w-full">
       <p class="tw-select-none !tw-my-1">text</p>]]></description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</guid><description><![CDATA[<h1 id="gxyctf2019ping-ping-ping" class="headerLink">
-    <a href="#gxyctf2019ping-ping-ping" class="header-mark"></a>[GXYCTF2019]Ping Ping Ping</h1><p>题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping</p>
-<p>和DMCTF做的那道<strong>pingpingping</strong>类似，同样是使用管道符构造payload，先使用：</p>]]></description></item></channel></rss>
+    <a href="#gxyctf2019ping-ping-ping" class="header-mark"></a>[GXYCTF2019]Ping Ping Ping</h1><p>题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping</p>]]></description></item></channel></rss>

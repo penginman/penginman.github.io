@@ -5,35 +5,6 @@
 <p>$2^r,a_5,A_{n+1}$</p>
 <h3 id="平均值箭头向量等" class="headerLink">
     <a href="#%e5%b9%b3%e5%9d%87%e5%80%bc%e7%ae%ad%e5%a4%b4%e5%90%91%e9%87%8f%e7%ad%89" class="header-mark"></a>平均值、箭头、向量等</h3><p>加^号：<code>\hat{x}</code></p>
-<p>加横线：<code>\overline{x}</code></p>
-<p>加^：<code>\widehat{x}</code></p>
-<p>加波浪线：<code>\widetilde{x}</code></p>]]></description></item><item><title>Python-Day-100 笔记</title><link>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</guid><description><![CDATA[<h2 id="函数" class="headerLink">
+<p>加横线：<code>\overline{x}</code></p>]]></description></item><item><title>Python-Day-100 笔记</title><link>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</guid><description><![CDATA[<h2 id="函数" class="headerLink">
     <a href="#%e5%87%bd%e6%95%b0" class="header-mark"></a>函数</h2><h3 id="函数的参数" class="headerLink">
-    <a href="#%e5%87%bd%e6%95%b0%e7%9a%84%e5%8f%82%e6%95%b0" class="header-mark"></a>函数的参数</h3><p>可以使用可变参数<code>def func(*args)</code>，参数前面的<code>*</code>代表<code>args</code>是一个可变参数。</p>
-<h3 id="用模块管理函数" class="headerLink">
-    <a href="#%e7%94%a8%e6%a8%a1%e5%9d%97%e7%ae%a1%e7%90%86%e5%87%bd%e6%95%b0" class="header-mark"></a>用模块管理函数</h3><p>每个文件代表一个模块，不同模块的函数命名可以相同，但是如果如下代码引用</p>
-<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
-
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">python</p>]]></description></item></channel></rss>
+    <a href="#%e5%87%bd%e6%95%b0%e7%9a%84%e5%8f%82%e6%95%b0" class="header-mark"></a>函数的参数</h3><p>可以使用可变参数<code>def func(*args)</code>，参数前面的<code>*</code>代表<code>args</code>是一个可变参数。</p>]]></description></item></channel></rss>

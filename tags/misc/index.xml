@@ -5,6 +5,4 @@
     <a href="#check_in" class="header-mark"></a>Check_in</h2><p>真·有手就行</p>
 <p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130102716.png"     ></p>
 <h2 id="fakezip" class="headerLink">
-    <a href="#fakezip" class="header-mark"></a>fakezip</h2><p>看到题目<strong>fakezip</strong>翻译：假的压缩包，所以猜应该是伪加密，贴一个原理的博客：<a href="https://blog.csdn.net/u011377996/article/details/79286958" target="_blank" rel="noopener noreferrer">zip伪加密</a>，使用010 Editor打开压缩包，</p>
-<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130103932.png"     ></p>
-<p>找到01修改为00，再解压压缩包，虽然提示了压缩包错误但是直接无视，获得一个flag.txt</p>]]></description></item></channel></rss>
+    <a href="#fakezip" class="header-mark"></a>fakezip</h2><p>看到题目<strong>fakezip</strong>翻译：假的压缩包，所以猜应该是伪加密，贴一个原理的博客：<a href="https://blog.csdn.net/u011377996/article/details/79286958" target="_blank" rel="noopener noreferrer">zip伪加密</a>，使用010 Editor打开压缩包，</p>]]></description></item></channel></rss>
