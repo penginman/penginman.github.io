@@ -1,5 +1,48 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>代码审计 - 标签 - Braindance</title><link>https://www.braindance.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</link><description>代码审计 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Nov 2020 18:33:40 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="self" type="application/rss+xml"/><item><title>Hackgame2020(一)</title><link>https://www.braindance.top/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/hackgame20201/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>比赛地址：https://hack.lug.ustc.edu.cn/</p>
-<h1 id="web" class="headerLink">
-    <a href="#web" class="header-mark"></a>web</h1><h3 id="签到题" class="headerLink">
-    <a href="#%e7%ad%be%e5%88%b0%e9%a2%98" class="header-mark"></a>签到题</h3><p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个<code>进度条</code>和一个<code>提取</code>按钮。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>代码审计 on</title><link>/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</link><description>Recent content in 代码审计 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 01 Nov 2020 18:33:40 +0000</lastBuildDate><atom:link href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>Hackgame2020(一)</title><link>/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>/posts/ctf/hackgame20201/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>比赛地址：https://hack.lug.ustc.edu.cn/&lt;/p>
+&lt;h1 id="web">web&lt;/h1>
+&lt;h3 id="签到题">签到题&lt;/h3>
+&lt;p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个&lt;code>进度条&lt;/code>和一个&lt;code>提取&lt;/code>按钮。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png" alt="BwJbJs.png">&lt;/p>
+&lt;p>​	随便拉了拉进度条发现初始是&lt;code>0&lt;/code>末尾是&lt;code>1.5&lt;/code>，然后中间的数值都是小数&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png" alt="BwYAQx.png">&lt;/p>
+&lt;p>​	我猜的题目可能是想让数值为&lt;code>1&lt;/code>时能提取到flag。&lt;/p>
+&lt;p>​	F12查看源代码，定位到进度条的标签，查看属性&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png" alt="">&lt;/p>
+&lt;p>​	确实和猜测一样最大最小值分别是&lt;code>0&lt;/code>、&lt;code>1.5&lt;/code>，注意到&lt;code>step&lt;/code>值为&lt;code>0.00001&lt;/code>，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code>1&lt;/code>个flag，就把网页上的&lt;code>step&lt;/code>值改为&lt;code>1&lt;/code>。然后随便拖动一下进度条得到&lt;code>1&lt;/code>，点击&lt;code>提取&lt;/code>按钮，完工。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png" alt="">&lt;/p>
+&lt;h3 id="2048">2048&lt;/h3>
+&lt;p>​	打开题目是一个&lt;code>2048&lt;/code>的小游戏，第一个想法就是玩&lt;code>2048&lt;/code>达到一定分数以后会获得flag（&lt;del>可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del>）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del>逃课废物&lt;/del>是不可能努力哒！&lt;/p>
+&lt;p>F12开始翻网页资源&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png" alt="">&lt;/p>
+&lt;p>​	还好上次&lt;del>摸鱼&lt;/del>课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code>animframe_polyfill&lt;/code>应该就是管动画效果的，&lt;code>keynpard...&lt;/code>这个肯定是相应按键的，&lt;code>local_storage_manager&lt;/code>应该是保存游戏的，&lt;code>game_manager&lt;/code>感觉就是管理整个游戏的主要文件。&lt;/p>
+&lt;p>​	打开&lt;code>game_manager&lt;/code>粗略的看了下变量，&lt;code>score&lt;/code> 分数、&lt;code>over、won、keepPlaying&lt;/code>游戏状态，想赢游戏肯定是和&lt;code>score、won&lt;/code>有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p>
+&lt;p>发现了&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png" alt="">&lt;/p>
+&lt;p>​	只有这里修改了&lt;code>won&lt;/code>的状态，前面还有个&lt;code>16384&lt;/code>这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del>小声bb&lt;/del>&lt;a href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg">截图为证&lt;/a>），直接让&lt;code>if&lt;/code>里面的语句为真就可以获胜，直接修改&lt;code>if(1) self.won = true&lt;/code>，保存文件，按一个方向键让语句执行到，完工。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png" alt="">&lt;/p>
+&lt;h1 id="general">general&lt;/h1>
+&lt;h3 id="猫咪问题">猫咪问题++&lt;/h3>
+&lt;p>​	秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png" alt="">&lt;/p>
+&lt;p>​	题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png" alt="">&lt;/p>
+&lt;h4 id="第一题">第一题&lt;/h4>
+&lt;blockquote>
+&lt;ol>
+&lt;li>以下编程语言、软件或组织对应标志是哺乳动物的有几个？&lt;/li>
+&lt;/ol>
+&lt;p>Docker，Golang，Python，Plan 9，PHP，GNU，LLVM，Swift，Perl，GitHub，TortoiseSVN，FireFox，MySQL，PostgreSQL，MariaDB，Linux，OpenBSD，FreeDOS，Apache Tomcat，Squid，openSUSE，Kali，Xfce.&lt;/p>
+&lt;p>提示：学术上一般认为龙不属于哺乳动物。&lt;/p>
+&lt;/blockquote>
+&lt;p>​	本人只认识几个，那就一个一个搜呗。我的模式是：百度&lt;code>xxx标志&lt;/code>然后第二条就是百度图片的搜索结果，大致辨别一下，然后再百度&lt;code>xxx是哺乳动物吗&lt;/code>，妥妥的&lt;del>胎儿&lt;/del>教学。&lt;/p>
+&lt;p>​	一个比较有印象就是&lt;code>FreeDOS&lt;/code>这个标志就离谱，什么玩意&lt;/p>
+&lt;p>&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg" alt="">&lt;/p>
+&lt;p>&lt;strong>参考答案 ：12&lt;/strong>&lt;/p>
+&lt;h4 id="第二题">第二题&lt;/h4>
+&lt;blockquote>
+&lt;ol start="2">
+&lt;li>第一个以信鸽为载体的 IP 网络标准的 RFC 文档中推荐使用的 MTU (Maximum Transmission Unit) 是多少毫克？&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>​	卡了我好一会，没听过信鸽传输，贴上最后找到答案的&lt;a href="https://blog.csdn.net/qq_31621387/article/details/77690642">博客&lt;/a>，以及一篇信鸽传输的&lt;a href="http://sohu.com/a/309403082_354973">历史发展&lt;/a>，长见识了。&lt;/p></description></item></channel></rss>

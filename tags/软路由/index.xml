@@ -1,2 +1,33 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>软路由 - 标签 - Braindance</title><link>https://www.braindance.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link><description>软路由 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="self" type="application/rss+xml"/><item><title>软路由日记(一)</title><link>https://www.braindance.top/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软路由 on</title><link>/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link><description>Recent content in 软路由 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>软路由日记(一)</title><link>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。&lt;/p>
+&lt;p>最后的配件列表如下：&lt;/p>
+&lt;ul>
+&lt;li>DDR4 8G * 2&lt;/li>
+&lt;li>128G msata * 1&lt;/li>
+&lt;li>金士顿 480G sata * 1 （送的有sata的电源线和数据线，要注意下电源线用那种带拐角的，不然不好插上去）&lt;/li>
+&lt;li>DV 12V5A 电源 5.5mm&lt;/li>
+&lt;/ul>
+&lt;p>原来咸鱼上买了假三星内存条回来插上发现不能用，所以把笔记本上的两根 8G 换下来了，然后又觉得电脑单根有点卡，所以又下了一单，哈哈哈现在电脑上是假三星 32G。电源是发货最慢的，我把家里路由器机顶盒的电源找了个遍，发现都插不上去，重要的是同样是圆口的插孔，还分好多不一样的尺寸，这个是最大的 5.5mm 的，最后出去找了一家买监控的店，在压箱货里面找到了一个非常非常塑料感的电源，卖了我 30 块，我现在还记得我进去的时候老板正在玩魔兽骑着坐骑跑路。&lt;/p>
+&lt;p>再安利两个视频，我前期了解主要通过这两个 up 的视频学习的。&lt;/p>
+&lt;p>&lt;a href="https://www.bilibili.com/video/BV1WL411P7yN">保姆级J4125英特尔2.5G安装PVE+Ikuai+Openwrt&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.bilibili.com/video/BV13b4y1J7dX">用U盘直接给J4125软路由安装OpenWrt固件，超简单小白也看得懂&lt;/a>&lt;/p>
+&lt;h2 id="准备材料">准备材料&lt;/h2>
+&lt;p>需要准备：&lt;/p>
+&lt;ul>
+&lt;li>U盘一个。制作引导盘，安装完成以后可以恢复&lt;/li>
+&lt;li>键盘。安装向导需要一些配置&lt;/li>
+&lt;li>网线。安装完成以后可以访问 web页面配置&lt;/li>
+&lt;/ul>
+&lt;p>软件安装包：&lt;/p>
+&lt;ul>
+&lt;li>Restful。官网：&lt;a href="http://rufus.ie/zh/">http://rufus.ie/zh/&lt;/a>&lt;/li>
+&lt;li>pve镜像。官网：&lt;a href="https://www.proxmox.com/en/downloads">https://www.proxmox.com/en/downloads&lt;/a>。要下载名称有 ISO Installer 才是系统镜像文件&lt;/li>
+&lt;/ul>
+&lt;h2 id="restful-制作安装">Restful 制作安装&lt;/h2>
+&lt;p>插上U盘，打开 Restful 写入镜像文件，设备选择U盘盘符，引导类型选择镜像文件，然后右边选择下载好的 PVE 镜像文件，其他的配置默认即可。&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/02/03/63dcb88214c79.png" alt="">&lt;/p>
+&lt;p>确认以后会有一个弹窗选择 DD 镜像模式写入。用个网上找的图片&lt;/p>
+&lt;p>&lt;img src="https://qnam.smzdm.com/202202/24/62174f66812b27757.png_e1080.jpg" alt="">&lt;/p>
+&lt;p>引导盘算制作好了。如果引导盘安装完成以后想要恢复成原来U盘，插上U盘，注意一下识别的盘符，引导类型选择为&lt;code>非可引导&lt;/code>重新格式化一下即可，文件系统 FAT32 不能写入超过 2G 大小的文件，所以我一般选 NTFS。&lt;/p>
+&lt;h2 id="虚拟机网段规划分配">虚拟机网段规划分配&lt;/h2>
+&lt;p>因为安装的时候需要配置 PVE 网络的网关，既然用了软路由肯定是要用 OpenWrt、爱快这种路由系统装到虚拟机里，所以在安装之前先规划一下虚拟机的 IP 分配问题。以我安装的 OpenWrt 为例。&lt;/p></description></item></channel></rss>

@@ -1,1 +1,75 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>破解 - 标签 - Braindance</title><link>https://www.braindance.top/tags/%E7%A0%B4%E8%A7%A3/</link><description>破解 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E7%A0%B4%E8%A7%A3/" rel="self" type="application/rss+xml"/><item><title>JetBrains 全家桶破解</title><link>https://www.braindance.top/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</link><pubDate>Wed, 30 Aug 2023 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</guid><description>&lt;p>&lt;del>突然想开发了我的 IDEA 还是 2021 的，IDEA 和 Pycharm 还在机械硬盘，装个最新的到固态里面。教育邮箱懒得申请了，失效了又要麻烦续杯。写出来记录一下以后自己参考。&lt;/del>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>破解 on</title><link>/tags/%E7%A0%B4%E8%A7%A3/</link><description>Recent content in 破解 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E7%A0%B4%E8%A7%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>JetBrains 全家桶破解</title><link>/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</link><pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</guid><description>&lt;p>&lt;del>突然想开发了我的 IDEA 还是 2021 的，IDEA 和 Pycharm 还在机械硬盘，装个最新的到固态里面。教育邮箱懒得申请了，失效了又要麻烦续杯。写出来记录一下以后自己参考。&lt;/del>&lt;/p>
+&lt;blockquote>
+&lt;p>所提供的内容仅供学习交流使用,严禁用于商业用途,请于下载后24小时内删除。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="准备">准备&lt;/h2>
+&lt;p>破解使用的是 &lt;a href="https://gitee.com/ja-netfilter/ja-netfilter">ja-netfilter&lt;/a>：https://gitee.com/ja-netfilter/ja-netfilter。release 下载以后解压。&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/10/07/6520f05f102ea.png" alt="1696657544950.png">&lt;/p>
+&lt;p>&lt;code>config&lt;/code> 配置文件默认为空，需要添加一些配置。plugins 是可以加载一些其他联动插件，本文使用的方法不用其他插件。&lt;/p>
+&lt;p>找到 IDEA 或者 Pycharm 的 &lt;code>Help&lt;/code> &amp;mdash;&amp;gt; &lt;code>Edit Custom VM Options&lt;/code> 添加启动参数，路径是&lt;code>ja-netfilter&lt;/code>的 jar 包路径。&lt;/p>
+&lt;pre tabindex="0">&lt;code>-javaagent:C:\\path\\to\\ja-netfilter.jar
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Jetbrain全家桶在2022.2版本以上默认启用Java17&lt;/strong>，所以用的时候需要在 VM Options 里额外增加下面两行参数。&lt;/p>
+&lt;pre tabindex="0">&lt;code>--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+&lt;/code>&lt;/pre>&lt;p>在这里修改的 VM Options 配置文件路径是 C 盘下的本版本全局配置，也可以修改添加到安装目录下的 bin 目录中的 &lt;code>idea64.exe.vmoptions&lt;/code> 配置文件。&lt;/p>
+&lt;h2 id="修改其他配置">修改其他配置&lt;/h2>
+&lt;p>修改 &lt;code>config&lt;/code> 修改文件夹下的&lt;/p>
+&lt;p>&lt;code>congig/url.conf&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>[URL]
+PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action
+PREFIX,https://account.jetbrains.com.cn/lservice/rpc/validateKey.action
+&lt;/code>&lt;/pre>&lt;p>&lt;code>congig/dns.conf&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>[DNS]
+EQUAL,jetbrains.com
+&lt;/code>&lt;/pre>&lt;h2 id="激活">激活&lt;/h2>
+&lt;h3 id="使用-power-插件">使用 power 插件&lt;/h3>
+&lt;p>power 插件被作者成为非对称加密的屠龙刀，这种方式激活可以自定义信息，并且可以设置全家桶激活。&lt;/p>
+&lt;p>参考大佬&lt;a href="https://xuzhengtong.com/2022/07/25/ja-netfilter/ja-netfilter-plugins-power/">博客文章&lt;/a> 本地运行两个 python 文件，一个用于生成本地证书签名文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography &lt;span style="color:#f92672">import&lt;/span> x509
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.hazmat.backends &lt;span style="color:#f92672">import&lt;/span> default_backend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.hazmat.primitives &lt;span style="color:#f92672">import&lt;/span> hashes, serialization
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.hazmat.primitives.asymmetric &lt;span style="color:#f92672">import&lt;/span> rsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.x509.oid &lt;span style="color:#f92672">import&lt;/span> NameOID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>one_day &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>timedelta(days&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ten_day &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>timedelta(days&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">3650&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>today &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>datetime&lt;span style="color:#f92672">.&lt;/span>today()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yesterday &lt;span style="color:#f92672">=&lt;/span> today &lt;span style="color:#f92672">-&lt;/span> one_day
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tomorrow &lt;span style="color:#f92672">=&lt;/span> today &lt;span style="color:#f92672">+&lt;/span> ten_day
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>private_key &lt;span style="color:#f92672">=&lt;/span> rsa&lt;span style="color:#f92672">.&lt;/span>generate_private_key(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> public_exponent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">65537&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key_size&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">4096&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backend&lt;span style="color:#f92672">=&lt;/span>default_backend()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>public_key &lt;span style="color:#f92672">=&lt;/span> private_key&lt;span style="color:#f92672">.&lt;/span>public_key()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> x509&lt;span style="color:#f92672">.&lt;/span>CertificateBuilder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>subject_name(x509&lt;span style="color:#f92672">.&lt;/span>Name([
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x509&lt;span style="color:#f92672">.&lt;/span>NameAttribute(NameOID&lt;span style="color:#f92672">.&lt;/span>COMMON_NAME, &lt;span style="color:#e6db74">&amp;#39;MoYuno-from-2022-07-25&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>issuer_name(x509&lt;span style="color:#f92672">.&lt;/span>Name([
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x509&lt;span style="color:#f92672">.&lt;/span>NameAttribute(NameOID&lt;span style="color:#f92672">.&lt;/span>COMMON_NAME, &lt;span style="color:#e6db74">&amp;#39;JetProfile CA&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>not_valid_before(yesterday)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>not_valid_after(tomorrow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>serial_number(x509&lt;span style="color:#f92672">.&lt;/span>random_serial_number())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>public_key(public_key)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>certificate &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>sign(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> private_key&lt;span style="color:#f92672">=&lt;/span>private_key, algorithm&lt;span style="color:#f92672">=&lt;/span>hashes&lt;span style="color:#f92672">.&lt;/span>SHA256(),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backend&lt;span style="color:#f92672">=&lt;/span>default_backend()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>private_bytes &lt;span style="color:#f92672">=&lt;/span> private_key&lt;span style="color:#f92672">.&lt;/span>private_bytes(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>Encoding&lt;span style="color:#f92672">.&lt;/span>PEM,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> format&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>PrivateFormat&lt;span style="color:#f92672">.&lt;/span>TraditionalOpenSSL,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encryption_algorithm&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>NoEncryption())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>public_bytes &lt;span style="color:#f92672">=&lt;/span> certificate&lt;span style="color:#f92672">.&lt;/span>public_bytes(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>Encoding&lt;span style="color:#f92672">.&lt;/span>PEM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;ca.key&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;wb&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> fout:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fout&lt;span style="color:#f92672">.&lt;/span>write(private_bytes)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;ca.crt&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;wb&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> fout:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fout&lt;span style="color:#f92672">.&lt;/span>write(public_bytes)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有一个生成 key 和伪造验签&lt;/p></description></item></channel></rss>

@@ -1,2 +1,43 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>校园网 - 标签 - Braindance</title><link>https://www.braindance.top/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><description>校园网 - 标签 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" rel="self" type="application/rss+xml"/><item><title>ZUT 使用路由器连接校园网</title><link>https://www.braindance.top/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><pubDate>Tue, 11 Oct 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>我们学校的校园网不光每个月要宽带费 20/月，而且要绑定一个校园卡，我的一个月月租下来要 49/月，而且校园网还限制设备数量只能连接一个，我一般都是电脑连校园网，手机用流量，但是教职工的校园网就可以两个设备连接，寝室里目前有6+个设备也需要联网，商量以后打算搞个路由器贡献一个账号连校园网开 wifi，之前就见贴吧有老哥已经成功了，所以自己也尝试一下做个记录，给以后的同学看也不错。由于我已经连好路由器了，所以部分图片取自网络图片作为参考，我也尽量说的详细些。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>校园网 on</title><link>/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><description>Recent content in 校园网 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 31 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/index.xml" rel="self" type="application/rss+xml"/><item><title>ZUT 使用路由器连接校园网</title><link>/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate><guid>/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>我们学校的校园网不光每个月要宽带费 20/月，而且要绑定一个校园卡，我的一个月月租下来要 49/月，而且校园网还限制设备数量只能连接一个，我一般都是电脑连校园网，手机用流量，但是教职工的校园网就可以两个设备连接，寝室里目前有6+个设备也需要联网，商量以后打算搞个路由器贡献一个账号连校园网开 wifi，之前就见贴吧有老哥已经成功了，所以自己也尝试一下做个记录，给以后的同学看也不错。由于我已经连好路由器了，所以部分图片取自网络图片作为参考，我也尽量说的详细些。&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>对于任何硬件、软件的损坏，本人没有赔偿的责任，哪怕这样的后果是因教程中的错误造成的。也请认真对待每一步操作，也许因为你的操作不当硬件因此变成一块砖。另外本教程的操作会使你的路由器失去保修。&lt;/li>
+&lt;li>本篇文章仅起指导性的作用，在操作的过程中遇到的问题也许我也没有遇到过，请先自行尝试解决，如果我有空也会尽量帮助。&lt;/li>
+&lt;li>学校明令禁止安装路由器，本人绝对没有怂恿或建议任何同学安装路由器，本人安装路由器的行为完全属于个人意志，仅仅作为个人的学习技术交流，请读者在安装好路由器之后 24 小时内再将之拆除，请按照学校指明的方式连接到互联网。如果学校根据校规等文件追究责任，与本人无关。&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>叠甲过&lt;/p>
+&lt;h2 id="前置知识">前置知识&lt;/h2>
+&lt;p>校园网插入网线认证是要模拟 Dr.com 软件的发包认证，除了账号密码认证校园网以外，软件还会定时发送心跳包保证校园网连接。&lt;/p>
+&lt;p>zut 的校园网认证格式为账号：&lt;code>\r\n你的学号@[unicom|telecom|cmcc]&lt;/code> ，其中 &lt;code>@&lt;/code> 后面的是你的运营商，对照前面的格式分别为：联通、电信、移动，例如我的是联通校园网，账号就是：&lt;code>\r\n2022********@unicom&lt;/code>，密码就是你自己的密码。&lt;/p>
+&lt;p>zut 校园网的客户端版本为：6.0.0（P）&lt;/p>
+&lt;p>校园网的防检测插件原理还没有写，自己用的 小米4C 是社区固件资源中自带的。想看原理可以看最后挖坑部分&lt;/p>
+&lt;h2 id="需要的材料">需要的材料&lt;/h2>
+&lt;p>本教程使用的路由器型号 &lt;code>Xiaomi router 4c&lt;/code> pdd二手35，安装的系统 &lt;code>openwrt&lt;/code>。&lt;strong>请注意&lt;/strong>：路由器的选择直接影响到你后面的操作，我专门在网上挑了好久选的这个路由器，但是，&lt;strong>唯独这个路由器的社区资源最特殊&lt;/strong>，本人也是经过各种尝试才成功。如果选择其他路由器，本教程中的主要安装思路相同，但是需要自行寻找适合自己路由器的固件资源。&lt;/p>
+&lt;ul>
+&lt;li>路由器。&lt;/li>
+&lt;li>网线两根。一根我买的8m的，因为宿舍AP在门上面，另一根需要连接路由器和电脑，长度自己看。&lt;/li>
+&lt;li>开通校园网的账号。&lt;/li>
+&lt;li>自己思考的能力。&lt;/li>
+&lt;li>需要的软件压缩包：&lt;a href="https://wwn.lanzouy.com/igsaW0dn0k3a">zut_Xiaomi_router_4c.zip&lt;/a>。其中包含
+&lt;ul>
+&lt;li>dogcom.zip。用来进行校园网模拟拨号，定时发送心跳包的工具。&lt;/li>
+&lt;li>R3GV2 patches.zip。刷机的主要部分包含了：R3GV2 patches（前期连接路由器的工具）、Mi4C.bin（小米 4c 的 openwrt 固件自带防检测插件）、breed.bin（breed web 恢复控制台）&lt;/li>
+&lt;li>MobaXterm_Portable.zip。用来连接路由器和传输文件的软件&lt;/li>
+&lt;li>小米路由器4C恢复官方固件工具包.zip。刷成砖的&lt;a href="https://web.vip.miui.com/page/info/mio/mio/detail?postId=19134127&amp;amp;app_version=dev.20051">官方补救措施&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="教程参考的网站或资料">教程参考的网站或资料&lt;/h2>
+&lt;ul>
+&lt;li>贴吧老哥的教程：&lt;a href="https://tieba.baidu.com/p/7760362347">https://tieba.baidu.com/p/7760362347&lt;/a>&lt;/li>
+&lt;li>广东工业大学在 github 上的教程：&lt;a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt">https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt&lt;/a>&lt;/li>
+&lt;li>【记录】小米路由器 4C 刷机过程：&lt;a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27">https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27&lt;/a>&lt;/li>
+&lt;li>R4CM，说说我的小米路由器4C刷机过程：不用Linux也不用虚拟机…… ：&lt;a href="https://www.right.com.cn/FORUM/thread-4047571-1-1.html">https://www.right.com.cn/FORUM/thread-4047571-1-1.html&lt;/a>&lt;/li>
+&lt;li>路由器认证校园网drcom：&lt;a href="https://www.brothereye.cn/router/669/">https://www.brothereye.cn/router/669/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="开工">开工&lt;/h2>
+&lt;p>接通路由器电源，&lt;strong>使用网线连接路由器&lt;/strong>，进入初始化管理页面通常是 &lt;code>192.168.1.1&lt;/code>，能跳过就跳过，下图右选择无需拨号即可。（网络图片仅供参考）&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2022/10/11/63450a2f460ac.png" alt="ab3pm-21hcz.png">&lt;/p>
+&lt;p>接下来设置 wifi 名称和密码，可以勾选管理密码和 wifi 密码相同的框，保存以后会提示新的管理后台地址，通常是 &lt;code>192.168.31.1&lt;/code>，使用管理密码登陆以后，显示路由器界面就算初始化成功。&lt;/p></description></item></channel></rss>

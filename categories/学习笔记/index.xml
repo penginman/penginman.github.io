@@ -1,10 +1,98 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>学习笔记 - 分类 - Braindance</title><link>https://www.braindance.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>学习笔记 - 分类 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://www.braindance.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>https://www.braindance.top/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description><![CDATA[<p><a href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/m0_55746113/article/details/122728673</a></p>
-<h2 id="标注符号" class="headerLink">
-    <a href="#%e6%a0%87%e6%b3%a8%e7%ac%a6%e5%8f%b7" class="header-mark"></a>标注符号</h2><h3 id="上下标" class="headerLink">
-    <a href="#%e4%b8%8a%e4%b8%8b%e6%a0%87" class="header-mark"></a>上下标</h3><p>上标符号为“^”、下标符号为“_” ，多于一个字符用<code>{}</code>包含，例如<code>2^r</code>、<code>a_5</code></p>
-<p>$2^r,a_5,A_{n+1}$</p>
-<h3 id="平均值箭头向量等" class="headerLink">
-    <a href="#%e5%b9%b3%e5%9d%87%e5%80%bc%e7%ae%ad%e5%a4%b4%e5%90%91%e9%87%8f%e7%ad%89" class="header-mark"></a>平均值、箭头、向量等</h3><p>加^号：<code>\hat{x}</code></p>
-<p>加横线：<code>\overline{x}</code></p>]]></description></item><item><title>Python-Day-100 笔记</title><link>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</guid><description><![CDATA[<h2 id="函数" class="headerLink">
-    <a href="#%e5%87%bd%e6%95%b0" class="header-mark"></a>函数</h2><h3 id="函数的参数" class="headerLink">
-    <a href="#%e5%87%bd%e6%95%b0%e7%9a%84%e5%8f%82%e6%95%b0" class="header-mark"></a>函数的参数</h3><p>可以使用可变参数<code>def func(*args)</code>，参数前面的<code>*</code>代表<code>args</code>是一个可变参数。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习笔记 on</title><link>/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 学习笔记 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p>&lt;a href="https://blog.csdn.net/m0_55746113/article/details/122728673">https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a>&lt;/p>
+&lt;h2 id="标注符号">标注符号&lt;/h2>
+&lt;h3 id="上下标">上下标&lt;/h3>
+&lt;p>上标符号为“^”、下标符号为“_” ，多于一个字符用&lt;code>{}&lt;/code>包含，例如&lt;code>2^r&lt;/code>、&lt;code>a_5&lt;/code>&lt;/p>
+&lt;p>$2^r,a_5,A_{n+1}$&lt;/p>
+&lt;h3 id="平均值箭头向量等">平均值、箭头、向量等&lt;/h3>
+&lt;p>加^号：&lt;code>\hat{x}&lt;/code>&lt;/p>
+&lt;p>加横线：&lt;code>\overline{x}&lt;/code>&lt;/p>
+&lt;p>加^：&lt;code>\widehat{x}&lt;/code>&lt;/p>
+&lt;p>加波浪线：&lt;code>\widetilde{x}&lt;/code>&lt;/p>
+&lt;p>加一个点：&lt;code>\dot{x}&lt;/code>&lt;/p>
+&lt;p>加两个点：&lt;code>\ddot{x}&lt;/code>&lt;/p>
+&lt;p>$\hat x,\overline x,\widehat x,\widetilde x,\dot x,\ddot x$&lt;/p>
+&lt;h3 id="加粗">加粗&lt;/h3>
+&lt;p>矩阵字母一般会用加粗的罗马体来表示。&lt;code>\bf&lt;/code>&lt;/p>
+&lt;h2 id="根号">根号&lt;/h2>
+&lt;p>&lt;code>\sqrt{}&lt;/code>&lt;/p>
+&lt;h2 id="希腊字母表">希腊字母表&lt;/h2>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/10/12/6527dfcd9db91.png" alt="1697112011353.png">&lt;/p>
+&lt;h2 id="运算符号">运算符号&lt;/h2>
+&lt;h3 id="加减乘除">加减乘除&lt;/h3>
+&lt;p>&lt;code>+&lt;/code> 和 &lt;code>-&lt;/code>。&lt;code>\times&lt;/code> 和 &lt;code>\div&lt;/code>。点乘用 &lt;code>\cdot&lt;/code>&lt;/p>
+&lt;p>$ +,-,\times,\div,\cdot$&lt;/p>
+&lt;h3 id="大于小于约等于">大于、小于、约等于&lt;/h3>
+&lt;p>大于小于直接 &lt;code>&amp;gt;&lt;/code> 、 &lt;code>&amp;lt;&lt;/code>&lt;/p>
+&lt;p>大于等于 &lt;code>\ge&lt;/code>，小于等于 &lt;code>\le&lt;/code>&lt;/p>
+&lt;p>远大于 &lt;code>\gg&lt;/code>，远小于 &lt;code>\ll&lt;/code>&lt;/p>
+&lt;p>不等于 &lt;code>\ne&lt;/code>&lt;/p>
+&lt;p>约等于 &lt;code>\approx&lt;/code>&lt;/p>
+&lt;p>$&amp;gt;,&amp;lt;,\ge,\le,\gg,\ll,\ne,\approx$&lt;/p>
+&lt;h3 id="分式和根式">分式和根式&lt;/h3>
+&lt;p>&lt;code>\frac{分子}{分母}&lt;/code>或&lt;code>\frac 分子 分母&lt;/code>。如&lt;/p>
+&lt;p>$ \frac{1}{2}$&lt;/p>
+&lt;h3 id="交集并集">交集并集&lt;/h3>
+&lt;p>交集用 &lt;code>\cap&lt;/code>&lt;/p>
+&lt;p>并集用 &lt;code>\cup&lt;/code>&lt;/p>
+&lt;p>$\cap,\cup$&lt;/p>
+&lt;h3 id="属于不属于">属于不属于&lt;/h3>
+&lt;p>属于用 &lt;code>\in&lt;/code>&lt;/p>
+&lt;p>不属于用 &lt;code>\notin&lt;/code>&lt;/p>
+&lt;p>$\in,\notin$&lt;/p></description></item><item><title>Python-Day-100 笔记</title><link>/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate><guid>/posts/python%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="函数">函数&lt;/h2>
+&lt;h3 id="函数的参数">函数的参数&lt;/h3>
+&lt;p>可以使用可变参数&lt;code>def func(*args)&lt;/code>，参数前面的&lt;code>*&lt;/code>代表&lt;code>args&lt;/code>是一个可变参数。&lt;/p>
+&lt;h3 id="用模块管理函数">用模块管理函数&lt;/h3>
+&lt;p>每个文件代表一个模块，不同模块的函数命名可以相同，但是如果如下代码引用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> module1 &lt;span style="color:#f92672">import&lt;/span> foo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> module2 &lt;span style="color:#f92672">import&lt;/span> foo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>foo()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>程序会调用最后一个调用的&lt;code>foo&lt;/code>函数。
+如果导入模块中除了定义的函数以外有可执行的代码，则Python解释器在导入这个模块时就会执行这些代码。可以利用只有被Python解释器直接执行的模块的名字才是 &lt;strong>__main__&lt;/strong> 进行判断&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">foo&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># __name__是Python中一个隐含的变量它代表了模块的名字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 只有被Python解释器直接执行的模块的名字才是__main__&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;call foo()&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> foo()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在其他模块再导入上述模块时，if条件中的语句就不会执行&lt;/p>
+&lt;h3 id="变量作用域">变量作用域&lt;/h3>
+&lt;p>Python查找一个变量时会按照“局部作用域”、“嵌套作用域”、“全局作用域”和“内置作用域”的顺序进行搜索。内置作用域及python内置的标识符如：&lt;code>input&lt;/code>、&lt;code>print&lt;/code>、&lt;code>int&lt;/code>。
+可以使用&lt;code>global&lt;/code>关键字来指示局部函数中的变量来自&lt;strong>全局变量&lt;/strong>，&lt;code>nonlocal&lt;/code>关键字表示变量来自&lt;strong>外部嵌套函数内的变量&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>事实上，减少对全局变量的使用，也是降低代码之间耦合度的一个重要举措，同时也是对&lt;a href="https://zh.wikipedia.org/zh-hans/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B">迪米特法则&lt;/a>的践行。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="字符串和常用数据结构">字符串和常用数据结构&lt;/h2>
+&lt;h3 id="字符串">字符串&lt;/h3>
+&lt;p>反斜杠&lt;code>\&lt;/code>用来转义。
+&lt;code>\&lt;/code>后面可以跟八进制和六进制来表示字符，&lt;code>\u68d2&lt;/code>使用unicode字符编码表示字符。
+如果不想使用&lt;code>\&lt;/code>转义，可以在字符串前加上字母&lt;code>r&lt;/code>说明&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>s1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">r&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\n&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">hello, world!&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">\n&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(s1) &lt;span style="color:#75715e"># \n\\hello, world!\\\n&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用&lt;code>+&lt;/code>进行字符串拼接，使用&lt;code>*&lt;/code>重复一个字符串的内容，&lt;code>in&lt;/code>、&lt;code>not in&lt;/code>来判断字符串中是否包含子串，&lt;code>[]&lt;/code>、&lt;code>[:]&lt;/code>用来切片运算。&lt;/p>
+&lt;p>字符串类型是一种结构化的、非标量类型，所以会有一系列的属性和方法。
+字符串对象身上的&lt;strong>常用的函数&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>len()；获取字符串长度&lt;/li>
+&lt;li>capitalize()；字符串首个字母大写的拷贝&lt;/li>
+&lt;li>title()；每个字符串单词首字母大写的拷贝&lt;/li>
+&lt;li>upper()；所有字符串大写的拷贝&lt;/li>
+&lt;li>find()；查找字串位置。未找到值为 -1&lt;/li>
+&lt;li>startswith()；以某字符开始。类似的有endswith()&lt;/li>
+&lt;li>center(50,&amp;rsquo;*&amp;rsquo;)；将字符串以指定宽度居中，填充指定字符。类似的有rjust()、ljust()&lt;/li>
+&lt;li>isdigit()；是否为数字构成&lt;/li>
+&lt;li>isalpha()；是否为字母构成&lt;/li>
+&lt;li>isalnum()；是否为数字字母构成&lt;/li>
+&lt;li>strip()；获取处理左右两侧空格后的拷贝&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>格式化输出字符串&lt;/strong>
+使用&lt;code>%d&lt;/code>、&lt;code>%s&lt;/code>等占位符，并在字符串结尾使用&lt;code>%()&lt;/code>列表对应。
+字符串提供的&lt;code>format()&lt;/code>方法。
+Python 3.6以后提供了语法糖表示，在字符串前使用&lt;code>f&lt;/code>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>a,b &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>,&lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74"> * &lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74"> = &lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> (a, b, a &lt;span style="color:#f92672">*&lt;/span> b))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{0}&lt;/span>&lt;span style="color:#e6db74"> * &lt;/span>&lt;span style="color:#e6db74">{1}&lt;/span>&lt;span style="color:#e6db74"> = &lt;/span>&lt;span style="color:#e6db74">{2}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(a, b, a &lt;span style="color:#f92672">*&lt;/span> b))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>a&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> * &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>b&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> = &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>a &lt;span style="color:#f92672">*&lt;/span> b&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="列表">列表&lt;/h3>
+&lt;p>数值类型（int、float）是标量类型，列表（list）是一种结构化的、非标量类型。
+可以使用下标的方式遍历列表元素，或者for循环遍历列表元素&lt;/p></description></item></channel></rss>

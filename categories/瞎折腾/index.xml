@@ -1,13 +1,488 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>瞎折腾 - 分类 - Braindance</title><link>https://www.braindance.top/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/</link><description>瞎折腾 - 分类 - Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://www.braindance.top/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="self" type="application/rss+xml"/><item><title>JetBrains 全家桶破解</title><link>https://www.braindance.top/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</link><pubDate>Wed, 30 Aug 2023 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</guid><description>&lt;p>&lt;del>突然想开发了我的 IDEA 还是 2021 的，IDEA 和 Pycharm 还在机械硬盘，装个最新的到固态里面。教育邮箱懒得申请了，失效了又要麻烦续杯。写出来记录一下以后自己参考。&lt;/del>&lt;/p></description></item><item><title>软路由日记(一)</title><link>https://www.braindance.top/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。</p>]]></description></item><item><title>中国联通SK-D748光猫超级密码获取</title><link>https://www.braindance.top/posts/play_time/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9Ask-d748%E5%85%89%E7%8C%AB%E8%B6%85%E7%BA%A7%E5%AF%86%E7%A0%81%E8%8E%B7%E5%8F%96/</link><pubDate>Wed, 04 Jan 2023 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9Ask-d748%E5%85%89%E7%8C%AB%E8%B6%85%E7%BA%A7%E5%AF%86%E7%A0%81%E8%8E%B7%E5%8F%96/</guid><description><![CDATA[<p>折腾软路由百忙之中抽时间来简单<del>水</del>一篇。</p>
-<p>有这个需求是因为目前在家里是用另一个无线路由器桥接联通的光猫的，但是在dhcp 里死活找不到桥接路由器分配的 ip，然后插上软路由竟然又把 ip 分配给软路由了，真是不服不行。</p>]]></description></item><item><title>ZUT 使用路由器连接校园网</title><link>https://www.braindance.top/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><pubDate>Tue, 11 Oct 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>我们学校的校园网不光每个月要宽带费 20/月，而且要绑定一个校园卡，我的一个月月租下来要 49/月，而且校园网还限制设备数量只能连接一个，我一般都是电脑连校园网，手机用流量，但是教职工的校园网就可以两个设备连接，寝室里目前有6+个设备也需要联网，商量以后打算搞个路由器贡献一个账号连校园网开 wifi，之前就见贴吧有老哥已经成功了，所以自己也尝试一下做个记录，给以后的同学看也不错。由于我已经连好路由器了，所以部分图片取自网络图片作为参考，我也尽量说的详细些。</p>]]></description></item><item><title>KKapi+ISpeak说说页面部署</title><link>https://www.braindance.top/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 04 Oct 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>感觉原来的 Artitalk 说说不好康，在开往里发现好多博客都用的说说功能叫叨叨点啥，看了看作者的<a href="https://www.antmoe.com/speak/" target="_blank" rel="noopener noreferrer">说说页面</a>，可以插入图片和标签分类，还有仅自己可见的功能，感觉挺不错的（实际是自己想折腾）所以就整一个。自己在部署过程中实在是踩了不少的坑，而且作者的文档感觉写的也不算完善，所以打算自己记录一下。</p>]]></description></item><item><title>博客图床迁移</title><link>https://www.braindance.top/posts/play_time/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB/</link><pubDate>Sun, 01 May 2022 00:00:00 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB/</guid><description><![CDATA[<h2 id="起因" class="headerLink">
-    <a href="#%e8%b5%b7%e5%9b%a0" class="header-mark"></a>起因</h2><p>原来博客的图片使用Jsdelivr和github的方式存储访问，但是最近Jsdelivr频繁的被墙，感觉可能在未来的不久会失效，毕竟好多人用来当免费的CDN（<del>比如我</del>），也会有人使用其访问些zz敏感或其他的文件，被墙了也情有可原，而且github的仓库的作用也是用来存储代码而非图床，像我这样的人也导致了仓库的滥用，所以决定找个新的途径。</p>
-<h2 id="过程" class="headerLink">
-    <a href="#%e8%bf%87%e7%a8%8b" class="header-mark"></a>过程</h2><p>当时在网上找了好久，最后在loc上找到了 一个<a href="https://hostloc.com/thread-807685-1-1.html" target="_blank" rel="noopener noreferrer">帖子</a>，感觉把目前行得通的方法都列出来了。</p>]]></description></item><item><title>博客搬迁</title><link>https://www.braindance.top/posts/play_time/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</link><pubDate>Mon, 31 Jan 2022 11:31:54 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</guid><description><![CDATA[<p><img class="tw-inline" loading="lazy" src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/202201311142110.jpg"   alt="202201311142110"  ></p>
-<p>大四开始写毕业设计了，在学的过程中想记一记笔记，但是之前的hexo博客没动很久了，就想着把博客搬迁下顺便起个头，激起一些学习的劲头。</p>]]></description></item><item><title>PicGo复制自定义链接</title><link>https://www.braindance.top/posts/play_time/picgo%E5%A4%8D%E5%88%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5/</link><pubDate>Mon, 30 Nov 2020 09:54:11 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/picgo%E5%A4%8D%E5%88%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5/</guid><description><![CDATA[<p>2022年2月3日22:41:32</p>
-<p><strong>！！！！！</strong></p>
-<p><strong>建议直接看文章末尾，我发现我就是个笨比。</strong></p>]]></description></item><item><title>jsdelivr 缓存刷新</title><link>https://www.braindance.top/posts/play_time/jsdelivr-%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0/</link><pubDate>Fri, 20 Nov 2020 22:02:46 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/jsdelivr-%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>​	上一篇修改了黑幕，但是使用了jsdelivr加速的静态资源，所以照常更新下github上的资源，但是github上查看已经上传成功了，jsdelivr访问的依然是之前的资源，说白了就是缓存的问题。即使本地浏览器端的缓存已经清理，也会因为CDN周围的节点没有同步数据而导致用户端未能及时更新。</p>]]></description></item><item><title>萌娘百科黑幕实现</title><link>https://www.braindance.top/posts/play_time/%E8%90%8C%E5%A8%98%E7%99%BE%E7%A7%91%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</link><pubDate>Fri, 20 Nov 2020 10:13:07 +0800</pubDate><author><name>Braindance</name></author><guid>https://www.braindance.top/posts/play_time/%E8%90%8C%E5%A8%98%E7%99%BE%E7%A7%91%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</guid><description><![CDATA[<h2 id="前言" class="headerLink">
-    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>​	老早就觉得<a href="https://zh.moegirl.org.cn/Mainpage" target="_blank" rel="noopener noreferrer">萌娘百科</a>里的<span class='heimu'>黑幕</span>很好玩，所以摸索着给自己博客加了一个。参考博客<a href="https://www.cnblogs.com/send-off-a-friend/p/12355387.html" target="_blank" rel="noopener noreferrer">Re：萌娘百科上的黑幕实现</a>。不过我改的方法有稍稍有点不同，是把hexo渲染markdown文章中的删除线<code>~~ ~~</code>标签修改了。我回来又想到了更好的方法，markdown支持文章中的<strong>自定义标签</strong>，自己增加一个<code>&lt;span class='heimu'&gt;...&lt;/span&gt;</code>标签更好。那么两种都记一下吧。当然用<strong>自定义标签</strong>的话还可以保留<strong>删除线</strong>。</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>瞎折腾 on</title><link>/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/</link><description>Recent content in 瞎折腾 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>JetBrains 全家桶破解</title><link>/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</link><pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</guid><description>&lt;p>&lt;del>突然想开发了我的 IDEA 还是 2021 的，IDEA 和 Pycharm 还在机械硬盘，装个最新的到固态里面。教育邮箱懒得申请了，失效了又要麻烦续杯。写出来记录一下以后自己参考。&lt;/del>&lt;/p>
+&lt;blockquote>
+&lt;p>所提供的内容仅供学习交流使用,严禁用于商业用途,请于下载后24小时内删除。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="准备">准备&lt;/h2>
+&lt;p>破解使用的是 &lt;a href="https://gitee.com/ja-netfilter/ja-netfilter">ja-netfilter&lt;/a>：https://gitee.com/ja-netfilter/ja-netfilter。release 下载以后解压。&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/10/07/6520f05f102ea.png" alt="1696657544950.png">&lt;/p>
+&lt;p>&lt;code>config&lt;/code> 配置文件默认为空，需要添加一些配置。plugins 是可以加载一些其他联动插件，本文使用的方法不用其他插件。&lt;/p>
+&lt;p>找到 IDEA 或者 Pycharm 的 &lt;code>Help&lt;/code> &amp;mdash;&amp;gt; &lt;code>Edit Custom VM Options&lt;/code> 添加启动参数，路径是&lt;code>ja-netfilter&lt;/code>的 jar 包路径。&lt;/p>
+&lt;pre tabindex="0">&lt;code>-javaagent:C:\\path\\to\\ja-netfilter.jar
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Jetbrain全家桶在2022.2版本以上默认启用Java17&lt;/strong>，所以用的时候需要在 VM Options 里额外增加下面两行参数。&lt;/p>
+&lt;pre tabindex="0">&lt;code>--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+&lt;/code>&lt;/pre>&lt;p>在这里修改的 VM Options 配置文件路径是 C 盘下的本版本全局配置，也可以修改添加到安装目录下的 bin 目录中的 &lt;code>idea64.exe.vmoptions&lt;/code> 配置文件。&lt;/p>
+&lt;h2 id="修改其他配置">修改其他配置&lt;/h2>
+&lt;p>修改 &lt;code>config&lt;/code> 修改文件夹下的&lt;/p>
+&lt;p>&lt;code>congig/url.conf&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>[URL]
+PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action
+PREFIX,https://account.jetbrains.com.cn/lservice/rpc/validateKey.action
+&lt;/code>&lt;/pre>&lt;p>&lt;code>congig/dns.conf&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>[DNS]
+EQUAL,jetbrains.com
+&lt;/code>&lt;/pre>&lt;h2 id="激活">激活&lt;/h2>
+&lt;h3 id="使用-power-插件">使用 power 插件&lt;/h3>
+&lt;p>power 插件被作者成为非对称加密的屠龙刀，这种方式激活可以自定义信息，并且可以设置全家桶激活。&lt;/p>
+&lt;p>参考大佬&lt;a href="https://xuzhengtong.com/2022/07/25/ja-netfilter/ja-netfilter-plugins-power/">博客文章&lt;/a> 本地运行两个 python 文件，一个用于生成本地证书签名文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography &lt;span style="color:#f92672">import&lt;/span> x509
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.hazmat.backends &lt;span style="color:#f92672">import&lt;/span> default_backend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.hazmat.primitives &lt;span style="color:#f92672">import&lt;/span> hashes, serialization
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.hazmat.primitives.asymmetric &lt;span style="color:#f92672">import&lt;/span> rsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> cryptography.x509.oid &lt;span style="color:#f92672">import&lt;/span> NameOID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>one_day &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>timedelta(days&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ten_day &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>timedelta(days&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">3650&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>today &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>datetime&lt;span style="color:#f92672">.&lt;/span>today()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yesterday &lt;span style="color:#f92672">=&lt;/span> today &lt;span style="color:#f92672">-&lt;/span> one_day
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tomorrow &lt;span style="color:#f92672">=&lt;/span> today &lt;span style="color:#f92672">+&lt;/span> ten_day
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>private_key &lt;span style="color:#f92672">=&lt;/span> rsa&lt;span style="color:#f92672">.&lt;/span>generate_private_key(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> public_exponent&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">65537&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key_size&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">4096&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backend&lt;span style="color:#f92672">=&lt;/span>default_backend()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>public_key &lt;span style="color:#f92672">=&lt;/span> private_key&lt;span style="color:#f92672">.&lt;/span>public_key()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> x509&lt;span style="color:#f92672">.&lt;/span>CertificateBuilder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>subject_name(x509&lt;span style="color:#f92672">.&lt;/span>Name([
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x509&lt;span style="color:#f92672">.&lt;/span>NameAttribute(NameOID&lt;span style="color:#f92672">.&lt;/span>COMMON_NAME, &lt;span style="color:#e6db74">&amp;#39;MoYuno-from-2022-07-25&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>issuer_name(x509&lt;span style="color:#f92672">.&lt;/span>Name([
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x509&lt;span style="color:#f92672">.&lt;/span>NameAttribute(NameOID&lt;span style="color:#f92672">.&lt;/span>COMMON_NAME, &lt;span style="color:#e6db74">&amp;#39;JetProfile CA&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>not_valid_before(yesterday)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>not_valid_after(tomorrow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>serial_number(x509&lt;span style="color:#f92672">.&lt;/span>random_serial_number())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>public_key(public_key)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>certificate &lt;span style="color:#f92672">=&lt;/span> builder&lt;span style="color:#f92672">.&lt;/span>sign(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> private_key&lt;span style="color:#f92672">=&lt;/span>private_key, algorithm&lt;span style="color:#f92672">=&lt;/span>hashes&lt;span style="color:#f92672">.&lt;/span>SHA256(),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backend&lt;span style="color:#f92672">=&lt;/span>default_backend()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>private_bytes &lt;span style="color:#f92672">=&lt;/span> private_key&lt;span style="color:#f92672">.&lt;/span>private_bytes(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>Encoding&lt;span style="color:#f92672">.&lt;/span>PEM,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> format&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>PrivateFormat&lt;span style="color:#f92672">.&lt;/span>TraditionalOpenSSL,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encryption_algorithm&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>NoEncryption())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>public_bytes &lt;span style="color:#f92672">=&lt;/span> certificate&lt;span style="color:#f92672">.&lt;/span>public_bytes(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#f92672">=&lt;/span>serialization&lt;span style="color:#f92672">.&lt;/span>Encoding&lt;span style="color:#f92672">.&lt;/span>PEM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;ca.key&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;wb&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> fout:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fout&lt;span style="color:#f92672">.&lt;/span>write(private_bytes)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;ca.crt&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;wb&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> fout:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fout&lt;span style="color:#f92672">.&lt;/span>write(public_bytes)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有一个生成 key 和伪造验签&lt;/p></description></item><item><title>软路由日记(一)</title><link>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。&lt;/p>
+&lt;p>最后的配件列表如下：&lt;/p>
+&lt;ul>
+&lt;li>DDR4 8G * 2&lt;/li>
+&lt;li>128G msata * 1&lt;/li>
+&lt;li>金士顿 480G sata * 1 （送的有sata的电源线和数据线，要注意下电源线用那种带拐角的，不然不好插上去）&lt;/li>
+&lt;li>DV 12V5A 电源 5.5mm&lt;/li>
+&lt;/ul>
+&lt;p>原来咸鱼上买了假三星内存条回来插上发现不能用，所以把笔记本上的两根 8G 换下来了，然后又觉得电脑单根有点卡，所以又下了一单，哈哈哈现在电脑上是假三星 32G。电源是发货最慢的，我把家里路由器机顶盒的电源找了个遍，发现都插不上去，重要的是同样是圆口的插孔，还分好多不一样的尺寸，这个是最大的 5.5mm 的，最后出去找了一家买监控的店，在压箱货里面找到了一个非常非常塑料感的电源，卖了我 30 块，我现在还记得我进去的时候老板正在玩魔兽骑着坐骑跑路。&lt;/p>
+&lt;p>再安利两个视频，我前期了解主要通过这两个 up 的视频学习的。&lt;/p>
+&lt;p>&lt;a href="https://www.bilibili.com/video/BV1WL411P7yN">保姆级J4125英特尔2.5G安装PVE+Ikuai+Openwrt&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.bilibili.com/video/BV13b4y1J7dX">用U盘直接给J4125软路由安装OpenWrt固件，超简单小白也看得懂&lt;/a>&lt;/p>
+&lt;h2 id="准备材料">准备材料&lt;/h2>
+&lt;p>需要准备：&lt;/p>
+&lt;ul>
+&lt;li>U盘一个。制作引导盘，安装完成以后可以恢复&lt;/li>
+&lt;li>键盘。安装向导需要一些配置&lt;/li>
+&lt;li>网线。安装完成以后可以访问 web页面配置&lt;/li>
+&lt;/ul>
+&lt;p>软件安装包：&lt;/p>
+&lt;ul>
+&lt;li>Restful。官网：&lt;a href="http://rufus.ie/zh/">http://rufus.ie/zh/&lt;/a>&lt;/li>
+&lt;li>pve镜像。官网：&lt;a href="https://www.proxmox.com/en/downloads">https://www.proxmox.com/en/downloads&lt;/a>。要下载名称有 ISO Installer 才是系统镜像文件&lt;/li>
+&lt;/ul>
+&lt;h2 id="restful-制作安装">Restful 制作安装&lt;/h2>
+&lt;p>插上U盘，打开 Restful 写入镜像文件，设备选择U盘盘符，引导类型选择镜像文件，然后右边选择下载好的 PVE 镜像文件，其他的配置默认即可。&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/02/03/63dcb88214c79.png" alt="">&lt;/p>
+&lt;p>确认以后会有一个弹窗选择 DD 镜像模式写入。用个网上找的图片&lt;/p>
+&lt;p>&lt;img src="https://qnam.smzdm.com/202202/24/62174f66812b27757.png_e1080.jpg" alt="">&lt;/p>
+&lt;p>引导盘算制作好了。如果引导盘安装完成以后想要恢复成原来U盘，插上U盘，注意一下识别的盘符，引导类型选择为&lt;code>非可引导&lt;/code>重新格式化一下即可，文件系统 FAT32 不能写入超过 2G 大小的文件，所以我一般选 NTFS。&lt;/p>
+&lt;h2 id="虚拟机网段规划分配">虚拟机网段规划分配&lt;/h2>
+&lt;p>因为安装的时候需要配置 PVE 网络的网关，既然用了软路由肯定是要用 OpenWrt、爱快这种路由系统装到虚拟机里，所以在安装之前先规划一下虚拟机的 IP 分配问题。以我安装的 OpenWrt 为例。&lt;/p></description></item><item><title>中国联通SK-D748光猫超级密码获取</title><link>/posts/play_time/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9Ask-d748%E5%85%89%E7%8C%AB%E8%B6%85%E7%BA%A7%E5%AF%86%E7%A0%81%E8%8E%B7%E5%8F%96/</link><pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9Ask-d748%E5%85%89%E7%8C%AB%E8%B6%85%E7%BA%A7%E5%AF%86%E7%A0%81%E8%8E%B7%E5%8F%96/</guid><description>&lt;p>折腾软路由百忙之中抽时间来简单&lt;del>水&lt;/del>一篇。&lt;/p>
+&lt;p>有这个需求是因为目前在家里是用另一个无线路由器桥接联通的光猫的，但是在dhcp 里死活找不到桥接路由器分配的 ip，然后插上软路由竟然又把 ip 分配给软路由了，真是不服不行。&lt;/p>
+&lt;p>之前装联通宽带的时候尝试过找师傅要超级管理员的密码，但是师傅给我打哈哈糊弄过去了，给的一个普通 user 用户并没有静态 ip 的权限，所以就去网上找教程了，自己记录一下。&lt;/p>
+&lt;p>原文地址：&lt;a href="https://www.right.com.cn/forum/thread-8253868-1-1.html">https://www.right.com.cn/forum/thread-8253868-1-1.html&lt;/a>&lt;/p>
+&lt;p>设备型号 SK-D748-C&lt;/p>
+&lt;h2 id="第一步">第一步&lt;/h2>
+&lt;p>保证可以局域网内正常访问联通光猫的管理界面。比如我的光猫地址为 192.168.1.1&lt;/p>
+&lt;h2 id="第二步">第二步&lt;/h2>
+&lt;p>打开隐藏配置界面：&lt;a href="http://192.168.1.1/hidden_version_switch.html">http://192.168.1.1/hidden_version_switch.html&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/01/04/63b53083b2580.png" alt="1672818822972.png">&lt;/p>
+&lt;p>勾选图中的 Telnet Enable 选项，网页会刷新一下，接下来测试一下光猫的 telent 是否成功打开。&lt;/p>
+&lt;p>开始 - 运行 - cmd，运行 &lt;code>telnet 192.168.1.1&lt;/code> 提示输入登陆用户名称视为成功。&lt;/p>
+&lt;h2 id="第三步">第三步&lt;/h2>
+&lt;p>使用 ftp 连接光猫，默认的账号密码是 &lt;code>useradmin/useradmin&lt;/code> ，在 &lt;code>/var/tmp&lt;/code> 目录下的 &lt;code>telnet_su_passwd&lt;/code> 文件就是管理员密码。&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2023/01/04/63b533f299fab.png" alt="1672819703315.png">&lt;/p>
+&lt;p>我最后获得的密码格式是：前半段是光猫默认的 wifi 密码，从 CUAdmin 开始到后面一串数字是超级管理员的登陆密码&lt;/p>
+&lt;p>超级管理员用户名是 CUAdmin&lt;/p>
+&lt;h2 id="其他说明">其他说明&lt;/h2>
+&lt;ul>
+&lt;li>不要尝试在 ftp 里随意删除软件，可能导致设备异常&lt;/li>
+&lt;li>获取超级管理员权限后，修改任何设置前自行评估有无风险。&lt;/li>
+&lt;/ul></description></item><item><title>ZUT 使用路由器连接校园网</title><link>/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate><guid>/posts/play_time/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>我们学校的校园网不光每个月要宽带费 20/月，而且要绑定一个校园卡，我的一个月月租下来要 49/月，而且校园网还限制设备数量只能连接一个，我一般都是电脑连校园网，手机用流量，但是教职工的校园网就可以两个设备连接，寝室里目前有6+个设备也需要联网，商量以后打算搞个路由器贡献一个账号连校园网开 wifi，之前就见贴吧有老哥已经成功了，所以自己也尝试一下做个记录，给以后的同学看也不错。由于我已经连好路由器了，所以部分图片取自网络图片作为参考，我也尽量说的详细些。&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>对于任何硬件、软件的损坏，本人没有赔偿的责任，哪怕这样的后果是因教程中的错误造成的。也请认真对待每一步操作，也许因为你的操作不当硬件因此变成一块砖。另外本教程的操作会使你的路由器失去保修。&lt;/li>
+&lt;li>本篇文章仅起指导性的作用，在操作的过程中遇到的问题也许我也没有遇到过，请先自行尝试解决，如果我有空也会尽量帮助。&lt;/li>
+&lt;li>学校明令禁止安装路由器，本人绝对没有怂恿或建议任何同学安装路由器，本人安装路由器的行为完全属于个人意志，仅仅作为个人的学习技术交流，请读者在安装好路由器之后 24 小时内再将之拆除，请按照学校指明的方式连接到互联网。如果学校根据校规等文件追究责任，与本人无关。&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>叠甲过&lt;/p>
+&lt;h2 id="前置知识">前置知识&lt;/h2>
+&lt;p>校园网插入网线认证是要模拟 Dr.com 软件的发包认证，除了账号密码认证校园网以外，软件还会定时发送心跳包保证校园网连接。&lt;/p>
+&lt;p>zut 的校园网认证格式为账号：&lt;code>\r\n你的学号@[unicom|telecom|cmcc]&lt;/code> ，其中 &lt;code>@&lt;/code> 后面的是你的运营商，对照前面的格式分别为：联通、电信、移动，例如我的是联通校园网，账号就是：&lt;code>\r\n2022********@unicom&lt;/code>，密码就是你自己的密码。&lt;/p>
+&lt;p>zut 校园网的客户端版本为：6.0.0（P）&lt;/p>
+&lt;p>校园网的防检测插件原理还没有写，自己用的 小米4C 是社区固件资源中自带的。想看原理可以看最后挖坑部分&lt;/p>
+&lt;h2 id="需要的材料">需要的材料&lt;/h2>
+&lt;p>本教程使用的路由器型号 &lt;code>Xiaomi router 4c&lt;/code> pdd二手35，安装的系统 &lt;code>openwrt&lt;/code>。&lt;strong>请注意&lt;/strong>：路由器的选择直接影响到你后面的操作，我专门在网上挑了好久选的这个路由器，但是，&lt;strong>唯独这个路由器的社区资源最特殊&lt;/strong>，本人也是经过各种尝试才成功。如果选择其他路由器，本教程中的主要安装思路相同，但是需要自行寻找适合自己路由器的固件资源。&lt;/p>
+&lt;ul>
+&lt;li>路由器。&lt;/li>
+&lt;li>网线两根。一根我买的8m的，因为宿舍AP在门上面，另一根需要连接路由器和电脑，长度自己看。&lt;/li>
+&lt;li>开通校园网的账号。&lt;/li>
+&lt;li>自己思考的能力。&lt;/li>
+&lt;li>需要的软件压缩包：&lt;a href="https://wwn.lanzouy.com/igsaW0dn0k3a">zut_Xiaomi_router_4c.zip&lt;/a>。其中包含
+&lt;ul>
+&lt;li>dogcom.zip。用来进行校园网模拟拨号，定时发送心跳包的工具。&lt;/li>
+&lt;li>R3GV2 patches.zip。刷机的主要部分包含了：R3GV2 patches（前期连接路由器的工具）、Mi4C.bin（小米 4c 的 openwrt 固件自带防检测插件）、breed.bin（breed web 恢复控制台）&lt;/li>
+&lt;li>MobaXterm_Portable.zip。用来连接路由器和传输文件的软件&lt;/li>
+&lt;li>小米路由器4C恢复官方固件工具包.zip。刷成砖的&lt;a href="https://web.vip.miui.com/page/info/mio/mio/detail?postId=19134127&amp;amp;app_version=dev.20051">官方补救措施&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="教程参考的网站或资料">教程参考的网站或资料&lt;/h2>
+&lt;ul>
+&lt;li>贴吧老哥的教程：&lt;a href="https://tieba.baidu.com/p/7760362347">https://tieba.baidu.com/p/7760362347&lt;/a>&lt;/li>
+&lt;li>广东工业大学在 github 上的教程：&lt;a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt">https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt&lt;/a>&lt;/li>
+&lt;li>【记录】小米路由器 4C 刷机过程：&lt;a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27">https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27&lt;/a>&lt;/li>
+&lt;li>R4CM，说说我的小米路由器4C刷机过程：不用Linux也不用虚拟机…… ：&lt;a href="https://www.right.com.cn/FORUM/thread-4047571-1-1.html">https://www.right.com.cn/FORUM/thread-4047571-1-1.html&lt;/a>&lt;/li>
+&lt;li>路由器认证校园网drcom：&lt;a href="https://www.brothereye.cn/router/669/">https://www.brothereye.cn/router/669/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="开工">开工&lt;/h2>
+&lt;p>接通路由器电源，&lt;strong>使用网线连接路由器&lt;/strong>，进入初始化管理页面通常是 &lt;code>192.168.1.1&lt;/code>，能跳过就跳过，下图右选择无需拨号即可。（网络图片仅供参考）&lt;/p>
+&lt;p>&lt;img src="https://img.braindance.top/article/2022/10/11/63450a2f460ac.png" alt="ab3pm-21hcz.png">&lt;/p>
+&lt;p>接下来设置 wifi 名称和密码，可以勾选管理密码和 wifi 密码相同的框，保存以后会提示新的管理后台地址，通常是 &lt;code>192.168.31.1&lt;/code>，使用管理密码登陆以后，显示路由器界面就算初始化成功。&lt;/p></description></item><item><title>KKapi+ISpeak说说页面部署</title><link>/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate><guid>/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>感觉原来的 Artitalk 说说不好康，在开往里发现好多博客都用的说说功能叫叨叨点啥，看了看作者的&lt;a href="https://www.antmoe.com/speak/">说说页面&lt;/a>，可以插入图片和标签分类，还有仅自己可见的功能，感觉挺不错的（实际是自己想折腾）所以就整一个。自己在部署过程中实在是踩了不少的坑，而且作者的文档感觉写的也不算完善，所以打算自己记录一下。&lt;/p>
+&lt;h2 id="项目结构">项目结构&lt;/h2>
+&lt;p>作者的文档中各种仓库链接属实给我跳晕了，最后理出来的项目分为以下部分：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>kkapi&lt;/code>。是作为说说的后端部分，连接 MongoDB 数据库，还有一个&lt;code>kkadmin&lt;/code>的管理页面&lt;/li>
+&lt;li>&lt;code>ISpeak&lt;/code>。说说的主体部分，依赖于后端的 &lt;code>kkapi&lt;/code> ，分为前端的展示页面，和一个对接后端的发布说说页面。&lt;/li>
+&lt;/ul>
+&lt;p>作者文档中给出很多部署方法，白嫖版的就是 vercel 后端 api + 管理界面 + MongoDB 提供的云服务，但是个人感觉 vercel 经常被墙，所以部署的 api 感觉也不会稳定，而且考虑到数据的存放问题，所以我选择的是都部署到自己服务器上。&lt;/p>
+&lt;h2 id="后端部署">后端部署&lt;/h2>
+&lt;h3 id="docker-安装-mongodb">Docker 安装 Mongodb&lt;/h3>
+&lt;p>安装可以参考菜鸟教程的 &lt;a href="https://www.runoob.com/docker/docker-install-mongodb.html">Docker 安装 MongoDB&lt;/a> 。因为之前听过 MongoDB 的未授权访问，所以考虑到安全性问题，创建容器的时候添加 &lt;code>MONGO_INITDB_ROOT_USERNAME&lt;/code> 和 &lt;code>MONGO_INITDB_ROOT_PASSWORD&lt;/code> 设置用户的账号密码，开启Docker MongoDB 的身份验证。考虑到数据未来的迁移可以通过 &lt;code>-v&lt;/code> 挂载宿主机的一个目录。可以修改默认端口再减少一些风险。最后我启动的命令如下&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -d --name mongodb &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-p xxxxx:27017 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-v /my/own/datadir:/data/db &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-e MONGO_INITDB_ROOT_USERNAME&lt;span style="color:#f92672">=&lt;/span>mongoadmin &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-e MONGO_INITDB_ROOT_PASSWORD&lt;span style="color:#f92672">=&lt;/span>secret &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	--restart&lt;span style="color:#f92672">=&lt;/span>always
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	mongo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>之后可以使用工具测试一下连接。&lt;/p>
+&lt;h3 id="kkapi-部署">kkapi 部署&lt;/h3>
+&lt;p>和项目文档中的教程差不多，要注意使用的 node 版本请高于 &lt;code>16.0.0&lt;/code>&lt;/p></description></item><item><title>博客图床迁移</title><link>/posts/play_time/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>/posts/play_time/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="起因">起因&lt;/h2>
+&lt;p>原来博客的图片使用Jsdelivr和github的方式存储访问，但是最近Jsdelivr频繁的被墙，感觉可能在未来的不久会失效，毕竟好多人用来当免费的CDN（&lt;del>比如我&lt;/del>），也会有人使用其访问些zz敏感或其他的文件，被墙了也情有可原，而且github的仓库的作用也是用来存储代码而非图床，像我这样的人也导致了仓库的滥用，所以决定找个新的途径。&lt;/p>
+&lt;h2 id="过程">过程&lt;/h2>
+&lt;p>当时在网上找了好久，最后在loc上找到了 一个&lt;a href="https://hostloc.com/thread-807685-1-1.html">帖子&lt;/a>，感觉把目前行得通的方法都列出来了。&lt;/p>
+&lt;p>一、第三方存储&lt;/p>
+&lt;ol>
+&lt;li>github+jsdelivr 或 gitee 可以搭配PicGo使用&lt;/li>
+&lt;li>茎肛互撸娃大佬的鸡霸图床&lt;/li>
+&lt;li>国内对象存储&lt;/li>
+&lt;li>使用Onedrive 或 Google Drive 搭建图床&lt;/li>
+&lt;/ol>
+&lt;p>二、自行搭建&lt;/p>
+&lt;ol>
+&lt;li>（腾讯云轻量香港 or CDN） 反代 （本地 or 大盘鸡）&lt;/li>
+&lt;li>北岸域名+国内机器&lt;/li>
+&lt;li>国内机器非标准端口&lt;/li>
+&lt;li>家宽开通公网IP存在家里&lt;/li>
+&lt;/ol>
+&lt;p>三、直接嵌在文档中，图片转base64，markdown插入&lt;/p>
+&lt;p>最后我是选择了良心云的cos对象存储，新用户第一年便宜，就算以后续费一年差不多也70左右。之前自己有了解过对象存储这一技术，但是当时听闻的是有人被套路云的流量计费给掏空了，这次在良心云的计费方式中找到了按量计费，这也刚好满足了博客图片也不多的需求，更不怕被人把钱包给刷爆了。&lt;/p>
+&lt;p>上传的方式还是配合PicGo上传，又添加了一个&lt;a href="https://github.com/liuwave/picgo-plugin-rename-file">rename-file&lt;/a>插件实现上传路径的命名。因为感觉对象存储给的链接太长，国内没有备案的域名，使用了一个服务器直接域名重定向到对象存储给的域名。&lt;/p>
+&lt;h2 id="结果">结果&lt;/h2>
+&lt;p>宣布从这篇文章开始往后的图片都会用对象存储，之前的文章如果有需要评论或者联系我再补上吧。&lt;/p>
+&lt;h3 id="插曲避坑">插曲（避坑）&lt;/h3>
+&lt;p>期间使用对象存储测试图片的时候，发现过一阵子图片就访问不了了，去桶里一看发现空空如也，发生了两次清空也不知道啥原因，最后一次点了下清空存储桶，发现使用方式里有个&lt;strong>生命周期管理&lt;/strong>，发现是这玩意自动删除文件，所以记得把&lt;strong>生命周期规则修改一下&lt;/strong>。&lt;/p></description></item><item><title>博客搬迁</title><link>/posts/play_time/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</link><pubDate>Mon, 31 Jan 2022 11:31:54 +0800</pubDate><guid>/posts/play_time/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</guid><description>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/202201311142110.jpg" alt="202201311142110">&lt;/p>
+&lt;p>大四开始写毕业设计了，在学的过程中想记一记笔记，但是之前的hexo博客没动很久了，就想着把博客搬迁下顺便起个头，激起一些学习的劲头。&lt;/p>
+&lt;h1 id="为什么选择hugo">为什么选择Hugo&lt;/h1>
+&lt;p>因为静态的网站生成框架也没几个，搜索的时候也就hexo、hugo、jekyll。之前用的hexo确实很顺手，但是自己改网站，加功能的时候搞了好多&lt;strong>依赖&lt;/strong>，感觉很臃肿，当时的博客文件夹带上依赖大概就有500+MB，现在换了hugo看下是90MB。&lt;/p>
+&lt;p>hugo还有一个特点就是生成网站的速度很快。这一点我没有截图作比较，但是明显的感觉hugo比hexo快好多。引用一片文章里的一句话：&lt;/p>
+&lt;blockquote>
+&lt;p>根据相关博主提供的数据，他200篇左右的博文用Hexo 需要10分钟去生成静态网页，而Hugo 只需要10秒。&lt;/p>
+&lt;/blockquote>
+&lt;p>所以感觉要是长期写东西的话，&lt;strong>选个好的框架也是个长远的选择&lt;/strong>。&lt;/p>
+&lt;p>hugo在github上的⭐也比hexo多。&lt;/p>
+&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api/pin/?username=gohugoio&amp;amp;repo=hugo" alt="Readme Card">&lt;/p>
+&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api/pin/?username=hexojs&amp;amp;repo=hexo" alt="Readme Card">&lt;/p>
+&lt;p>不过在迁移的过程中，最大的感受就是：&lt;strong>Hugo在国内的使用者不多&lt;/strong>。&lt;/p>
+&lt;p>网上想要找个合适的教程非常难，然后就是去官网啃英文的文档。而且hugo框架和hexo比起来完全的不一样，鄙人go还没接触过，主要还是自己菜。一开始选了&lt;a href="https://github.com/luizdepra/hugo-coder">coder&lt;/a>这个主题，但是觉得还是对hugo本身的了解不够多，四处碰壁，最后选择了一个有国人维护的也是我现在在用的主题，就是&lt;a href="https://github.com/HEIGE-PCloud/DoIt">DoIt&lt;/a>，这个主题也是从上一代的主题迭代下来的，因为原来的那个已经很久没有维护了(可能觉得已经完工了)。这个主题的教程也很友好，摸完感觉我有点上手了。&lt;/p>
+&lt;h1 id="博客的部署">博客的部署&lt;/h1>
+&lt;p>之前使用hexo，在最后使用的时候发现了&lt;a href="https://www.travis-ci.com/">Travis CI - Test and Deploy with Confidence&lt;/a> &lt;strong>持续集成&lt;/strong>这个好东西，每次在本地写完博客以后push到github的仓库，然后这个app会自动构建博客发布到github pages。&lt;/p>
+&lt;p>所以这次也是一样的选择，一个仓库用来放博客本体(顺便当一个备份)，使用持续集成发布到github pages和自己服务器里。不过这次学到的是github Actions。因为之前有用过一些自动签到的脚本，所以这个东西也略有了解，差不多就借一个生产环境干一些事情。具体的配置github的官方docs也写的比较清楚还有中文翻译，上手还看了一篇阮老师的博客&lt;a href="https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程&lt;/a>。&lt;/p>
+&lt;p>发布到自己服务器上那块感觉处理的还不是很好，找了好几种方法：ftp上传、webhook，最后用了执行git clone的命令从github pages拉仓库。&lt;/p>
+&lt;p>所以最后的部署的流程就是：&lt;/p>
+&lt;blockquote>
+&lt;p>本地push到github仓库	&amp;ndash;&amp;gt;	仓库Actions发布到github pages、服务器拉取page仓库。&lt;/p>
+&lt;/blockquote></description></item><item><title>PicGo复制自定义链接</title><link>/posts/play_time/picgo%E5%A4%8D%E5%88%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5/</link><pubDate>Mon, 30 Nov 2020 09:54:11 +0000</pubDate><guid>/posts/play_time/picgo%E5%A4%8D%E5%88%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5/</guid><description>&lt;p>2022年2月3日22:41:32&lt;/p>
+&lt;p>&lt;strong>！！！！！&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>建议直接看文章末尾，我发现我就是个笨比。&lt;/strong>&lt;/p>
+&lt;h1 id="前言">前言&lt;/h1>
+&lt;p>现在博客里面的图片使用的是github+jsdelivr+PicGo图床。PicGo是一个开源的上传图片的软件，支持大部分图床的上传，只需要设置对应的图床参数即可一键上传。github上PicGo的概述：&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具&lt;/strong>&lt;/p>
+&lt;p>PicGo 本体支持如下图床：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>七牛图床&lt;/code> v1.0&lt;/li>
+&lt;li>&lt;code>腾讯云 COS v4\v5 版本&lt;/code> v1.1 &amp;amp; v1.5.0&lt;/li>
+&lt;li>&lt;code>又拍云&lt;/code> v1.2.0&lt;/li>
+&lt;li>&lt;code>GitHub&lt;/code> v1.5.0&lt;/li>
+&lt;li>&lt;code>SM.MS V2&lt;/code> v2.3.0-beta.0&lt;/li>
+&lt;li>&lt;code>阿里云 OSS&lt;/code> v1.6.0&lt;/li>
+&lt;li>&lt;code>Imgur&lt;/code> v1.6.0&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>本体不再增加默认的图床支持。你可以自行开发第三方图床插件。&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>项目地址：&lt;a href="https://github.com/Molunerfinn/PicGo">PicGo&lt;/a>&lt;/p>
+&lt;p>软件界面：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130095609.png" alt="">&lt;/p>
+&lt;h1 id="起因">起因&lt;/h1>
+&lt;p>PicGo上传成功以后可以自动复制url，但是默认复制的图片链接是github提供的，github在国内又经常抽风，图片通常都是无法访问的，所以我使用了jsdelivr提供的链接访问图片，PicGo也提供了自定义链接，但是规定必须包含&lt;code>$url&lt;/code>参数，也就是默认的url地址：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130093835.png" alt="">&lt;/p>
+&lt;p>起初是把jsdelivr的链接直接拼在后面，每次使用的时候都再删一次。直到昨晚受不了了就尝试去修改软件试图绕过判断。&lt;/p>
+&lt;h1 id="解决方法">解决方法&lt;/h1>
+&lt;p>在软件设置的配置文件里找到了&lt;code>customLink&lt;/code>，和之前自己设置的链接对照了一下，认为这个就是实际的自定义链接，直接在此处修改，再上传自动复制的链接就正确了，而且绕过了必须包含$url。&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130094455.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130094651.png" alt="">&lt;/p>
+&lt;h1 id="结语">结语&lt;/h1>
+&lt;p>软件提供了自动使用时间戳重命名，所以我自定义链接中还是使用了&lt;code>$filename&lt;/code>变量，然后博客中的图片大部分都是使用QQ的截屏功能，出来的截图后缀都是&lt;code>png&lt;/code>格式，这个可以根据需要自己设定拼接，然后使用的markdown编辑器是typora，想要添加图片直接&lt;!-- raw HTML omitted -->Crtl&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->Shift&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->i&lt;!-- raw HTML omitted -->，把图片链接贴里面就彳亍了。&lt;!-- raw HTML omitted -->&lt;del>白嫖真爽&lt;/del>&lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>jsdelivr 缓存刷新</title><link>/posts/play_time/jsdelivr-%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0/</link><pubDate>Fri, 20 Nov 2020 22:02:46 +0000</pubDate><guid>/posts/play_time/jsdelivr-%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>​	上一篇修改了黑幕，但是使用了jsdelivr加速的静态资源，所以照常更新下github上的资源，但是github上查看已经上传成功了，jsdelivr访问的依然是之前的资源，说白了就是缓存的问题。即使本地浏览器端的缓存已经清理，也会因为CDN周围的节点没有同步数据而导致用户端未能及时更新。&lt;/p>
+&lt;h2 id="缓存刷新">缓存刷新&lt;/h2>
+&lt;p>把原来访问的链接&lt;/p>
+&lt;p>&lt;code>https://cdn.jsdelivr.net/...&lt;/code>&lt;/p>
+&lt;p>改为&lt;/p>
+&lt;p>&lt;code>https://purge.jsdelivr.net/...&lt;/code>&lt;/p>
+&lt;p>访问资源就会进行刷新，然后页面会返回刷新信息：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201120222419.png" alt="">&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->划水&lt;!-- raw HTML omitted -->收工。&lt;/p></description></item><item><title>萌娘百科黑幕实现</title><link>/posts/play_time/%E8%90%8C%E5%A8%98%E7%99%BE%E7%A7%91%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</link><pubDate>Fri, 20 Nov 2020 10:13:07 +0000</pubDate><guid>/posts/play_time/%E8%90%8C%E5%A8%98%E7%99%BE%E7%A7%91%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>​	老早就觉得&lt;a href="https://zh.moegirl.org.cn/Mainpage">萌娘百科&lt;/a>里的&lt;!-- raw HTML omitted -->黑幕&lt;!-- raw HTML omitted -->很好玩，所以摸索着给自己博客加了一个。参考博客&lt;a href="https://www.cnblogs.com/send-off-a-friend/p/12355387.html">Re：萌娘百科上的黑幕实现&lt;/a>。不过我改的方法有稍稍有点不同，是把hexo渲染markdown文章中的删除线&lt;code>~~ ~~&lt;/code>标签修改了。我回来又想到了更好的方法，markdown支持文章中的&lt;strong>自定义标签&lt;/strong>，自己增加一个&lt;code>&amp;lt;span class='heimu'&amp;gt;...&amp;lt;/span&amp;gt;&lt;/code>标签更好。那么两种都记一下吧。当然用&lt;strong>自定义标签&lt;/strong>的话还可以保留&lt;strong>删除线&lt;/strong>。&lt;/p>
+&lt;h2 id="示例">示例&lt;/h2>
+&lt;p>&lt;!-- raw HTML omitted -->我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;a href="">我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;del>我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/del>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;strong>我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/strong>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;code>我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/code>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>原博客图&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210818171850.png" alt="">&lt;/p>
+&lt;p>萌娘百科&lt;a href="https://zh.moegirl.org.cn/Template:%E9%BB%91%E5%B9%95">官方介绍&lt;/a>&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>​	先进入主题的资源文件夹&lt;code>themes\butterfly\source\&lt;/code>，修改需要用到的文件&lt;code>css\_global\index.styl&lt;/code>、&lt;code>js/main.js&lt;/code>。&lt;/p>
+&lt;p>​	说明一下两个文件的作用：主题的总样式表&lt;code>index.css&lt;/code>是经过整合形成的，而**.styl文件是基于Node.js的CSS的预处理框架**，我们会在这个里面添加黑幕的样式。&lt;code>main.js&lt;/code>里面使用选择器为标签添加&lt;code>title='你知道的太多了'&lt;/code>，这个可以修改成自己喜欢的。&lt;/p>
+&lt;h2 id="修改自定义标签">修改自定义标签&lt;/h2>
+&lt;ol>
+&lt;li>在&lt;code>index.styl&lt;/code>文件末尾添加&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-stylus" data-lang="stylus">&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span> &lt;span style="color:#f92672">a&lt;/span>, &lt;span style="color:#f92672">a&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span> &lt;span style="color:#f92672">a&lt;/span>.&lt;span style="color:#a6e22e">new&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span> &lt;span style="color:#f92672">code&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> background&lt;span style="color:#f92672">-&lt;/span>color: &lt;span style="color:#ae81ff">#252525&lt;/span> !important
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: &lt;span style="color:#ae81ff">#252525&lt;/span> !important
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> text-shadow: &lt;span style="color:#66d9ef">none&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span>,.&lt;span style="color:#a6e22e">heimu&lt;/span> &lt;span style="color:#f92672">code&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: &lt;span style="color:#66d9ef">white&lt;/span> !important;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span> &lt;span style="color:#f92672">a&lt;/span>, &lt;span style="color:#f92672">a&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span> &lt;span style="color:#f92672">a&lt;/span>, &lt;span style="color:#f92672">a&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: &lt;span style="color:#66d9ef">lightblue&lt;/span> !important;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span> .&lt;span style="color:#a6e22e">new&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span> .&lt;span style="color:#a6e22e">new&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span>, .&lt;span style="color:#a6e22e">new&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">hover&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">heimu&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span> .&lt;span style="color:#a6e22e">new&lt;/span>, .&lt;span style="color:#a6e22e">heimu&lt;/span> .&lt;span style="color:#a6e22e">new&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span>, .&lt;span style="color:#a6e22e">new&lt;/span>:&lt;span style="color:#960050;background-color:#1e0010">active&lt;/span> .&lt;span style="color:#a6e22e">heimu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: &lt;span style="color:#ae81ff">#BA0000&lt;/span> !important;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>因为是&lt;code>.styl&lt;/code>的文件，缩进是很严格的，自行按照前面缩进来整理一下。上面那么多就是兼容了一下黑幕下的超链接、粗体、代码块。主要是超链接。&lt;/p></description></item><item><title>jsDelivr加速静态博客</title><link>/posts/play_time/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link><pubDate>Wed, 11 Nov 2020 21:37:53 +0000</pubDate><guid>/posts/play_time/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>​	这几天总感觉博客访问特别慢，最先是找到了CDN加速，但是在国内加速的话域名都是要备案的，又看了看境外加速。&lt;/p>
+&lt;blockquote>
+&lt;p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科&lt;/p>
+&lt;/blockquote>
+&lt;p>在犹豫要不要买的时候，发现了这个东西：&lt;a href="https://www.jsdelivr.com/">jsdelivr&lt;/a>，一个可以加速静态资源的免费CDN，官网上能看的出和WordPress有什么py关系还可以加速github的资源。hexo是静态博客，那么我就把博客要用到的js、css、还有博客用到的一些图片都放github然后引用。开搞&lt;/p>
+&lt;h2 id="1-新建仓库">1. 新建仓库&lt;/h2>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111202508.png" alt="">&lt;/p>
+&lt;p>​	名字重了是因为我已经创建好了并且使用了以后才来写的博客。&lt;/p>
+&lt;h2 id="2-克隆git仓库到本地">2. 克隆Git仓库到本地&lt;/h2>
+&lt;p>​	在自己电脑建个文件夹然后打开git输入&lt;code>git clone 你仓库的链接&lt;/code>，把刚刚创建的仓库拉倒本地方便上传到仓库。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111203733.png" alt="">&lt;/p>
+&lt;p>廖雪峰老师的git教程我当时看了一遍，觉得非常棒，哈哈哈就是自己太菜了又给忘了，帖出来：&lt;a href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000">Git简介&lt;/a>。&lt;/p>
+&lt;h2 id="3-上传需要加速的资源">3. 上传需要加速的资源&lt;/h2>
+&lt;p>​	把需要上传的资源整理到刚刚拉下来的本地git仓库，上传。&lt;/p>
+&lt;pre tabindex="0">&lt;code>git status //查看状态
+git add . //添加所有文件到暂存区
+git commit -m &amp;#39;第一次提交&amp;#39; //把文件提交到仓库
+git push //推送至远程仓库
+&lt;/code>&lt;/pre>&lt;p>​	这里我说一下是怎么加速自己的博客的，因为博客加载的时候需要加载主题的各种js和css文件，然后因为服务器网渣所以加载时间很慢，使用加速的话就会加载的快。&lt;/p>
+&lt;p>​	接下来是要上传哪些文件，我使用的是&lt;code>butterfly&lt;/code>这个主题，&lt;a href="https://github.com/jerryc127/hexo-theme-butterfly">主题github&lt;/a>支持一下作者，直接在主题&lt;code>theme/butterfly&lt;/code>文件夹下面找到资源文件夹&lt;code>source&lt;/code>发现里面都是一些零碎的文件，但是在发布文件夹&lt;code>public&lt;/code>下是一个完整的js和css，所以猜测生成的时候会把零碎的文件进行整合，然后主题配置文件里作者也写的很清楚&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111205045.png" alt="">	穷人流下了不争气的泪。传！(真加速还得选好服务器)&lt;/p>
+&lt;p>​	这里我的分析是：由于引用的不是本地的资源文件，所以可能会产生自己在本地修改了某项配置，但是网页没有生效，这里就需要时刻记着自己引用的是github上的资源，如果本地配置大改的话，github上的文件也要进行重新上传覆盖。&lt;/p>
+&lt;p>​	做法：配置文件里找到引用的是本地资源的项，然后在生成网站的&lt;code>public&lt;/code>文件下找到对应的资源文件。&lt;/p>
+&lt;p>我列一下我在配置文件里修改的项：&lt;code>main_css&lt;/code>、&lt;code>main&lt;/code>、&lt;code>utils&lt;/code>、&lt;code>local_search&lt;/code>、&lt;code>algolia_js&lt;/code>、&lt;code>translate&lt;/code>，因为使用的是&lt;code>Valine&lt;/code>评论，里面可以设置自定义表情，我也使用这个方法修改了。&lt;/p>
+&lt;h2 id="3-获取地址">3. 获取地址&lt;/h2>
+&lt;p>​	官网首页很清楚的写明了如何获取资源链接&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201111211357.png" alt="">&lt;/p>
+&lt;p>​	&lt;code>https://cdn.jsdelivr.net/gh/user/repo@version/file&lt;/code>，&lt;code>user&lt;/code>就是你的github用户名，&lt;code>repo@version&lt;/code>，仓库加上版本号，&lt;code>file&lt;/code>就是仓库下的路径。&lt;/p>
+&lt;p>​	这里我没有说版本号是因为网上的教程讲到了仓库需要发布，但是我后面无意间发现不用发布直接&lt;code>reop@分支名&lt;/code>，也可以访问到。并且我一开始也发布仓库了，但是后面想要修改已经上传的文件也出了一些问题，索性直接用简单的。&lt;/p>
+&lt;p>​	贴一个我博客首页的壁纸链接：https://cdn.jsdelivr.net/gh/penginman/PicBed@master/top_img/83531406_p0.png&lt;/p>
+&lt;p>​	这个壁纸有12M大小，而且链接也符合上面的格式，可以参考一下。&lt;/p>
+&lt;h2 id="4-引用链接">4. 引用链接&lt;/h2>
+&lt;p>​	配置文件里可以找需要替换的资源，直接贴上链接就可以了，只不过以后别忘了&lt;strong>你现在引用的是之前的上传的静态资源&lt;/strong>，别忘啦！别忘啦！别忘啦！&lt;/p>
+&lt;p>​	我发现github能这样用以后就在上面整了图床，现在博客里的图片都开始在上传，之前用的路过图床，说的全球都有CDN加速，但是还是卡的一。&lt;/p>
+&lt;p>​	还有我整理的&lt;code>Valine&lt;/code>评论的自定义表情，大伙可以直接拿去用：&lt;a href="https://cdn.jsdelivr.net/gh/penginman/CDN@master/emoji/">图片地址&lt;/a>，&lt;a href="https://cdn.jsdelivr.net/gh/penginman/CDN@master/emoji/valine.json">emojimap&lt;/a>。完工&lt;/p></description></item><item><title>Chevereto-搭建一个自己的图床</title><link>/posts/play_time/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/</link><pubDate>Sun, 20 Sep 2020 11:09:02 +0000</pubDate><guid>/posts/play_time/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/</guid><description>&lt;p>博客搭完了，自己选择的这个博客主题又是以图片为主要元素的，当然要考虑图片的使用问题了，原来打算直接放在服务器上，但是后来想了想，以后如果文章&lt;del>越写越多&lt;/del>用的图太多服务器的流量也不够用，想到了图床这一托管图片的服务，但是放在别人的上面总怕会受到&lt;del>限制&lt;/del>，正好发现了&lt;code>Chevereto&lt;/code>这一图床系统，可以自己搭建一个图床服务器，正好自己还有一个阿里云学生云，那就开工。&lt;/p>
+&lt;h3 id="chevereto-说明">Chevereto 说明&lt;/h3>
+&lt;blockquote>
+&lt;p>Chevereto是一个可以帮助你建立自己的图像分享网站（图床）的应用程序，我们的目标是可以让世界上的任何一个人都可以建立自己的图像共享平台。我们坚定不移的为那些想要可定制的白标图像共享服务的人建立一个真正的替代品。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;code>Chevereto&lt;/code>分为免费版和付费版，区别肯定就是大小什么的，我这个搭在学生云上肯定就不用想我会选择哪个了吧🤣&lt;/p>
+&lt;h3 id="环境说明">环境说明&lt;/h3>
+&lt;p>因为&lt;code>Chevereto&lt;/code>所需要的环境为&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Apache/Nginx&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>PHP 5.5+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>MySQL 5.0+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;del>我太懒了不想动&lt;/del>所以我选择使用宝塔面板为我们搭建web环境。&lt;/p>
+&lt;p>宝塔面板官网：https://www.bt.cn/&lt;/p>
+&lt;p>安装完成以后进入管理面板应该会直接提示你安装需要的环境&lt;/p>
+&lt;p>我的环境如下图&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9TVP.png" alt="BJ9TVP.png">&lt;/p>
+&lt;h3 id="总结安装步骤">总结安装步骤&lt;/h3>
+&lt;ol>
+&lt;li>去github下载Chevereto的压缩包。&lt;/li>
+&lt;li>在宝塔面板上新建网站目录，创建一个存图片的数据库(自行创建)。&lt;/li>
+&lt;li>将Chevereto的压缩包上传到网站目录解压。&lt;/li>
+&lt;li>访问新建的网站就是Chevereto的管理面板，并进行初始配置。&lt;/li>
+&lt;li>无了。&lt;/li>
+&lt;/ol>
+&lt;h3 id="开始">开始&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/Chevereto/Chevereto-Free/releases">github下载地址&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>创建网站目录和数据库用户&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9H58.png" alt="BJ9H58.png">&lt;/p>
+&lt;p>因为我域名所以域名留空，提示默认使用&lt;code>80&lt;/code>端口，访问地址就是服务器ip地址，剩下的自己随机发挥。&lt;/p>
+&lt;ul>
+&lt;li>创建完成后需要配置一下网站配置文件才可以访问到配置页面。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9Ibt.png" alt="BJ9Ibt.png">&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9qPS.png" alt="BJ9qPS.png">&lt;/p>
+&lt;p>在&lt;code>server{...}&lt;/code>中添加&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">location&lt;/span> &lt;span style="color:#e6db74">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">try_files&lt;/span> $uri $uri/ &lt;span style="color:#e6db74">/index.php?&lt;/span>$query_string;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置完成以后应该会自动保存并重启&lt;code>Nginx&lt;/code>。&lt;/p>
+&lt;ul>
+&lt;li>将在github上下载的&lt;code>Chevereto&lt;/code>压缩包上传到刚刚创建的网站目录中（上图是&lt;code>/www/wwwroot&lt;/code>）并解压。&lt;/li>
+&lt;/ul>
+&lt;p>之后就可以直接访问&lt;code>服务器ip:80&lt;/code>（80端口可以省略），然后一步一步的进行配置。&lt;/p>
+&lt;p>&lt;strong>可能会出现的错误&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>Chevereto can’t create the app/settings.php file. You must manually create this file&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;p>解决方法：这个错误就是没有找到&lt;code>setting.php&lt;/code>配置文件，压缩包内似乎没有创建该文件，我们可以自行创建，在&lt;code>Chevereto&lt;/code>的网站目录下的&lt;code>/app&lt;/code>目录下执行命令创建文件，并修改文件权限&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>touch settings.php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x settings.php
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>我自己还遇到了第二个错误，大概的意思就是访问权限不足blahbalhblahbla，我改了好久都不行。最后直接把整个网站目录的权限给改了访问成功。知道这样做不对，希望大佬能指点。&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>访问网站进行网站的初始化配置，大概就是填写数据库名称、数据库账号密码、管理员的账户和密码和一些信息。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ97Uf.jpg" alt="BJ97Uf.jpg">&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9O2Q.jpg" alt="BJ9O2Q.jpg">&lt;/p>
+&lt;p>完成以后就可以登陆管理员账号进入管理面板，我是首先去设置里找到语言设置把面板改成了中文。&lt;/p>
+&lt;h3 id="完工">完工&lt;/h3>
+&lt;p>管理面板还有好多其他功能，我都还没研究过，大伙可以以后可以自己慢慢学习&lt;/p>
+&lt;p>然后我的图床地址：http://47.97.231.10/ (已失效) &lt;del>🈚👇👻来丶se兔&lt;/del>&lt;/p></description></item><item><title>Let_s_Encrypt 免费Https证书</title><link>/posts/play_time/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/</link><pubDate>Thu, 03 Sep 2020 15:30:37 +0000</pubDate><guid>/posts/play_time/lets-encrypt-%E5%85%8D%E8%B4%B9https%E8%AF%81%E4%B9%A6/</guid><description>&lt;p>参考文章:&lt;a href="https://imququ.com/post/letsencrypt-certificate.html">Let&amp;rsquo;s Encrypt，免费好用的 HTTPS 证书&lt;/a>&lt;/p>
+&lt;h3 id="先放官网">先放官网&lt;/h3>
+&lt;p>&lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt&lt;/a> 是免费、自动化、开放的证书签发服务, 它得到了 Mozilla、Cisco、Akamai、Electronic Frontier Foundation 和 Chrome 等众多公司和机构的支持，发展十分迅猛&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h4 id="所需环境">所需环境&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>一个 HTTP 服务，以 Nginx 为例&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>python&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>两个目录:&lt;/p>
+&lt;blockquote>
+&lt;p>/site	网站目录&lt;/p>
+&lt;p>/site_site_cert	保存证书的目录&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>证书的颁发有两种方式：&lt;/strong>&lt;/p>
+&lt;h4 id="通过在线生成">通过在线生成&lt;/h4>
+&lt;p>通过网址在线生成，需要验证文件&lt;/p>
+&lt;h4 id="通过程序生成">通过程序生成&lt;/h4>
+&lt;p>通过本地 IIS，生成后会自动绑定本地 IIS 站点上的HTTPS 域名。&lt;/p>
+&lt;p>我使用的是第一种方法：在线生成，原理是：先在你的服务器上传一个密钥，然后Let&amp;rsquo;s Encrypt会对网站进行访问，下载密钥进行验证。&lt;/p>
+&lt;hr>
+&lt;h3 id="开工">开工&lt;/h3>
+&lt;h3 id="创建账号">创建账号&lt;/h3>
+&lt;p>首先创建一个目录，我是在根目录下创建文件夹site_cert&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir /site_cert
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个文件夹用来存放各种临时文件和最后的证书文件。进入这个目录，创建一个RSA私钥，用于Let&amp;rsquo;s Encrypt识别你的身份&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openssl genrsa &lt;span style="color:#ae81ff">4096&lt;/span> &amp;gt; account.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="创建csr文件">创建CSR文件&lt;/h3>
+&lt;p>在这之前，还需要创建域名私钥（一定不要使用上面的账户私钥）&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openssl genrsa &lt;span style="color:#ae81ff">4096&lt;/span> &amp;gt; domain.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>我参考的文章提到了两种私钥RSA和ECC，我现在也还不懂什么原理，把两种区别放出来吧&lt;/p>
+&lt;blockquote>
+&lt;p>RSA 私钥：兼容性好&lt;/p>
+&lt;p>ECC 私钥：部分老旧操作系统、浏览器不支持。优点是证书体积小&lt;/p>
+&lt;/blockquote>
+&lt;p>两个用于身份身份验证的私钥文件创建好，就可以生成CSR（Certificate Signing Request，证书签名请求）文件了，申请时可以把域名带 &lt;code>www&lt;/code> 和不带 &lt;code>www&lt;/code> 的两种情况都加进去，一张证书最多可以包含100个域名。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openssl req -new -sha256 -key domain.key -subj &lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span> -reqexts SAN -config &amp;lt;&lt;span style="color:#f92672">(&lt;/span>cat /etc/ssl/openssl.cnf &amp;lt;&lt;span style="color:#f92672">(&lt;/span>printf &lt;span style="color:#e6db74">&amp;#34;[SAN]\nsubjectAltName=DNS:yoursite.com,DNS:www.yoursite.com&amp;#34;&lt;/span>&lt;span style="color:#f92672">))&lt;/span> &amp;gt; domain.csr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>其中DNS的&lt;code>yoursite.com&lt;/code>和&lt;code>www.yoursite.com&lt;/code>记得要换成自己的域名&lt;/li>
+&lt;/ul>
+&lt;p>我在这里遇到了问题提示找不到&lt;code>/etc/ssl/openssl.cnf&lt;/code>文件，在网上找的的&lt;a href="https://blog.csdn.net/hjxdreamer/article/details/103296944">解决办法&lt;/a>是&lt;/p></description></item><item><title>Freenom域名注册解析到服务器</title><link>/posts/play_time/freenom%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E8%A7%A3%E6%9E%90%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</link><pubDate>Wed, 02 Sep 2020 12:25:37 +0000</pubDate><guid>/posts/play_time/freenom%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E8%A7%A3%E6%9E%90%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid><description>&lt;h3 id="1官网">&lt;strong>1.官网&lt;/strong>&lt;/h3>
+&lt;p>&lt;a href="https://www.freenom.com/zh/index.html?lang=zh">Freenom - 人人都熟悉的名字&lt;/a>&lt;/p>
+&lt;p>官网右上角可以切换中文，简直了。&lt;/p>
+&lt;p>然后觉得我讲的有点啰嗦的还可以看油管上的&lt;a href="https://www.youtube.com/watch?v=IAZDrtmQeh0">freenom教学视频&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9Xvj.png" alt="BJ9Xvj.png">&lt;/p>
+&lt;h3 id="2搜索想要的域名">&lt;strong>2.搜索想要的域名&lt;/strong>&lt;/h3>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJCFGF.png" alt="BJCFGF.png">&lt;/p>
+&lt;p>​	搜索以后会列出来可以选择的域名列表，上面的是免费域名，下面的则是一些付费域名。&lt;/p>
+&lt;p>​	我在这里还遇到了一个坑提前说。freenom提供的有自己的域名解析服务，国内也可以访问的到，我遇到了一个问题有回答说换个DNS解析就行，推荐的是&lt;a href="https://dns.he.net/">Hurricane Electric Hosted &lt;em>DNS&lt;/em>&lt;/a>，但这个网站禁止了.tk域名的解析。类似的问题请自行先考虑&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9xrn.png" alt="BJ9xrn.png">接下来选中域名以后点击Get it now！以后只是添加到购物车，随后点击界面中的Checkout跳转到结算界面，这里只用选择期限即可。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJ9vKs.png" alt="BJ9vKs.png">点击continue按钮会提示注册，这里又有坑。&lt;/p>
+&lt;blockquote>
+&lt;p>由于蝗虫一般涌入试图薅羊毛的中国人让 &lt;code>freenom&lt;/code> 极度不爽, &lt;code>freenom&lt;/code> 的免费域名注册对中国人并不友好, 极大概率注册会失败. 为了顺利注册免费域名, 请首先用美国 IP 翻着墙, 使用 Google 账号直接登录该站, 不必自主注册账号, 在填写个人资料时, 用 &lt;a href="https://www.fakenamegenerator.com/">fakenamegenerator.com&lt;/a> 胡诌个美国住址, 就可以随意注册免费域名了.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="3域名解析">&lt;strong>3.域名解析&lt;/strong>&lt;/h3>
+&lt;p>​	完成以后点击Services&amp;ndash;&amp;gt;My Domains进入域名管理页面。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJCk24.png" alt="BJCk24.png">&lt;/p>
+&lt;p>点击域名后面的Manage Domain进入域名解析&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/penginman/PicBed/master/20201029160037.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJCpV0.png" alt="BJCpV0.png">&lt;/p>
+&lt;p>​	Nameservers就是域名解析服务器进入后两个选项，第一个是使用freenom的域名解析服务器，第二个是使用其他域名解析商的服务器。&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJC9aV.png" alt="BJC9aV.png">&lt;/p>
+&lt;p>之后点击Manage Freenom DNS进行域名解析就可以使用注册的域名访问了，示例：&lt;/p>
+&lt;p>&lt;img src="https://s1.ax1x.com/2020/10/29/BJCiPU.png" alt="BJCiPU.png">&lt;/p></description></item></channel></rss>
