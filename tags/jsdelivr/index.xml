@@ -7,11 +7,10 @@
 &lt;p>&lt;code>https://purge.jsdelivr.net/...&lt;/code>&lt;/p>
 &lt;p>访问资源就会进行刷新，然后页面会返回刷新信息：&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201120222419.png" alt="">&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->划水&lt;!-- raw HTML omitted -->收工。&lt;/p></description></item><item><title>jsDelivr加速静态博客</title><link>/posts/play_time/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link><pubDate>Wed, 11 Nov 2020 21:37:53 +0000</pubDate><guid>/posts/play_time/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>划水收工。&lt;/p></description></item><item><title>jsDelivr加速静态博客</title><link>/posts/play_time/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link><pubDate>Wed, 11 Nov 2020 21:37:53 +0000</pubDate><guid>/posts/play_time/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>​	这几天总感觉博客访问特别慢，最先是找到了CDN加速，但是在国内加速的话域名都是要备案的，又看了看境外加速。&lt;/p>
 &lt;blockquote>
-&lt;p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科&lt;/p>
-&lt;/blockquote>
+&lt;p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科&lt;/p>&lt;/blockquote>
 &lt;p>在犹豫要不要买的时候，发现了这个东西：&lt;a href="https://www.jsdelivr.com/">jsdelivr&lt;/a>，一个可以加速静态资源的免费CDN，官网上能看的出和WordPress有什么py关系还可以加速github的资源。hexo是静态博客，那么我就把博客要用到的js、css、还有博客用到的一些图片都放github然后引用。开搞&lt;/p>
 &lt;h2 id="1-新建仓库">1. 新建仓库&lt;/h2>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111202508.png" alt="">&lt;/p>

@@ -21,7 +21,6 @@
 &lt;p>​	检查一下都有什么过滤。发现有一下过滤&lt;/p>
 &lt;blockquote>
 &lt;p>script &amp;ndash;&amp;gt; scr_ipt&lt;/p>
-&lt;p>onmouseover &amp;ndash;&amp;gt; o_nmouseover&lt;/p>
-&lt;/blockquote>
+&lt;p>onmouseover &amp;ndash;&amp;gt; o_nmouseover&lt;/p>&lt;/blockquote>
 &lt;p>无法采用事件，那么尝试构造一个标签&lt;code> &amp;quot;&amp;gt; &amp;lt;a href='javascript:alert()'&amp;gt;233&amp;lt;/a&amp;gt; //&lt;/code>，发现&lt;code>javascript&lt;/code>没有过滤，说明判断语句匹配值仅仅为&lt;code>script&lt;/code>，点击构造的&lt;code>&amp;lt;a&amp;gt;&lt;/code>标签内容。完工&lt;/p>
 &lt;p>​&lt;/p></description></item></channel></rss>

@@ -160,8 +160,7 @@ if (isset($_POST[&amp;#39;submit&amp;#39;])) {
 }
 &lt;/code>&lt;/pre>&lt;p>过滤部分：&lt;/p></description></item><item><title>Upload-Labs(一)</title><link>/posts/ctf/upload-labs1/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0000</pubDate><guid>/posts/ctf/upload-labs1/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
 &lt;blockquote>
-&lt;p>大部分的网站和应用系统都有上传功能，而程序员在开发任意文件上传功能时，并未考虑文件格式后缀的合法性校验或者是否只在前端通过js进行后缀检验。这时攻击者可以上传一个与网站脚本语言相对应的恶意代码动态脚本，例如(jsp、asp、php、aspx文件后缀)到服务器上，从而访问这些恶意脚本中包含的恶意代码，进行动态解析最终达到执行恶意代码的效果，进一步影响服务器安全。&lt;/p>
-&lt;/blockquote>
+&lt;p>大部分的网站和应用系统都有上传功能，而程序员在开发任意文件上传功能时，并未考虑文件格式后缀的合法性校验或者是否只在前端通过js进行后缀检验。这时攻击者可以上传一个与网站脚本语言相对应的恶意代码动态脚本，例如(jsp、asp、php、aspx文件后缀)到服务器上，从而访问这些恶意脚本中包含的恶意代码，进行动态解析最终达到执行恶意代码的效果，进一步影响服务器安全。&lt;/p>&lt;/blockquote>
 &lt;p>在线靶机地址：&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://buuoj.cn/challenges#Upload-Labs-Linux">linux环境&lt;/a>&lt;/li>

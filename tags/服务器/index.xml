@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>服务器 on</title><link>/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link><description>Recent content in 服务器 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>ClawCloud使用体验</title><link>/posts/%E6%96%B0%E5%85%A5clawcloud/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>/posts/%E6%96%B0%E5%85%A5clawcloud/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>快毕业了忙的飞起，上个服务器到期了我都没来得及管，现在写这篇博客还是在github的pages上，又接触了一些项目，想买个便宜好使的服务器玩玩。&lt;/p>
+&lt;p>在论坛里搜到&lt;a href="https://claw.cloud/">ClawCloud&lt;/a>评价不错，刚好最近有活动优惠就入手了一台系统为Debian，之前一直用的ubuntu，这下也换个玩玩。记录一下机器怎么样和自己配置过程，也边以后自己看。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>2C / 2G / 40G / 1T&lt;/th>
+ &lt;th>$25.20 USD&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="测评">测评&lt;/h2>
+&lt;p>部分测试结果：&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPS融合怪版本：2025.02.12
+Shell项目地址：https://github.com/spiritLHLS/ecs
+Go项目地址：https://github.com/oneclickvirt/ecs
+---------------------基础信息查询--感谢所有开源项目---------------------
+ CPU 型号 : Intel(R) Xeon(R) Platinum
+ CPU 核心数 : 2
+ CPU 频率 : 2500.002 MHz
+ CPU 缓存 : L1: 32.00 KB / L2: 1.00 MB / L3: 33.00 MB
+ AES-NI指令集 : ✔ Enabled
+ VM-x/AMD-V支持 : ❌ Disabled
+ 内存 : 130.84 MiB / 1.85 GiB
+ Swap : [ no swap partition or swap file detected ]
+ 硬盘空间 : 911.28 MiB / 40110.19 MiB
+ 启动盘路径 : /dev/vda1
+ 系统在线时间 : 0 days, 0 hour 5 min
+ 负载 : 1.02, 0.34, 0.12
+ 系统 : Debian GNU/Linux 12 (bookworm) (x86_64)
+ 架构 : x86_64 (64 Bit)
+ 内核 : 6.1.0-31-cloud-amd64
+ TCP加速方式 : cubic
+ 虚拟化架构 : KVM
+ NAT类型 : Full Cone
+ IPV4 ASN : AS45102 Alibaba (US) Technology Co., Ltd.
+ IPV4 位置 : Tokyo / Tokyo / JP
+ IPV6 ASN : AS45102 Alibaba
+ IPV6 位置 : Tokyo / Tokyo / Japan
+ IPV6 子网掩码 : 128
+----------------------CPU测试--通过sysbench测试-------------------------
+ -&amp;gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)
+ 1 线程测试(单核)得分: 		1062 Scores
+ 2 线程测试(多核)得分: 		1770 Scores
+---------------------内存测试--感谢lemonbench开源-----------------------
+ -&amp;gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)
+ 单线程读测试:		5350.57 MB/s
+ 单线程写测试:		5815.83 MB/s
+------------------磁盘dd读写测试--感谢lemonbench开源--------------------
+ -&amp;gt; 磁盘IO测试中 (4K Block/1M Block, Direct Mode)
+ 测试操作		写速度					读速度
+ 100MB-4K Block		35.0 MB/s (8551 IOPS, 2.99s)		52.4 MB/s (12800 IOPS, 2.00s)
+ 1GB-1M Block		232 MB/s (221 IOPS, 4.52s)		208 MB/s (198 IOPS, 5.04s)
+---------------------磁盘fio读写测试--感谢yabs开源----------------------
+Block Size | 4k (IOPS) | 64k (IOPS)
+ ------ | --- ---- | ---- ---- 
+Read | 20.68 MB/s (5.1k) | 96.31 MB/s (1.5k)
+Write | 20.69 MB/s (5.1k) | 96.82 MB/s (1.5k)
+Total | 41.37 MB/s (10.3k) | 193.13 MB/s (3.0k)
+ | | 
+Block Size | 512k (IOPS) | 1m (IOPS)
+ ------ | --- ---- | ---- ---- 
+Read | 91.97 MB/s (179) | 91.36 MB/s (89)
+Write | 96.85 MB/s (189) | 97.44 MB/s (95)
+Total | 188.82 MB/s (368) | 188.81 MB/s (184)
+&lt;/code>&lt;/pre>&lt;p>完整测试结果连接如下：&lt;/p></description></item></channel></rss>

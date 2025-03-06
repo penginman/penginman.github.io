@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sql注入 on</title><link>/tags/sql%E6%B3%A8%E5%85%A5/</link><description>Recent content in Sql注入 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0000</lastBuildDate><atom:link href="/tags/sql%E6%B3%A8%E5%85%A5/index.xml" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0000</pubDate><guid>/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description>&lt;h1 id="easy_sql">easy_sql&lt;/h1>
 &lt;p>在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是&lt;strong>括号单引号闭合&lt;/strong>&lt;/p>
 &lt;blockquote>
-&lt;p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;lsquo;1&amp;rsquo;) LIMIT 0,1&amp;rsquo; at line 1&lt;/p>
-&lt;/blockquote>
+&lt;p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;lsquo;1&amp;rsquo;) LIMIT 0,1&amp;rsquo; at line 1&lt;/p>&lt;/blockquote>
 &lt;p>过滤的字符有union，所以尝试报错注入，查询版本号。&lt;/p>
 &lt;pre tabindex="0">&lt;code>admin&amp;#39;) and (extractvalue(1,concat(0x7e,(select version()),0x7e)))#
 &lt;/code>&lt;/pre>&lt;p>接下来想要通过&lt;strong>information_schema&lt;/strong>库查字段，但是发现被过滤了，所以猜表名和字段名，尝试出了flag表和表中的一个字段id，但是在id字段中只查询出了一个值：1，使用sqlmap跑也没跑出来。&lt;/p>

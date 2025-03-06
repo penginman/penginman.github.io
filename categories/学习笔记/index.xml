@@ -60,8 +60,7 @@
 &lt;p>Python查找一个变量时会按照“局部作用域”、“嵌套作用域”、“全局作用域”和“内置作用域”的顺序进行搜索。内置作用域及python内置的标识符如：&lt;code>input&lt;/code>、&lt;code>print&lt;/code>、&lt;code>int&lt;/code>。
 可以使用&lt;code>global&lt;/code>关键字来指示局部函数中的变量来自&lt;strong>全局变量&lt;/strong>，&lt;code>nonlocal&lt;/code>关键字表示变量来自&lt;strong>外部嵌套函数内的变量&lt;/strong>&lt;/p>
 &lt;blockquote>
-&lt;p>事实上，减少对全局变量的使用，也是降低代码之间耦合度的一个重要举措，同时也是对&lt;a href="https://zh.wikipedia.org/zh-hans/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B">迪米特法则&lt;/a>的践行。&lt;/p>
-&lt;/blockquote>
+&lt;p>事实上，减少对全局变量的使用，也是降低代码之间耦合度的一个重要举措，同时也是对&lt;a href="https://zh.wikipedia.org/zh-hans/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B">迪米特法则&lt;/a>的践行。&lt;/p>&lt;/blockquote>
 &lt;h2 id="字符串和常用数据结构">字符串和常用数据结构&lt;/h2>
 &lt;h3 id="字符串">字符串&lt;/h3>
 &lt;p>反斜杠&lt;code>\&lt;/code>用来转义。

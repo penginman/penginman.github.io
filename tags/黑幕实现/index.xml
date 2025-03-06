@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>黑幕实现 on</title><link>/tags/%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</link><description>Recent content in 黑幕实现 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 20 Nov 2020 10:13:07 +0000</lastBuildDate><atom:link href="/tags/%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>萌娘百科黑幕实现</title><link>/posts/play_time/%E8%90%8C%E5%A8%98%E7%99%BE%E7%A7%91%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</link><pubDate>Fri, 20 Nov 2020 10:13:07 +0000</pubDate><guid>/posts/play_time/%E8%90%8C%E5%A8%98%E7%99%BE%E7%A7%91%E9%BB%91%E5%B9%95%E5%AE%9E%E7%8E%B0/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>​	老早就觉得&lt;a href="https://zh.moegirl.org.cn/Mainpage">萌娘百科&lt;/a>里的&lt;!-- raw HTML omitted -->黑幕&lt;!-- raw HTML omitted -->很好玩，所以摸索着给自己博客加了一个。参考博客&lt;a href="https://www.cnblogs.com/send-off-a-friend/p/12355387.html">Re：萌娘百科上的黑幕实现&lt;/a>。不过我改的方法有稍稍有点不同，是把hexo渲染markdown文章中的删除线&lt;code>~~ ~~&lt;/code>标签修改了。我回来又想到了更好的方法，markdown支持文章中的&lt;strong>自定义标签&lt;/strong>，自己增加一个&lt;code>&amp;lt;span class='heimu'&amp;gt;...&amp;lt;/span&amp;gt;&lt;/code>标签更好。那么两种都记一下吧。当然用&lt;strong>自定义标签&lt;/strong>的话还可以保留&lt;strong>删除线&lt;/strong>。&lt;/p>
+&lt;p>​	老早就觉得&lt;a href="https://zh.moegirl.org.cn/Mainpage">萌娘百科&lt;/a>里的&lt;code>&amp;lt;span class='heimu'&amp;gt;黑幕&amp;lt;/span&amp;gt;&lt;/code>很好玩，所以摸索着给自己博客加了一个。参考博客&lt;a href="https://www.cnblogs.com/send-off-a-friend/p/12355387.html">Re：萌娘百科上的黑幕实现&lt;/a>。不过我改的方法有稍稍有点不同，是把hexo渲染markdown文章中的删除线&lt;code>~~ ~~&lt;/code>标签修改了。我回来又想到了更好的方法，markdown支持文章中的&lt;strong>自定义标签&lt;/strong>，自己增加一个&lt;code>&amp;lt;span class='heimu'&amp;gt;...&amp;lt;/span&amp;gt;&lt;/code>标签更好。那么两种都记一下吧。当然用&lt;strong>自定义标签&lt;/strong>的话还可以保留&lt;strong>删除线&lt;/strong>。&lt;/p>
 &lt;h2 id="示例">示例&lt;/h2>
-&lt;p>&lt;!-- raw HTML omitted -->我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;a href="">我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;del>我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/del>&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;strong>我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/strong>&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;code>我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&lt;/code>&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>原博客图&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;span class=&amp;#39;heimu&amp;#39;&amp;gt;我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;#39;heimu&amp;#39;&amp;gt;我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;#39;heimu&amp;#39;&amp;gt;~~我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气~~&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;#39;heimu&amp;#39;&amp;gt;**我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气**&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;#39;heimu&amp;#39;&amp;gt;我刚刚去楼下售卖机买饮料发现没有用上优惠券，就很气`&amp;lt;/span&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>原博客图&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210818171850.png" alt="">&lt;/p>
 &lt;p>萌娘百科&lt;a href="https://zh.moegirl.org.cn/Template:%E9%BB%91%E5%B9%95">官方介绍&lt;/a>&lt;/p>
 &lt;h2 id="准备工作">准备工作&lt;/h2>
