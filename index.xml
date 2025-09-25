@@ -1370,7 +1370,7 @@ loading="lazy"
 loading="lazy"
 &gt;&lt;/p&gt;
 &lt;h2 id="完工"&gt;完工
-&lt;/h2&gt;&lt;p&gt;说说还支持 markdown 格式的图片插入，看起来更好用了，给作者点个赞。&lt;/p&gt;</description></item><item><title>友链</title><link>/friends/</link><pubDate>Sat, 10 Sep 2022 16:26:47 +0800</pubDate><guid>/friends/</guid><description>&lt;h2 id="懒狗"&gt;懒狗
+&lt;/h2&gt;&lt;p&gt;说说还支持 markdown 格式的图片插入，看起来更好用了，给作者点个赞。&lt;/p&gt;</description></item><item><title>友链</title><link>/page/friends/</link><pubDate>Sat, 10 Sep 2022 16:26:47 +0800</pubDate><guid>/page/friends/</guid><description>&lt;h2 id="懒狗"&gt;懒狗
 &lt;/h2&gt;&lt;figure&gt;&lt;a href="https://www.penginman.com/"&gt;&lt;img src="https://www.penginman.com/img/avatar.png"
 alt="为世界上所有的美好而战"&gt;&lt;/a&gt;&lt;figcaption&gt;
 &lt;h4&gt;Braindance&lt;/h4&gt;&lt;p&gt;为世界上所有的美好而战&lt;/p&gt;
@@ -1382,7 +1382,7 @@ alt="为世界上所有的美好而战"&gt;&lt;/a&gt;&lt;figcaption&gt;
 link: https://www.penginman.com
 avatar: https://www.penginman.com/img/avatar.png
 descr: 为世界上所有的美好而战
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>关于</title><link>/about/</link><pubDate>Sun, 28 Aug 2022 11:58:42 +0800</pubDate><guid>/about/</guid><description>&lt;p&gt;为世界上所有的美好而战&lt;/p&gt;</description></item><item><title>近期总结</title><link>/posts/%E8%BF%91%E6%9C%9F%E6%80%BB%E7%BB%93/</link><pubDate>Wed, 10 Aug 2022 18:39:26 +0800</pubDate><guid>/posts/%E8%BF%91%E6%9C%9F%E6%80%BB%E7%BB%93/</guid><description>&lt;p&gt;水一篇文章，写写最近干了啥&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>关于</title><link>/page/about/</link><pubDate>Sun, 28 Aug 2022 11:58:42 +0800</pubDate><guid>/page/about/</guid><description>&lt;p&gt;为世界上所有的美好而战&lt;/p&gt;</description></item><item><title>近期总结</title><link>/posts/%E8%BF%91%E6%9C%9F%E6%80%BB%E7%BB%93/</link><pubDate>Wed, 10 Aug 2022 18:39:26 +0800</pubDate><guid>/posts/%E8%BF%91%E6%9C%9F%E6%80%BB%E7%BB%93/</guid><description>&lt;p&gt;水一篇文章，写写最近干了啥&lt;/p&gt;
 &lt;h2 id="onenav"&gt;Onenav
 &lt;/h2&gt;&lt;p&gt;一直想找一个导航页的网站，自己天天用书签栏用的找不到太烦了。之前用过webstack主题的网站，本来是直接写源码上的，后来自己做了一个用js读配置文件加载的，但是加网站的时候要手改数据文件。
 最后发现了正在用的导航页&lt;a class="link" href="https://github.com/helloxz/onenav" target="_blank" rel="noopener"
@@ -7821,4 +7821,4 @@ alt="BJ9L8g.jpg"
 &lt;p&gt;服务器到手以后，又听说什么国外的服务器有可能会被Qang，我也尽量少选国内提供的服务，随后找到了国外免费的域名注册商&lt;a class="link" href="http://www.freenom.com" target="_blank" rel="noopener"
 &gt;freenom&lt;/a&gt;，注册了域名braindanc.tk，把域名解析到自己的服务器，后面补一篇注册的过程吧。&lt;/p&gt;
 &lt;p&gt;到这服务器和域名都搞定了。&lt;/p&gt;</description></item><item><title>第一篇文章</title><link>/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link><pubDate>Wed, 26 Aug 2020 16:40:03 +0000</pubDate><guid>/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid><description>&lt;p&gt;&lt;strong&gt;第一篇文章的内容&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;刚把博客搭成，然后看了看markdown的语法，以后慢慢往上面加吧。&lt;/p&gt;</description></item><item><title/><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>archives</title><link>/archives/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/archives/</guid><description/></item></channel></rss>
+&lt;p&gt;刚把博客搭成，然后看了看markdown的语法，以后慢慢往上面加吧。&lt;/p&gt;</description></item><item><title/><link>/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/page/search/</guid><description/></item><item><title>archives</title><link>/page/archives/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/page/archives/</guid><description/></item></channel></rss>
