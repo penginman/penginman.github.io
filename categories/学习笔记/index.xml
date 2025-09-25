@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习笔记 on</title><link>/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 学习笔记 on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习笔记 on Braindance</title><link>https://www.braindance.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 学习笔记 on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>https://www.braindance.top/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>https://www.braindance.top/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener"
 &gt;https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="标注符号"&gt;标注符号
 &lt;/h2&gt;&lt;h3 id="上下标"&gt;上下标
@@ -75,7 +75,7 @@ $$
 a&amp;amp;=b+c+d \
 &amp;amp;=e+f
 \end{align}
-$$&lt;/p&gt;</description></item><item><title>Python-Day-100 笔记</title><link>/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate><guid>/posts/python%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="函数"&gt;函数
+$$&lt;/p&gt;</description></item><item><title>Python-Day-100 笔记</title><link>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate><guid>https://www.braindance.top/posts/python%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="函数"&gt;函数
 &lt;/h2&gt;&lt;h3 id="函数的参数"&gt;函数的参数
 &lt;/h3&gt;&lt;p&gt;可以使用可变参数&lt;code&gt;def func(*args)&lt;/code&gt;，参数前面的&lt;code&gt;*&lt;/code&gt;代表&lt;code&gt;args&lt;/code&gt;是一个可变参数。&lt;/p&gt;
 &lt;h3 id="用模块管理函数"&gt;用模块管理函数

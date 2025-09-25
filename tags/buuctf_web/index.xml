@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BUUCTF_Web on</title><link>/tags/buuctf_web/</link><description>Recent content in BUUCTF_Web on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 18 Jan 2021 16:58:56 +0000</lastBuildDate><atom:link href="/tags/buuctf_web/index.xml" rel="self" type="application/rss+xml"/><item><title>BUUCTF寒假刷题-Web</title><link>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p&gt;寒假横向刷题（尽量）
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BUUCTF_Web on Braindance</title><link>https://www.braindance.top/tags/buuctf_web/</link><description>Recent content in BUUCTF_Web on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 18 Jan 2021 16:58:56 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/buuctf_web/index.xml" rel="self" type="application/rss+xml"/><item><title>BUUCTF寒假刷题-Web</title><link>https://www.braindance.top/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p&gt;寒假横向刷题（尽量）
 &lt;a class="link" href="https://buuoj.cn/challenges#" target="_blank" rel="noopener"
 &gt;BUUCTF&lt;/a&gt;
 💗🧡💛💚💙💜🤎🖤🤍
@@ -2360,7 +2360,7 @@ loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;搜索的时候学到了一个其他的截断&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;zip://test.zip#hello.html.php
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代表当前目录下的test.zip压缩包里面的hello.html.php，于是包含成功。&lt;/p&gt;</description></item><item><title>极客大挑战 2019 RCE ME</title><link>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</link><pubDate>Sat, 05 Dec 2020 20:42:00 +0000</pubDate><guid>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</guid><description>&lt;h1 id="极客大挑战-2019rce-me"&gt;[极客大挑战 2019]RCE ME
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代表当前目录下的test.zip压缩包里面的hello.html.php，于是包含成功。&lt;/p&gt;</description></item><item><title>极客大挑战 2019 RCE ME</title><link>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</link><pubDate>Sat, 05 Dec 2020 20:42:00 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</guid><description>&lt;h1 id="极客大挑战-2019rce-me"&gt;[极客大挑战 2019]RCE ME
 &lt;/h1&gt;&lt;p&gt;源码：&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;?php
 error_reporting(0);
@@ -2435,7 +2435,7 @@ loading="lazy"
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204233847.png"
 loading="lazy"
 &gt;&lt;/p&gt;
-&lt;p&gt;flag{a216900e-2427-48f7-9323-f65d0a3abdbf}&lt;/p&gt;</description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0000</pubDate><guid>/posts/ctf/gxyctf2019ping-ping-ping/</guid><description>&lt;h1 id="gxyctf2019ping-ping-ping"&gt;[GXYCTF2019]Ping Ping Ping
+&lt;p&gt;flag{a216900e-2427-48f7-9323-f65d0a3abdbf}&lt;/p&gt;</description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</guid><description>&lt;h1 id="gxyctf2019ping-ping-ping"&gt;[GXYCTF2019]Ping Ping Ping
 &lt;/h1&gt;&lt;p&gt;题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping&lt;/p&gt;
 &lt;p&gt;和DMCTF做的那道&lt;strong&gt;pingpingping&lt;/strong&gt;类似，同样是使用管道符构造payload，先使用：&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;?ip=127.0.0.1|ls

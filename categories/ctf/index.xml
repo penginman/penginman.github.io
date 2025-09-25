@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CTF on</title><link>/categories/ctf/</link><description>Recent content in CTF on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0000</lastBuildDate><atom:link href="/categories/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0000</pubDate><guid>/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description>&lt;h1 id="easy_sql"&gt;easy_sql
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CTF on Braindance</title><link>https://www.braindance.top/categories/ctf/</link><description>Recent content in CTF on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0000</lastBuildDate><atom:link href="https://www.braindance.top/categories/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>https://www.braindance.top/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description>&lt;h1 id="easy_sql"&gt;easy_sql
 &lt;/h1&gt;&lt;p&gt;在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是&lt;strong&gt;括号单引号闭合&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;lsquo;1&amp;rsquo;) LIMIT 0,1&amp;rsquo; at line 1&lt;/p&gt;&lt;/blockquote&gt;
@@ -151,7 +151,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;简介：&lt;strong&gt;ReflectionClass&lt;/strong&gt; 类报告了一个类的有关信息。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;和上面的那个类对比，两个类研究的对象不一样&lt;strong&gt;ReflectionMethod&lt;/strong&gt;研究的是类中的方法，&lt;strong&gt;ReflectionClass&lt;/strong&gt; 研究的是类。&lt;/p&gt;
-&lt;p&gt;这个类中也有一个获得注释的函数ReflectionClass::getDocComment，但是其获得的是文档注释，即文件开头的/**/中内容，但是本题的注释是在函数里的。&lt;/p&gt;</description></item><item><title>ReadlezPHP&amp;EasySearch</title><link>/posts/ctf/readlezphpeasysearch/</link><pubDate>Tue, 20 Apr 2021 17:12:43 +0000</pubDate><guid>/posts/ctf/readlezphpeasysearch/</guid><description>&lt;h1 id="readlezphp"&gt;ReadlezPHP
+&lt;p&gt;这个类中也有一个获得注释的函数ReflectionClass::getDocComment，但是其获得的是文档注释，即文件开头的/**/中内容，但是本题的注释是在函数里的。&lt;/p&gt;</description></item><item><title>ReadlezPHP&amp;EasySearch</title><link>https://www.braindance.top/posts/ctf/readlezphpeasysearch/</link><pubDate>Tue, 20 Apr 2021 17:12:43 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/readlezphpeasysearch/</guid><description>&lt;h1 id="readlezphp"&gt;ReadlezPHP
 &lt;/h1&gt;&lt;p&gt;源码找到&lt;code&gt;time.php?source&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210420175641.png"
 loading="lazy"
@@ -260,7 +260,7 @@ loading="lazy"
 &lt;p&gt;SSI 注入全称Server-Side Includes Injection，即服务端包含注入。SSI 是类似于 CGI，用于动态页面的指令。SSI 注入允许远程在 Web 应用中注入脚本来执行代码。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;简单的命令执行&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code class="language-code" data-lang="code"&gt;&amp;#34;--&amp;gt;&amp;#39;--&amp;gt;`--&amp;gt;&amp;lt;&amp;lt;!--#exec cmd=&amp;#34;cat /etc/passwd&amp;#34;--&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我使用了反弹shell，自行修改一下命令即可。在/var/www/html目录下可以找到一个名为&lt;code&gt;flag_990c66bf85a09c664f0b6741840499b2&lt;/code&gt;的文件，获得flag&lt;/p&gt;</description></item><item><title>极客大挑战 2019 FinalSQL</title><link>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</link><pubDate>Sun, 18 Apr 2021 19:11:51 +0000</pubDate><guid>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</guid><description>&lt;p&gt;还是同一场比赛的界面&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我使用了反弹shell，自行修改一下命令即可。在/var/www/html目录下可以找到一个名为&lt;code&gt;flag_990c66bf85a09c664f0b6741840499b2&lt;/code&gt;的文件，获得flag&lt;/p&gt;</description></item><item><title>极客大挑战 2019 FinalSQL</title><link>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</link><pubDate>Sun, 18 Apr 2021 19:11:51 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019finalsql/</guid><description>&lt;p&gt;还是同一场比赛的界面&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210416224503.png"
 loading="lazy"
 &gt;&lt;/p&gt;
@@ -297,7 +297,7 @@ loading="lazy"
 &lt;blockquote&gt;
 &lt;p&gt;F1naI1y ====&amp;gt; id,username,password&lt;/p&gt;
 &lt;p&gt;Flaaaaag ====&amp;gt; id,fl4gawsl&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;在第九项可以查得到flag，上面的sql语句已经准备好了。第一个是查询表名的，第二个是查询字段名，第三个是得到flag&lt;/p&gt;</description></item><item><title>WUSTCTF2020 朴实无华</title><link>/posts/ctf/wustctf2020%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/</link><pubDate>Fri, 16 Apr 2021 15:33:32 +0000</pubDate><guid>/posts/ctf/wustctf2020%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/</guid><description>&lt;p&gt;进入页面直接报错&lt;/p&gt;
+&lt;p&gt;在第九项可以查得到flag，上面的sql语句已经准备好了。第一个是查询表名的，第二个是查询字段名，第三个是得到flag&lt;/p&gt;</description></item><item><title>WUSTCTF2020 朴实无华</title><link>https://www.braindance.top/posts/ctf/wustctf2020%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/</link><pubDate>Fri, 16 Apr 2021 15:33:32 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/wustctf2020%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/</guid><description>&lt;p&gt;进入页面直接报错&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210416103737.png"
 loading="lazy"
 &gt;&lt;/p&gt;
@@ -373,7 +373,7 @@ loading="lazy"
 &lt;p&gt;先使用ls查看下当前目录下的文件，发现一个名为&lt;code&gt;fllllllllllllllllllllllllllllllllllllllllaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaag&lt;/code&gt;读取得到flag。&lt;/p&gt;
 &lt;p&gt;最终payload：&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code class="language-url" data-lang="url"&gt;/fl4g.php?num=2e9&amp;amp;md5=0e215962017&amp;amp;get_flag=more${IFS}fllllllllllllllllllllllllllllllllllllllllaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaag
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>SWPU2019 Web1</title><link>/posts/ctf/swpu2019web1/</link><pubDate>Thu, 15 Apr 2021 09:55:17 +0000</pubDate><guid>/posts/ctf/swpu2019web1/</guid><description>&lt;p&gt;一个登陆界面，再看下url地址为login.php，确认了使用的是php&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>SWPU2019 Web1</title><link>https://www.braindance.top/posts/ctf/swpu2019web1/</link><pubDate>Thu, 15 Apr 2021 09:55:17 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/swpu2019web1/</guid><description>&lt;p&gt;一个登陆界面，再看下url地址为login.php，确认了使用的是php&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415091617.png"
 loading="lazy"
 &gt;&lt;/p&gt;
@@ -421,7 +421,7 @@ loading="lazy"
 &lt;p&gt;所以测试users表的字段数时，就通过形如上图的格式，改变联合查询的字段数判断。&lt;/p&gt;
 &lt;p&gt;最终的payload：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;/**/union/**/select/**/1,(select/**/group_concat(b)/**/from(select/**/1,2/**/as/**/a,3/**/as/**/b/**/union/**/select/**/*/**/from/**/users)x),3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>BUUCTF寒假刷题-Web</title><link>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p&gt;寒假横向刷题（尽量）
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>BUUCTF寒假刷题-Web</title><link>https://www.braindance.top/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p&gt;寒假横向刷题（尽量）
 &lt;a class="link" href="https://buuoj.cn/challenges#" target="_blank" rel="noopener"
 &gt;BUUCTF&lt;/a&gt;
 💗🧡💛💚💙💜🤎🖤🤍
@@ -2783,7 +2783,7 @@ loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;搜索的时候学到了一个其他的截断&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;zip://test.zip#hello.html.php
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代表当前目录下的test.zip压缩包里面的hello.html.php，于是包含成功。&lt;/p&gt;</description></item><item><title>极客大挑战 2019 RCE ME</title><link>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</link><pubDate>Sat, 05 Dec 2020 20:42:00 +0000</pubDate><guid>/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</guid><description>&lt;h1 id="极客大挑战-2019rce-me"&gt;[极客大挑战 2019]RCE ME
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代表当前目录下的test.zip压缩包里面的hello.html.php，于是包含成功。&lt;/p&gt;</description></item><item><title>极客大挑战 2019 RCE ME</title><link>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</link><pubDate>Sat, 05 Dec 2020 20:42:00 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019rce-me/</guid><description>&lt;h1 id="极客大挑战-2019rce-me"&gt;[极客大挑战 2019]RCE ME
 &lt;/h1&gt;&lt;p&gt;源码：&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;?php
 error_reporting(0);
@@ -2858,7 +2858,7 @@ loading="lazy"
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204233847.png"
 loading="lazy"
 &gt;&lt;/p&gt;
-&lt;p&gt;flag{a216900e-2427-48f7-9323-f65d0a3abdbf}&lt;/p&gt;</description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0000</pubDate><guid>/posts/ctf/gxyctf2019ping-ping-ping/</guid><description>&lt;h1 id="gxyctf2019ping-ping-ping"&gt;[GXYCTF2019]Ping Ping Ping
+&lt;p&gt;flag{a216900e-2427-48f7-9323-f65d0a3abdbf}&lt;/p&gt;</description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/gxyctf2019ping-ping-ping/</guid><description>&lt;h1 id="gxyctf2019ping-ping-ping"&gt;[GXYCTF2019]Ping Ping Ping
 &lt;/h1&gt;&lt;p&gt;题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping&lt;/p&gt;
 &lt;p&gt;和DMCTF做的那道&lt;strong&gt;pingpingping&lt;/strong&gt;类似，同样是使用管道符构造payload，先使用：&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;?ip=127.0.0.1|ls
@@ -2935,7 +2935,7 @@ $IFS$1 //$1改成$加其他数字貌似都行
 &lt;pre tabindex="0"&gt;&lt;code&gt;/?ip=|cat$IFS`ls`
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;附：大佬整理的博客（内含更多姿势）：&lt;a class="link" href="https://www.ghtwf01.cn/index.php/archives/273/" target="_blank" rel="noopener"
-&gt;命令执行漏洞利用及绕过方式总结&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description></item><item><title>DMCTF之Misc</title><link>/posts/ctf/dmctf%E4%B9%8Bmisc/</link><pubDate>Tue, 01 Dec 2020 11:20:45 +0000</pubDate><guid>/posts/ctf/dmctf%E4%B9%8Bmisc/</guid><description>&lt;h1 id="前言"&gt;前言
+&gt;命令执行漏洞利用及绕过方式总结&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description></item><item><title>DMCTF之Misc</title><link>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bmisc/</link><pubDate>Tue, 01 Dec 2020 11:20:45 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/dmctf%E4%B9%8Bmisc/</guid><description>&lt;h1 id="前言"&gt;前言
 &lt;/h1&gt;&lt;p&gt;这次比赛是第一次做Mics的题awa。&lt;/p&gt;
 &lt;h1 id="misc"&gt;Misc
 &lt;/h1&gt;&lt;h2 id="check_in"&gt;Check_in
@@ -3193,7 +3193,7 @@ ti
 ng
 !!
 !}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考下题目标题和flag格式，拼接后获得flag：&lt;strong&gt;DMCTF{QrCode_1s_so_interesting!!!}&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Upload-Labs的最后几道题</title><link>/posts/ctf/upload-labs5/</link><pubDate>Thu, 19 Nov 2020 08:47:19 +0000</pubDate><guid>/posts/ctf/upload-labs5/</guid><description>&lt;h2 id="pass-17"&gt;Pass-17
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考下题目标题和flag格式，拼接后获得flag：&lt;strong&gt;DMCTF{QrCode_1s_so_interesting!!!}&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Upload-Labs的最后几道题</title><link>https://www.braindance.top/posts/ctf/upload-labs5/</link><pubDate>Thu, 19 Nov 2020 08:47:19 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/upload-labs5/</guid><description>&lt;h2 id="pass-17"&gt;Pass-17
 &lt;/h2&gt;&lt;p&gt;​ （windows环境，php版本5.2.17，题号是18题）&lt;/p&gt;
 &lt;p&gt;源码：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$is_upload &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;;
@@ -3342,7 +3342,7 @@ loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;完工&lt;/p&gt;
 &lt;h2 id="最后"&gt;最后
-&lt;/h2&gt;&lt;p&gt;​ Upload labs的20道题大部分完成了，有两道题没完成，但是也学到了不少东西，这些天再抽空写一个总结吧。射射观看。&lt;/p&gt;</description></item><item><title>Upload-Labs之Pass-16</title><link>/posts/ctf/upload-labs4/</link><pubDate>Mon, 16 Nov 2020 22:50:25 +0000</pubDate><guid>/posts/ctf/upload-labs4/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;/h2&gt;&lt;p&gt;​ Upload labs的20道题大部分完成了，有两道题没完成，但是也学到了不少东西，这些天再抽空写一个总结吧。射射观看。&lt;/p&gt;</description></item><item><title>Upload-Labs之Pass-16</title><link>https://www.braindance.top/posts/ctf/upload-labs4/</link><pubDate>Mon, 16 Nov 2020 22:50:25 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/upload-labs4/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;​ 我在这道题上花了快一天的时间，但是也学到了不少姿势，觉得东西应该足够多，而且参考了的博客发现这道题算是有歧义的，不知道作者想要考察的点是哪一个，所以算是有两种解法吧，可惜的是两种方法都不算是大成功，只有部分成功执行了。&lt;/p&gt;
 &lt;p&gt;​ 参考博客：&lt;a class="link" href="https://xz.aliyun.com/t/2657#toc-4" target="_blank" rel="noopener"
 &gt;upload-labs之pass 16详细分析&lt;/a&gt;&lt;/p&gt;
@@ -3676,7 +3676,7 @@ loading="lazy"
 loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 如果如图所示，我们的图片马就上传成功了。&lt;strong&gt;需要提醒：有些图片不行可能需要多换几个图片试一试！！！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;呼，终于可以休息了。&lt;/p&gt;</description></item><item><title>Upload-Labs(三)</title><link>/posts/ctf/upload-labs3/</link><pubDate>Mon, 16 Nov 2020 16:04:30 +0000</pubDate><guid>/posts/ctf/upload-labs3/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;p&gt;呼，终于可以休息了。&lt;/p&gt;</description></item><item><title>Upload-Labs(三)</title><link>https://www.braindance.top/posts/ctf/upload-labs3/</link><pubDate>Mon, 16 Nov 2020 16:04:30 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/upload-labs3/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;​ 继续接着上一次的&lt;code&gt;Upload-labs&lt;/code&gt;往下写。这记下第11-15题，目前进度是20题都已经完成正在抽时间写博客，然后16题是我卡的最久的关，不过也学到了感觉很牛的姿势，所以到时候专门开一篇只讲16。&lt;/p&gt;
 &lt;p&gt;​ 在线靶机地址：&lt;/p&gt;
 &lt;ul&gt;
@@ -3774,7 +3774,7 @@ loading="lazy"
 &lt;p&gt;png 文件头 89504E470D0A1A0A&lt;/p&gt;
 &lt;p&gt;jpg 文件头 89504E470D0A1A0A&lt;/p&gt;
 &lt;p&gt;gif 文件头 474946383961&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;​ 这几个字节应该都是够长的可以绕过这三个函数，所以验证了同学说的不同的函数检测的文件头长度是不一样的。完工&lt;/p&gt;</description></item><item><title>Upload-Labs(二)</title><link>/posts/ctf/upload-labs2/</link><pubDate>Mon, 09 Nov 2020 20:12:27 +0000</pubDate><guid>/posts/ctf/upload-labs2/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;p&gt;​ 这几个字节应该都是够长的可以绕过这三个函数，所以验证了同学说的不同的函数检测的文件头长度是不一样的。完工&lt;/p&gt;</description></item><item><title>Upload-Labs(二)</title><link>https://www.braindance.top/posts/ctf/upload-labs2/</link><pubDate>Mon, 09 Nov 2020 20:12:27 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/upload-labs2/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;​ 这次彻底的从头到尾分析了一下源码的执行过程，大致的写一下，以防以后再看的时候不知道题目是什么情况。&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;$is_upload = false;
 $msg = null;
@@ -4004,7 +4004,7 @@ $msg = UPLOAD_PATH . &amp;#39;文件夹不存在,请手工创建！&amp;#39;;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb8yPf.png"
 loading="lazy"
 &gt;&lt;/p&gt;
-&lt;p&gt;上传并访问文件。完工&lt;/p&gt;</description></item><item><title>Upload-Labs(一)</title><link>/posts/ctf/upload-labs1/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0000</pubDate><guid>/posts/ctf/upload-labs1/</guid><description>&lt;h2 id="介绍"&gt;介绍
+&lt;p&gt;上传并访问文件。完工&lt;/p&gt;</description></item><item><title>Upload-Labs(一)</title><link>https://www.braindance.top/posts/ctf/upload-labs1/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/upload-labs1/</guid><description>&lt;h2 id="介绍"&gt;介绍
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;大部分的网站和应用系统都有上传功能，而程序员在开发任意文件上传功能时，并未考虑文件格式后缀的合法性校验或者是否只在前端通过js进行后缀检验。这时攻击者可以上传一个与网站脚本语言相对应的恶意代码动态脚本，例如(jsp、asp、php、aspx文件后缀)到服务器上，从而访问这些恶意脚本中包含的恶意代码，进行动态解析最终达到执行恶意代码的效果，进一步影响服务器安全。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;在线靶机地址：&lt;/p&gt;
@@ -4186,7 +4186,7 @@ loading="lazy"
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTLmNj.png"
 loading="lazy"
 &gt;&lt;/p&gt;
-&lt;p&gt;​ 打开图片成功执行。完工&lt;/p&gt;</description></item><item><title>Hackgame2020(二)</title><link>/posts/ctf/hackgame20202/</link><pubDate>Thu, 05 Nov 2020 09:29:22 +0000</pubDate><guid>/posts/ctf/hackgame20202/</guid><description>&lt;h3 id="一闪而过的flag"&gt;一闪而过的Flag
+&lt;p&gt;​ 打开图片成功执行。完工&lt;/p&gt;</description></item><item><title>Hackgame2020(二)</title><link>https://www.braindance.top/posts/ctf/hackgame20202/</link><pubDate>Thu, 05 Nov 2020 09:29:22 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/hackgame20202/</guid><description>&lt;h3 id="一闪而过的flag"&gt;一闪而过的Flag
 &lt;/h3&gt;&lt;p&gt;​ 根据题目信息&lt;strong&gt;程序每次运行时隐约可见黑色控制台上有 flag 一闪而过&lt;/strong&gt;，我想到了应该能看程序的代码啥的找到，但是&lt;del&gt;天下武功，唯快不破&lt;/del&gt;，下载 运行 截图一气呵成。&lt;/p&gt;
 &lt;p&gt;​ &lt;img src="https://s1.ax1x.com/2020/11/09/B7TOUA.png"
 loading="lazy"
@@ -4315,7 +4315,7 @@ loading="lazy"
 &lt;p&gt;&lt;strong&gt;参考答案：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. flag{D0_Y0U_l1k3_g4me_0f_l1fe?_d5e1c80641}&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. flag{1s_th3_e55ence_0f_0ur_un1ver5e_ju5t_c0mputat1on?_ea3e769cb8}&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;完工。&lt;/p&gt;</description></item><item><title>XSS-Lab (一)</title><link>/posts/ctf/xss-lab1/</link><pubDate>Tue, 03 Nov 2020 10:13:39 +0000</pubDate><guid>/posts/ctf/xss-lab1/</guid><description>&lt;h2 id="头"&gt;头
+&lt;p&gt;完工。&lt;/p&gt;</description></item><item><title>XSS-Lab (一)</title><link>https://www.braindance.top/posts/ctf/xss-lab1/</link><pubDate>Tue, 03 Nov 2020 10:13:39 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/xss-lab1/</guid><description>&lt;h2 id="头"&gt;头
 &lt;/h2&gt;&lt;p&gt;靶机地址：https://buuoj.cn/challenges#XSS-Lab&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/BsmJ5n.png"
 loading="lazy"
@@ -4354,7 +4354,7 @@ loading="lazy"
 &lt;p&gt;script &amp;ndash;&amp;gt; scr_ipt&lt;/p&gt;
 &lt;p&gt;onmouseover &amp;ndash;&amp;gt; o_nmouseover&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;无法采用事件，那么尝试构造一个标签&lt;code&gt; &amp;quot;&amp;gt; &amp;lt;a href='javascript:alert()'&amp;gt;233&amp;lt;/a&amp;gt; //&lt;/code&gt;，发现&lt;code&gt;javascript&lt;/code&gt;没有过滤，说明判断语句匹配值仅仅为&lt;code&gt;script&lt;/code&gt;，点击构造的&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;标签内容。完工&lt;/p&gt;
-&lt;p&gt;​&lt;/p&gt;</description></item><item><title>Hackgame2020(一)</title><link>/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>/posts/ctf/hackgame20201/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;p&gt;​&lt;/p&gt;</description></item><item><title>Hackgame2020(一)</title><link>https://www.braindance.top/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/hackgame20201/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;比赛地址：https://hack.lug.ustc.edu.cn/&lt;/p&gt;
 &lt;h1 id="web"&gt;web
 &lt;/h1&gt;&lt;h3 id="签到题"&gt;签到题
@@ -4460,7 +4460,7 @@ loading="lazy"
 &lt;/ol&gt;&lt;/blockquote&gt;
 &lt;p&gt;​ 百度&lt;code&gt;中国科学技术大学第六届信息安全大赛&lt;/code&gt;有个&lt;code&gt;...圆满结束&lt;/code&gt;，就他了。点开第二行就是&lt;code&gt;经统计，在本次比赛中，总共有 2682 人注册，1904 人至少完成了一题。比赛期间所有人合计提交了 17098 次 flag&lt;/code&gt;。（看这个网站的标志似乎还是第三题搜的那个&lt;code&gt;USTC Linux 用户协会&lt;/code&gt;的官网新闻。嗷原来题目上已经说了是举办方👀）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：17098&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;完工。&lt;/p&gt;</description></item><item><title>sql-labs(一)</title><link>/posts/ctf/sql-labs1/</link><pubDate>Tue, 22 Sep 2020 10:50:08 +0000</pubDate><guid>/posts/ctf/sql-labs1/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;p&gt;完工。&lt;/p&gt;</description></item><item><title>sql-labs(一)</title><link>https://www.braindance.top/posts/ctf/sql-labs1/</link><pubDate>Tue, 22 Sep 2020 10:50:08 +0000</pubDate><guid>https://www.braindance.top/posts/ctf/sql-labs1/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;在线靶机地址：https://buuoj.cn/challenges#sqli-labs&lt;/p&gt;
 &lt;h2 id="less-1"&gt;less-1
 &lt;/h2&gt;&lt;p&gt;​ 首先说明sql注入的大致步骤：&lt;/p&gt;
