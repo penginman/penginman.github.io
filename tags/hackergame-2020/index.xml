@@ -1,102 +1,236 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hackergame 2020 on</title><link>/tags/hackergame-2020/</link><description>Recent content in Hackergame 2020 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 05 Nov 2020 09:29:22 +0000</lastBuildDate><atom:link href="/tags/hackergame-2020/index.xml" rel="self" type="application/rss+xml"/><item><title>Hackgame2020(二)</title><link>/posts/ctf/hackgame20202/</link><pubDate>Thu, 05 Nov 2020 09:29:22 +0000</pubDate><guid>/posts/ctf/hackgame20202/</guid><description>&lt;h3 id="一闪而过的flag">一闪而过的Flag&lt;/h3>
-&lt;p>​	根据题目信息&lt;strong>程序每次运行时隐约可见黑色控制台上有 flag 一闪而过&lt;/strong>，我想到了应该能看程序的代码啥的找到，但是&lt;del>天下武功，唯快不破&lt;/del>，下载 运行 截图一气呵成。&lt;/p>
-&lt;p>​	&lt;img src="https://s1.ax1x.com/2020/11/09/B7TOUA.png" alt="">&lt;/p>
-&lt;p>​	接下来让我康康哪一位是&lt;del>瞎子&lt;/del>，包括答案里也是满满的嘲讽。&lt;/p>
-&lt;p>&lt;strong>参考答案：flag{Are_you_eyes1ght_g00D?_can_you_dIst1nguish_1iI?}&lt;/strong>&lt;/p>
-&lt;h3 id="从零开始的记账工具人">从零开始的记账工具人&lt;/h3>
-&lt;p>​	&lt;del>npy&lt;/del>给了我一张账单，让我计算账单上面的金额，flag就是由金额组成的。本以为是一个简单的Excel的表格函数解决，打开我傻了。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/05/B2Flxf.png" alt="">&lt;/p>
-&lt;p>​	原来是搞这个大小写金额的转换，没见过Excel有这种操作就去百度，转了一大圈，网上只有数字转大写金额的，没有反过来的。还去了github上找代码，发现运行的结果和自己想要的还是有些出入。卡了有足足半天，之后自己写了一个Java代码跑了一遍，代码如下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.util.Scanner;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Main&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Scanner sn &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Scanner(System.&lt;span style="color:#a6e22e">in&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String str;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> cnt&lt;span style="color:#f92672">=&lt;/span>0;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">double&lt;/span> result&lt;span style="color:#f92672">=&lt;/span>0;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span>(cnt&lt;span style="color:#f92672">++!=&lt;/span>1000){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str &lt;span style="color:#f92672">=&lt;/span> sn.&lt;span style="color:#a6e22e">next&lt;/span>();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#f92672">=&lt;/span> sn.&lt;span style="color:#a6e22e">nextInt&lt;/span>();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">+=&lt;/span> tonum(str)&lt;span style="color:#f92672">*&lt;/span>x;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(result);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">double&lt;/span> &lt;span style="color:#a6e22e">tonum&lt;/span>(String s){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> len;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">double&lt;/span> res&lt;span style="color:#f92672">=&lt;/span>0,temp &lt;span style="color:#f92672">=&lt;/span> 1;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">double&lt;/span> result&lt;span style="color:#f92672">=&lt;/span>0;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len &lt;span style="color:#f92672">=&lt;/span> s.&lt;span style="color:#a6e22e">length&lt;/span>();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>0;i&lt;span style="color:#f92672">&amp;lt;&lt;/span>len;i&lt;span style="color:#f92672">++&lt;/span>){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">switch&lt;/span> (s.&lt;span style="color:#a6e22e">charAt&lt;/span>(i)){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;壹&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>1;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;贰&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>2;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;叁&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>3;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;肆&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>4;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;伍&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>5;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;陆&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>6;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;柒&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>7;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;捌&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>8;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;玖&amp;#39;&lt;/span>: temp&lt;span style="color:#f92672">=&lt;/span>9;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;零&amp;#39;&lt;/span>: &lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;拾&amp;#39;&lt;/span>: res&lt;span style="color:#f92672">+=&lt;/span>temp&lt;span style="color:#f92672">*&lt;/span>10;temp&lt;span style="color:#f92672">=&lt;/span>0;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;佰&amp;#39;&lt;/span>: res&lt;span style="color:#f92672">+=&lt;/span>temp&lt;span style="color:#f92672">*&lt;/span>100;temp&lt;span style="color:#f92672">=&lt;/span>0;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;元&amp;#39;&lt;/span>: res&lt;span style="color:#f92672">+=&lt;/span>temp;temp&lt;span style="color:#f92672">=&lt;/span>0;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;角&amp;#39;&lt;/span>: res&lt;span style="color:#f92672">+=&lt;/span>temp&lt;span style="color:#f92672">*&lt;/span>0.&lt;span style="color:#a6e22e">1&lt;/span>;temp&lt;span style="color:#f92672">=&lt;/span>0;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;分&amp;#39;&lt;/span>: res&lt;span style="color:#f92672">+=&lt;/span>temp&lt;span style="color:#f92672">*&lt;/span>0.&lt;span style="color:#a6e22e">01&lt;/span>;temp&lt;span style="color:#f92672">=&lt;/span>0;&lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#39;整&amp;#39;&lt;/span>: &lt;span style="color:#66d9ef">break&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">default&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;这个认不出来&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> s.&lt;span style="color:#a6e22e">charAt&lt;/span>(i));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> res;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>​	程序用的控制台输入，直接表格两列从头拉倒尾粘贴，出答案。程序的思路就是把金额大写当做字符串处理，每一位用&lt;code>switch&lt;/code>判断数字或是个、十、百、千那一位上的数字。&lt;/p></description></item><item><title>Hackgame2020(一)</title><link>/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>/posts/ctf/hackgame20201/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>比赛地址：https://hack.lug.ustc.edu.cn/&lt;/p>
-&lt;h1 id="web">web&lt;/h1>
-&lt;h3 id="签到题">签到题&lt;/h3>
-&lt;p>​	第一题是flag提取器，打开题目以后页面是一个提取器下面一个&lt;code>进度条&lt;/code>和一个&lt;code>提取&lt;/code>按钮。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png" alt="BwJbJs.png">&lt;/p>
-&lt;p>​	随便拉了拉进度条发现初始是&lt;code>0&lt;/code>末尾是&lt;code>1.5&lt;/code>，然后中间的数值都是小数&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png" alt="BwYAQx.png">&lt;/p>
-&lt;p>​	我猜的题目可能是想让数值为&lt;code>1&lt;/code>时能提取到flag。&lt;/p>
-&lt;p>​	F12查看源代码，定位到进度条的标签，查看属性&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png" alt="">&lt;/p>
-&lt;p>​	确实和猜测一样最大最小值分别是&lt;code>0&lt;/code>、&lt;code>1.5&lt;/code>，注意到&lt;code>step&lt;/code>值为&lt;code>0.00001&lt;/code>，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code>1&lt;/code>个flag，就把网页上的&lt;code>step&lt;/code>值改为&lt;code>1&lt;/code>。然后随便拖动一下进度条得到&lt;code>1&lt;/code>，点击&lt;code>提取&lt;/code>按钮，完工。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png" alt="">&lt;/p>
-&lt;h3 id="2048">2048&lt;/h3>
-&lt;p>​	打开题目是一个&lt;code>2048&lt;/code>的小游戏，第一个想法就是玩&lt;code>2048&lt;/code>达到一定分数以后会获得flag（&lt;del>可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del>）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del>逃课废物&lt;/del>是不可能努力哒！&lt;/p>
-&lt;p>F12开始翻网页资源&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png" alt="">&lt;/p>
-&lt;p>​	还好上次&lt;del>摸鱼&lt;/del>课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code>animframe_polyfill&lt;/code>应该就是管动画效果的，&lt;code>keynpard...&lt;/code>这个肯定是相应按键的，&lt;code>local_storage_manager&lt;/code>应该是保存游戏的，&lt;code>game_manager&lt;/code>感觉就是管理整个游戏的主要文件。&lt;/p>
-&lt;p>​	打开&lt;code>game_manager&lt;/code>粗略的看了下变量，&lt;code>score&lt;/code> 分数、&lt;code>over、won、keepPlaying&lt;/code>游戏状态，想赢游戏肯定是和&lt;code>score、won&lt;/code>有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p>
-&lt;p>发现了&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png" alt="">&lt;/p>
-&lt;p>​	只有这里修改了&lt;code>won&lt;/code>的状态，前面还有个&lt;code>16384&lt;/code>这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del>小声bb&lt;/del>&lt;a href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg">截图为证&lt;/a>），直接让&lt;code>if&lt;/code>里面的语句为真就可以获胜，直接修改&lt;code>if(1) self.won = true&lt;/code>，保存文件，按一个方向键让语句执行到，完工。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png" alt="">&lt;/p>
-&lt;h1 id="general">general&lt;/h1>
-&lt;h3 id="猫咪问题">猫咪问题++&lt;/h3>
-&lt;p>​	秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png" alt="">&lt;/p>
-&lt;p>​	题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p>
-&lt;p>&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png" alt="">&lt;/p>
-&lt;h4 id="第一题">第一题&lt;/h4>
-&lt;blockquote>
-&lt;ol>
-&lt;li>以下编程语言、软件或组织对应标志是哺乳动物的有几个？&lt;/li>
-&lt;/ol>
-&lt;p>Docker，Golang，Python，Plan 9，PHP，GNU，LLVM，Swift，Perl，GitHub，TortoiseSVN，FireFox，MySQL，PostgreSQL，MariaDB，Linux，OpenBSD，FreeDOS，Apache Tomcat，Squid，openSUSE，Kali，Xfce.&lt;/p>
-&lt;p>提示：学术上一般认为龙不属于哺乳动物。&lt;/p>&lt;/blockquote>
-&lt;p>​	本人只认识几个，那就一个一个搜呗。我的模式是：百度&lt;code>xxx标志&lt;/code>然后第二条就是百度图片的搜索结果，大致辨别一下，然后再百度&lt;code>xxx是哺乳动物吗&lt;/code>，妥妥的&lt;del>胎儿&lt;/del>教学。&lt;/p>
-&lt;p>​	一个比较有印象就是&lt;code>FreeDOS&lt;/code>这个标志就离谱，什么玩意&lt;/p>
-&lt;p>&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg" alt="">&lt;/p>
-&lt;p>&lt;strong>参考答案 ：12&lt;/strong>&lt;/p>
-&lt;h4 id="第二题">第二题&lt;/h4>
-&lt;blockquote>
-&lt;ol start="2">
-&lt;li>第一个以信鸽为载体的 IP 网络标准的 RFC 文档中推荐使用的 MTU (Maximum Transmission Unit) 是多少毫克？&lt;/li>
-&lt;/ol>&lt;/blockquote>
-&lt;p>​	卡了我好一会，没听过信鸽传输，贴上最后找到答案的&lt;a href="https://blog.csdn.net/qq_31621387/article/details/77690642">博客&lt;/a>，以及一篇信鸽传输的&lt;a href="http://sohu.com/a/309403082_354973">历史发展&lt;/a>，长见识了。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hackergame 2020 on</title><link>/tags/hackergame-2020/</link><description>Recent content in Hackergame 2020 on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 05 Nov 2020 09:29:22 +0000</lastBuildDate><atom:link href="/tags/hackergame-2020/index.xml" rel="self" type="application/rss+xml"/><item><title>Hackgame2020(二)</title><link>/posts/ctf/hackgame20202/</link><pubDate>Thu, 05 Nov 2020 09:29:22 +0000</pubDate><guid>/posts/ctf/hackgame20202/</guid><description>&lt;h3 id="一闪而过的flag"&gt;一闪而过的Flag
+&lt;/h3&gt;&lt;p&gt;​ 根据题目信息&lt;strong&gt;程序每次运行时隐约可见黑色控制台上有 flag 一闪而过&lt;/strong&gt;，我想到了应该能看程序的代码啥的找到，但是&lt;del&gt;天下武功，唯快不破&lt;/del&gt;，下载 运行 截图一气呵成。&lt;/p&gt;
+&lt;p&gt;​ &lt;img src="https://s1.ax1x.com/2020/11/09/B7TOUA.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 接下来让我康康哪一位是&lt;del&gt;瞎子&lt;/del&gt;，包括答案里也是满满的嘲讽。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：flag{Are_you_eyes1ght_g00D?_can_you_dIst1nguish_1iI?}&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="从零开始的记账工具人"&gt;从零开始的记账工具人
+&lt;/h3&gt;&lt;p&gt;​ &lt;del&gt;npy&lt;/del&gt;给了我一张账单，让我计算账单上面的金额，flag就是由金额组成的。本以为是一个简单的Excel的表格函数解决，打开我傻了。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2Flxf.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 原来是搞这个大小写金额的转换，没见过Excel有这种操作就去百度，转了一大圈，网上只有数字转大写金额的，没有反过来的。还去了github上找代码，发现运行的结果和自己想要的还是有些出入。卡了有足足半天，之后自己写了一个Java代码跑了一遍，代码如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; java.util.Scanner;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Main&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Scanner sn &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Scanner(System.&lt;span style="color:#a6e22e"&gt;in&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; String str;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; x;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; cnt&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;double&lt;/span&gt; result&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt;(cnt&lt;span style="color:#f92672"&gt;++!=&lt;/span&gt;1000){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; str &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sn.&lt;span style="color:#a6e22e"&gt;next&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sn.&lt;span style="color:#a6e22e"&gt;nextInt&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; result &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; tonum(str)&lt;span style="color:#f92672"&gt;*&lt;/span&gt;x;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(result);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;double&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;tonum&lt;/span&gt;(String s){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; len;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;double&lt;/span&gt; res&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0,temp &lt;span style="color:#f92672"&gt;=&lt;/span&gt; 1;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;double&lt;/span&gt; result&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; len &lt;span style="color:#f92672"&gt;=&lt;/span&gt; s.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; i&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;i&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;len;i&lt;span style="color:#f92672"&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;switch&lt;/span&gt; (s.&lt;span style="color:#a6e22e"&gt;charAt&lt;/span&gt;(i)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;壹&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;1;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;贰&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;2;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;叁&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;3;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;肆&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;4;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;伍&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;5;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;陆&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;6;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;柒&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;7;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;捌&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;8;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;玖&amp;#39;&lt;/span&gt;: temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;9;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;零&amp;#39;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;拾&amp;#39;&lt;/span&gt;: res&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;temp&lt;span style="color:#f92672"&gt;*&lt;/span&gt;10;temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;佰&amp;#39;&lt;/span&gt;: res&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;temp&lt;span style="color:#f92672"&gt;*&lt;/span&gt;100;temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;元&amp;#39;&lt;/span&gt;: res&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;temp;temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;角&amp;#39;&lt;/span&gt;: res&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;temp&lt;span style="color:#f92672"&gt;*&lt;/span&gt;0.&lt;span style="color:#a6e22e"&gt;1&lt;/span&gt;;temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;分&amp;#39;&lt;/span&gt;: res&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;temp&lt;span style="color:#f92672"&gt;*&lt;/span&gt;0.&lt;span style="color:#a6e22e"&gt;01&lt;/span&gt;;temp&lt;span style="color:#f92672"&gt;=&lt;/span&gt;0;&lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;整&amp;#39;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;default&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;这个认不出来&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; s.&lt;span style="color:#a6e22e"&gt;charAt&lt;/span&gt;(i));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; res;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;​ 程序用的控制台输入，直接表格两列从头拉倒尾粘贴，出答案。程序的思路就是把金额大写当做字符串处理，每一位用&lt;code&gt;switch&lt;/code&gt;判断数字或是个、十、百、千那一位上的数字。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2F7ee.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ Java渣轻喷。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：flag{19115.33}&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="超简单的世界模拟器"&gt;超简单的世界模拟器
+&lt;/h3&gt;&lt;p&gt;​ 这道题下面有两道小题&lt;/p&gt;
+&lt;h3 id="蝴蝶效应"&gt;蝴蝶效应
+&lt;/h3&gt;&lt;p&gt;​ 先看有意思的一个漫画&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2k9eg.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 一个人用石头模拟了一整个宇宙，斯巴拉西。&lt;/p&gt;
+&lt;p&gt;​ 打开题目以后是一个终端，然提示等待你输入一个&lt;strong&gt;15*15矩阵&lt;/strong&gt;（只能有0和1组成），看到这挺懵的，但是题目里有一个重要信息&lt;strong&gt;生命游戏&lt;/strong&gt;，百度百科看了一下这个&lt;a class="link" href="https://baike.baidu.com/item/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/2926434?fr=aladdin" target="_blank" rel="noopener"
+&gt;生命游戏&lt;/a&gt;，游戏的规则大致就是：&lt;strong&gt;一个细胞会根据周围的细胞数量判断存活和死亡&lt;/strong&gt;，然后细胞会不断演算，这个和前面的漫画有异曲同工之妙。&lt;/p&gt;
+&lt;p&gt;​ 返回终端里面一片白中间有几个框框&lt;img src="https://s1.ax1x.com/2020/11/05/B2ZFBT.png"
+loading="lazy"
+&gt;，题目中&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果被特殊标注的正方形内的细胞被“清除”，你将会得到对应的 flag：&lt;/p&gt;
+&lt;p&gt;“清除”任意一个正方形，你将会得到第一个 flag。同时“清除”两个正方形，你将会得到第二个 flag。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 用细胞去碰框框就是了，正好也看到了一个知乎的提问：&lt;a class="link" href="https://baike.baidu.com/item/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/2926434?fr=aladdin" target="_blank" rel="noopener"
+&gt;&lt;em&gt;生命游戏&lt;/em&gt;(Game of Life)有哪些图形? - 知乎&lt;/a&gt;，看了看内容更有趣了。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2elzn.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 大师我悟了，就是提供一个初始的&lt;strong&gt;15*15矩阵&lt;/strong&gt;，根据&lt;strong&gt;生命游戏&lt;/strong&gt;的规则进行演算，然后去消除黑框框。我臭屁完了直接贴图形&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一关&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-轻量级飞船" data-lang="轻量级飞船"&gt;000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000011000
+000000000111100
+000000000110110
+000000000001100
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;​ 第一关打上面的黑框，刚好在上面15行的范围内，用一个&lt;strong&gt;轻量级飞船&lt;/strong&gt;直线打过去即可。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第二关&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-三飞船" data-lang="三飞船"&gt;000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000011000
+000000000111100
+000000000110110
+000000000001100
+000000000000000
+001100000000000
+011110000000000
+011011000001100
+000110000011110
+000000000011011
+000000000000110
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;​ 第二关我期初试了试&lt;strong&gt;滑翔者&lt;/strong&gt;放在右上角以便能打到最远距离，但是和第二个都是擦肩而过。于是我就乱试乱拼凑，最后拼出来一个&lt;strong&gt;三飞船&lt;/strong&gt;，正好把两个黑框都给消了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. flag{D0_Y0U_l1k3_g4me_0f_l1fe?_d5e1c80641}&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. flag{1s_th3_e55ence_0f_0ur_un1ver5e_ju5t_c0mputat1on?_ea3e769cb8}&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;完工。&lt;/p&gt;</description></item><item><title>Hackgame2020(一)</title><link>/posts/ctf/hackgame20201/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>/posts/ctf/hackgame20201/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;/h2&gt;&lt;p&gt;比赛地址：https://hack.lug.ustc.edu.cn/&lt;/p&gt;
+&lt;h1 id="web"&gt;web
+&lt;/h1&gt;&lt;h3 id="签到题"&gt;签到题
+&lt;/h3&gt;&lt;p&gt;​ 第一题是flag提取器，打开题目以后页面是一个提取器下面一个&lt;code&gt;进度条&lt;/code&gt;和一个&lt;code&gt;提取&lt;/code&gt;按钮。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png"
+loading="lazy"
+alt="BwJbJs.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 随便拉了拉进度条发现初始是&lt;code&gt;0&lt;/code&gt;末尾是&lt;code&gt;1.5&lt;/code&gt;，然后中间的数值都是小数&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png"
+loading="lazy"
+alt="BwYAQx.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 我猜的题目可能是想让数值为&lt;code&gt;1&lt;/code&gt;时能提取到flag。&lt;/p&gt;
+&lt;p&gt;​ F12查看源代码，定位到进度条的标签，查看属性&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 确实和猜测一样最大最小值分别是&lt;code&gt;0&lt;/code&gt;、&lt;code&gt;1.5&lt;/code&gt;，注意到&lt;code&gt;step&lt;/code&gt;值为&lt;code&gt;0.00001&lt;/code&gt;，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code&gt;1&lt;/code&gt;个flag，就把网页上的&lt;code&gt;step&lt;/code&gt;值改为&lt;code&gt;1&lt;/code&gt;。然后随便拖动一下进度条得到&lt;code&gt;1&lt;/code&gt;，点击&lt;code&gt;提取&lt;/code&gt;按钮，完工。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;h3 id="2048"&gt;2048
+&lt;/h3&gt;&lt;p&gt;​ 打开题目是一个&lt;code&gt;2048&lt;/code&gt;的小游戏，第一个想法就是玩&lt;code&gt;2048&lt;/code&gt;达到一定分数以后会获得flag（&lt;del&gt;可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del&gt;）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del&gt;逃课废物&lt;/del&gt;是不可能努力哒！&lt;/p&gt;
+&lt;p&gt;F12开始翻网页资源&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 还好上次&lt;del&gt;摸鱼&lt;/del&gt;课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code&gt;animframe_polyfill&lt;/code&gt;应该就是管动画效果的，&lt;code&gt;keynpard...&lt;/code&gt;这个肯定是相应按键的，&lt;code&gt;local_storage_manager&lt;/code&gt;应该是保存游戏的，&lt;code&gt;game_manager&lt;/code&gt;感觉就是管理整个游戏的主要文件。&lt;/p&gt;
+&lt;p&gt;​ 打开&lt;code&gt;game_manager&lt;/code&gt;粗略的看了下变量，&lt;code&gt;score&lt;/code&gt; 分数、&lt;code&gt;over、won、keepPlaying&lt;/code&gt;游戏状态，想赢游戏肯定是和&lt;code&gt;score、won&lt;/code&gt;有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p&gt;
+&lt;p&gt;发现了&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 只有这里修改了&lt;code&gt;won&lt;/code&gt;的状态，前面还有个&lt;code&gt;16384&lt;/code&gt;这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del&gt;小声bb&lt;/del&gt;&lt;a class="link" href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg" target="_blank" rel="noopener"
+&gt;截图为证&lt;/a&gt;），直接让&lt;code&gt;if&lt;/code&gt;里面的语句为真就可以获胜，直接修改&lt;code&gt;if(1) self.won = true&lt;/code&gt;，保存文件，按一个方向键让语句执行到，完工。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;h1 id="general"&gt;general
+&lt;/h1&gt;&lt;h3 id="猫咪问题"&gt;猫咪问题++
+&lt;/h3&gt;&lt;p&gt;​ 秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;​ 题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;h4 id="第一题"&gt;第一题
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;以下编程语言、软件或组织对应标志是哺乳动物的有几个？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Docker，Golang，Python，Plan 9，PHP，GNU，LLVM，Swift，Perl，GitHub，TortoiseSVN，FireFox，MySQL，PostgreSQL，MariaDB，Linux，OpenBSD，FreeDOS，Apache Tomcat，Squid，openSUSE，Kali，Xfce.&lt;/p&gt;
+&lt;p&gt;提示：学术上一般认为龙不属于哺乳动物。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 本人只认识几个，那就一个一个搜呗。我的模式是：百度&lt;code&gt;xxx标志&lt;/code&gt;然后第二条就是百度图片的搜索结果，大致辨别一下，然后再百度&lt;code&gt;xxx是哺乳动物吗&lt;/code&gt;，妥妥的&lt;del&gt;胎儿&lt;/del&gt;教学。&lt;/p&gt;
+&lt;p&gt;​ 一个比较有印象就是&lt;code&gt;FreeDOS&lt;/code&gt;这个标志就离谱，什么玩意&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案 ：12&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="第二题"&gt;第二题
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;第一个以信鸽为载体的 IP 网络标准的 RFC 文档中推荐使用的 MTU (Maximum Transmission Unit) 是多少毫克？&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 卡了我好一会，没听过信鸽传输，贴上最后找到答案的&lt;a class="link" href="https://blog.csdn.net/qq_31621387/article/details/77690642" target="_blank" rel="noopener"
+&gt;博客&lt;/a&gt;，以及一篇信鸽传输的&lt;a class="link" href="http://sohu.com/a/309403082_354973" target="_blank" rel="noopener"
+&gt;历史发展&lt;/a&gt;，长见识了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：256&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="第三题"&gt;第三题
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;USTC Linux 用户协会在 2019 年 9 月 21 日自由软件日活动中介绍的开源游戏的名称共有几个字母？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;提示：活动记录会在哪里？&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 搜索&lt;code&gt;USTC Linux 用户协会&lt;/code&gt;发现这个协会就是科大爱好者们创建的。那么直接摸到他们官网的&lt;a class="link" href="https://lug.ustc.edu.cn/news/" target="_blank" rel="noopener"
+&gt;新闻版块&lt;/a&gt;（百度搜出来的是旧站，里面有新站的网址）。题目中还写道&lt;code&gt;2019年9月21日自由软件日活动&lt;/code&gt;，那么官网肯定有那天的新闻。&lt;/p&gt;
+&lt;p&gt;​ 找到一篇当天的新闻&lt;a class="link" href="https://lug.ustc.edu.cn/news/2019/09/2019-sfd-ustc/" target="_blank" rel="noopener"
+&gt;2019 软件自由日中国科大站&lt;/a&gt;，进取直接找，文章末尾有&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最后一项是李文睿同学介绍了开源游戏 Teeworlds，由于底层代码开源，开发者可以做出自己的定制，可玩性非常高。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 答案就是&lt;code&gt;Teeworlds&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;​ 我还摸到了他们当天活动的记录资料：&lt;a class="link" href="https://ftp.lug.ustc.edu.cn/%E6%B4%BB%E5%8A%A8/2019.09.21_SFD/" target="_blank" rel="noopener"
+&gt;点我&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​ 在&lt;code&gt;slides\闪电演讲\Teeworlds&lt;/code&gt;文件夹下有应该作者演讲的PPT和游戏的视频演示，有点心动了🤣&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：9&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="第四题"&gt;第四题
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;中国科学技术大学西校区图书馆正前方（西南方向） 50 米 L 型灌木处共有几个连通的划线停车位？&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 直接百度地图搜图书馆，然后全景地图房门口，视野拉到L型灌木那。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwvkdA.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：9&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="第五题"&gt;第五题
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;中国科学技术大学第六届信息安全大赛所有人合计提交了多少次 flag？&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;p&gt;​ 百度&lt;code&gt;中国科学技术大学第六届信息安全大赛&lt;/code&gt;有个&lt;code&gt;...圆满结束&lt;/code&gt;，就他了。点开第二行就是&lt;code&gt;经统计，在本次比赛中，总共有 2682 人注册，1904 人至少完成了一题。比赛期间所有人合计提交了 17098 次 flag&lt;/code&gt;。（看这个网站的标志似乎还是第三题搜的那个&lt;code&gt;USTC Linux 用户协会&lt;/code&gt;的官网新闻。嗷原来题目上已经说了是举办方👀）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考答案：17098&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;完工。&lt;/p&gt;</description></item></channel></rss>

@@ -1,97 +1,557 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习笔记 on</title><link>/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 学习笔记 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p>&lt;a href="https://blog.csdn.net/m0_55746113/article/details/122728673">https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a>&lt;/p>
-&lt;h2 id="标注符号">标注符号&lt;/h2>
-&lt;h3 id="上下标">上下标&lt;/h3>
-&lt;p>上标符号为“^”、下标符号为“_” ，多于一个字符用&lt;code>{}&lt;/code>包含，例如&lt;code>2^r&lt;/code>、&lt;code>a_5&lt;/code>&lt;/p>
-&lt;p>$2^r,a_5,A_{n+1}$&lt;/p>
-&lt;h3 id="平均值箭头向量等">平均值、箭头、向量等&lt;/h3>
-&lt;p>加^号：&lt;code>\hat{x}&lt;/code>&lt;/p>
-&lt;p>加横线：&lt;code>\overline{x}&lt;/code>&lt;/p>
-&lt;p>加^：&lt;code>\widehat{x}&lt;/code>&lt;/p>
-&lt;p>加波浪线：&lt;code>\widetilde{x}&lt;/code>&lt;/p>
-&lt;p>加一个点：&lt;code>\dot{x}&lt;/code>&lt;/p>
-&lt;p>加两个点：&lt;code>\ddot{x}&lt;/code>&lt;/p>
-&lt;p>$\hat x,\overline x,\widehat x,\widetilde x,\dot x,\ddot x$&lt;/p>
-&lt;h3 id="加粗">加粗&lt;/h3>
-&lt;p>矩阵字母一般会用加粗的罗马体来表示。&lt;code>\bf&lt;/code>&lt;/p>
-&lt;h2 id="根号">根号&lt;/h2>
-&lt;p>&lt;code>\sqrt{}&lt;/code>&lt;/p>
-&lt;h2 id="希腊字母表">希腊字母表&lt;/h2>
-&lt;p>&lt;img src="https://img.braindance.top/article/2023/10/12/6527dfcd9db91.png" alt="1697112011353.png">&lt;/p>
-&lt;h2 id="运算符号">运算符号&lt;/h2>
-&lt;h3 id="加减乘除">加减乘除&lt;/h3>
-&lt;p>&lt;code>+&lt;/code> 和 &lt;code>-&lt;/code>。&lt;code>\times&lt;/code> 和 &lt;code>\div&lt;/code>。点乘用 &lt;code>\cdot&lt;/code>&lt;/p>
-&lt;p>$ +,-,\times,\div,\cdot$&lt;/p>
-&lt;h3 id="大于小于约等于">大于、小于、约等于&lt;/h3>
-&lt;p>大于小于直接 &lt;code>&amp;gt;&lt;/code> 、 &lt;code>&amp;lt;&lt;/code>&lt;/p>
-&lt;p>大于等于 &lt;code>\ge&lt;/code>，小于等于 &lt;code>\le&lt;/code>&lt;/p>
-&lt;p>远大于 &lt;code>\gg&lt;/code>，远小于 &lt;code>\ll&lt;/code>&lt;/p>
-&lt;p>不等于 &lt;code>\ne&lt;/code>&lt;/p>
-&lt;p>约等于 &lt;code>\approx&lt;/code>&lt;/p>
-&lt;p>$&amp;gt;,&amp;lt;,\ge,\le,\gg,\ll,\ne,\approx$&lt;/p>
-&lt;h3 id="分式和根式">分式和根式&lt;/h3>
-&lt;p>&lt;code>\frac{分子}{分母}&lt;/code>或&lt;code>\frac 分子 分母&lt;/code>。如&lt;/p>
-&lt;p>$ \frac{1}{2}$&lt;/p>
-&lt;h3 id="交集并集">交集并集&lt;/h3>
-&lt;p>交集用 &lt;code>\cap&lt;/code>&lt;/p>
-&lt;p>并集用 &lt;code>\cup&lt;/code>&lt;/p>
-&lt;p>$\cap,\cup$&lt;/p>
-&lt;h3 id="属于不属于">属于不属于&lt;/h3>
-&lt;p>属于用 &lt;code>\in&lt;/code>&lt;/p>
-&lt;p>不属于用 &lt;code>\notin&lt;/code>&lt;/p>
-&lt;p>$\in,\notin$&lt;/p></description></item><item><title>Python-Day-100 笔记</title><link>/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate><guid>/posts/python%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="函数">函数&lt;/h2>
-&lt;h3 id="函数的参数">函数的参数&lt;/h3>
-&lt;p>可以使用可变参数&lt;code>def func(*args)&lt;/code>，参数前面的&lt;code>*&lt;/code>代表&lt;code>args&lt;/code>是一个可变参数。&lt;/p>
-&lt;h3 id="用模块管理函数">用模块管理函数&lt;/h3>
-&lt;p>每个文件代表一个模块，不同模块的函数命名可以相同，但是如果如下代码引用&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> module1 &lt;span style="color:#f92672">import&lt;/span> foo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> module2 &lt;span style="color:#f92672">import&lt;/span> foo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>foo()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>程序会调用最后一个调用的&lt;code>foo&lt;/code>函数。
-如果导入模块中除了定义的函数以外有可执行的代码，则Python解释器在导入这个模块时就会执行这些代码。可以利用只有被Python解释器直接执行的模块的名字才是 &lt;strong>__main__&lt;/strong> 进行判断&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">foo&lt;/span>():
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># __name__是Python中一个隐含的变量它代表了模块的名字&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 只有被Python解释器直接执行的模块的名字才是__main__&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;call foo()&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> foo()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在其他模块再导入上述模块时，if条件中的语句就不会执行&lt;/p>
-&lt;h3 id="变量作用域">变量作用域&lt;/h3>
-&lt;p>Python查找一个变量时会按照“局部作用域”、“嵌套作用域”、“全局作用域”和“内置作用域”的顺序进行搜索。内置作用域及python内置的标识符如：&lt;code>input&lt;/code>、&lt;code>print&lt;/code>、&lt;code>int&lt;/code>。
-可以使用&lt;code>global&lt;/code>关键字来指示局部函数中的变量来自&lt;strong>全局变量&lt;/strong>，&lt;code>nonlocal&lt;/code>关键字表示变量来自&lt;strong>外部嵌套函数内的变量&lt;/strong>&lt;/p>
-&lt;blockquote>
-&lt;p>事实上，减少对全局变量的使用，也是降低代码之间耦合度的一个重要举措，同时也是对&lt;a href="https://zh.wikipedia.org/zh-hans/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B">迪米特法则&lt;/a>的践行。&lt;/p>&lt;/blockquote>
-&lt;h2 id="字符串和常用数据结构">字符串和常用数据结构&lt;/h2>
-&lt;h3 id="字符串">字符串&lt;/h3>
-&lt;p>反斜杠&lt;code>\&lt;/code>用来转义。
-&lt;code>\&lt;/code>后面可以跟八进制和六进制来表示字符，&lt;code>\u68d2&lt;/code>使用unicode字符编码表示字符。
-如果不想使用&lt;code>\&lt;/code>转义，可以在字符串前加上字母&lt;code>r&lt;/code>说明&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>s1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">r&lt;/span>&lt;span style="color:#e6db74">&amp;#39;\n&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">hello, world!&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">\n&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(s1) &lt;span style="color:#75715e"># \n\\hello, world!\\\n&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用&lt;code>+&lt;/code>进行字符串拼接，使用&lt;code>*&lt;/code>重复一个字符串的内容，&lt;code>in&lt;/code>、&lt;code>not in&lt;/code>来判断字符串中是否包含子串，&lt;code>[]&lt;/code>、&lt;code>[:]&lt;/code>用来切片运算。&lt;/p>
-&lt;p>字符串类型是一种结构化的、非标量类型，所以会有一系列的属性和方法。
-字符串对象身上的&lt;strong>常用的函数&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>len()；获取字符串长度&lt;/li>
-&lt;li>capitalize()；字符串首个字母大写的拷贝&lt;/li>
-&lt;li>title()；每个字符串单词首字母大写的拷贝&lt;/li>
-&lt;li>upper()；所有字符串大写的拷贝&lt;/li>
-&lt;li>find()；查找字串位置。未找到值为 -1&lt;/li>
-&lt;li>startswith()；以某字符开始。类似的有endswith()&lt;/li>
-&lt;li>center(50,&amp;rsquo;*&amp;rsquo;)；将字符串以指定宽度居中，填充指定字符。类似的有rjust()、ljust()&lt;/li>
-&lt;li>isdigit()；是否为数字构成&lt;/li>
-&lt;li>isalpha()；是否为字母构成&lt;/li>
-&lt;li>isalnum()；是否为数字字母构成&lt;/li>
-&lt;li>strip()；获取处理左右两侧空格后的拷贝&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>格式化输出字符串&lt;/strong>
-使用&lt;code>%d&lt;/code>、&lt;code>%s&lt;/code>等占位符，并在字符串结尾使用&lt;code>%()&lt;/code>列表对应。
-字符串提供的&lt;code>format()&lt;/code>方法。
-Python 3.6以后提供了语法糖表示，在字符串前使用&lt;code>f&lt;/code>。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>a,b &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>,&lt;span style="color:#ae81ff">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74"> * &lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74"> = &lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> (a, b, a &lt;span style="color:#f92672">*&lt;/span> b))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{0}&lt;/span>&lt;span style="color:#e6db74"> * &lt;/span>&lt;span style="color:#e6db74">{1}&lt;/span>&lt;span style="color:#e6db74"> = &lt;/span>&lt;span style="color:#e6db74">{2}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(a, b, a &lt;span style="color:#f92672">*&lt;/span> b))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>a&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> * &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>b&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> = &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>a &lt;span style="color:#f92672">*&lt;/span> b&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="列表">列表&lt;/h3>
-&lt;p>数值类型（int、float）是标量类型，列表（list）是一种结构化的、非标量类型。
-可以使用下标的方式遍历列表元素，或者for循环遍历列表元素&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习笔记 on</title><link>/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 学习笔记 on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener"
+&gt;https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="标注符号"&gt;标注符号
+&lt;/h2&gt;&lt;h3 id="上下标"&gt;上下标
+&lt;/h3&gt;&lt;p&gt;上标符号为“^”、下标符号为“_” ，多于一个字符用&lt;code&gt;{}&lt;/code&gt;包含，例如&lt;code&gt;2^r&lt;/code&gt;、&lt;code&gt;a_5&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$2^r,a_5,A_{n+1}$&lt;/p&gt;
+&lt;h3 id="平均值箭头向量等"&gt;平均值、箭头、向量等
+&lt;/h3&gt;&lt;p&gt;加^号：&lt;code&gt;\hat{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加横线：&lt;code&gt;\overline{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加^：&lt;code&gt;\widehat{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加波浪线：&lt;code&gt;\widetilde{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加一个点：&lt;code&gt;\dot{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加两个点：&lt;code&gt;\ddot{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\hat x,\overline x,\widehat x,\widetilde x,\dot x,\ddot x$&lt;/p&gt;
+&lt;h3 id="加粗"&gt;加粗
+&lt;/h3&gt;&lt;p&gt;矩阵字母一般会用加粗的罗马体来表示。&lt;code&gt;\bf&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="根号"&gt;根号
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;\sqrt{}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="希腊字母表"&gt;希腊字母表
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/10/12/6527dfcd9db91.png"
+loading="lazy"
+alt="1697112011353.png"
+&gt;&lt;/p&gt;
+&lt;h2 id="运算符号"&gt;运算符号
+&lt;/h2&gt;&lt;h3 id="加减乘除"&gt;加减乘除
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;+&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt;。&lt;code&gt;\times&lt;/code&gt; 和 &lt;code&gt;\div&lt;/code&gt;。点乘用 &lt;code&gt;\cdot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$ +,-,\times,\div,\cdot$&lt;/p&gt;
+&lt;h3 id="大于小于约等于"&gt;大于、小于、约等于
+&lt;/h3&gt;&lt;p&gt;大于小于直接 &lt;code&gt;&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;大于等于 &lt;code&gt;\ge&lt;/code&gt;，小于等于 &lt;code&gt;\le&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;远大于 &lt;code&gt;\gg&lt;/code&gt;，远小于 &lt;code&gt;\ll&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;不等于 &lt;code&gt;\ne&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;约等于 &lt;code&gt;\approx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$&amp;gt;,&amp;lt;,\ge,\le,\gg,\ll,\ne,\approx$&lt;/p&gt;
+&lt;h3 id="分式和根式"&gt;分式和根式
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;\frac{分子}{分母}&lt;/code&gt;或&lt;code&gt;\frac 分子 分母&lt;/code&gt;。如&lt;/p&gt;
+&lt;p&gt;$ \frac{1}{2}$&lt;/p&gt;
+&lt;h3 id="交集并集"&gt;交集并集
+&lt;/h3&gt;&lt;p&gt;交集用 &lt;code&gt;\cap&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;并集用 &lt;code&gt;\cup&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\cap,\cup$&lt;/p&gt;
+&lt;h3 id="属于不属于"&gt;属于不属于
+&lt;/h3&gt;&lt;p&gt;属于用 &lt;code&gt;\in&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;不属于用 &lt;code&gt;\notin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\in,\notin$&lt;/p&gt;
+&lt;h3 id="省略号"&gt;省略号
+&lt;/h3&gt;&lt;p&gt;横向省略号 &lt;code&gt;\cdots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;垂直省略号 &lt;code&gt;\vdots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;斜向省略号 &lt;code&gt;\ddots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\cdots, \vdots , \ddots $&lt;/p&gt;
+&lt;h3 id="求和与求积"&gt;求和与求积
+&lt;/h3&gt;&lt;p&gt;求和用 &lt;code&gt;\sum&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;求积（product）用 &lt;code&gt;\prod&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可以用&lt;code&gt;\limits&lt;/code&gt;来强制显示在下方。&lt;/p&gt;
+&lt;p&gt;$\sum,\prod,\sum_i,\sum \limits_{i=1}^N,\prod_{i=1}^N x_i$&lt;/p&gt;
+&lt;h2 id="标注符号-1"&gt;标注符号
+&lt;/h2&gt;&lt;h3 id="括号"&gt;括号
+&lt;/h3&gt;&lt;p&gt;小括号直接 &lt;code&gt;()&lt;/code&gt;，中括号直接 &lt;code&gt;[]&lt;/code&gt;，大括号 &lt;code&gt;\{\}&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;左向上取整 &lt;code&gt;\lceil&lt;/code&gt;，右向上取整 &lt;code&gt;\rceil&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\lceil ,\rceil $&lt;/p&gt;
+&lt;p&gt;左向下取整 &lt;code&gt;\lfloor&lt;/code&gt;，右向下取整 &lt;code&gt;\rfloor&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\lfloor ,\rfloor $&lt;/p&gt;
+&lt;p&gt;绝对值用&lt;code&gt;||&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="下方加符号"&gt;下方加符号
+&lt;/h4&gt;&lt;p&gt;在任意符号下面加符号 &lt;code&gt;\underset{}{}&lt;/code&gt;。例如 &lt;code&gt;\underset{B}{A}&lt;/code&gt;。在下方换行使用 &lt;code&gt;\substack{}&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;$\underset{B}{A}，\underset{\substack{B&amp;gt;0 \ C&amp;lt;0}}{A}$&lt;/p&gt;
+&lt;h3 id="花体符号"&gt;花体符号
+&lt;/h3&gt;&lt;p&gt;傅里叶变换中的f用 &lt;code&gt;\mathcal&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\mathcal f,\mathcal L,\mathcal G$&lt;/p&gt;
+&lt;h2 id="多行公式"&gt;多行公式
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;\\&lt;/code&gt; 来换行，使用 &lt;code&gt;\begin{align}&lt;/code&gt;、&lt;code&gt;\end{align}&lt;/code&gt; 环绕表示多行环境。多行环境&lt;code&gt;\\&lt;/code&gt;默认右对齐，如果想要使&lt;strong&gt;某个符号对齐&lt;/strong&gt;，需要在符号前加 &lt;code&gt;&amp;amp;&lt;/code&gt;，例如&lt;code&gt;=&lt;/code&gt;号前面&lt;/p&gt;
+&lt;p&gt;$ \begin{align} a&amp;amp;=b+c+d \ &amp;amp;=e+f \end{align}$
+$$
+\begin{align}
+a&amp;amp;=b+c+d \
+&amp;amp;=e+f
+\end{align}
+$$&lt;/p&gt;</description></item><item><title>Python-Day-100 笔记</title><link>/posts/python%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate><guid>/posts/python%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="函数"&gt;函数
+&lt;/h2&gt;&lt;h3 id="函数的参数"&gt;函数的参数
+&lt;/h3&gt;&lt;p&gt;可以使用可变参数&lt;code&gt;def func(*args)&lt;/code&gt;，参数前面的&lt;code&gt;*&lt;/code&gt;代表&lt;code&gt;args&lt;/code&gt;是一个可变参数。&lt;/p&gt;
+&lt;h3 id="用模块管理函数"&gt;用模块管理函数
+&lt;/h3&gt;&lt;p&gt;每个文件代表一个模块，不同模块的函数命名可以相同，但是如果如下代码引用&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; module1 &lt;span style="color:#f92672"&gt;import&lt;/span&gt; foo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; module2 &lt;span style="color:#f92672"&gt;import&lt;/span&gt; foo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;foo()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;程序会调用最后一个调用的&lt;code&gt;foo&lt;/code&gt;函数。
+如果导入模块中除了定义的函数以外有可执行的代码，则Python解释器在导入这个模块时就会执行这些代码。可以利用只有被Python解释器直接执行的模块的名字才是 &lt;strong&gt;__main__&lt;/strong&gt; 进行判断&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;foo&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# __name__是Python中一个隐含的变量它代表了模块的名字&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 只有被Python解释器直接执行的模块的名字才是__main__&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name__ &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;call foo()&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; foo()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在其他模块再导入上述模块时，if条件中的语句就不会执行&lt;/p&gt;
+&lt;h3 id="变量作用域"&gt;变量作用域
+&lt;/h3&gt;&lt;p&gt;Python查找一个变量时会按照“局部作用域”、“嵌套作用域”、“全局作用域”和“内置作用域”的顺序进行搜索。内置作用域及python内置的标识符如：&lt;code&gt;input&lt;/code&gt;、&lt;code&gt;print&lt;/code&gt;、&lt;code&gt;int&lt;/code&gt;。
+可以使用&lt;code&gt;global&lt;/code&gt;关键字来指示局部函数中的变量来自&lt;strong&gt;全局变量&lt;/strong&gt;，&lt;code&gt;nonlocal&lt;/code&gt;关键字表示变量来自&lt;strong&gt;外部嵌套函数内的变量&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;事实上，减少对全局变量的使用，也是降低代码之间耦合度的一个重要举措，同时也是对&lt;a class="link" href="https://zh.wikipedia.org/zh-hans/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B" target="_blank" rel="noopener"
+&gt;迪米特法则&lt;/a&gt;的践行。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="字符串和常用数据结构"&gt;字符串和常用数据结构
+&lt;/h2&gt;&lt;h3 id="字符串"&gt;字符串
+&lt;/h3&gt;&lt;p&gt;反斜杠&lt;code&gt;\&lt;/code&gt;用来转义。
+&lt;code&gt;\&lt;/code&gt;后面可以跟八进制和六进制来表示字符，&lt;code&gt;\u68d2&lt;/code&gt;使用unicode字符编码表示字符。
+如果不想使用&lt;code&gt;\&lt;/code&gt;转义，可以在字符串前加上字母&lt;code&gt;r&lt;/code&gt;说明&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;s1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;r&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;\n&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\\&lt;/span&gt;&lt;span style="color:#e6db74"&gt;hello, world!&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\\&lt;/span&gt;&lt;span style="color:#e6db74"&gt;\n&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(s1) &lt;span style="color:#75715e"&gt;# \n\\hello, world!\\\n&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;+&lt;/code&gt;进行字符串拼接，使用&lt;code&gt;*&lt;/code&gt;重复一个字符串的内容，&lt;code&gt;in&lt;/code&gt;、&lt;code&gt;not in&lt;/code&gt;来判断字符串中是否包含子串，&lt;code&gt;[]&lt;/code&gt;、&lt;code&gt;[:]&lt;/code&gt;用来切片运算。&lt;/p&gt;
+&lt;p&gt;字符串类型是一种结构化的、非标量类型，所以会有一系列的属性和方法。
+字符串对象身上的&lt;strong&gt;常用的函数&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;len()；获取字符串长度&lt;/li&gt;
+&lt;li&gt;capitalize()；字符串首个字母大写的拷贝&lt;/li&gt;
+&lt;li&gt;title()；每个字符串单词首字母大写的拷贝&lt;/li&gt;
+&lt;li&gt;upper()；所有字符串大写的拷贝&lt;/li&gt;
+&lt;li&gt;find()；查找字串位置。未找到值为 -1&lt;/li&gt;
+&lt;li&gt;startswith()；以某字符开始。类似的有endswith()&lt;/li&gt;
+&lt;li&gt;center(50,&amp;rsquo;*&amp;rsquo;)；将字符串以指定宽度居中，填充指定字符。类似的有rjust()、ljust()&lt;/li&gt;
+&lt;li&gt;isdigit()；是否为数字构成&lt;/li&gt;
+&lt;li&gt;isalpha()；是否为字母构成&lt;/li&gt;
+&lt;li&gt;isalnum()；是否为数字字母构成&lt;/li&gt;
+&lt;li&gt;strip()；获取处理左右两侧空格后的拷贝&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;格式化输出字符串&lt;/strong&gt;
+使用&lt;code&gt;%d&lt;/code&gt;、&lt;code&gt;%s&lt;/code&gt;等占位符，并在字符串结尾使用&lt;code&gt;%()&lt;/code&gt;列表对应。
+字符串提供的&lt;code&gt;format()&lt;/code&gt;方法。
+Python 3.6以后提供了语法糖表示，在字符串前使用&lt;code&gt;f&lt;/code&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;a,b &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%d&lt;/span&gt;&lt;span style="color:#e6db74"&gt; * &lt;/span&gt;&lt;span style="color:#e6db74"&gt;%d&lt;/span&gt;&lt;span style="color:#e6db74"&gt; = &lt;/span&gt;&lt;span style="color:#e6db74"&gt;%d&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;%&lt;/span&gt; (a, b, a &lt;span style="color:#f92672"&gt;*&lt;/span&gt; b))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;{0}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; * &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{1}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; = &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{2}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;.&lt;/span&gt;format(a, b, a &lt;span style="color:#f92672"&gt;*&lt;/span&gt; b))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;a&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; * &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;b&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; = &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;a &lt;span style="color:#f92672"&gt;*&lt;/span&gt; b&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="列表"&gt;列表
+&lt;/h3&gt;&lt;p&gt;数值类型（int、float）是标量类型，列表（list）是一种结构化的、非标量类型。
+可以使用下标的方式遍历列表元素，或者for循环遍历列表元素&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;list &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;4&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;6&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;通过下标访问
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; index &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(len(list)):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(list[index])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;遍历元素访问
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; elem &lt;span style="color:#f92672"&gt;in&lt;/span&gt; list:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(elem)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;使用enumerate()处理获得元素及其下标
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; index, elem &lt;span style="color:#f92672"&gt;in&lt;/span&gt; enumerate(list1):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(index, elem)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;列表也可以使用&lt;code&gt;+&lt;/code&gt;进行拼接，使用切片操作获得列表的复制。
+&lt;code&gt;sorted()&lt;/code&gt;函数返回列表进行排序后的备份，不会影响原来的列表，我们设计函数应该像 sorted 函数一样不产生副作用。可以设置关键字&lt;code&gt;reverse=True&lt;/code&gt;使列表逆置，关键字&lt;code&gt;key=len&lt;/code&gt;根据字符串长度进行排序&lt;/p&gt;
+&lt;h3 id="生成式和生成器"&gt;生成式和生成器
+&lt;/h3&gt;&lt;p&gt;生成式表达式创建列表容器和生成器创建列表容器&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;用列表的生成表达式语法创建列表容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;表达式生成的容器里面元素已经准备就绪&lt;span style="color:#960050;background-color:#1e0010"&gt;，&lt;/span&gt;所以会耗费较多内存空间
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;f1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [x &lt;span style="color:#f92672"&gt;**&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; x &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;下面的代码创建的不是一个列表而是一个生成器对象
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;//&lt;/span&gt;生成器会在使用时&lt;span style="color:#960050;background-color:#1e0010"&gt;，&lt;/span&gt;经过运算获取数据&lt;span style="color:#960050;background-color:#1e0010"&gt;，&lt;/span&gt;不占用额外空间&lt;span style="color:#960050;background-color:#1e0010"&gt;，&lt;/span&gt;但是消耗时间
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;f2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (x &lt;span style="color:#f92672"&gt;**&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; x &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还可以使用关键字&lt;code&gt;yield&lt;/code&gt;将一个普通函数改造成&lt;strong&gt;生成器函数&lt;/strong&gt;，下面是使用生成器函数打印斐波那契数列的例子&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fib&lt;/span&gt;(n):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; a, b &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; _ &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(n):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; a, b &lt;span style="color:#f92672"&gt;=&lt;/span&gt; b, a &lt;span style="color:#f92672"&gt;+&lt;/span&gt; b
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;yield&lt;/span&gt; a
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; val &lt;span style="color:#f92672"&gt;in&lt;/span&gt; fib(&lt;span style="color:#ae81ff"&gt;20&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(val)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name__ &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="元组"&gt;元组
+&lt;/h3&gt;&lt;p&gt;元组与列表类似也是一种容器数据类型，但是元素内的元素不可以被修改。
+可以使用列表的方法访问元素，不能修改元组元素，但是可以引用新的元组，原来的元素就会被垃圾回收。
+使用&lt;code&gt;list()&lt;/code&gt;函数将元组转换成列表，使用&lt;code&gt;tuple()&lt;/code&gt;函数将列表转换成元组。
+为什么要用元组？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;元组可以在多线程环境中保证对象状态不会被修改，一个不变对象自动就是线程安全的，这样就可以省掉处理同步化的开销。&lt;/li&gt;
+&lt;li&gt;元组在创建时间和占用的空间上面都优于列表。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="集合"&gt;集合
+&lt;/h3&gt;&lt;p&gt;集合跟数学上的集合是一致的，不允许有重复元素，而且可以进行交集、并集、差集等运算。
+如果定义集合时有重复元素会被剔除；集合可以添加删除元素；
+集合的成员进行交集（&amp;amp;）、并集、差集等运算。例&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;set1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 集合的交集、并集、差集、对称差运算&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set1 &lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt; set2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set1.intersection(set2))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set1 &lt;span style="color:#f92672"&gt;|&lt;/span&gt; set2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set1.union(set2))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set1 &lt;span style="color:#f92672"&gt;-&lt;/span&gt; set2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set1.difference(set2))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set1 &lt;span style="color:#f92672"&gt;^&lt;/span&gt; set2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set1.symmetric_difference(set2))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 判断子集和超集&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set2 &lt;span style="color:#f92672"&gt;&amp;lt;=&lt;/span&gt; set1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set2.issubset(set1))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set3 &lt;span style="color:#f92672"&gt;&amp;lt;=&lt;/span&gt; set1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set3.issubset(set1))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set1 &lt;span style="color:#f92672"&gt;&amp;gt;=&lt;/span&gt; set2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set1.issuperset(set2))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(set1 &lt;span style="color:#f92672"&gt;&amp;gt;=&lt;/span&gt; set3)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# print(set1.issuperset(set3))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="字典"&gt;字典
+&lt;/h3&gt;&lt;p&gt;字典可以存储任何数据类型，每一个元素都为一个键一个值的&lt;code&gt;key:value&lt;/code&gt;格式。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dic1&lt;span style="color:#f92672"&gt;=&lt;/span&gt;{&lt;span style="color:#e6db74"&gt;&amp;#39;筑基丹&amp;#39;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1100&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;元灵精华&amp;#39;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;900&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;磐龙宝剑&amp;#39;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;11000&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 创建字典的构造器语法&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;items1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; dict(one&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, two&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, three&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;, four&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;4&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 通过zip函数将两个序列压成字典&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;items2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; dict(zip([&lt;span style="color:#e6db74"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;], &lt;span style="color:#e6db74"&gt;&amp;#39;123&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 对字典中所有键值对进行遍历&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; key &lt;span style="color:#f92672"&gt;in&lt;/span&gt; dic1:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;key&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;dic1[key]&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# get方法也是通过键获取对应的值但是可以设置默认值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(scores&lt;span style="color:#f92672"&gt;.&lt;/span&gt;get(&lt;span style="color:#e6db74"&gt;&amp;#39;神农鼎&amp;#39;&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;60&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="面向对象编程"&gt;面向对象编程
+&lt;/h2&gt;&lt;p&gt;比较正式的说法&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）和泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派。&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;python中使用&lt;code&gt;class&lt;/code&gt;关键字定义类，然后在类中定义属性和方法&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Student&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# __init__是一个特殊方法用于在创建对象时进行初始化操作&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# 通过这个方法我们可以为学生对象绑定name和age两个属性&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, name, age):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name &lt;span style="color:#f92672"&gt;=&lt;/span&gt; name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;study&lt;/span&gt;(self, course_name):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%s&lt;/span&gt;&lt;span style="color:#e6db74"&gt;正在学习&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%s&lt;/span&gt;&lt;span style="color:#e6db74"&gt;.&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;%&lt;/span&gt; (self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name, course_name))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; stu1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Student(&lt;span style="color:#e6db74"&gt;&amp;#39;大卫&amp;#39;&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;18&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; stu1&lt;span style="color:#f92672"&gt;.&lt;/span&gt;study()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在python中可以给对象的属性或方法添加访问权限，就像Java中的私有属性，可以在属性或方法前添加双下划线&lt;code&gt;__&lt;/code&gt;表示改方法是私有的，并且调用对象的属性或方法时会报&lt;code&gt;'XXX' object has no attribute '__xx'&lt;/code&gt;的错误。
+但是Python并没有从语法上保护属性或方法的私密性，如果知道更换名字的规则仍然可以访问到它们，如&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-Python" data-lang="Python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Test&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, foo):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;__foo &lt;span style="color:#f92672"&gt;=&lt;/span&gt; foo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__bar&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;__foo)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;__bar&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; test &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Test(&lt;span style="color:#e6db74"&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; test&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_Test__bar()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(test&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_Test__foo)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name__ &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;__main__&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之所以这样设定，可以用这样一句名言加以解释，就是&amp;quot;We are all consenting adults here&amp;quot;。因为绝大多数程序员都认为开放比封闭要好，而且程序员要自己为自己的行为负责。实际开发过程中Python程序员会遵循一种命名习惯就是让属性以单下划线开头表示属性是受保护的，其他类访问这样的属性时应该慎重，这种做法并不是语法上的规则，而是一种隐喻。
+作者踩过的坑&lt;a class="link" href="http://blog.csdn.net/jackfrued/article/details/79521404" target="_blank" rel="noopener"
+&gt;《Python - 那些年我们踩过的那些坑》&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;面向对象的支柱&lt;/strong&gt; ：&lt;strong&gt;封装&lt;/strong&gt;、&lt;strong&gt;继承&lt;/strong&gt;、&lt;strong&gt;多态&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;封装的感觉有点像webapi&lt;/p&gt;
+&lt;h2 id="面向对象进阶"&gt;面向对象进阶
+&lt;/h2&gt;&lt;h3 id="property装饰器"&gt;@property装饰器
+&lt;/h3&gt;&lt;p&gt;之前讲过的使用单下划线标识变量为私有的，不建议外界直接访问，如果想访问可以使用 &lt;strong&gt;@property装饰器&lt;/strong&gt; 可以用来包装getter和setter方法&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Person&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self,name,age):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name &lt;span style="color:#f92672"&gt;=&lt;/span&gt; name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@property&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@property&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;age&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@age.setter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;age&lt;/span&gt;(self,age):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#没有定义name的setter方法，如果访问的话会报AttributeError: can&amp;#39;t set attribute错误&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="__-slots-__魔法"&gt;__ slots __魔法
+&lt;/h3&gt;&lt;p&gt;由于Python是一种动态语言，允许在程序运行中给对象或属性绑定新的方法和属性，可以使用__slots__魔法来限定类可以绑定的属性和方法。 __slots__是一个变量，英文名直接翻译过来的意思是插槽，可以理解为在其中的方法或属性规定为类可拥有的&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Person&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; __slots__ &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#e6db74"&gt;&amp;#39;_name&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;_age&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;_gender&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self,name,age):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name &lt;span style="color:#f92672"&gt;=&lt;/span&gt; name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@property&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@property&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;age&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@age.setter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;age&lt;/span&gt;(self,age):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#如果添加或设置不在__slots__包含的属性，如&amp;#39;_is_man&amp;#39;则会报错AttributeError: &amp;#39;Person&amp;#39; object has no attribute &amp;#39;_is_man&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="静态方法和类方法"&gt;静态方法和类方法
+&lt;/h3&gt;&lt;p&gt;类中的方法不一定都是对象方法（给类对象传递消息），也有一些通用的&lt;strong&gt;静态方法&lt;/strong&gt;，如：三角形类中还为创建对象之前需要判断三条边是否能组成三角形，判断边能否组成三角形就可以设置为静态方法。&lt;strong&gt;类方法&lt;/strong&gt;个人理解类似于Java中的默认构造方法。
+静态方法使用&lt;code&gt;@staticmethod&lt;/code&gt;装饰器，举例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Triangle&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, a, b, c):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_a &lt;span style="color:#f92672"&gt;=&lt;/span&gt; a
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_b &lt;span style="color:#f92672"&gt;=&lt;/span&gt; b
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_c &lt;span style="color:#f92672"&gt;=&lt;/span&gt; c
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@staticmethod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;is_valid&lt;/span&gt;(a, b, c):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; a &lt;span style="color:#f92672"&gt;+&lt;/span&gt; b &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; c &lt;span style="color:#f92672"&gt;and&lt;/span&gt; b &lt;span style="color:#f92672"&gt;+&lt;/span&gt; c &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; a &lt;span style="color:#f92672"&gt;and&lt;/span&gt; a &lt;span style="color:#f92672"&gt;+&lt;/span&gt; c &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; b
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;#静态方法&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; a,b,c &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;6&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;8&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; Triangle&lt;span style="color:#f92672"&gt;.&lt;/span&gt;is_valid(a, b, c):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#34;构成三角形&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;类方法使用&lt;code&gt;@classmethod&lt;/code&gt;装饰器，类方法的第一个参数约定名为&lt;code&gt;cls&lt;/code&gt;参数，它代表的是当前类相关的信息的对象，举例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Clock&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;数字时钟&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, hour&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, minute&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, second&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_hour &lt;span style="color:#f92672"&gt;=&lt;/span&gt; hour
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_minute &lt;span style="color:#f92672"&gt;=&lt;/span&gt; minute
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_second &lt;span style="color:#f92672"&gt;=&lt;/span&gt; second
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;now&lt;/span&gt;(cls):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ctime &lt;span style="color:#f92672"&gt;=&lt;/span&gt; localtime(time())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; cls(ctime&lt;span style="color:#f92672"&gt;.&lt;/span&gt;tm_hour, ctime&lt;span style="color:#f92672"&gt;.&lt;/span&gt;tm_min, ctime&lt;span style="color:#f92672"&gt;.&lt;/span&gt;tm_sec)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;show&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;显示时间&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%02d&lt;/span&gt;&lt;span style="color:#e6db74"&gt;:&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%02d&lt;/span&gt;&lt;span style="color:#e6db74"&gt;:&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%02d&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;%&lt;/span&gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; (self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_hour, self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_minute, self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_second)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; clock &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Clock&lt;span style="color:#f92672"&gt;.&lt;/span&gt;now()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; clock&lt;span style="color:#f92672"&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="类之间的关系"&gt;类之间的关系
+&lt;/h3&gt;&lt;p&gt;类之间的关系主要有三种：is-a、has-a和use-a关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;is-a关系。通常称为继承或者泛化，如学生和人的关系，狗和宠物的关系。&lt;/li&gt;
+&lt;li&gt;has-a关系。通常称为关联，如部门和公司、汽车和引擎的关系。
+&lt;ul&gt;
+&lt;li&gt;关联关系如果是整体和部分的关联，则称这种关联为&lt;strong&gt;聚合关系&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;如果整体负责了部分的生命周期（比如我和我的脑子）整体和部分是不可分割的，整体的生命周期结束就表示部分的生命周期结束，这种关联是最强的关联关系，称为&lt;strong&gt;强聚合&lt;/strong&gt;或者&lt;strong&gt;组合关系&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use-a关系。称为依赖关系，表示一个类依赖于顶一个类的定义，依赖关系总是单向的。比如某人要过河，需要借用一条船，此时人与船之间的关系就是依赖。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些都属于UML（统一建模语言）用来描述对象之间的关系。参考内容：&lt;a class="link" href="https://blog.csdn.net/weixin_45920385/article/details/121315813" target="_blank" rel="noopener"
+&gt;UML的四种关系&lt;/a&gt;。还可以去看《UML面向对象设计基础》一书&lt;/p&gt;
+&lt;h3 id="继承和多态"&gt;继承和多态
+&lt;/h3&gt;&lt;p&gt;我们可以在已有的类的基础之上建立新的类，可以直接将原有类中的属性和方法继承下来，从而减少重复代码。继承中有两个概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;父类。也成超类、基类，是提供类继承信息的类&lt;/li&gt;
+&lt;li&gt;子类。也成派生类、衍生类，是得到继承信息的类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;子类除了可以继承父类中的属性和方法，还可以定义自己新的属性和方法，所以子类的功能也会更全面。在开发中也经常使用子类替换父类对象，这一规则称为&lt;a class="link" href="https://zh.wikipedia.org/wiki/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99" target="_blank" rel="noopener"
+&gt;里氏替换原则&lt;/a&gt;。
+继承的例子：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Person&lt;/span&gt;(object):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, name, age):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_name &lt;span style="color:#f92672"&gt;=&lt;/span&gt; name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; age
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; 省略setter和getter方法
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Student&lt;/span&gt;(Person):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, name, age, grade):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; super()&lt;span style="color:#f92672"&gt;.&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(name, age)&lt;span style="color:#75715e"&gt;#调用父类的初始化方法&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_grade &lt;span style="color:#f92672"&gt;=&lt;/span&gt; grade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;子类继承父类方法以后，可以对父类已经实现的方法重新构造，这种行为称为方法重写（override）。通过重写父类的方法，可以使得不同的子类拥有不同的行为，这就是所谓的&lt;strong&gt;多态&lt;/strong&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; abc &lt;span style="color:#f92672"&gt;import&lt;/span&gt; ABCMeta, abstractmethod
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Pet&lt;/span&gt;(object, metaclass&lt;span style="color:#f92672"&gt;=&lt;/span&gt;ABCMeta):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;宠物&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;__init__&lt;/span&gt;(self, nickname):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_nickname &lt;span style="color:#f92672"&gt;=&lt;/span&gt; nickname
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@abstractmethod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;make_voice&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;发出声音&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Dog&lt;/span&gt;(Pet):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;make_voice&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%s&lt;/span&gt;&lt;span style="color:#e6db74"&gt;: 汪汪汪...&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;%&lt;/span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_nickname)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Cat&lt;/span&gt;(Pet):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;make_voice&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;%s&lt;/span&gt;&lt;span style="color:#e6db74"&gt;: 喵...喵...&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;%&lt;/span&gt; self&lt;span style="color:#f92672"&gt;.&lt;/span&gt;_nickname)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面代码中，创建了 &lt;code&gt;Pet&lt;/code&gt; 抽象类，抽象类就是不能够被创建成对象的类，它是专门用来让其他类继承它。Python中没有Java那样对抽象类的支持，但是可以使用 &lt;code&gt;abc&lt;/code&gt; 模块的 &lt;code&gt;ABCMeta&lt;/code&gt; 元类和 &lt;code&gt;abstractmethod&lt;/code&gt; 包装器来达到抽象类的效果。&lt;code&gt;Dog&lt;/code&gt; 和 &lt;code&gt;Cat&lt;/code&gt; 类分别继承了抽象类 &lt;code&gt;Pet&lt;/code&gt; 并重写了 &lt;code&gt;make_voice&lt;/code&gt; 方法，当分别创建两个对象并调用方法时，这个方法就表现出了多态行为。&lt;/p&gt;
+&lt;h2 id="文件和异常"&gt;文件和异常
+&lt;/h2&gt;&lt;p&gt;开发中经常需要将数据持久化存储，最简单的方式就是存到文件中，Python可以使用 &lt;code&gt;open&lt;/code&gt; 函数，指定文件名、操作模式、编码信息等获取到操作文件的对象。具体的操作模式如下表&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作模式&lt;/th&gt;
+&lt;th&gt;具体含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'r'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;读取 （默认）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'w'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;写入（会先截断之前的内容）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'x'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;写入，如果文件已经存在会产生异常&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'a'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;追加，将内容写入到已有文件的末尾&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'b'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;二进制模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'t'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文本模式（默认）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;'+'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;更新（既可以读又可以写）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;下图是来自菜鸟教程中的辅助图记。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://www.runoob.com/wp-content/uploads/2013/11/2112205-861c05b2bdbc9c28.png"
+loading="lazy"
+alt="文件操作"
+&gt;&lt;/p&gt;
+&lt;h3 id="读写文本文件"&gt;读写文本文件
+&lt;/h3&gt;&lt;p&gt;读取文件时使用 &lt;code&gt;r&lt;/code&gt; 操作模式即可，&lt;code&gt;encoding&lt;/code&gt; 参数可以指定编码（若未指定，默认值是None，读取时会使用系统默认编码），如果编码不一致会无法解码导致读取失败。读取文件时会遇到各种错误如：文件找不到会引发 &lt;code&gt;FileNotFoundError&lt;/code&gt;，指定了未知的编码会引发 &lt;code&gt;LookupError&lt;/code&gt;，而如果读取文件时无法按指定方式解码会引发 &lt;code&gt;UnicodeDecodeError&lt;/code&gt;，可以使用 &lt;code&gt;try-except&lt;/code&gt; 代码块捕获异常&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; f &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; f &lt;span style="color:#f92672"&gt;=&lt;/span&gt; open(&lt;span style="color:#e6db74"&gt;&amp;#39;致橡树.txt&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;, encoding&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(f&lt;span style="color:#f92672"&gt;.&lt;/span&gt;read())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;except&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;FileNotFoundError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;无法打开指定的文件!&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;except&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;LookupError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;指定了未知的编码!&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;except&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;UnicodeDecodeError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#39;读取文件时解码错误!&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;finally&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; f&lt;span style="color:#f92672"&gt;.&lt;/span&gt;close()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name__ &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;try-except&lt;/code&gt; 代码块最后可以使用 &lt;code&gt;finally&lt;/code&gt; 块执行外部资源的释放的操作，因为在它其中的代码，不论程序正常还是异常执行都会被执行，即使是 &lt;code&gt;sys&lt;/code&gt; 的 &lt;code&gt;exit&lt;/code&gt; 函数都会被执行，因为 &lt;code&gt;exit&lt;/code&gt; 函数实质上是引发了 &lt;code&gt;SystemExit&lt;/code&gt; 异常。
+除了 &lt;code&gt;finally&lt;/code&gt; 块来执行外部资源的释放以外，还可以使用 &lt;code&gt;with&lt;/code&gt; 关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; open(&lt;span style="color:#e6db74"&gt;&amp;#39;致橡树.txt&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;, encoding&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(f&lt;span style="color:#f92672"&gt;.&lt;/span&gt;read())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;除了使用 &lt;code&gt;read&lt;/code&gt; 方法读取文件内容以外，还可以使用 &lt;code&gt;for-in&lt;/code&gt; 循环逐行读取或是 &lt;code&gt;readlines&lt;/code&gt; 将文件按行读取到一个列表容器中。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; open(&lt;span style="color:#e6db74"&gt;&amp;#39;致橡树.txt&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;, encoding&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(f&lt;span style="color:#f92672"&gt;.&lt;/span&gt;read())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ith open(&lt;span style="color:#e6db74"&gt;&amp;#39;致橡树.txt&amp;#39;&lt;/span&gt;, mode&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; line &lt;span style="color:#f92672"&gt;in&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(line, end&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; open(&lt;span style="color:#e6db74"&gt;&amp;#39;致橡树.txt&amp;#39;&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lines &lt;span style="color:#f92672"&gt;=&lt;/span&gt; f&lt;span style="color:#f92672"&gt;.&lt;/span&gt;readlines()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(lines)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果想要写入文件可以使用 &lt;code&gt;w&lt;/code&gt; 操作模式，但是其会覆盖文件原来的内容，如果想要追加内容可以使用 &lt;code&gt;a&lt;/code&gt; 操作模式&lt;/p&gt;
+&lt;h3 id="读写二进制文件"&gt;读写二进制文件
+&lt;/h3&gt;&lt;p&gt;二进制文件常见的有图片的复制或写入图片内容，需要使用二进制模式 &lt;code&gt;b&lt;/code&gt;，可以接合读或写模式为 &lt;code&gt;rb&lt;/code&gt; 、&lt;code&gt;wb&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id="读写json文件"&gt;读写JSON文件
+&lt;/h3&gt;&lt;p&gt;一个JSON数据类型和Python数据类型的对照表&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON&lt;/th&gt;
+&lt;th&gt;Python&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;td&gt;dict&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;array&lt;/td&gt;
+&lt;td&gt;list&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;str&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;number (int / real)&lt;/td&gt;
+&lt;td&gt;int / float&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;true / false&lt;/td&gt;
+&lt;td&gt;True / False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;null&lt;/td&gt;
+&lt;td&gt;None&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Python 中的 &lt;code&gt;json&lt;/code&gt; 模块包含了对 JSON 格式字串操作的函数，分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dump&lt;/code&gt; - 将 Python 对象按照 JSON 格式序列化到文件中&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dumps&lt;/code&gt; - 将 Python 对象序列化为 JSON 格式字串&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;load&lt;/code&gt; - 和 dump 相反。(将文件中的 JSON 数据反序列化为 Python 对象)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;loads&lt;/code&gt; -和 dumps相反。（将字符串的内容反序列化成Python对象）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mydict &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;tieba&amp;#34;&lt;/span&gt;:{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;image&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;container&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; { &lt;span style="color:#e6db74"&gt;&amp;#34;icon&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;lt; img src =&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;emoji/tieba/呵呵.png&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;gt;&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;text&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;呵呵&amp;#34;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; { &lt;span style="color:#e6db74"&gt;&amp;#34;icon&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;lt; img src =&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;emoji/tieba/哈哈.png&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;gt;&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;text&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;哈哈&amp;#34;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; open(&lt;span style="color:#e6db74"&gt;&amp;#39;data.json&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;, encoding&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; fs:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; json&lt;span style="color:#f92672"&gt;.&lt;/span&gt;dump(mydict, fs)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;留个异常的坑以后来填。&lt;a class="link" href="https://segmentfault.com/a/1190000007736783" target="_blank" rel="noopener"
+&gt;总结：Python中的异常处理&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

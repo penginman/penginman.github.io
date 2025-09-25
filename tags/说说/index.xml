@@ -1,22 +1,162 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>说说 on</title><link>/tags/%E8%AF%B4%E8%AF%B4/</link><description>Recent content in 说说 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 16 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%AF%B4%E8%AF%B4/index.xml" rel="self" type="application/rss+xml"/><item><title>KKapi+ISpeak说说页面部署</title><link>/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate><guid>/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>感觉原来的 Artitalk 说说不好康，在开往里发现好多博客都用的说说功能叫叨叨点啥，看了看作者的&lt;a href="https://www.antmoe.com/speak/">说说页面&lt;/a>，可以插入图片和标签分类，还有仅自己可见的功能，感觉挺不错的（实际是自己想折腾）所以就整一个。自己在部署过程中实在是踩了不少的坑，而且作者的文档感觉写的也不算完善，所以打算自己记录一下。&lt;/p>
-&lt;h2 id="项目结构">项目结构&lt;/h2>
-&lt;p>作者的文档中各种仓库链接属实给我跳晕了，最后理出来的项目分为以下部分：&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>kkapi&lt;/code>。是作为说说的后端部分，连接 MongoDB 数据库，还有一个&lt;code>kkadmin&lt;/code>的管理页面&lt;/li>
-&lt;li>&lt;code>ISpeak&lt;/code>。说说的主体部分，依赖于后端的 &lt;code>kkapi&lt;/code> ，分为前端的展示页面，和一个对接后端的发布说说页面。&lt;/li>
-&lt;/ul>
-&lt;p>作者文档中给出很多部署方法，白嫖版的就是 vercel 后端 api + 管理界面 + MongoDB 提供的云服务，但是个人感觉 vercel 经常被墙，所以部署的 api 感觉也不会稳定，而且考虑到数据的存放问题，所以我选择的是都部署到自己服务器上。&lt;/p>
-&lt;h2 id="后端部署">后端部署&lt;/h2>
-&lt;h3 id="docker-安装-mongodb">Docker 安装 Mongodb&lt;/h3>
-&lt;p>安装可以参考菜鸟教程的 &lt;a href="https://www.runoob.com/docker/docker-install-mongodb.html">Docker 安装 MongoDB&lt;/a> 。因为之前听过 MongoDB 的未授权访问，所以考虑到安全性问题，创建容器的时候添加 &lt;code>MONGO_INITDB_ROOT_USERNAME&lt;/code> 和 &lt;code>MONGO_INITDB_ROOT_PASSWORD&lt;/code> 设置用户的账号密码，开启Docker MongoDB 的身份验证。考虑到数据未来的迁移可以通过 &lt;code>-v&lt;/code> 挂载宿主机的一个目录。可以修改默认端口再减少一些风险。最后我启动的命令如下&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -d --name mongodb &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-p xxxxx:27017 &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-v /my/own/datadir:/data/db &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-e MONGO_INITDB_ROOT_USERNAME&lt;span style="color:#f92672">=&lt;/span>mongoadmin &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	-e MONGO_INITDB_ROOT_PASSWORD&lt;span style="color:#f92672">=&lt;/span>secret &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>	--restart&lt;span style="color:#f92672">=&lt;/span>always
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	mongo
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>之后可以使用工具测试一下连接。&lt;/p>
-&lt;h3 id="kkapi-部署">kkapi 部署&lt;/h3>
-&lt;p>和项目文档中的教程差不多，要注意使用的 node 版本请高于 &lt;code>16.0.0&lt;/code>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>说说 on</title><link>/tags/%E8%AF%B4%E8%AF%B4/</link><description>Recent content in 说说 on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 16 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%AF%B4%E8%AF%B4/index.xml" rel="self" type="application/rss+xml"/><item><title>KKapi+ISpeak说说页面部署</title><link>/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate><guid>/posts/play_time/kkapi+ispeak%E8%AF%B4%E8%AF%B4%E9%A1%B5%E9%9D%A2%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;/h2&gt;&lt;p&gt;感觉原来的 Artitalk 说说不好康，在开往里发现好多博客都用的说说功能叫叨叨点啥，看了看作者的&lt;a class="link" href="https://www.antmoe.com/speak/" target="_blank" rel="noopener"
+&gt;说说页面&lt;/a&gt;，可以插入图片和标签分类，还有仅自己可见的功能，感觉挺不错的（实际是自己想折腾）所以就整一个。自己在部署过程中实在是踩了不少的坑，而且作者的文档感觉写的也不算完善，所以打算自己记录一下。&lt;/p&gt;
+&lt;h2 id="项目结构"&gt;项目结构
+&lt;/h2&gt;&lt;p&gt;作者的文档中各种仓库链接属实给我跳晕了，最后理出来的项目分为以下部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;kkapi&lt;/code&gt;。是作为说说的后端部分，连接 MongoDB 数据库，还有一个&lt;code&gt;kkadmin&lt;/code&gt;的管理页面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ISpeak&lt;/code&gt;。说说的主体部分，依赖于后端的 &lt;code&gt;kkapi&lt;/code&gt; ，分为前端的展示页面，和一个对接后端的发布说说页面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作者文档中给出很多部署方法，白嫖版的就是 vercel 后端 api + 管理界面 + MongoDB 提供的云服务，但是个人感觉 vercel 经常被墙，所以部署的 api 感觉也不会稳定，而且考虑到数据的存放问题，所以我选择的是都部署到自己服务器上。&lt;/p&gt;
+&lt;h2 id="后端部署"&gt;后端部署
+&lt;/h2&gt;&lt;h3 id="docker-安装-mongodb"&gt;Docker 安装 Mongodb
+&lt;/h3&gt;&lt;p&gt;安装可以参考菜鸟教程的 &lt;a class="link" href="https://www.runoob.com/docker/docker-install-mongodb.html" target="_blank" rel="noopener"
+&gt;Docker 安装 MongoDB&lt;/a&gt; 。因为之前听过 MongoDB 的未授权访问，所以考虑到安全性问题，创建容器的时候添加 &lt;code&gt;MONGO_INITDB_ROOT_USERNAME&lt;/code&gt; 和 &lt;code&gt;MONGO_INITDB_ROOT_PASSWORD&lt;/code&gt; 设置用户的账号密码，开启Docker MongoDB 的身份验证。考虑到数据未来的迁移可以通过 &lt;code&gt;-v&lt;/code&gt; 挂载宿主机的一个目录。可以修改默认端口再减少一些风险。最后我启动的命令如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -d --name mongodb &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -p xxxxx:27017 &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -v /my/own/datadir:/data/db &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -e MONGO_INITDB_ROOT_USERNAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;mongoadmin &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -e MONGO_INITDB_ROOT_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;secret &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --restart&lt;span style="color:#f92672"&gt;=&lt;/span&gt;always
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; mongo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后可以使用工具测试一下连接。&lt;/p&gt;
+&lt;h3 id="kkapi-部署"&gt;kkapi 部署
+&lt;/h3&gt;&lt;p&gt;和项目文档中的教程差不多，要注意使用的 node 版本请高于 &lt;code&gt;16.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先克隆项目源码
+&lt;code&gt;git clone https://ghproxy.com/https://github.com/kkfive/kkapi-open.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;接下来项目需要安装的工具 &lt;code&gt;yarn&lt;/code&gt; 和 &lt;code&gt;pm2&lt;/code&gt;，分别是
+&lt;code&gt;npm i yarn -g&lt;/code&gt;
+&lt;code&gt;npm i pm2 -g&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后安装项目所需依赖 &lt;code&gt;yarn install&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;之后再执行 &lt;code&gt;yarn build&lt;/code&gt; 编译项目。这里我的小鸡顶不住编译所以自己在本地编译传上去了💧。&lt;/li&gt;
+&lt;li&gt;在项目文件夹创建环境变量文件，格式如&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-env" data-lang="env"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DATABASE_URL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;mongodb://127.0.0.1:27017/kkpaiopen?authSource&lt;span style="color:#f92672"&gt;=&lt;/span&gt;admin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DATABASE_USER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;mongoadmin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DATABASE_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;secret
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 加密密钥 测试&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SECRETKEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxxxxxxxxxxxxxx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里的数据库连接地址我原来还想使用MongoDB提供的免费云服务当数据库，但是没搞成功，所以最后使用了本地的 MongoDB，有大佬知道的可以指点一下。&lt;/p&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;使用 &lt;code&gt;pm2&lt;/code&gt; 使用守护线程启动项目
+&lt;code&gt;pm2 start pm2.json&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我启动项目遇到了 &lt;code&gt;[PM2][WARN] Expect “restart_delay” to be a typeof [object Number], but now is [object String]&lt;/code&gt; 错误，这个错误原因是作者的 pm2.json 中的 &lt;code&gt;restart_delay&lt;/code&gt; 值是字符串类型 &lt;code&gt;60s&lt;/code&gt; 改成数值 &lt;code&gt;60&lt;/code&gt; 就可以了。&lt;/p&gt;
+&lt;ol start="7"&gt;
+&lt;li&gt;
+&lt;p&gt;测试项目是否成功启动
+可以使用 &lt;code&gt;lsof -i:端口&lt;/code&gt; 查看端口是否被监听判断项目是否成功启动。没成功的原因大概率是因为数据库连接地址、数据库账号密码不正确。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建初始化用户
+&lt;code&gt;curl http://127.0.0.1:3000/api/user/init&lt;/code&gt;
+创建的默认用户名和密码是 &lt;code&gt;admin&lt;/code&gt; 和 &lt;code&gt;123456&lt;/code&gt;，这个用户名密码用来登陆可视化的管理后台，并且用户似乎&lt;strong&gt;只能拥有一个&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="kkapiadmin可视化管理后台"&gt;kkapiadmin（可视化管理后台）
+&lt;/h3&gt;&lt;p&gt;参考&lt;a class="link" href="https://kkapi.js.org/guide/admin/setup.html" target="_blank" rel="noopener"
+&gt;官方文档&lt;/a&gt;中的教程，使用的 Vercel 部署的。这个墙不墙的就无所谓了，注意的坑有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;修改部署分支和生产分支为 &lt;code&gt;vercel&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;fork 作者仓库的时候记得把 only fork master 取消勾选。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;之后登录就是用前面初始化的用户名密码，进入后台以后可以修改密码。登陆后台以后需要设置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ISpeak 标签。因为发布说说是需要选择标签的，标签中的背景颜色值是&lt;strong&gt;十六进制的颜色&lt;/strong&gt;代码&lt;/li&gt;
+&lt;li&gt;添加用户token。&lt;strong&gt;需要注意！！！&lt;/strong&gt;，添加的token的&lt;strong&gt;标题&lt;/strong&gt;只能是 &lt;code&gt;speak&lt;/code&gt; 不能是其他的，否则发布说说时会提示token不存在，发布时验证的就是字段为 &lt;code&gt;speak&lt;/code&gt; 的token的值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/04/c5191febc049fbed86f5b77df8367c89.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;接下来可以在前端说说页面测试发布说说，发布说说需要输入后端 kkapi 地址、用户id （在管理后台可以找到）、token。网址：https://ispeak-biubiu.vercel.app/&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/04/778dcc5fe051722e4f9a919b7a9e2a61.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/04/491fff2969d731ff17d8799fe6a20d14.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;发布成功可以在后端看到发布的说说。&lt;/p&gt;
+&lt;h2 id="前端部署"&gt;前端部署
+&lt;/h2&gt;&lt;p&gt;我使用的是 Ispeak 搭配的 twikoo 评论，因为现在博客使用的就是 twikoo，省去了再部署评论的麻烦。根据&lt;a class="link" href="https://kkapi.js.org/posts/ispeak/" target="_blank" rel="noopener"
+&gt;ISpeak文档部分&lt;/a&gt;，&lt;a class="link" href="https://github.com/kkfive/ISpeak/blob/master/src/types/parameter.ts" target="_blank" rel="noopener"
+&gt;ispeak 配置项&lt;/a&gt;中 &lt;code&gt;comment&lt;/code&gt; 是一个回调函数，可以自行初始化评论，参照twikoo评论初始化的格式。我博客中的说说页面代码&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;tip&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;style&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;text-align:center;&amp;#34;&lt;/span&gt;&amp;gt;ipseak加载中&amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ispeak&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;link&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;rel&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;href&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://cdn.staticfile.org/highlight.js/10.6.0/styles/atom-one-dark.min.css&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;link&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;rel&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;href&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://cdn.jsdelivr.net/npm/ispeak@4.4.0/style.css&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;script&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://cdn.staticfile.org/highlight.js/10.6.0/highlight.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;script&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://cdn.staticfile.org/marked/2.0.0/marked.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;script&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://cdn.jsdelivr.net/npm/ispeak@4.4.0/ispeak.umd.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;script&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;head&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;getElementsByTagName&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;head&amp;#39;&lt;/span&gt;)[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;meta&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;createElement&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;meta&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;meta&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;name&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;referrer&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;meta&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;content&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;no-referrer&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;head&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;appendChild&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;meta&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;ispeak&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;ispeak&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;init&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;el&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;#ispeak&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;api&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;这里是后端kkapi地址&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;author&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;后端用户id&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;pageSize&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;loading_img&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;https://bu.dusays.com/2021/03/04/d2d5e983e2961.gif&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;comment&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;speak&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;_id&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;title&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;content&lt;/span&gt; } &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;speak&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// 4.4.0 之后在此回调函数中初始化评论
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#75715e"&gt;//这里是twikoo的初始化配置，如果使用其他评论可以在这里修改
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;twikoo&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;init&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;el&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;.ispeak-comment&amp;#39;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 默认情况下 ipseak 生成class为 ispeak-comment 的div
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;path&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;/shuoshuo/?q=&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;_id&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;envId&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;twikoo后端地址&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .&lt;span style="color:#a6e22e"&gt;then&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;log&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;ispeak 加载完成&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; document.&lt;span style="color:#a6e22e"&gt;getElementById&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;tip&amp;#39;&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;style&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;display&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;none&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; document.&lt;span style="color:#a6e22e"&gt;getElementById&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;tip&amp;#39;&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;innerHTML&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;ipseak依赖加载失败！&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更新一波。被人发现了说说的评论没有独立，自己改了下配置。
+上面的代码加入了 32 和 37 行代码，其中 37 行 &lt;code&gt;path&lt;/code&gt; 属性设置为你当前的说说页面路径加 &lt;code&gt;q&lt;/code&gt; 参数，这个参数可能无所谓吧，但是 &lt;code&gt;_id&lt;/code&gt; 是当前说说的唯一 id，因为自己在页面中测试时，说说评论请求的地址格式也是根据 37 行代码这个进行请求查询的。&lt;/p&gt;
+&lt;h2 id="github-登陆验证可选"&gt;Github 登陆验证（可选*）
+&lt;/h2&gt;&lt;p&gt;可以发布仅登陆可见的说说，但是需要配置 Github app。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;参考&lt;a class="link" href="https://kkapi.js.org/guide/setup/github.html" target="_blank" rel="noopener"
+&gt;项目文档&lt;/a&gt;创建 app ，其中填写的 speak 页面路径就是 ISpeak 所在的博客路径&lt;/li&gt;
+&lt;li&gt;创建以后拥有了 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secrets&lt;/code&gt;，这两项需要填写在 kkapi 后端部署的 &lt;code&gt;local.env&lt;/code&gt; 配置中。&lt;/li&gt;
+&lt;li&gt;在 kkapi 的后端界面个人设置中填写 &lt;code&gt;GitHubId&lt;/code&gt; 。获得方法访问 github 提供的接口
+&lt;code&gt;https://api.github.com/users/&amp;lt;Your UserName&amp;gt;&lt;/code&gt;注意替换尖括号整体为你github的用户名，不是昵称。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://file.acs.pw/picGo/2022/03/13/20220313121930.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;在前端页面的 &lt;code&gt;speak&lt;/code&gt; 初始化中添加两个属性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;ispeak&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;init&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;speakPage&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;：&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;/shuoshuo/&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;//这里是说说的页面路径，对应于 github app 中填写的 speak 页面路径（用双引号括起来，我不知道为啥单引号不行）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;githubClientId&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Iv1.*******&amp;#39;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;//github app 的 Client ID
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后就可以在你的说说下面找到一个 Github 授权登陆。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/04/4aeea0532e5dc44c83a6822033d9971e.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;h2 id="完工"&gt;完工
+&lt;/h2&gt;&lt;p&gt;说说还支持 markdown 格式的图片插入，看起来更好用了，给作者点个赞。&lt;/p&gt;</description></item></channel></rss>

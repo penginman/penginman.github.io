@@ -1,41 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LaTex on</title><link>/tags/latex/</link><description>Recent content in LaTex on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p>&lt;a href="https://blog.csdn.net/m0_55746113/article/details/122728673">https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a>&lt;/p>
-&lt;h2 id="标注符号">标注符号&lt;/h2>
-&lt;h3 id="上下标">上下标&lt;/h3>
-&lt;p>上标符号为“^”、下标符号为“_” ，多于一个字符用&lt;code>{}&lt;/code>包含，例如&lt;code>2^r&lt;/code>、&lt;code>a_5&lt;/code>&lt;/p>
-&lt;p>$2^r,a_5,A_{n+1}$&lt;/p>
-&lt;h3 id="平均值箭头向量等">平均值、箭头、向量等&lt;/h3>
-&lt;p>加^号：&lt;code>\hat{x}&lt;/code>&lt;/p>
-&lt;p>加横线：&lt;code>\overline{x}&lt;/code>&lt;/p>
-&lt;p>加^：&lt;code>\widehat{x}&lt;/code>&lt;/p>
-&lt;p>加波浪线：&lt;code>\widetilde{x}&lt;/code>&lt;/p>
-&lt;p>加一个点：&lt;code>\dot{x}&lt;/code>&lt;/p>
-&lt;p>加两个点：&lt;code>\ddot{x}&lt;/code>&lt;/p>
-&lt;p>$\hat x,\overline x,\widehat x,\widetilde x,\dot x,\ddot x$&lt;/p>
-&lt;h3 id="加粗">加粗&lt;/h3>
-&lt;p>矩阵字母一般会用加粗的罗马体来表示。&lt;code>\bf&lt;/code>&lt;/p>
-&lt;h2 id="根号">根号&lt;/h2>
-&lt;p>&lt;code>\sqrt{}&lt;/code>&lt;/p>
-&lt;h2 id="希腊字母表">希腊字母表&lt;/h2>
-&lt;p>&lt;img src="https://img.braindance.top/article/2023/10/12/6527dfcd9db91.png" alt="1697112011353.png">&lt;/p>
-&lt;h2 id="运算符号">运算符号&lt;/h2>
-&lt;h3 id="加减乘除">加减乘除&lt;/h3>
-&lt;p>&lt;code>+&lt;/code> 和 &lt;code>-&lt;/code>。&lt;code>\times&lt;/code> 和 &lt;code>\div&lt;/code>。点乘用 &lt;code>\cdot&lt;/code>&lt;/p>
-&lt;p>$ +,-,\times,\div,\cdot$&lt;/p>
-&lt;h3 id="大于小于约等于">大于、小于、约等于&lt;/h3>
-&lt;p>大于小于直接 &lt;code>&amp;gt;&lt;/code> 、 &lt;code>&amp;lt;&lt;/code>&lt;/p>
-&lt;p>大于等于 &lt;code>\ge&lt;/code>，小于等于 &lt;code>\le&lt;/code>&lt;/p>
-&lt;p>远大于 &lt;code>\gg&lt;/code>，远小于 &lt;code>\ll&lt;/code>&lt;/p>
-&lt;p>不等于 &lt;code>\ne&lt;/code>&lt;/p>
-&lt;p>约等于 &lt;code>\approx&lt;/code>&lt;/p>
-&lt;p>$&amp;gt;,&amp;lt;,\ge,\le,\gg,\ll,\ne,\approx$&lt;/p>
-&lt;h3 id="分式和根式">分式和根式&lt;/h3>
-&lt;p>&lt;code>\frac{分子}{分母}&lt;/code>或&lt;code>\frac 分子 分母&lt;/code>。如&lt;/p>
-&lt;p>$ \frac{1}{2}$&lt;/p>
-&lt;h3 id="交集并集">交集并集&lt;/h3>
-&lt;p>交集用 &lt;code>\cap&lt;/code>&lt;/p>
-&lt;p>并集用 &lt;code>\cup&lt;/code>&lt;/p>
-&lt;p>$\cap,\cup$&lt;/p>
-&lt;h3 id="属于不属于">属于不属于&lt;/h3>
-&lt;p>属于用 &lt;code>\in&lt;/code>&lt;/p>
-&lt;p>不属于用 &lt;code>\notin&lt;/code>&lt;/p>
-&lt;p>$\in,\notin$&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LaTex on</title><link>/tags/latex/</link><description>Recent content in LaTex on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener"
+&gt;https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="标注符号"&gt;标注符号
+&lt;/h2&gt;&lt;h3 id="上下标"&gt;上下标
+&lt;/h3&gt;&lt;p&gt;上标符号为“^”、下标符号为“_” ，多于一个字符用&lt;code&gt;{}&lt;/code&gt;包含，例如&lt;code&gt;2^r&lt;/code&gt;、&lt;code&gt;a_5&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$2^r,a_5,A_{n+1}$&lt;/p&gt;
+&lt;h3 id="平均值箭头向量等"&gt;平均值、箭头、向量等
+&lt;/h3&gt;&lt;p&gt;加^号：&lt;code&gt;\hat{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加横线：&lt;code&gt;\overline{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加^：&lt;code&gt;\widehat{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加波浪线：&lt;code&gt;\widetilde{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加一个点：&lt;code&gt;\dot{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;加两个点：&lt;code&gt;\ddot{x}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\hat x,\overline x,\widehat x,\widetilde x,\dot x,\ddot x$&lt;/p&gt;
+&lt;h3 id="加粗"&gt;加粗
+&lt;/h3&gt;&lt;p&gt;矩阵字母一般会用加粗的罗马体来表示。&lt;code&gt;\bf&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="根号"&gt;根号
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;\sqrt{}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="希腊字母表"&gt;希腊字母表
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/10/12/6527dfcd9db91.png"
+loading="lazy"
+alt="1697112011353.png"
+&gt;&lt;/p&gt;
+&lt;h2 id="运算符号"&gt;运算符号
+&lt;/h2&gt;&lt;h3 id="加减乘除"&gt;加减乘除
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;+&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt;。&lt;code&gt;\times&lt;/code&gt; 和 &lt;code&gt;\div&lt;/code&gt;。点乘用 &lt;code&gt;\cdot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$ +,-,\times,\div,\cdot$&lt;/p&gt;
+&lt;h3 id="大于小于约等于"&gt;大于、小于、约等于
+&lt;/h3&gt;&lt;p&gt;大于小于直接 &lt;code&gt;&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;大于等于 &lt;code&gt;\ge&lt;/code&gt;，小于等于 &lt;code&gt;\le&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;远大于 &lt;code&gt;\gg&lt;/code&gt;，远小于 &lt;code&gt;\ll&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;不等于 &lt;code&gt;\ne&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;约等于 &lt;code&gt;\approx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$&amp;gt;,&amp;lt;,\ge,\le,\gg,\ll,\ne,\approx$&lt;/p&gt;
+&lt;h3 id="分式和根式"&gt;分式和根式
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;\frac{分子}{分母}&lt;/code&gt;或&lt;code&gt;\frac 分子 分母&lt;/code&gt;。如&lt;/p&gt;
+&lt;p&gt;$ \frac{1}{2}$&lt;/p&gt;
+&lt;h3 id="交集并集"&gt;交集并集
+&lt;/h3&gt;&lt;p&gt;交集用 &lt;code&gt;\cap&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;并集用 &lt;code&gt;\cup&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\cap,\cup$&lt;/p&gt;
+&lt;h3 id="属于不属于"&gt;属于不属于
+&lt;/h3&gt;&lt;p&gt;属于用 &lt;code&gt;\in&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;不属于用 &lt;code&gt;\notin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\in,\notin$&lt;/p&gt;
+&lt;h3 id="省略号"&gt;省略号
+&lt;/h3&gt;&lt;p&gt;横向省略号 &lt;code&gt;\cdots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;垂直省略号 &lt;code&gt;\vdots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;斜向省略号 &lt;code&gt;\ddots&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\cdots, \vdots , \ddots $&lt;/p&gt;
+&lt;h3 id="求和与求积"&gt;求和与求积
+&lt;/h3&gt;&lt;p&gt;求和用 &lt;code&gt;\sum&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;求积（product）用 &lt;code&gt;\prod&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可以用&lt;code&gt;\limits&lt;/code&gt;来强制显示在下方。&lt;/p&gt;
+&lt;p&gt;$\sum,\prod,\sum_i,\sum \limits_{i=1}^N,\prod_{i=1}^N x_i$&lt;/p&gt;
+&lt;h2 id="标注符号-1"&gt;标注符号
+&lt;/h2&gt;&lt;h3 id="括号"&gt;括号
+&lt;/h3&gt;&lt;p&gt;小括号直接 &lt;code&gt;()&lt;/code&gt;，中括号直接 &lt;code&gt;[]&lt;/code&gt;，大括号 &lt;code&gt;\{\}&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;左向上取整 &lt;code&gt;\lceil&lt;/code&gt;，右向上取整 &lt;code&gt;\rceil&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\lceil ,\rceil $&lt;/p&gt;
+&lt;p&gt;左向下取整 &lt;code&gt;\lfloor&lt;/code&gt;，右向下取整 &lt;code&gt;\rfloor&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\lfloor ,\rfloor $&lt;/p&gt;
+&lt;p&gt;绝对值用&lt;code&gt;||&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="下方加符号"&gt;下方加符号
+&lt;/h4&gt;&lt;p&gt;在任意符号下面加符号 &lt;code&gt;\underset{}{}&lt;/code&gt;。例如 &lt;code&gt;\underset{B}{A}&lt;/code&gt;。在下方换行使用 &lt;code&gt;\substack{}&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;$\underset{B}{A}，\underset{\substack{B&amp;gt;0 \ C&amp;lt;0}}{A}$&lt;/p&gt;
+&lt;h3 id="花体符号"&gt;花体符号
+&lt;/h3&gt;&lt;p&gt;傅里叶变换中的f用 &lt;code&gt;\mathcal&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\mathcal f,\mathcal L,\mathcal G$&lt;/p&gt;
+&lt;h2 id="多行公式"&gt;多行公式
+&lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;\\&lt;/code&gt; 来换行，使用 &lt;code&gt;\begin{align}&lt;/code&gt;、&lt;code&gt;\end{align}&lt;/code&gt; 环绕表示多行环境。多行环境&lt;code&gt;\\&lt;/code&gt;默认右对齐，如果想要使&lt;strong&gt;某个符号对齐&lt;/strong&gt;，需要在符号前加 &lt;code&gt;&amp;amp;&lt;/code&gt;，例如&lt;code&gt;=&lt;/code&gt;号前面&lt;/p&gt;
+&lt;p&gt;$ \begin{align} a&amp;amp;=b+c+d \ &amp;amp;=e+f \end{align}$
+$$
+\begin{align}
+a&amp;amp;=b+c+d \
+&amp;amp;=e+f
+\end{align}
+$$&lt;/p&gt;</description></item></channel></rss>

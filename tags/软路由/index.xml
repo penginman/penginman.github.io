@@ -1,33 +1,119 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软路由 on</title><link>/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link><description>Recent content in 软路由 on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>软路由日记(一)</title><link>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。&lt;/p>
-&lt;p>最后的配件列表如下：&lt;/p>
-&lt;ul>
-&lt;li>DDR4 8G * 2&lt;/li>
-&lt;li>128G msata * 1&lt;/li>
-&lt;li>金士顿 480G sata * 1 （送的有sata的电源线和数据线，要注意下电源线用那种带拐角的，不然不好插上去）&lt;/li>
-&lt;li>DV 12V5A 电源 5.5mm&lt;/li>
-&lt;/ul>
-&lt;p>原来咸鱼上买了假三星内存条回来插上发现不能用，所以把笔记本上的两根 8G 换下来了，然后又觉得电脑单根有点卡，所以又下了一单，哈哈哈现在电脑上是假三星 32G。电源是发货最慢的，我把家里路由器机顶盒的电源找了个遍，发现都插不上去，重要的是同样是圆口的插孔，还分好多不一样的尺寸，这个是最大的 5.5mm 的，最后出去找了一家买监控的店，在压箱货里面找到了一个非常非常塑料感的电源，卖了我 30 块，我现在还记得我进去的时候老板正在玩魔兽骑着坐骑跑路。&lt;/p>
-&lt;p>再安利两个视频，我前期了解主要通过这两个 up 的视频学习的。&lt;/p>
-&lt;p>&lt;a href="https://www.bilibili.com/video/BV1WL411P7yN">保姆级J4125英特尔2.5G安装PVE+Ikuai+Openwrt&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://www.bilibili.com/video/BV13b4y1J7dX">用U盘直接给J4125软路由安装OpenWrt固件，超简单小白也看得懂&lt;/a>&lt;/p>
-&lt;h2 id="准备材料">准备材料&lt;/h2>
-&lt;p>需要准备：&lt;/p>
-&lt;ul>
-&lt;li>U盘一个。制作引导盘，安装完成以后可以恢复&lt;/li>
-&lt;li>键盘。安装向导需要一些配置&lt;/li>
-&lt;li>网线。安装完成以后可以访问 web页面配置&lt;/li>
-&lt;/ul>
-&lt;p>软件安装包：&lt;/p>
-&lt;ul>
-&lt;li>Restful。官网：&lt;a href="http://rufus.ie/zh/">http://rufus.ie/zh/&lt;/a>&lt;/li>
-&lt;li>pve镜像。官网：&lt;a href="https://www.proxmox.com/en/downloads">https://www.proxmox.com/en/downloads&lt;/a>。要下载名称有 ISO Installer 才是系统镜像文件&lt;/li>
-&lt;/ul>
-&lt;h2 id="restful-制作安装">Restful 制作安装&lt;/h2>
-&lt;p>插上U盘，打开 Restful 写入镜像文件，设备选择U盘盘符，引导类型选择镜像文件，然后右边选择下载好的 PVE 镜像文件，其他的配置默认即可。&lt;/p>
-&lt;p>&lt;img src="https://img.braindance.top/article/2023/02/03/63dcb88214c79.png" alt="">&lt;/p>
-&lt;p>确认以后会有一个弹窗选择 DD 镜像模式写入。用个网上找的图片&lt;/p>
-&lt;p>&lt;img src="https://qnam.smzdm.com/202202/24/62174f66812b27757.png_e1080.jpg" alt="">&lt;/p>
-&lt;p>引导盘算制作好了。如果引导盘安装完成以后想要恢复成原来U盘，插上U盘，注意一下识别的盘符，引导类型选择为&lt;code>非可引导&lt;/code>重新格式化一下即可，文件系统 FAT32 不能写入超过 2G 大小的文件，所以我一般选 NTFS。&lt;/p>
-&lt;h2 id="虚拟机网段规划分配">虚拟机网段规划分配&lt;/h2>
-&lt;p>因为安装的时候需要配置 PVE 网络的网关，既然用了软路由肯定是要用 OpenWrt、爱快这种路由系统装到虚拟机里，所以在安装之前先规划一下虚拟机的 IP 分配问题。以我安装的 OpenWrt 为例。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软路由 on</title><link>/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link><description>Recent content in 软路由 on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>软路由日记(一)</title><link>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description>&lt;h2 id="前言"&gt;前言
+&lt;/h2&gt;&lt;p&gt;在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。&lt;/p&gt;
+&lt;p&gt;最后的配件列表如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DDR4 8G * 2&lt;/li&gt;
+&lt;li&gt;128G msata * 1&lt;/li&gt;
+&lt;li&gt;金士顿 480G sata * 1 （送的有sata的电源线和数据线，要注意下电源线用那种带拐角的，不然不好插上去）&lt;/li&gt;
+&lt;li&gt;DV 12V5A 电源 5.5mm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;原来咸鱼上买了假三星内存条回来插上发现不能用，所以把笔记本上的两根 8G 换下来了，然后又觉得电脑单根有点卡，所以又下了一单，哈哈哈现在电脑上是假三星 32G。电源是发货最慢的，我把家里路由器机顶盒的电源找了个遍，发现都插不上去，重要的是同样是圆口的插孔，还分好多不一样的尺寸，这个是最大的 5.5mm 的，最后出去找了一家买监控的店，在压箱货里面找到了一个非常非常塑料感的电源，卖了我 30 块，我现在还记得我进去的时候老板正在玩魔兽骑着坐骑跑路。&lt;/p&gt;
+&lt;p&gt;再安利两个视频，我前期了解主要通过这两个 up 的视频学习的。&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1WL411P7yN" target="_blank" rel="noopener"
+&gt;保姆级J4125英特尔2.5G安装PVE+Ikuai+Openwrt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV13b4y1J7dX" target="_blank" rel="noopener"
+&gt;用U盘直接给J4125软路由安装OpenWrt固件，超简单小白也看得懂&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="准备材料"&gt;准备材料
+&lt;/h2&gt;&lt;p&gt;需要准备：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;U盘一个。制作引导盘，安装完成以后可以恢复&lt;/li&gt;
+&lt;li&gt;键盘。安装向导需要一些配置&lt;/li&gt;
+&lt;li&gt;网线。安装完成以后可以访问 web页面配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;软件安装包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Restful。官网：&lt;a class="link" href="http://rufus.ie/zh/" target="_blank" rel="noopener"
+&gt;http://rufus.ie/zh/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pve镜像。官网：&lt;a class="link" href="https://www.proxmox.com/en/downloads" target="_blank" rel="noopener"
+&gt;https://www.proxmox.com/en/downloads&lt;/a&gt;。要下载名称有 ISO Installer 才是系统镜像文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="restful-制作安装"&gt;Restful 制作安装
+&lt;/h2&gt;&lt;p&gt;插上U盘，打开 Restful 写入镜像文件，设备选择U盘盘符，引导类型选择镜像文件，然后右边选择下载好的 PVE 镜像文件，其他的配置默认即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/02/03/63dcb88214c79.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;确认以后会有一个弹窗选择 DD 镜像模式写入。用个网上找的图片&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://qnam.smzdm.com/202202/24/62174f66812b27757.png_e1080.jpg"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;引导盘算制作好了。如果引导盘安装完成以后想要恢复成原来U盘，插上U盘，注意一下识别的盘符，引导类型选择为&lt;code&gt;非可引导&lt;/code&gt;重新格式化一下即可，文件系统 FAT32 不能写入超过 2G 大小的文件，所以我一般选 NTFS。&lt;/p&gt;
+&lt;h2 id="虚拟机网段规划分配"&gt;虚拟机网段规划分配
+&lt;/h2&gt;&lt;p&gt;因为安装的时候需要配置 PVE 网络的网关，既然用了软路由肯定是要用 OpenWrt、爱快这种路由系统装到虚拟机里，所以在安装之前先规划一下虚拟机的 IP 分配问题。以我安装的 OpenWrt 为例。&lt;/p&gt;
+&lt;p&gt;我打算把软路由作为旁路由使用，不会影响家里爸妈用网体验，自己只需要本地改一下 WIFI 的网关为软路由地址即可。因为我家的入户路由所在的 IP 段是 192.168.1.0/24 ，所以我选择一个其他的网段如 192.168.5.0/24，避免和主路由所在的网段搞混。选择 PVE 系统的 IP 为 192.168.5.2，OpenWrt 虚拟机的 IP 为 192.168.5.3，其他虚拟机顺延。所以在安装 PVE 系统的时候网关需要填为 OpenWrt 准备的虚拟机地址 192.168.5.3，PVE 地址也需要修改为对应的。&lt;/p&gt;
+&lt;p&gt;所以最后的结果就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PVE 主系统：192.168.5.2&lt;/p&gt;
+&lt;p&gt;OpenWrt：192.168.5.3&lt;/p&gt;
+&lt;p&gt;Xbantu：192.168.5.4&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;如果是直接作为主路由拨号使用，网关同样要填上 OpenWrt 的地址，因为要用 OpenWrt 拨号。&lt;/p&gt;
+&lt;h2 id="安装-pve-系统"&gt;安装 PVE 系统
+&lt;/h2&gt;&lt;p&gt;U盘插上软路由，注意一下启动界面提示的进入 BIOS 界面的按键，我的是 F7，如果不一样问客服或者搜一搜。选择U盘作为引导盘启动安装系统，找一下自己的U盘名称。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/02/03/63dcbc8286845.png"
+loading="lazy"
+alt="1675410562364.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;接下来进入PVE的安装界面。我已经装好系统了没图，可以看着上面推荐的视频里来，界面依次是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择默认的硬盘。&lt;/li&gt;
+&lt;li&gt;输入国家、时区、键盘语言。&lt;/li&gt;
+&lt;li&gt;设置管理员的密码、确认密码，设置邮箱。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个邮箱我暂时还没有用到，可能 PVE 官方远程管理用得上，先填一个能使用的吧。&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;设置管理网卡口、域名、虚拟机 IP 段、网关、DNS。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;网卡&lt;/strong&gt;的选择是用于管理 PVE 虚拟机的网卡。比如我的软路由有四个物理网卡，我选择其中一个物理插上网线用来管理 PVE 及其虚拟机，其他三个物理网卡分配给其他虚拟机使用，通常是不可以直接访问 PVE 管理面板的。下拉列表有网卡真实的 MAC 地址，看最后两位一般是有顺序的，我也是大致对应软路由上的物理网口，&lt;del&gt;应该是从小到大吧&lt;/del&gt;，我选择了第四个最后一个网口最为 PVE 的管理网口。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;域名&lt;/strong&gt;可能和 PVE 官方的远程管理有关。虚拟机 &lt;strong&gt;IP 段&lt;/strong&gt;就是 PVE 管理的虚拟机可获得的 IP 范围。&lt;strong&gt;DNS&lt;/strong&gt; 不多说了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网关&lt;/strong&gt;的设置，在&lt;a class="link" href="###%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%bd%91%e6%ae%b5%e8%a7%84%e5%88%92%e5%88%86%e9%85%8d" &gt;虚拟机网段规划分配&lt;/a&gt;章节中有说明，填上。&lt;/p&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;确认填写信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;确认安装后稍等一段时间，PVE 会自动重启，系统选择 &lt;strong&gt;Proxmox VE GUN/Linux&lt;/strong&gt;，之后会进入 PVE 系统的登陆页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/02/07/63e1ab32bee01.png"
+loading="lazy"
+alt="1675733810414.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;登陆的用户名是 &lt;strong&gt;root&lt;/strong&gt;，密码是刚刚安装时填写的密码。上面的信息是 PVE 的 Web 控制台地址，图中的地址可能和我的不一样，这个和前面设置的 IP 段有关。&lt;/p&gt;
+&lt;h3 id="连接-pve-主机"&gt;连接 PVE 主机
+&lt;/h3&gt;&lt;p&gt;安装完成以后，使用网线连接软路由，并配置自己电脑的有线网卡保证和软路由在同一个网段。比如我前面规划我的 IP 网段为 192.168.5.0/24，电脑随便填一个不会冲突的 IP，网关和 DNS 可以填为 OpenWrt 预留的地址。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/02/07/63e1a9ce293c3.png"
+loading="lazy"
+alt="1675733453093.png"
+&gt;&lt;/p&gt;
+&lt;p&gt;之后可以直接访问安装成功时提示的 PVE Web 控制台地址和端口，即使没有证书也要使用 &lt;strong&gt;https&lt;/strong&gt; 访问，浏览器高级选项中有继续访问。用户名是 &lt;strong&gt;root&lt;/strong&gt; 密码就是安装时填写的。下面可以选择语言为简体中文。可能会有一个其他提示直接跳过即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/02/07/63e1ae4e965f6.png"
+loading="lazy"
+alt="1675734606058.png"
+&gt;&lt;/p&gt;
+&lt;h2 id="一些配置"&gt;一些配置
+&lt;/h2&gt;&lt;p&gt;为了方便一些虚拟机可以直通硬件设备，比如 NAS 直通硬盘，提高工作效率，所以需要对 PVE 设置并开启硬件直通。&lt;/p&gt;
+&lt;p&gt;前面步骤连上软路由，使用 Shell 连接 PVE 系统，以上面为例地址为 192.168.5.2，用户名密码同上面。虚拟的相关技术不太懂，本人也是跟着操作的。&lt;/p&gt;
+&lt;p&gt;偶然发现一篇文章讲了一些相关内容，内核大佬请看 &lt;a class="link" href="https://blog.csdn.net/coolfishbone_joey/article/details/124411847" target="_blank" rel="noopener"
+&gt;[转]关于Linux grub配置iommu=pt intel_iommu=on&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="pve直通特性功能"&gt;PVE直通特性功能
+&lt;/h3&gt;&lt;p&gt;注意 Intel 和 AMD 的CPU 一些参数不一样，我使用的 J4125 是 Intel 的。修改的文件都是 &lt;code&gt;/etc/default/grub&lt;/code&gt; ，需要修改的参数是 &lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/code&gt;，默认值应该是&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;根据 CPU 不同需要修改成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intel CPU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet intel_iommu=on iommu=pt&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;AMD CPU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet amd_iommu=on iommu=pt&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意参数之间的空格，修改之后保存退出，执行指令 &lt;code&gt;update-grub&lt;/code&gt; 更新一下引导程序，出现 &lt;strong&gt;done&lt;/strong&gt;字样就算成功。&lt;/p&gt;
+&lt;h3 id="增加模块"&gt;增加模块
+&lt;/h3&gt;&lt;p&gt;接下来增加一些模块，修改 &lt;code&gt;/etc/modules&lt;/code&gt;文件，添加#号下面的几个模块。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with &amp;#34;#&amp;#34; are ignored.
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后执行指令 &lt;code&gt;update-initramfs -u -k all&lt;/code&gt; 对模块的升级。没有出现 &lt;strong&gt;Error&lt;/strong&gt; 字样就算成功了，之后 &lt;strong&gt;reboot&lt;/strong&gt; 重启一下。&lt;/p&gt;
+&lt;h2 id="结束"&gt;结束
+&lt;/h2&gt;&lt;p&gt;这一篇就先写到 PVE 的安装和配置直通，下一篇打算写自己经历的固件的选择和安装。软路由老早就装好了，当时也没截图凭借一些其他的教程写了自己的经过，自己挖的坑一定要填上！&lt;/p&gt;</description></item></channel></rss>
