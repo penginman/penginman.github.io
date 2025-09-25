@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LaTex on Braindance</title><link>https://www.braindance.top/tags/latex/</link><description>Recent content in LaTex on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>https://www.braindance.top/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>https://www.braindance.top/posts/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LaTex on Braindance</title><link>https://www.braindance.top/tags/latex/</link><description>Recent content in LaTex on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTex数学公式</title><link>https://www.braindance.top/articles/2023/05/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link><pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate><guid>https://www.braindance.top/articles/2023/05/latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid><description>&lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/m0_55746113/article/details/122728673" target="_blank" rel="noopener"
 &gt;https://blog.csdn.net/m0_55746113/article/details/122728673&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="标注符号"&gt;标注符号
 &lt;/h2&gt;&lt;h3 id="上下标"&gt;上下标
@@ -70,9 +70,10 @@ alt="1697112011353.png"
 &lt;h2 id="多行公式"&gt;多行公式
 &lt;/h2&gt;&lt;p&gt;使用 &lt;code&gt;\\&lt;/code&gt; 来换行，使用 &lt;code&gt;\begin{align}&lt;/code&gt;、&lt;code&gt;\end{align}&lt;/code&gt; 环绕表示多行环境。多行环境&lt;code&gt;\\&lt;/code&gt;默认右对齐，如果想要使&lt;strong&gt;某个符号对齐&lt;/strong&gt;，需要在符号前加 &lt;code&gt;&amp;amp;&lt;/code&gt;，例如&lt;code&gt;=&lt;/code&gt;号前面&lt;/p&gt;
 &lt;p&gt;$ \begin{align} a&amp;amp;=b+c+d \ &amp;amp;=e+f \end{align}$
+&lt;/p&gt;
 $$
 \begin{align}
-a&amp;amp;=b+c+d \
-&amp;amp;=e+f
+a&amp;=b+c+d \\
+&amp;=e+f
 \end{align}
-$$&lt;/p&gt;</description></item></channel></rss>
+$$</description></item></channel></rss>

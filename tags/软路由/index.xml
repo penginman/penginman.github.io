@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软路由 on Braindance</title><link>https://www.braindance.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link><description>Recent content in 软路由 on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>软路由日记(一)</title><link>https://www.braindance.top/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://www.braindance.top/posts/play_time/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description>&lt;h2 id="前言"&gt;前言
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软路由 on Braindance</title><link>https://www.braindance.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link><description>Recent content in 软路由 on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>软路由日记(一)</title><link>https://www.braindance.top/articles/2023/02/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://www.braindance.top/articles/2023/02/%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%97%A5%E8%AE%B0%E4%B8%80/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;在学校疫情期间买了一个 j4125 的软路由，一直等到回家过了很久才到手，因为买的是裸机，还有些配件是在别的店买的，回家以后发现地址只能在区以内修改，只能取消订单重新下了单。&lt;/p&gt;
 &lt;p&gt;最后的配件列表如下：&lt;/p&gt;
 &lt;ul&gt;
@@ -93,27 +93,64 @@ alt="1675734606058.png"
 &gt;[转]关于Linux grub配置iommu=pt intel_iommu=on&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="pve直通特性功能"&gt;PVE直通特性功能
 &lt;/h3&gt;&lt;p&gt;注意 Intel 和 AMD 的CPU 一些参数不一样，我使用的 J4125 是 Intel 的。修改的文件都是 &lt;code&gt;/etc/default/grub&lt;/code&gt; ，需要修改的参数是 &lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/code&gt;，默认值应该是&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;根据 CPU 不同需要修改成&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;根据 CPU 不同需要修改成&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Intel CPU&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet intel_iommu=on iommu=pt&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet intel_iommu=on iommu=pt&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;AMD CPU&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet amd_iommu=on iommu=pt&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意参数之间的空格，修改之后保存退出，执行指令 &lt;code&gt;update-grub&lt;/code&gt; 更新一下引导程序，出现 &lt;strong&gt;done&lt;/strong&gt;字样就算成功。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet amd_iommu=on iommu=pt&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;注意参数之间的空格，修改之后保存退出，执行指令 &lt;code&gt;update-grub&lt;/code&gt; 更新一下引导程序，出现 &lt;strong&gt;done&lt;/strong&gt;字样就算成功。&lt;/p&gt;
 &lt;h3 id="增加模块"&gt;增加模块
 &lt;/h3&gt;&lt;p&gt;接下来增加一些模块，修改 &lt;code&gt;/etc/modules&lt;/code&gt;文件，添加#号下面的几个模块。&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;# /etc/modules: kernel modules to load at boot time.
-#
-# This file contains the names of kernel modules that should be loaded
-# at boot time, one per line. Lines beginning with &amp;#34;#&amp;#34; are ignored.
-vfio
-vfio_iommu_type1
-vfio_pci
-vfio_virqfd
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后执行指令 &lt;code&gt;update-initramfs -u -k all&lt;/code&gt; 对模块的升级。没有出现 &lt;strong&gt;Error&lt;/strong&gt; 字样就算成功了，之后 &lt;strong&gt;reboot&lt;/strong&gt; 重启一下。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# /etc/modules: kernel modules to load at boot time.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# This file contains the names of kernel modules that should be loaded&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# at boot time, one per line. Lines beginning with &amp;#34;#&amp;#34; are ignored.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;vfio&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;vfio_iommu_type1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;vfio_pci&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;vfio_virqfd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后执行指令 &lt;code&gt;update-initramfs -u -k all&lt;/code&gt; 对模块的升级。没有出现 &lt;strong&gt;Error&lt;/strong&gt; 字样就算成功了，之后 &lt;strong&gt;reboot&lt;/strong&gt; 重启一下。&lt;/p&gt;
 &lt;h2 id="结束"&gt;结束
 &lt;/h2&gt;&lt;p&gt;这一篇就先写到 PVE 的安装和配置直通，下一篇打算写自己经历的固件的选择和安装。软路由老早就装好了，当时也没截图凭借一些其他的教程写了自己的经过，自己挖的坑一定要填上！&lt;/p&gt;</description></item></channel></rss>
