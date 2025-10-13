@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>校园网 on Braindance</title><link>https://www.braindance.top/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><description>Recent content in 校园网 on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 31 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/index.xml" rel="self" type="application/rss+xml"/><item><title>ZUT 使用路由器连接校园网</title><link>https://www.braindance.top/articles/2022/10/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</link><pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate><guid>https://www.braindance.top/articles/2022/10/zut-%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%9B%AD%E7%BD%91/</guid><description>&lt;h2 id="前言"&gt;前言
-&lt;/h2&gt;&lt;p&gt;我们学校的校园网不光每个月要宽带费 20/月，而且要绑定一个校园卡，我的一个月月租下来要 49/月，而且校园网还限制设备数量只能连接一个，我一般都是电脑连校园网，手机用流量，但是教职工的校园网就可以两个设备连接，寝室里目前有6+个设备也需要联网，商量以后打算搞个路由器贡献一个账号连校园网开 wifi，之前就见贴吧有老哥已经成功了，所以自己也尝试一下做个记录，给以后的同学看也不错。由于我已经连好路由器了，所以部分图片取自网络图片作为参考，我也尽量说的详细些。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;我们学校的校园网不光每个月要宽带费 20/月，而且要绑定一个校园卡，我的一个月月租下来要 49/月，而且校园网还限制设备数量只能连接一个，我一般都是电脑连校园网，手机用流量，但是教职工的校园网就可以两个设备连接，寝室里目前有 6+个设备也需要联网，商量以后打算搞个路由器贡献一个账号连校园网开 wifi，之前就见贴吧有老哥已经成功了，所以自己也尝试一下做个记录，给以后的同学看也不错。由于我已经连好路由器了，所以部分图片取自网络图片作为参考，我也尽量说的详细些。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;对于任何硬件、软件的损坏，本人没有赔偿的责任，哪怕这样的后果是因教程中的错误造成的。也请认真对待每一步操作，也许因为你的操作不当硬件因此变成一块砖。另外本教程的操作会使你的路由器失去保修。&lt;/li&gt;
@@ -11,12 +11,12 @@
 &lt;/h2&gt;&lt;p&gt;校园网插入网线认证是要模拟 Dr.com 软件的发包认证，除了账号密码认证校园网以外，软件还会定时发送心跳包保证校园网连接。&lt;/p&gt;
 &lt;p&gt;zut 的校园网认证格式为账号：&lt;code&gt;\r\n你的学号@[unicom|telecom|cmcc]&lt;/code&gt; ，其中 &lt;code&gt;@&lt;/code&gt; 后面的是你的运营商，对照前面的格式分别为：联通、电信、移动，例如我的是联通校园网，账号就是：&lt;code&gt;\r\n2022********@unicom&lt;/code&gt;，密码就是你自己的密码。&lt;/p&gt;
 &lt;p&gt;zut 校园网的客户端版本为：6.0.0（P）&lt;/p&gt;
-&lt;p&gt;校园网的防检测插件原理还没有写，自己用的 小米4C 是社区固件资源中自带的。想看原理可以看最后挖坑部分&lt;/p&gt;
+&lt;p&gt;校园网的防检测插件原理还没有写，自己用的 小米 4C 是社区固件资源中自带的。想看原理可以看最后挖坑部分&lt;/p&gt;
 &lt;h2 id="需要的材料"&gt;需要的材料
-&lt;/h2&gt;&lt;p&gt;本教程使用的路由器型号 &lt;code&gt;Xiaomi router 4c&lt;/code&gt; pdd二手35，安装的系统 &lt;code&gt;openwrt&lt;/code&gt;。&lt;strong&gt;请注意&lt;/strong&gt;：路由器的选择直接影响到你后面的操作，我专门在网上挑了好久选的这个路由器，但是，&lt;strong&gt;唯独这个路由器的社区资源最特殊&lt;/strong&gt;，本人也是经过各种尝试才成功。如果选择其他路由器，本教程中的主要安装思路相同，但是需要自行寻找适合自己路由器的固件资源。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;本教程使用的路由器型号 &lt;code&gt;Xiaomi router 4c&lt;/code&gt; pdd 二手 35，安装的系统 &lt;code&gt;openwrt&lt;/code&gt;。&lt;strong&gt;请注意&lt;/strong&gt;：路由器的选择直接影响到你后面的操作，我专门在网上挑了好久选的这个路由器，但是，&lt;strong&gt;唯独这个路由器的社区资源最特殊&lt;/strong&gt;，本人也是经过各种尝试才成功。如果选择其他路由器，本教程中的主要安装思路相同，但是需要自行寻找适合自己路由器的固件资源。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;路由器。&lt;/li&gt;
-&lt;li&gt;网线两根。一根我买的8m的，因为宿舍AP在门上面，另一根需要连接路由器和电脑，长度自己看。&lt;/li&gt;
+&lt;li&gt;网线两根。一根我买的 8m 的，因为宿舍 AP 在门上面，另一根需要连接路由器和电脑，长度自己看。&lt;/li&gt;
 &lt;li&gt;开通校园网的账号。&lt;/li&gt;
 &lt;li&gt;自己思考的能力。&lt;/li&gt;
 &lt;li&gt;需要的软件压缩包：&lt;a class="link" href="https://wwn.lanzouy.com/igsaW0dn0k3a" target="_blank" rel="noopener"
@@ -25,7 +25,7 @@
 &lt;li&gt;dogcom.zip。用来进行校园网模拟拨号，定时发送心跳包的工具。&lt;/li&gt;
 &lt;li&gt;R3GV2 patches.zip。刷机的主要部分包含了：R3GV2 patches（前期连接路由器的工具）、Mi4C.bin（小米 4c 的 openwrt 固件自带防检测插件）、breed.bin（breed web 恢复控制台）&lt;/li&gt;
 &lt;li&gt;MobaXterm_Portable.zip。用来连接路由器和传输文件的软件&lt;/li&gt;
-&lt;li&gt;小米路由器4C恢复官方固件工具包.zip。刷成砖的&lt;a class="link" href="https://web.vip.miui.com/page/info/mio/mio/detail?postId=19134127&amp;amp;app_version=dev.20051" target="_blank" rel="noopener"
+&lt;li&gt;小米路由器 4C 恢复官方固件工具包.zip。刷成砖的&lt;a class="link" href="https://web.vip.miui.com/page/info/mio/mio/detail?postId=19134127&amp;amp;app_version=dev.20051" target="_blank" rel="noopener"
 &gt;官方补救措施&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -38,9 +38,9 @@
 &gt;https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;【记录】小米路由器 4C 刷机过程：&lt;a class="link" href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27" target="_blank" rel="noopener"
 &gt;https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;R4CM，说说我的小米路由器4C刷机过程：不用Linux也不用虚拟机…… ：&lt;a class="link" href="https://www.right.com.cn/FORUM/thread-4047571-1-1.html" target="_blank" rel="noopener"
+&lt;li&gt;R4CM，说说我的小米路由器 4C 刷机过程：不用 Linux 也不用虚拟机…… ：&lt;a class="link" href="https://www.right.com.cn/FORUM/thread-4047571-1-1.html" target="_blank" rel="noopener"
 &gt;https://www.right.com.cn/FORUM/thread-4047571-1-1.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;路由器认证校园网drcom：&lt;a class="link" href="https://www.brothereye.cn/router/669/" target="_blank" rel="noopener"
+&lt;li&gt;路由器认证校园网 drcom：&lt;a class="link" href="https://www.brothereye.cn/router/669/" target="_blank" rel="noopener"
 &gt;https://www.brothereye.cn/router/669/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="开工"&gt;开工
@@ -112,7 +112,7 @@ loading="lazy"
 alt="连接 ftp"
 &gt;&lt;/p&gt;
 &lt;p&gt;找到 &lt;code&gt;tmp&lt;/code&gt; 文件夹其中的三个文件：&lt;code&gt;all.bin&lt;/code&gt; 、&lt;code&gt;bootloader.bin&lt;/code&gt; 和 &lt;code&gt;eeprom.bin&lt;/code&gt;，复制到本地做备份，下载以后一定要看清楚三个文件的大小分别是 &lt;code&gt;16MB&lt;/code&gt; 、&lt;code&gt;64k&lt;/code&gt; 和 &lt;code&gt;64k&lt;/code&gt;，如果大小是 &lt;code&gt;1k&lt;/code&gt; 那就是错误的，再备份几次，也有可能是后门没写牢再执行 &lt;code&gt;0.start_main.bat&lt;/code&gt; 试试。&lt;/p&gt;
-&lt;h3 id="上传-breed--文件并刷入"&gt;上传 Breed 文件并刷入
+&lt;h3 id="上传-breed-文件并刷入"&gt;上传 Breed 文件并刷入
 &lt;/h3&gt;&lt;p&gt;在资源管理器的 ftp 中把 &lt;code&gt;breed.bin&lt;/code&gt; 文件上传到 &lt;code&gt;/tmp&lt;/code&gt; 文件夹下，在 telnet 中执行指令刷入引导加载器&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -131,7 +131,7 @@ alt="Breed界面"
 &gt;&lt;/p&gt;
 &lt;p&gt;如果你在之后有不可挽回的错误操作，都可以通过以上操作进行复位重置。&lt;/p&gt;
 &lt;h3 id="检查-mac-地址"&gt;检查 MAC 地址
-&lt;/h3&gt;&lt;p&gt;进入 MAC 地址修改，通常你应该看到的前三个 MAC 地址应该是全0，这就需要刷入 一次之前的 &lt;code&gt;eeprom.bin&lt;/code&gt;。（网络图片仅供参考）&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;进入 MAC 地址修改，通常你应该看到的前三个 MAC 地址应该是全 0，这就需要刷入 一次之前的 &lt;code&gt;eeprom.bin&lt;/code&gt;。（网络图片仅供参考）&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/6345201b6c592.png"
 loading="lazy"
 alt="MAC 地址修改"
@@ -143,15 +143,15 @@ alt="MAC 地址修改"
 loading="lazy"
 alt="固件更新"
 &gt;&lt;/p&gt;
-&lt;p&gt;之后路由器灯会全灭，然后电源灯进入&lt;strong&gt;黄色闪烁&lt;/strong&gt;的状态，就是正在安装，等待安装成功以后等会变成&lt;strong&gt;蓝色&lt;/strong&gt;，之后就可以访问 &lt;code&gt;192.168.1.1&lt;/code&gt; 进入openwrt 管理后台页面，默认密码为 &lt;code&gt;password&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;之后路由器灯会全灭，然后电源灯进入&lt;strong&gt;黄色闪烁&lt;/strong&gt;的状态，就是正在安装，等待安装成功以后等会变成&lt;strong&gt;蓝色&lt;/strong&gt;，之后就可以访问 &lt;code&gt;192.168.1.1&lt;/code&gt; 进入 openwrt 管理后台页面，默认密码为 &lt;code&gt;password&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/634524441d739.png"
 loading="lazy"
 alt="openwrt 界面"
 &gt;&lt;/p&gt;
-&lt;p&gt;说一下 &lt;code&gt;Mi4C.bin&lt;/code&gt; 这个openw 的固件。这个固件来自前面提到的广东工业大学项目中的 &lt;a class="link" href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27" target="_blank" rel="noopener"
+&lt;p&gt;说一下 &lt;code&gt;Mi4C.bin&lt;/code&gt; 这个 openw 的固件。这个固件来自前面提到的广东工业大学项目中的 &lt;a class="link" href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27" target="_blank" rel="noopener"
 &gt;issue&lt;/a&gt;，是一位同学自己找人定制的一份固件并且免费分享出来了，其中已经内置了 Dr.com 插件（用来发送心跳包）及防检测插件（ttl，ipid，cookieflash，ua2f 最新版），非常感谢这位同学的分享。&lt;/p&gt;
 &lt;h3 id="配置-pppoe-拨号"&gt;配置 PPPoE 拨号
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;前置条件&lt;/strong&gt;：宿舍上面的AP接口插入路由器的 WAN 口&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;前置条件&lt;/strong&gt;：宿舍上面的 AP 接口插入路由器的 WAN 口&lt;/p&gt;
 &lt;p&gt;选择 网络 &amp;mdash;&amp;gt; 接口，点击 &lt;code&gt;WAN&lt;/code&gt; 接口对应的 编辑（Edit）按钮。&lt;/p&gt;
 &lt;p&gt;下面图中是我的已经配置好的界面，初次进入应该是有个 &lt;code&gt;WAN&lt;/code&gt; 和 &lt;code&gt;WAN6&lt;/code&gt; 接口，它们两个的下面并不是我图中的 &lt;code&gt;pppoe-wan&lt;/code&gt;，应该是 &lt;code&gt;eht0.2&lt;/code&gt;。&lt;code&gt;WAN6&lt;/code&gt; 接口是一个 DHCP IPV6 客户端，它和 &lt;code&gt;WAN&lt;/code&gt; 接口是同一个物理接口，留着也不影响 。&lt;code&gt;LAN&lt;/code&gt; 口尽量不要动。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63452a57015e9.png"
@@ -333,14 +333,14 @@ loading="lazy"
 alt="1665481387645.png"
 &gt;&lt;/p&gt;
 &lt;h3 id="查看校园网是否成功认证"&gt;查看校园网是否成功认证
-&lt;/h3&gt;&lt;p&gt;配置完成后，重启路由器，并请耐心等待若干分钟（3分钟内），重新回到 openwrt 管理页面的 网络 &amp;mdash;&amp;gt; 接口中，查看 &lt;code&gt;WAN&lt;/code&gt; 接口 PPPoE 是否拨号成功，如果运行时间、发送、接受均有数据，并且 IPv4 获得的一个地址，则说明路由器已经可以上网了。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;配置完成后，重启路由器，并请耐心等待若干分钟（3 分钟内），重新回到 openwrt 管理页面的 网络 &amp;mdash;&amp;gt; 接口中，查看 &lt;code&gt;WAN&lt;/code&gt; 接口 PPPoE 是否拨号成功，如果运行时间、发送、接受均有数据，并且 IPv4 获得的一个地址，则说明路由器已经可以上网了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63453da03857e.png"
 loading="lazy"
 alt="拨号成功"
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;wan中，学号密码输入错误。&lt;/p&gt;
-&lt;p&gt;路由器的wan没有与校园网端口连接&lt;/p&gt;
+&lt;p&gt;wan 中，学号密码输入错误。&lt;/p&gt;
+&lt;p&gt;路由器的 wan 没有与校园网端口连接&lt;/p&gt;
 &lt;p&gt;网线断了，或者路由器坏了&lt;/p&gt;
 &lt;p&gt;压根没开通校园网&lt;/p&gt;
 &lt;p&gt;dogcom 插件中，校园网心跳配置已经更改&lt;/p&gt;
@@ -349,7 +349,7 @@ alt="拨号成功"
 &lt;/h2&gt;&lt;h3 id="校园网防检测"&gt;校园网防检测
 &lt;/h3&gt;&lt;p&gt;常见的四种检测：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;基于 IPv4 数据包包头内的 TTL 字段的检测（固定TTL）&lt;/li&gt;
+&lt;li&gt;基于 IPv4 数据包包头内的 TTL 字段的检测（固定 TTL）&lt;/li&gt;
 &lt;li&gt;基于 HTTP 数据包请求头内的 User-Agent 字段的检测(UA2F)&lt;/li&gt;
 &lt;li&gt;DPI (Deep Packet Inspection) 深度包检测技术）（不常用）&lt;/li&gt;
 &lt;li&gt;基于 IPv4 数据包包头内的 Identification 字段的检测（rkp-ipid 设置 IPID）&lt;/li&gt;
