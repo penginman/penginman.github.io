@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Braindance</title><link>https://www.braindance.top/tags/web/</link><description>Recent content in Web on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Aug 2021 17:21:24 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>CISCN线上赛库存</title><link>https://www.braindance.top/articles/2021/08/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</link><pubDate>Wed, 18 Aug 2021 17:21:24 +0000</pubDate><guid>https://www.braindance.top/articles/2021/08/ciscn%E7%BA%BF%E4%B8%8A%E8%B5%9B%E5%BA%93%E5%AD%98/</guid><description>&lt;h1 id="easy_sql"&gt;easy_sql
 &lt;/h1&gt;&lt;p&gt;在用户名处，尝试sql注入，加上单引号报错，测试闭合，随便添加几个符号在password的报错附近中注意到了是&lt;strong&gt;括号单引号闭合&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;lsquo;1&amp;rsquo;) LIMIT 0,1&amp;rsquo; at line 1&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;lsquo;1&amp;rsquo;) LIMIT 0,1&amp;rsquo; at line 1&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;过滤的字符有union，所以尝试报错注入，查询版本号。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -281,15 +282,18 @@
 &lt;p&gt;，源码虽然给出了&lt;code&gt;User&lt;/code&gt;类，但是不知道有什么其他的方法，这时候想到了可能使用PHP的原生类。&lt;/p&gt;
 &lt;p&gt;根据提示&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;虽然你看到的不完全，但是你觉得我会把flag藏在哪里呢，仔细想想文件里面还有什么？&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;应该想到看不完全可能是在代码注释中，百度获取类中的代码注释，可以得到一个&lt;code&gt;ReflectionMethod&lt;/code&gt;类，并且&lt;code&gt;ReflectionMethod&lt;/code&gt;类中刚好有一个&lt;code&gt;getDocComment&lt;/code&gt; 方法可以获得注释：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;简介：&lt;strong&gt;ReflectionMethod&lt;/strong&gt; 类报告了一个方法的有关信息。类报告了一个方法的有关信息&lt;/p&gt;
-&lt;p&gt;ReflectionFunctionAbstract::getDocComment — 获取注释内容&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;ReflectionFunctionAbstract::getDocComment — 获取注释内容&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;源码中初始化创建对象为&lt;code&gt;new $rc($ra, $rb)&lt;/code&gt;，传递了两个参数，&lt;code&gt;ReflectionMethod&lt;/code&gt;类的初始化魔术方法也提供了两个参数&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;public ReflectionMethod::__construct ( &lt;a class="link" href="https://www.php.net/manual/zh/language.types.declarations.php#language.types.declarations.mixed" target="_blank" rel="noopener"
-&gt;mixed&lt;/a&gt; &lt;code&gt;$class&lt;/code&gt; , string &lt;code&gt;$name&lt;/code&gt; )&lt;/p&gt;&lt;/blockquote&gt;
+&gt;mixed&lt;/a&gt; &lt;code&gt;$class&lt;/code&gt; , string &lt;code&gt;$name&lt;/code&gt; )&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;所以构造第一个参数是User，第二个参数为源码里的那些方法名，一个一个尝试，在q方法中找到了flag的注释&lt;/p&gt;
 &lt;p&gt;payload&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -311,7 +315,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;题外话：在尝试过程中还发现了另一个类&lt;code&gt;ReflectionClass&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;简介：&lt;strong&gt;ReflectionClass&lt;/strong&gt; 类报告了一个类的有关信息。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;简介：&lt;strong&gt;ReflectionClass&lt;/strong&gt; 类报告了一个类的有关信息。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;和上面的那个类对比，两个类研究的对象不一样&lt;strong&gt;ReflectionMethod&lt;/strong&gt;研究的是类中的方法，&lt;strong&gt;ReflectionClass&lt;/strong&gt; 研究的是类。&lt;/p&gt;
 &lt;p&gt;这个类中也有一个获得注释的函数ReflectionClass::getDocComment，但是其获得的是文档注释，即文件开头的/**/中内容，但是本题的注释是在函数里的。&lt;/p&gt;</description></item><item><title>BUUCTF寒假刷题-Web</title><link>https://www.braindance.top/articles/2021/01/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</link><pubDate>Mon, 18 Jan 2021 16:58:56 +0000</pubDate><guid>https://www.braindance.top/articles/2021/01/buuctf%E5%AF%92%E5%81%87%E5%88%B7%E9%A2%98-web/</guid><description>&lt;p&gt;寒假横向刷题（尽量）
 &lt;a class="link" href="https://buuoj.cn/challenges#" target="_blank" rel="noopener"
@@ -430,7 +435,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;发现白名单有source.php和hint.php，先去查看一下hint.php&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;flag not here, and flag in ffffllllaaaagggg&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;flag not here, and flag in ffffllllaaaagggg&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;分析源码&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;判断&lt;code&gt;$_REQUEST['file']&lt;/code&gt;对象为空且为字符串&lt;/li&gt;
@@ -478,7 +484,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这道题使用的是堆叠注入，原理&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1; DELETE FROM products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select * from products where productid=1;DELETE FROM products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1; DELETE FROM products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select * from products where productid=1;DELETE FROM products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;查看数据库&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -665,7 +672,7 @@ loading="lazy"
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-mysql" data-lang="mysql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;desc&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;Flag&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;show&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Flag&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;show&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Flag&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;返回了&amp;quot;Nonono.“测试出被过滤了：desc、from、Flag。&lt;/p&gt;
@@ -681,7 +688,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;在oracle 缺省支持 通过 ‘ || ’ 来实现字符串拼接，但在mysql 缺省不支持。需要调整mysql 的sql_mode
-模式：pipes_as_concat 来实现oracle 的一些功能&lt;/p&gt;&lt;/blockquote&gt;
+模式：pipes_as_concat 来实现oracle 的一些功能&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;payload&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -713,7 +721,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;页面内容只有&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Can you find out the flag?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Can you find out the flag?&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;立马想到使用php伪协议读文件内容。使用filter过滤器&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -860,12 +869,14 @@ loading="lazy"
 &lt;blockquote&gt;
 &lt;p&gt;/flag.txt&lt;/p&gt;
 &lt;p&gt;/welcome.txt&lt;/p&gt;
-&lt;p&gt;hints.txt&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;hints.txt&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;内容分别是&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;flag in /fllllllllllllag&lt;/p&gt;
 &lt;p&gt;render&lt;/p&gt;
-&lt;p&gt;md5(cookie_secret+md5(filename))&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;md5(cookie_secret+md5(filename))&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;进入hints.txt注意到url地址此时为&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -878,9 +889,11 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;再根据hints.txt文件的内容，推断可以使用url方式访问文件，但是需要提供&lt;strong&gt;filehash&lt;/strong&gt;值，加密的方法即hints.txt的内容：md5(cookie_secret+md5(filename))。flag文件的名称&lt;code&gt;filename&lt;/code&gt;有了，接下来就是获取&lt;code&gt;cookie_secret&lt;/code&gt;的值。&lt;/p&gt;
 &lt;p&gt;接下来触及到盲区了，获取cookie_secret是看wp。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;render是python中的一个渲染函数，也就是一种模板，通过调用的参数不同，生成不同的网页 render配合Tornado使用&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;render是python中的一个渲染函数，也就是一种模板，通过调用的参数不同，生成不同的网页 render配合Tornado使用&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在tornado模板中，存在一些可以访问的快速对象,这里用到的是handler.settings，handler 指向RequestHandler，而RequestHandler.settings又指向self.application.settings，所以handler.settings就指向RequestHandler.application.settings了，这里面就是我们的一些环境变量&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在tornado模板中，存在一些可以访问的快速对象,这里用到的是handler.settings，handler 指向RequestHandler，而RequestHandler.settings又指向self.application.settings，所以handler.settings就指向RequestHandler.application.settings了，这里面就是我们的一些环境变量&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;获取cookie_secret的payload&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1040,7 +1053,8 @@ loading="lazy"
 &lt;p&gt;flag.php&lt;/p&gt;
 &lt;p&gt;index.js&lt;/p&gt;
 &lt;p&gt;index.php&lt;/p&gt;
-&lt;p&gt;style.css&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;style.css&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;在index.php中有一段代码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1206,7 +1220,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;页面提示过滤：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;NO! HACKER! your file included &amp;lsquo;&amp;lt;?&amp;rsquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;NO! HACKER! your file included &amp;lsquo;&amp;lt;?&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;尝试script执行php代码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1316,7 +1331,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;题目提示备份文件，备份文件常见后缀：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;.git .svn .swp .~ .bak .bash_history&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;.git .svn .swp .~ .bak .bash_history&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;尝试index.php.bak，下载了一个备份文件：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1402,7 +1418,8 @@ loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;可以在注释里找到&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;!-- you are not admin --&gt;&lt;/blockquote&gt;
+&lt;!-- you are not admin --&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;思路应该是只要我们是admin登陆就可以得到flag，可以找到注册按钮，不能注册admin,那就随便注册一个进去看看。找到几个功能。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;post。发表文章，但是没能找到在哪里打开&lt;/li&gt;
@@ -1587,7 +1604,8 @@ loading="lazy"
 &lt;p&gt;python flask_session_cookie_manager{2,3}.py {encode,decode}&lt;/p&gt;
 &lt;p&gt;-s &amp;ldquo;SECRET_KEY&amp;rdquo; 都需要使用
 -c &amp;ldquo;Session cookie value&amp;rdquo; session的值 只有解密decode用得到
--t &amp;ldquo;Session cookie structure&amp;rdquo; cookie结构 只有encode用得&lt;/p&gt;&lt;/blockquote&gt;
+-t &amp;ldquo;Session cookie structure&amp;rdquo; cookie结构 只有encode用得&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;执行&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1621,7 +1639,8 @@ loading="lazy"
 &lt;h2 id="解法二unicode欺骗"&gt;解法二：Unicode欺骗
 &lt;/h2&gt;&lt;p&gt;第二种方法是利用代码中的strlower()函数的使用不当。这个函数分别在注册、登陆、修改密码的地方出现三次。这个方法的思路就是unicode加密三层，在最后一层修改密码时执行函数strlower()后修改到admin的密码。过程为&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;ᴬᴰᴹᴵᴺ&amp;mdash;&amp;mdash;注册后&amp;mdash;&amp;mdash;&amp;gt;ADMIN&amp;mdash;修改密码&amp;mdash;&amp;gt;admin&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;ᴬᴰᴹᴵᴺ&amp;mdash;&amp;mdash;注册后&amp;mdash;&amp;mdash;&amp;gt;ADMIN&amp;mdash;修改密码&amp;mdash;&amp;gt;admin&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;payload&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1638,7 +1657,8 @@ loading="lazy"
 loading="lazy"
 &gt;网站题直接去看源码，在源码也搜索php有两个：index.php、pay.php。前者是首页，直接看后面的那个，打开就有提示&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Only Cuit&amp;rsquo;s students can buy the FLAG&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Only Cuit&amp;rsquo;s students can buy the FLAG&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;应该还是一道http的套娃题。查看网页的请求发现Cookie中有一个user=0，很可疑，改成user=1，有了下一个提示：输入密码，并且源码中有一段php&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1712,7 +1732,8 @@ loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;知识点&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;.user.ini。它比.htaccess用的更广，不管是nginx/apache/IIS，只要是以fastcgi运行的php都可以用这个方法。可谓很广，不像.htaccess有局限性，只能是apache.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;.user.ini。它比.htaccess用的更广，不管是nginx/apache/IIS，只要是以fastcgi运行的php都可以用这个方法。可谓很广，不像.htaccess有局限性，只能是apache.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;准备好.user.ini文件内容为自动包含图片马，因为上传会检查文件头，所以添加了一个GIF文件头伪装：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1726,7 +1747,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;接下来上传图片马，尝试了正常上传PHP马会提示：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;lt;? in contents!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;? in contents!&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;所以使用script马执行php：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -1742,7 +1764,8 @@ loading="lazy"
 &lt;blockquote&gt;
 &lt;p&gt;Your dir uploads/852aff287f54bca0ed7757a702913e50
 Your files :
-array(5) { [0]=&amp;gt; string(1) &amp;ldquo;.&amp;rdquo; [1]=&amp;gt; string(2) &amp;ldquo;..&amp;rdquo; [2]=&amp;gt; string(9) &amp;ldquo;.user.ini&amp;rdquo; [3]=&amp;gt; string(7) &amp;ldquo;233.gif&amp;rdquo; [4]=&amp;gt; string(9) &amp;ldquo;index.php&amp;rdquo; }&lt;/p&gt;&lt;/blockquote&gt;
+array(5) { [0]=&amp;gt; string(1) &amp;ldquo;.&amp;rdquo; [1]=&amp;gt; string(2) &amp;ldquo;..&amp;rdquo; [2]=&amp;gt; string(9) &amp;ldquo;.user.ini&amp;rdquo; [3]=&amp;gt; string(7) &amp;ldquo;233.gif&amp;rdquo; [4]=&amp;gt; string(9) &amp;ldquo;index.php&amp;rdquo; }&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;这时候.user.ini文件已经会帮我们自动包含图片马了，所以我们只需要访问一个PHP文件即可，正好上传目录下有一个index.php文件，可以直接蚁剑连接或者POST请求system(&amp;lsquo;cat /flag&amp;rsquo;)。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="bjdctf2020easy-md5"&gt;[BJDCTF2020]Easy MD5
@@ -1756,10 +1779,12 @@ loading="lazy"
 &lt;p&gt;&lt;a class="link" href="https://blog.csdn.net/March97/article/details/81222922" target="_blank" rel="noopener"
 &gt;sql注入：md5($password,true)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="link" href="http://mslc.ctf.su/wp/leet-more-2010-oh-those-admins-writeup/" target="_blank" rel="noopener"
-&gt;Leet More 2010 Oh Those Admins! writeup&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&gt;Leet More 2010 Oh Those Admins! writeup&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;随便输入一些东西都没有反应，在请求头中发现了一个Hint：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;select * from &amp;lsquo;admin&amp;rsquo; where password=md5($pass,true)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;select * from &amp;lsquo;admin&amp;rsquo; where password=md5($pass,true)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;md5(string,raw)&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
@@ -1804,7 +1829,8 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;可以看到原理是构成一个闭合，这里还有第二个知识点，是or后面的字符串被认为是true，引用文章里的一段：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;a string starting with a &lt;code&gt;1&lt;/code&gt; is cast as an integer when used as a boolean.&lt;/p&gt;
-&lt;p&gt;在mysql里面，在用作布尔型判断时，以1开头的字符串会被当做整型数。要注意的是这种情况是必须要有单引号括起来的，比如password=‘xxx’ or ‘1xxxxxxxxx’，那么就相当于password=‘xxx’ or 1 ，也就相当于password=‘xxx’ or true，所以返回值就是true。当然在我后来测试中发现，不只是1开头，只要是数字开头都是可以的。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在mysql里面，在用作布尔型判断时，以1开头的字符串会被当做整型数。要注意的是这种情况是必须要有单引号括起来的，比如password=‘xxx’ or ‘1xxxxxxxxx’，那么就相当于password=‘xxx’ or 1 ，也就相当于password=‘xxx’ or true，所以返回值就是true。当然在我后来测试中发现，不只是1开头，只要是数字开头都是可以的。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;自己进行的测试：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210201113825.png"
 loading="lazy"
@@ -2189,7 +2215,8 @@ loading="lazy"
 &lt;blockquote&gt;
 &lt;p&gt;1 &amp;raquo; Hello, glzjin wants a girlfriend.&lt;/p&gt;
 &lt;p&gt;2 &amp;raquo; Do you want to be my girlfriend?&lt;/p&gt;
-&lt;p&gt;3之后都是 &amp;raquo; Error Occured When Fetch Result.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;3之后都是 &amp;raquo; Error Occured When Fetch Result.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;输入一个单引号&lt;code&gt;1'&lt;/code&gt;出现了&lt;code&gt;bool(false)&lt;/code&gt;，是一个布尔类型返回，就很有可能是盲注之类的。测试的时候还发现空格被过滤了，空格被过滤可以尝试使用TAB制表符代替。&lt;/p&gt;
 &lt;p&gt;题目中也有提示&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2292,7 +2319,8 @@ loading="lazy"
 &lt;/ol&gt;
 &lt;p&gt;如果使用正常的查询语句会因为flag的长度太长，页面中的回显长度不能显示全，但是可以使用&lt;code&gt;left&lt;/code&gt;和&lt;code&gt;right&lt;/code&gt;函数：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;语法：LEFT(ARG,LENGTH)、RIGHT(ARG,LENGTH)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;语法：LEFT(ARG,LENGTH)、RIGHT(ARG,LENGTH)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;这两个函数会用到选取的长度，如果想要拼成一个完整的flag，可以先用length查看总长度，计算以后拼一下&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -2963,7 +2991,8 @@ loading="lazy"
 &lt;p&gt;&lt;a class="link" href="http://www.lmxspace.com/2018/07/16/%E8%B0%88%E8%B0%88escapeshellarg%E5%8F%82%E6%95%B0%E7%BB%95%E8%BF%87%E5%92%8C%E6%B3%A8%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener"
 &gt;谈谈escapeshellarg参数绕过和注入的问题&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="link" href="https://paper.seebug.org/164/" target="_blank" rel="noopener"
-&gt;PHP escapeshellarg()+escapeshellcmd() 之殇&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&gt;PHP escapeshellarg()+escapeshellcmd() 之殇&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;参考博客整理一下这两个处理命令的函数同时使用时的问题：&lt;/p&gt;
@@ -3057,7 +3086,8 @@ loading="lazy"
 &lt;p&gt;/WEB-INF/lib/：存放web应用需要的各种JAR文件，放置仅在这个应用中要求使用的jar文件,如数据库驱动jar文件&lt;/p&gt;
 &lt;p&gt;/WEB-INF/src/：源码目录，按照包名结构放置各个java文件。&lt;/p&gt;
 &lt;p&gt;/WEB-INF/database.properties：数据库配置文件&lt;/p&gt;
-&lt;p&gt;漏洞检测以及利用方法：通过找到web.xml文件，推断class文件的路径，最后直接class文件，在通过反编译class文件，得到网站源码&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;漏洞检测以及利用方法：通过找到web.xml文件，推断class文件的路径，最后直接class文件，在通过反编译class文件，得到网站源码&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;重点不在登陆界面，而是那个Help按钮，可以下载文件。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310110934.png"
 loading="lazy"
@@ -3203,10 +3233,12 @@ loading="lazy"
 &gt;CVE-2020-7066&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;只有一个按钮，点击以后查看网页的Network请求中有一个&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Hint: Flag in localhost&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Hint: Flag in localhost&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;且utl地址中有可控的参数，所以应该是使用ssrf。这里还有一个提示是在主页面那里&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You just view *.ctfhub.com&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;You just view *.ctfhub.com&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;只可以访问以ctfhub.com结尾的网站，再根据cve使用%00截断访问：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -3218,7 +3250,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;第二个提示：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Host must be end with &amp;lsquo;123&amp;rsquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Host must be end with &amp;lsquo;123&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;必须以123结尾，所以最终payload&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -3514,7 +3547,8 @@ loading="lazy"
 &lt;td&gt;file -f:报错出具体内容&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;&lt;/blockquote&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;摘自&lt;a class="link" href="https://www.ghtwf01.cn/index.php/archives/273/" target="_blank" rel="noopener"
 &gt;命令执行漏洞利用及绕过方式总结&lt;/a&gt;。&lt;/p&gt;
 &lt;hr&gt;
@@ -3629,11 +3663,13 @@ loading="lazy"
 &lt;h1 id="bjdctf2020the-mystery-of-ip"&gt;[BJDCTF2020]The mystery of ip
 &lt;/h1&gt;&lt;p&gt;hint.php里面有注释&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Do you know why i know your ip?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Do you know why i know your ip?&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;去flag.php尝试加入请求头x-forward-x、client-ip发现ip可以改变。然后是自己感觉网页很简单，突破点在请求头中，尝试了下ssti模板注入，发现成功了。&lt;/p&gt;
 &lt;p&gt;尝试了几个ssti的payload不行，但是提示了&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Uncaught &amp;ndash;&amp;gt; Smarty Compiler:&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Uncaught &amp;ndash;&amp;gt; Smarty Compiler:&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;得知了这个是Smarty引擎，在网上尝试搜索这种类型的注入&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -3659,7 +3695,8 @@ loading="lazy"
 &lt;p&gt;对照的是古文码。是以GBK方式读取UTF-8编码的中文，我举个例子，使用vscode，先通过编码保存&amp;ndash;&amp;gt;GBK，再通过编码打开&amp;ndash;&amp;gt;UTF-8。内容如下&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我有一个数据库，但里面什么也没有~
-不信你找&lt;/p&gt;&lt;/blockquote&gt;
+不信你找&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;提示是数据库了，那么果断尝试PHPmyadmin，访问成功，然后查看下版本，去网上搜索对应版本的漏洞&lt;/p&gt;
 &lt;p&gt;&lt;a class="link" href="https://www.secpulse.com/archives/72817.html" target="_blank" rel="noopener"
 &gt;phpmyadmin4.8.1后台getshell&lt;/a&gt;&lt;/p&gt;
@@ -4744,7 +4781,8 @@ loading="lazy"
 &gt;浅谈Unicode设计的安全性&lt;/a&gt;，看了wp。&lt;/p&gt;
 &lt;p&gt;进入网站一个本杰明·富兰克林至理名言：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;金钱从来不会使人幸福，也不会使人幸福；它的本性中没有任何东西可以产生幸福。幸福拥有的越多，想要的就越多&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;金钱从来不会使人幸福，也不会使人幸福；它的本性中没有任何东西可以产生幸福。幸福拥有的越多，想要的就越多&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;del&gt;差点信了，我就要赚钱花(小声bb)&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;下面两个输入框，一个ID一个钱，上面一个独角兽商品列表，一看就是让买东西，但是1-3商品输入ID都提示错误，只有第四个可以买到，但是第四个输入钱的时候只能输入1位，然鹅4号价格是1377，显然买不到，输入多个又提示 ，所以思路就是找一个unicode字符，它的数字格式值是大于1377的。&lt;/p&gt;
 &lt;p&gt;一个和unicode有关的网站：https://www.compart.com/en/unicode&lt;/p&gt;
@@ -4760,7 +4798,8 @@ loading="lazy"
 &gt;&lt;/p&gt;
 &lt;p&gt;这道题和The mystery of ip的网站一样，还有可能是ssti，hint.php的注释里有&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Why not take a closer look at cookies?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Why not take a closer look at cookies?&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;去flag.php提交个1之后，看cookie为&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -4793,7 +4832,8 @@ loading="lazy"
 &gt;源码&lt;/a&gt;才搞明白。&lt;/p&gt;
 &lt;p&gt;这道题在渲染之前使用了twig模板：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Twig是来自于Symfony的模板引擎，它非常易于安装和使用。它的操作有点像Mustache和liquid。Twig使用一个加载器 loader(Twig_Loader_Array) 来定位模板，以及一个环境变量 environment(Twig_Environment) 来存储配置信息。其中，render() 方法通过其第一个参数载入模板，并通过第二个参数中的变量来渲染模板。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Twig是来自于Symfony的模板引擎，它非常易于安装和使用。它的操作有点像Mustache和liquid。Twig使用一个加载器 loader(Twig_Loader_Array) 来定位模板，以及一个环境变量 environment(Twig_Environment) 来存储配置信息。其中，render() 方法通过其第一个参数载入模板，并通过第二个参数中的变量来渲染模板。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;我同样在题目的源码中找到了&lt;code&gt;render()&lt;/code&gt;方法和&lt;code&gt;Twig_Environment&lt;/code&gt;配置信息&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302160322.png"
 loading="lazy"
@@ -4854,11 +4894,11 @@ loading="lazy"
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;error_reporting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;//听说你很喜欢数学，不知道你是否爱它胜过爱flag
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;isset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_GET&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;isset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_GET&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])){&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;show_source&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;__FILE__&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;//例子 c=20-1
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_GET&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_GET&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;strlen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;die&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;太长了不会算&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
@@ -4869,7 +4909,7 @@ loading="lazy"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;//常用数学函数http://www.w3school.com.cn/php/php_ref_math.asp
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="nv"&gt;$whitelist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;abs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;acos&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;acosh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;asin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;asinh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;atan2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;atan&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;atanh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;base_convert&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bindec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ceil&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cos&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cosh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decbin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;dechex&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decoct&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;deg2rad&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;exp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;expm1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;floor&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fmod&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;getrandmax&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hexdec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hypot&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;is_finite&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;is_infinite&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;is_nan&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;lcg_value&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;log10&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;log1p&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;log&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;max&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;min&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mt_getrandmax&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mt_rand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mt_srand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;octdec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pow&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rad2deg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;round&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sinh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sqrt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;srand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tan&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tanh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$whitelist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;abs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;acos&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;acosh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;asin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;asinh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;atan2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;atan&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;atanh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;base_convert&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bindec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ceil&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cos&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cosh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decbin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;dechex&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decoct&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;deg2rad&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;exp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;expm1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;floor&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fmod&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;getrandmax&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hexdec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hypot&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;is_finite&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;is_infinite&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;is_nan&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;lcg_value&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;log10&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;log1p&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;log&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;max&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;min&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mt_getrandmax&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mt_rand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mt_srand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;octdec&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pow&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rad2deg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;round&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sinh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sqrt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;srand&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tan&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tanh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;preg_match_all&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/[a-zA-Z_\x7f-\xff][a-zA-Z_0-9\x7f-\xff]*/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$used_funcs&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$used_funcs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;$func&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;in_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$func&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$whitelist&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -4877,7 +4917,7 @@ loading="lazy"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;//帮你算出答案
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="k"&gt;eval&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;echo &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;eval&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;echo &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -4955,7 +4995,8 @@ loading="lazy"
 &lt;p&gt;index.php&lt;/p&gt;
 &lt;p&gt;profile.php&lt;/p&gt;
 &lt;p&gt;register.php&lt;/p&gt;
-&lt;p&gt;update.php&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;update.php&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;发现有register就去注册个试试呗&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210309102253.png"
 loading="lazy"
@@ -5178,7 +5219,8 @@ loading="lazy"
 &lt;p&gt;模块：/usr/lisb64/nginx/modules&lt;/p&gt;
 &lt;p&gt;应用程序：/usr/sbin/nginx&lt;/p&gt;
 &lt;p&gt;程序默认存放位置：/usr/share/nginx/html&lt;/p&gt;
-&lt;p&gt;日志默认存放位置：/var/log/nginx&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;日志默认存放位置：/var/log/nginx&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;读配置文件&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -5397,7 +5439,8 @@ loading="lazy"
 &lt;p&gt;&lt;strong&gt;利用环境变量LD_PRELOAD来绕过&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;php的mail函数在执行过程中会默认调用系统程序/usr/sbin/sendmail，如果我们能劫持sendmail程序，再用mail函数来触发就能实现我们的目的&lt;/p&gt;
-&lt;p&gt;LD_PRELOAD是Linux系统的下一个有趣的环境变量：“它允许你定义在程序运行前优先加载的动态链接库。这个功能主要就是用来有选择性的载入不同动态链接库中的相同函数。通过这个环境变量，我们可以在主程序和其动态链接库的中间加载别的动态链接库，甚至覆盖正常的函数库。一方面，我们可以以此功能来使用自己的或是更好的函数（无需别人的源码），而另一方面，我们也可以以向别人的程序注入程序，从而达到特定的目的。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;LD_PRELOAD是Linux系统的下一个有趣的环境变量：“它允许你定义在程序运行前优先加载的动态链接库。这个功能主要就是用来有选择性的载入不同动态链接库中的相同函数。通过这个环境变量，我们可以在主程序和其动态链接库的中间加载别的动态链接库，甚至覆盖正常的函数库。一方面，我们可以以此功能来使用自己的或是更好的函数（无需别人的源码），而另一方面，我们也可以以向别人的程序注入程序，从而达到特定的目的。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;正好蚁剑的插件中就有一个名为：&lt;a class="link" href="https://github.com/Medicean/as_bypass_php_disable_functions" target="_blank" rel="noopener"
 &gt;as_bypass_php_disable_functions&lt;/a&gt;的插件，可以选择在插件市场安装或是手动安装（github有步骤）。安装以后右键shell选择加载插件：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204234337.png"
@@ -5408,7 +5451,8 @@ loading="lazy"
 loading="lazy"
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在这里我还遇到了问题，使用原来的shell执行插件功能以后，终端还是没有权限，但是我尝试了自己又上传了一个一句话木马，用这个新的一句话木马执行插件才成功，具体原因我也不清楚，如果有师傅知道原因求告知。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在这里我还遇到了问题，使用原来的shell执行插件功能以后，终端还是没有权限，但是我尝试了自己又上传了一个一句话木马，用这个新的一句话木马执行插件才成功，具体原因我也不清楚，如果有师傅知道原因求告知。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;上传一句话木马233.php：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -5603,7 +5647,8 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;附：大佬整理的博客（内含更多姿势）：&lt;a class="link" href="https://www.ghtwf01.cn/index.php/archives/273/" target="_blank" rel="noopener"
-&gt;命令执行漏洞利用及绕过方式总结&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description></item><item><title>Hackgame2020(一)</title><link>https://www.braindance.top/articles/2020/11/hackgame2020%E4%B8%80/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/hackgame2020%E4%B8%80/</guid><description>&lt;h2 id="前言"&gt;前言
+&gt;命令执行漏洞利用及绕过方式总结&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Hackgame2020(一)</title><link>https://www.braindance.top/articles/2020/11/hackgame2020%E4%B8%80/</link><pubDate>Sun, 01 Nov 2020 18:33:40 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/hackgame2020%E4%B8%80/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;比赛地址：https://hack.lug.ustc.edu.cn/&lt;/p&gt;
 &lt;h1 id="web"&gt;web
 &lt;/h1&gt;&lt;h3 id="签到题"&gt;签到题
@@ -5659,7 +5704,8 @@ loading="lazy"
 &lt;li&gt;以下编程语言、软件或组织对应标志是哺乳动物的有几个？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Docker，Golang，Python，Plan 9，PHP，GNU，LLVM，Swift，Perl，GitHub，TortoiseSVN，FireFox，MySQL，PostgreSQL，MariaDB，Linux，OpenBSD，FreeDOS，Apache Tomcat，Squid，openSUSE，Kali，Xfce.&lt;/p&gt;
-&lt;p&gt;提示：学术上一般认为龙不属于哺乳动物。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;提示：学术上一般认为龙不属于哺乳动物。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​ 本人只认识几个，那就一个一个搜呗。我的模式是：百度&lt;code&gt;xxx标志&lt;/code&gt;然后第二条就是百度图片的搜索结果，大致辨别一下，然后再百度&lt;code&gt;xxx是哺乳动物吗&lt;/code&gt;，妥妥的&lt;del&gt;胎儿&lt;/del&gt;教学。&lt;/p&gt;
 &lt;p&gt;​ 一个比较有印象就是&lt;code&gt;FreeDOS&lt;/code&gt;这个标志就离谱，什么玩意&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg"
@@ -5670,7 +5716,8 @@ loading="lazy"
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;ol start="2"&gt;
 &lt;li&gt;第一个以信鸽为载体的 IP 网络标准的 RFC 文档中推荐使用的 MTU (Maximum Transmission Unit) 是多少毫克？&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​ 卡了我好一会，没听过信鸽传输，贴上最后找到答案的&lt;a class="link" href="https://blog.csdn.net/qq_31621387/article/details/77690642" target="_blank" rel="noopener"
 &gt;博客&lt;/a&gt;，以及一篇信鸽传输的&lt;a class="link" href="http://sohu.com/a/309403082_354973" target="_blank" rel="noopener"
 &gt;历史发展&lt;/a&gt;，长见识了。&lt;/p&gt;
@@ -5680,13 +5727,15 @@ loading="lazy"
 &lt;ol start="3"&gt;
 &lt;li&gt;USTC Linux 用户协会在 2019 年 9 月 21 日自由软件日活动中介绍的开源游戏的名称共有几个字母？&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;提示：活动记录会在哪里？&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;提示：活动记录会在哪里？&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​ 搜索&lt;code&gt;USTC Linux 用户协会&lt;/code&gt;发现这个协会就是科大爱好者们创建的。那么直接摸到他们官网的&lt;a class="link" href="https://lug.ustc.edu.cn/news/" target="_blank" rel="noopener"
 &gt;新闻版块&lt;/a&gt;（百度搜出来的是旧站，里面有新站的网址）。题目中还写道&lt;code&gt;2019年9月21日自由软件日活动&lt;/code&gt;，那么官网肯定有那天的新闻。&lt;/p&gt;
 &lt;p&gt;​ 找到一篇当天的新闻&lt;a class="link" href="https://lug.ustc.edu.cn/news/2019/09/2019-sfd-ustc/" target="_blank" rel="noopener"
 &gt;2019 软件自由日中国科大站&lt;/a&gt;，进取直接找，文章末尾有&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;最后一项是李文睿同学介绍了开源游戏 Teeworlds，由于底层代码开源，开发者可以做出自己的定制，可玩性非常高。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;最后一项是李文睿同学介绍了开源游戏 Teeworlds，由于底层代码开源，开发者可以做出自己的定制，可玩性非常高。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​ 答案就是&lt;code&gt;Teeworlds&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;​ 我还摸到了他们当天活动的记录资料：&lt;a class="link" href="https://ftp.lug.ustc.edu.cn/%E6%B4%BB%E5%8A%A8/2019.09.21_SFD/" target="_blank" rel="noopener"
 &gt;点我&lt;/a&gt;&lt;/p&gt;
@@ -5696,7 +5745,8 @@ loading="lazy"
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;ol start="4"&gt;
 &lt;li&gt;中国科学技术大学西校区图书馆正前方（西南方向） 50 米 L 型灌木处共有几个连通的划线停车位？&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​ 直接百度地图搜图书馆，然后全景地图房门口，视野拉到L型灌木那。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwvkdA.png"
 loading="lazy"
@@ -5706,7 +5756,8 @@ loading="lazy"
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;ol start="5"&gt;
 &lt;li&gt;中国科学技术大学第六届信息安全大赛所有人合计提交了多少次 flag？&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;​ 百度&lt;code&gt;中国科学技术大学第六届信息安全大赛&lt;/code&gt;有个&lt;code&gt;...圆满结束&lt;/code&gt;，就他了。点开第二行就是&lt;code&gt;经统计，在本次比赛中，总共有 2682 人注册，1904 人至少完成了一题。比赛期间所有人合计提交了 17098 次 flag&lt;/code&gt;。（看这个网站的标志似乎还是第三题搜的那个&lt;code&gt;USTC Linux 用户协会&lt;/code&gt;的官网新闻。嗷原来题目上已经说了是举办方👀）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：17098&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;完工。&lt;/p&gt;</description></item></channel></rss>

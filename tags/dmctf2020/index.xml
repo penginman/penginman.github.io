@@ -465,7 +465,8 @@ loading="lazy"
 &lt;h2 id="sstv"&gt;SSTV
 &lt;/h2&gt;&lt;p&gt;题目既是工具。搜索SSTV百度百科：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;慢扫描电视（Slow-scan television）是业余无线电爱好者的一种主要图片传输方法，慢扫描电视通过无线电传输和接收单色或彩色静态图片。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;慢扫描电视（Slow-scan television）是业余无线电爱好者的一种主要图片传输方法，慢扫描电视通过无线电传输和接收单色或彩色静态图片。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;了解到是一种无线电传递图片的方法，搜到的博客&lt;a class="link" href="https://blog.csdn.net/zkf0100007/article/details/83387790" target="_blank" rel="noopener"
 &gt;慢扫描电视 SSTV&lt;/a&gt;和B站的视频&lt;a class="link" href="https://www.bilibili.com/video/BV1ea4y1J787" target="_blank" rel="noopener"
 &gt;慢扫描电视SSTV&lt;/a&gt;，下载MMSSTV软件，把output.wav音频调制麦克风输出，我使用的方法是在声音设置里把立体声混音打开并且设为默认设备，然后电脑里播放的声音就会被录制到。等待图片绘制成功，获得flag：&lt;strong&gt;DMCTF{SSTV,yyds?}&lt;/strong&gt;&lt;/p&gt;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>破解 on Braindance</title><link>https://www.braindance.top/tags/%E7%A0%B4%E8%A7%A3/</link><description>Recent content in 破解 on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E7%A0%B4%E8%A7%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>JetBrains 全家桶破解</title><link>https://www.braindance.top/articles/2023/08/jetbrains-%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</link><pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate><guid>https://www.braindance.top/articles/2023/08/jetbrains-%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%A0%B4%E8%A7%A3/</guid><description>&lt;p&gt;&lt;del&gt;突然想开发了我的 IDEA 还是 2021 的，IDEA 和 Pycharm 还在机械硬盘，装个最新的到固态里面。教育邮箱懒得申请了，失效了又要麻烦续杯。写出来记录一下以后自己参考。&lt;/del&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;所提供的内容仅供学习交流使用,严禁用于商业用途,请于下载后24小时内删除。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;所提供的内容仅供学习交流使用,严禁用于商业用途,请于下载后24小时内删除。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="准备"&gt;准备
 &lt;/h2&gt;&lt;p&gt;破解使用的是 &lt;a class="link" href="https://gitee.com/ja-netfilter/ja-netfilter" target="_blank" rel="noopener"
 &gt;ja-netfilter&lt;/a&gt;：https://gitee.com/ja-netfilter/ja-netfilter。release 下载以后解压。&lt;/p&gt;
@@ -351,7 +352,8 @@ alt="1696657436047.png"
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2024年10月21日&lt;/strong&gt;发现了个新问题。参照[博客][https://www.cnblogs.com/airlongdianblog/p/18418285]&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;2024.2后jetbrains新的安装程序自带了三个区域语言包，其中若选择中文大陆区域语言包，会将激活验证服务器地址修改为国内新验证地址。而jetbra/ja-netfaliter的拦截是黑名单制度，该新服务器地址并不在原本的拦截列表中。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;2024.2后jetbrains新的安装程序自带了三个区域语言包，其中若选择中文大陆区域语言包，会将激活验证服务器地址修改为国内新验证地址。而jetbra/ja-netfaliter的拦截是黑名单制度，该新服务器地址并不在原本的拦截列表中。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;这时激活失效并且会不断弹窗，只需要在&lt;code&gt;config/url.conf&lt;/code&gt;中加入拦截域名，重新启动即可。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;

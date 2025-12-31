@@ -15,7 +15,8 @@
 &lt;li&gt;&lt;code&gt;阿里云 OSS&lt;/code&gt; v1.6.0&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Imgur&lt;/code&gt; v1.6.0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;本体不再增加默认的图床支持。你可以自行开发第三方图床插件。&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;本体不再增加默认的图床支持。你可以自行开发第三方图床插件。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;项目地址：&lt;a class="link" href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener"
 &gt;PicGo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;软件界面：&lt;/p&gt;

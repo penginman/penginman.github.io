@@ -45,7 +45,8 @@ loading="lazy"
 &lt;p&gt;PVE 主系统：192.168.5.2&lt;/p&gt;
 &lt;p&gt;OpenWrt：192.168.5.3&lt;/p&gt;
 &lt;p&gt;Xbantu：192.168.5.4&lt;/p&gt;
-&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;如果是直接作为主路由拨号使用，网关同样要填上 OpenWrt 的地址，因为要用 OpenWrt 拨号。&lt;/p&gt;
 &lt;h2 id="安装-pve-系统"&gt;安装 PVE 系统
 &lt;/h2&gt;&lt;p&gt;U盘插上软路由，注意一下启动界面提示的进入 BIOS 界面的按键，我的是 F7，如果不一样问客服或者搜一搜。选择U盘作为引导盘启动安装系统，找一下自己的U盘名称。&lt;/p&gt;

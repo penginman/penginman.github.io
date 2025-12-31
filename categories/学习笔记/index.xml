@@ -121,7 +121,8 @@ $$</description></item><item><title>Python-Day-100 笔记</title><link>https://w
 可以使用&lt;code&gt;global&lt;/code&gt;关键字来指示局部函数中的变量来自&lt;strong&gt;全局变量&lt;/strong&gt;，&lt;code&gt;nonlocal&lt;/code&gt;关键字表示变量来自&lt;strong&gt;外部嵌套函数内的变量&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;事实上，减少对全局变量的使用，也是降低代码之间耦合度的一个重要举措，同时也是对&lt;a class="link" href="https://zh.wikipedia.org/zh-hans/%E5%BE%97%E5%A2%A8%E5%BF%92%E8%80%B3%E5%AE%9A%E5%BE%8B" target="_blank" rel="noopener"
-&gt;迪米特法则&lt;/a&gt;的践行。&lt;/p&gt;&lt;/blockquote&gt;
+&gt;迪米特法则&lt;/a&gt;的践行。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="字符串和常用数据结构"&gt;字符串和常用数据结构
 &lt;/h2&gt;&lt;h3 id="字符串"&gt;字符串
 &lt;/h3&gt;&lt;p&gt;反斜杠&lt;code&gt;\&lt;/code&gt;用来转义。
@@ -201,7 +202,8 @@ Python 3.6以后提供了语法糖表示，在字符串前使用&lt;code&gt;f&lt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;列表也可以使用&lt;code&gt;+&lt;/code&gt;进行拼接，使用切片操作获得列表的复制。
 &lt;code&gt;sorted()&lt;/code&gt;函数返回列表进行排序后的备份，不会影响原来的列表，我们设计函数应该像 sorted 函数一样不产生副作用。可以设置关键字&lt;code&gt;reverse=True&lt;/code&gt;使列表逆置，关键字&lt;code&gt;key=len&lt;/code&gt;根据字符串长度进行排序&lt;/p&gt;
 &lt;h3 id="生成式和生成器"&gt;生成式和生成器
@@ -361,7 +363,8 @@ Python 3.6以后提供了语法糖表示，在字符串前使用&lt;code&gt;f&lt
 &lt;/div&gt;&lt;h2 id="面向对象编程"&gt;面向对象编程
 &lt;/h2&gt;&lt;p&gt;比较正式的说法&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）和泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派。&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）和泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派。&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;python中使用&lt;code&gt;class&lt;/code&gt;关键字定义类，然后在类中定义属性和方法&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;

@@ -41,7 +41,8 @@
 &lt;li&gt;&lt;code&gt;阿里云 OSS&lt;/code&gt; v1.6.0&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Imgur&lt;/code&gt; v1.6.0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;本体不再增加默认的图床支持。你可以自行开发第三方图床插件。&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;本体不再增加默认的图床支持。你可以自行开发第三方图床插件。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;项目地址：&lt;a class="link" href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener"
 &gt;PicGo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;软件界面：&lt;/p&gt;
@@ -93,7 +94,8 @@ alt="image-20220203224558136"
 &lt;/div&gt;&lt;p&gt;然后返回的链接就会把原来的&lt;code&gt;raw.github.com/xxxxxx&lt;/code&gt;给替代了。&lt;/p&gt;</description></item><item><title>Chevereto-搭建一个自己的图床</title><link>https://www.braindance.top/articles/2020/09/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/</link><pubDate>Sun, 20 Sep 2020 11:09:02 +0000</pubDate><guid>https://www.braindance.top/articles/2020/09/chevereto-%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E5%BA%8A/</guid><description>&lt;p&gt;博客搭完了，自己选择的这个博客主题又是以图片为主要元素的，当然要考虑图片的使用问题了，原来打算直接放在服务器上，但是后来想了想，以后如果文章&lt;del&gt;越写越多&lt;/del&gt;用的图太多服务器的流量也不够用，想到了图床这一托管图片的服务，但是放在别人的上面总怕会受到&lt;del&gt;限制&lt;/del&gt;，正好发现了&lt;code&gt;Chevereto&lt;/code&gt;这一图床系统，可以自己搭建一个图床服务器，正好自己还有一个阿里云学生云，那就开工。&lt;/p&gt;
 &lt;h3 id="chevereto-说明"&gt;Chevereto 说明
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Chevereto 是一个可以帮助你建立自己的图像分享网站（图床）的应用程序，我们的目标是可以让世界上的任何一个人都可以建立自己的图像共享平台。我们坚定不移的为那些想要可定制的白标图像共享服务的人建立一个真正的替代品。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Chevereto 是一个可以帮助你建立自己的图像分享网站（图床）的应用程序，我们的目标是可以让世界上的任何一个人都可以建立自己的图像共享平台。我们坚定不移的为那些想要可定制的白标图像共享服务的人建立一个真正的替代品。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;Chevereto&lt;/code&gt;分为免费版和付费版，区别肯定就是大小什么的，我这个搭在学生云上肯定就不用想我会选择哪个了吧 🤣&lt;/p&gt;
 &lt;h3 id="环境说明"&gt;环境说明
 &lt;/h3&gt;&lt;p&gt;因为&lt;code&gt;Chevereto&lt;/code&gt;所需要的环境为&lt;/p&gt;
@@ -170,7 +172,8 @@ alt="BJ9qPS.png"
 &lt;p&gt;之后就可以直接访问&lt;code&gt;服务器ip:80&lt;/code&gt;（80 端口可以省略），然后一步一步的进行配置。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;可能会出现的错误&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Chevereto can’t create the app/settings.php file. You must manually create this file&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;Chevereto can’t create the app/settings.php file. You must manually create this file&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;解决方法：这个错误就是没有找到&lt;code&gt;setting.php&lt;/code&gt;配置文件，压缩包内似乎没有创建该文件，我们可以自行创建，在&lt;code&gt;Chevereto&lt;/code&gt;的网站目录下的&lt;code&gt;/app&lt;/code&gt;目录下执行命令创建文件，并修改文件权限&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -183,7 +186,8 @@ alt="BJ9qPS.png"
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;我自己还遇到了第二个错误，大概的意思就是访问权限不足 blahbalhblahbla，我改了好久都不行。最后直接把整个网站目录的权限给改了访问成功。知道这样做不对，希望大佬能指点。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;我自己还遇到了第二个错误，大概的意思就是访问权限不足 blahbalhblahbla，我改了好久都不行。最后直接把整个网站目录的权限给改了访问成功。知道这样做不对，希望大佬能指点。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;访问网站进行网站的初始化配置，大概就是填写数据库名称、数据库账号密码、管理员的账户和密码和一些信息。&lt;/li&gt;
 &lt;/ul&gt;

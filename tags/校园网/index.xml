@@ -5,7 +5,8 @@
 &lt;li&gt;对于任何硬件、软件的损坏，本人没有赔偿的责任，哪怕这样的后果是因教程中的错误造成的。也请认真对待每一步操作，也许因为你的操作不当硬件因此变成一块砖。另外本教程的操作会使你的路由器失去保修。&lt;/li&gt;
 &lt;li&gt;本篇文章仅起指导性的作用，在操作的过程中遇到的问题也许我也没有遇到过，请先自行尝试解决，如果我有空也会尽量帮助。&lt;/li&gt;
 &lt;li&gt;学校明令禁止安装路由器，本人绝对没有怂恿或建议任何同学安装路由器，本人安装路由器的行为完全属于个人意志，仅仅作为个人的学习技术交流，请读者在安装好路由器之后 24 小时内再将之拆除，请按照学校指明的方式连接到互联网。如果学校根据校规等文件追究责任，与本人无关。&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;叠甲过&lt;/p&gt;
 &lt;h2 id="前置知识"&gt;前置知识
 &lt;/h2&gt;&lt;p&gt;校园网插入网线认证是要模拟 Dr.com 软件的发包认证，除了账号密码认证校园网以外，软件还会定时发送心跳包保证校园网连接。&lt;/p&gt;
@@ -53,7 +54,8 @@ alt="ab3pm-21hcz.png"
 &lt;h2 id="刷入不死-breed"&gt;刷入不死 Breed
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;Breed 是国内个人 hackpascal 开发的闭源 Bootloader（引导加载器，即为用于加载操作系统的程序），也被称为“不死鸟”。
-因为有些官方升级固件自带 bootloader，如果从官方固件升级，会导致现有 bootloader 被覆盖。而当 Breed 更新固件时，它会自动删除固件附带的引导加载程序，因此可以防止 Breed 被覆盖。&lt;/p&gt;&lt;/blockquote&gt;
+因为有些官方升级固件自带 bootloader，如果从官方固件升级，会导致现有 bootloader 被覆盖。而当 Breed 更新固件时，它会自动删除固件附带的引导加载程序，因此可以防止 Breed 被覆盖。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;刷入 Breed 的作用就是为后面刷固件做个保险，失败以后可以进行 reset 复位，防止路由器刷成一块砖。&lt;/p&gt;
 &lt;h3 id="开启路由器-telnet-和-ftp"&gt;开启路由器 telnet 和 ftp
 &lt;/h3&gt;&lt;p&gt;打开前面下载的压缩包中的 &lt;code&gt;R3GV2 patches&lt;/code&gt; 文件夹，运行其中的 &lt;code&gt;0.start_main.bat&lt;/code&gt;，这个批处理的命令主要是运行了文件夹中的 &lt;code&gt;main.py&lt;/code&gt; ，而 &lt;code&gt;main.py&lt;/code&gt; 做的事情就是尝试发现你的路由器后台地址，然后需要输入&lt;strong&gt;管理后台的密码&lt;/strong&gt;，然后执行一些 exploit 在路由器中写入后门，界面中出现 &lt;code&gt;Done&lt;/code&gt; 字样就算成功。&lt;/p&gt;
@@ -344,7 +346,8 @@ alt="拨号成功"
 &lt;p&gt;网线断了，或者路由器坏了&lt;/p&gt;
 &lt;p&gt;压根没开通校园网&lt;/p&gt;
 &lt;p&gt;dogcom 插件中，校园网心跳配置已经更改&lt;/p&gt;
-&lt;p&gt;端口被学校网络中心拉黑了&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;端口被学校网络中心拉黑了&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="挖个坑"&gt;挖个坑
 &lt;/h2&gt;&lt;h3 id="校园网防检测"&gt;校园网防检测
 &lt;/h3&gt;&lt;p&gt;常见的四种检测：&lt;/p&gt;
@@ -435,7 +438,7 @@ alt="拨号成功"
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;PING_SUM&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
@@ -531,7 +534,7 @@ alt="拨号成功"
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;LOG_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;/root/ping/log.txt&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 用ps获取ups进程数量&lt;/span&gt;
