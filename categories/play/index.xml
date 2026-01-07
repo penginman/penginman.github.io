@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Play on Braindance</title><link>https://www.braindance.top/categories/play/</link><description>Recent content in Play on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.braindance.top/categories/play/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux上运行Firefox浏览器</title><link>https://www.braindance.top/articles/2025/10/docker-firefox-build/</link><pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.braindance.top/articles/2025/10/docker-firefox-build/</guid><description>&lt;h2 id="前言"&gt;前言
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Play on Braindance</title><link>https://www.braindance.top/categories/play/</link><description>Recent content in Play on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 07 Jan 2026 10:50:42 +0800</lastBuildDate><atom:link href="https://www.braindance.top/categories/play/index.xml" rel="self" type="application/rss+xml"/><item><title>为VSCode加上Cursor的代码补全</title><link>https://www.braindance.top/articles/2026/01/code-completion-for-vscode/</link><pubDate>Wed, 07 Jan 2026 10:50:42 +0800</pubDate><guid>https://www.braindance.top/articles/2026/01/code-completion-for-vscode/</guid><description>&lt;p&gt;之前用的 Windsurf 的免费代码补全最近用的很闹心，于是乎去找新的替代品，发现效果不错，记录一下（&lt;del&gt;才不是为了把年度总结刷下去&lt;/del&gt;）。&lt;/p&gt;
+&lt;h2 id="下载插件扩展"&gt;下载插件扩展
+&lt;/h2&gt;&lt;p&gt;相关项目：&lt;a class="link" href="https://github.com/Haleclipse/Cometix-Tab" target="_blank" rel="noopener"
+&gt;https://github.com/Haleclipse/Cometix-Tab&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;仓库中有说有用到实验性 API 需要 Insider 版本才可以使用其实后面能偷跑。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载拖到 VSCode 里安装&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id="配置扩展"&gt;配置扩展
+&lt;/h2&gt;&lt;p&gt;打开 VSCode 设置搜索&lt;code&gt;cometix Tab&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Server URL&lt;/code&gt; 修改为 &lt;code&gt;https://api2.cursor.sh.lilingfeng.dev&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Auth Token&lt;/code&gt; 随便填。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="stable-版本偷跑"&gt;Stable 版本偷跑
+&lt;/h2&gt;&lt;p&gt;找到 VSCode 安装目录下的 &lt;code&gt;resources\app\product.json&lt;/code&gt; ，找到 &lt;code&gt;extensionEnabledApiProposals&lt;/code&gt; 配置项，在列表中&lt;strong&gt;添加&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;Haleclipse.cometix-tab&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;inlineCompletionsAdditions&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后重启 VSCode&lt;/p&gt;
+&lt;h2 id="效果"&gt;效果
+&lt;/h2&gt;&lt;p&gt;代码补全效果如下。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://img.braindance.top/2026/01/completionexample-f5e1e6973953a8e1a5d0f24fdad26e6e.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;h2 id="最后"&gt;最后
+&lt;/h2&gt;&lt;p&gt;看到这的切用且珍惜，因为是公益佬在维护的。完结撒花。&lt;/p&gt;</description></item><item><title>Linux上运行Firefox浏览器</title><link>https://www.braindance.top/articles/2025/10/docker-firefox-build/</link><pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.braindance.top/articles/2025/10/docker-firefox-build/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;有一个网页游戏挂机的需求，遂找到了这个东西。项目地址：https://github.com/jlesage/docker-firefox&lt;/p&gt;
 &lt;h2 id="一键启动"&gt;一键启动
 &lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
