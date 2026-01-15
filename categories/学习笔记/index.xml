@@ -20,6 +20,7 @@
 &lt;/h2&gt;&lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/10/12/6527dfcd9db91.png"
 loading="lazy"
 alt="1697112011353.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="运算符号"&gt;运算符号
 &lt;/h2&gt;&lt;h3 id="加减乘除"&gt;加减乘除
@@ -797,6 +798,7 @@ Python 3.6以后提供了语法糖表示，在字符串前使用&lt;code&gt;f&lt
 &lt;p&gt;&lt;img src="https://www.runoob.com/wp-content/uploads/2013/11/2112205-861c05b2bdbc9c28.png"
 loading="lazy"
 alt="文件操作"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="读写文本文件"&gt;读写文本文件
 &lt;/h3&gt;&lt;p&gt;读取文件时使用 &lt;code&gt;r&lt;/code&gt; 操作模式即可，&lt;code&gt;encoding&lt;/code&gt; 参数可以指定编码（若未指定，默认值是None，读取时会使用系统默认编码），如果编码不一致会无法解码导致读取失败。读取文件时会遇到各种错误如：文件找不到会引发 &lt;code&gt;FileNotFoundError&lt;/code&gt;，指定了未知的编码会引发 &lt;code&gt;LookupError&lt;/code&gt;，而如果读取文件时无法按指定方式解码会引发 &lt;code&gt;UnicodeDecodeError&lt;/code&gt;，可以使用 &lt;code&gt;try-except&lt;/code&gt; 代码块捕获异常&lt;/p&gt;

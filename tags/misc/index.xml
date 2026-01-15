@@ -5,18 +5,21 @@
 &lt;/h2&gt;&lt;p&gt;真·有手就行&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130102716.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="fakezip"&gt;fakezip
 &lt;/h2&gt;&lt;p&gt;看到题目&lt;strong&gt;fakezip&lt;/strong&gt;翻译：假的压缩包，所以猜应该是伪加密，贴一个原理的博客：&lt;a class="link" href="https://blog.csdn.net/u011377996/article/details/79286958" target="_blank" rel="noopener"
 &gt;zip伪加密&lt;/a&gt;，使用010 Editor打开压缩包，&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130103932.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;找到01修改为00，再解压压缩包，虽然提示了压缩包错误但是直接无视，获得一个flag.txt&lt;/p&gt;
 &lt;p&gt;打开以后内容是：&lt;code&gt;♬♩¶♯♬♭♬♫♫♪♬∮♬♭‖♭♬♭♬∮♬♭‖♭♬♭♫♫♯=&lt;/code&gt;，音符加密虽然是第一次听说，但是百度还是可以简单找到：&lt;a class="link" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=yinyue" target="_blank" rel="noopener"
 &gt;文本加密为音乐符号&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130104321.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="base-family"&gt;Base family
 &lt;/h2&gt;&lt;p&gt;题目给出了是base家族，所以base所有种类都试一遍。base常见的种类有：&lt;code&gt;base16&lt;/code&gt;、&lt;code&gt;base32&lt;/code&gt;、&lt;code&gt;base58&lt;/code&gt;、&lt;code&gt;base64&lt;/code&gt;、&lt;code&gt;base91&lt;/code&gt;。还有几种没听过的base种类可以在这个网站找到：&lt;a class="link" href="http://ctf.ssleye.com/" target="_blank" rel="noopener"
@@ -79,6 +82,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;根据题目直接百度&lt;strong&gt;SlientEye&lt;/strong&gt;，下载以后打开图片&amp;ndash;&amp;gt;decode：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130105145.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;参数啥的都没动，密码为默认密码，直接Decode，得到一个flag.txt：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -101,11 +105,13 @@ loading="lazy"
 &lt;p&gt;解完以后直接出了一堆由：&lt;code&gt;[、]、!、+、(、)&lt;/code&gt;组成的符号，还是百度找到了这种编码叫JSfuck，可以直接浏览器控制台console输出获得flag&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130110943.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="jpgsteg"&gt;jpgsteg
 &lt;/h2&gt;&lt;p&gt;题目即是用到的工具，百度下载软件，使用jphide.exe打开图片&lt;code&gt;Tap code.jpg&lt;/code&gt;，选择seek功能解密，密码为123456（我蒙的）：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130111311.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;成功解密后获得一个文档，内容如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -137,6 +143,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;这里我思索了好久，刚开始以为是摩斯密码，但是又对不上号，最后找到了一个名为敲击码的，正好一行中的&lt;code&gt;.&lt;/code&gt;分成两部分代表坐标&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130111538.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;解码得到：&lt;code&gt;ohhamazing&lt;/code&gt; ，加上括号就是：&lt;strong&gt;flag{ohhamazing}&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;事后多看了一眼图片命名：&lt;code&gt;Tap code.jpg&lt;/code&gt;。这用啥解密不就在脸上写着的&lt;del&gt;wosabi \0/&lt;/del&gt;。。。&lt;/p&gt;
@@ -144,6 +151,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;打开压缩包发现都是加密，但是原始大小都为4，只有CRC不一样：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201102424.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;所以很有可能是四位数据的CRC32碰撞，就去网上找了一个python脚本：&lt;a class="link" href="https://blog.csdn.net/weixin_45396639/article/details/103393759" target="_blank" rel="noopener"
 &gt;crc32碰撞 ctf python&lt;/a&gt;作者原创的脚本：&lt;/p&gt;
@@ -288,6 +296,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;题目的压缩包解压以后得到一个&lt;strong&gt;flag.zip&lt;/strong&gt;压缩包和&lt;strong&gt;secret.txt&lt;/strong&gt;，flag.zip中也含有secret.txt，将外面没有加密的secret.txt使用&lt;strong&gt;winrar&lt;/strong&gt;压缩（需要和原来的压缩软件一致哒）以后对比flag.zip里的文件发现CRC码相同的：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201103227.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;配合ARCHPR使用明文攻击，获得加密密钥： &lt;strong&gt;[b00df998 5bdbbde6 485fa1f8]&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我在进行明文攻击时虽然没有跑出来压缩包的密码，但是获得了上面的密钥，也是可以解压加密的压缩包的（具体原理不清楚）。解压明文攻击解开获得的压缩包&lt;strong&gt;flag_decrypted.zip&lt;/strong&gt;，打开flag.txt是颜文字表情加密，直接复制到浏览器console控制台运行获得flag：flag{kaomoj1_1s_cut3}&lt;/p&gt;
@@ -350,12 +359,14 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;题目即提示，Whitespace进行一波搜索以后了解到是一种用空白符编程的语言，在压缩包里面摸了好久，在注释里发现空白编码：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201104847.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;这也让我想到自己在网上下工具的压缩包时，网站经常在注释里附上密码，通常都是网站的网址。&lt;/p&gt;
 &lt;p&gt;在&lt;a class="link" href="https://vii5ard.github.io/whitespace" target="_blank" rel="noopener"
 &gt;whitespace&lt;/a&gt;网站中粘贴密文点上面的&lt;code&gt;run&lt;/code&gt;：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201105235.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;解密获得：&lt;strong&gt;password is BlindWaterMark!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;输入解压以后获得两张看着相同的罗翔老师.png图片和一个hint.txt：&lt;/p&gt;
@@ -391,6 +402,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;获得解密图片：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201105728.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;图片中的内容为：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -419,6 +431,7 @@ loading="lazy"
 &gt;一些CTF编码脚本&lt;/a&gt;，在里面找到了这两段：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201105901.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;心里一顿狂喜，因为都是&lt;code&gt;2965a&lt;/code&gt;这个几个字符组成的，应该就是找对了。根据博客代码自行修改脚本&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -472,6 +485,7 @@ loading="lazy"
 &gt;慢扫描电视SSTV&lt;/a&gt;，下载MMSSTV软件，把output.wav音频调制麦克风输出，我使用的方法是在声音设置里把立体声混音打开并且设为默认设备，然后电脑里播放的声音就会被录制到。等待图片绘制成功，获得flag：&lt;strong&gt;DMCTF{SSTV,yyds?}&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201111538.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="simpleqrcode"&gt;SimpleQrcode
 &lt;/h2&gt;&lt;p&gt;​ 下载题目是一个gif图片都是二维码，使用使用stegSovle中的Frame Browser功能，一帧一帧播放，一帧一扫，有几帧图片是少了二维码的上边，有一张是少了右边，可以参考第一张完整的图片，把上面截取拼接上去，扫码后17张图片对应的内容（根据代码行号）：&lt;/p&gt;

@@ -8,6 +8,7 @@
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/10/07/6520f05f102ea.png"
 loading="lazy"
 alt="1696657544950.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;config&lt;/code&gt; 配置文件默认为空，需要添加一些配置。plugins 是可以加载一些其他联动插件，本文使用的方法不用其他插件。&lt;/p&gt;
 &lt;p&gt;找到 IDEA 或者 Pycharm 的 &lt;code&gt;Help&lt;/code&gt; &amp;mdash;&amp;gt; &lt;code&gt;Edit Custom VM Options&lt;/code&gt; 添加启动参数，路径是&lt;code&gt;ja-netfilter&lt;/code&gt;的 jar 包路径。&lt;/p&gt;
@@ -349,6 +350,7 @@ alt="1696657544950.png"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2023/10/07/6520eff16b4a4.png"
 loading="lazy"
 alt="1696657436047.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2024年10月21日&lt;/strong&gt;发现了个新问题。参照[博客][https://www.cnblogs.com/airlongdianblog/p/18418285]&lt;/p&gt;
 &lt;blockquote&gt;

@@ -22,19 +22,23 @@
 &lt;p&gt;软件界面：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130095609.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h1 id="起因"&gt;起因
 &lt;/h1&gt;&lt;p&gt;PicGo 上传成功以后可以自动复制 url，但是默认复制的图片链接是 github 提供的，github 在国内又经常抽风，图片通常都是无法访问的，所以我使用了 jsdelivr 提供的链接访问图片，PicGo 也提供了自定义链接，但是规定必须包含&lt;code&gt;$url&lt;/code&gt;参数，也就是默认的 url 地址：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130093835.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;起初是把 jsdelivr 的链接直接拼在后面，每次使用的时候都再删一次。直到昨晚受不了了就尝试去修改软件试图绕过判断。&lt;/p&gt;
 &lt;h1 id="解决方法"&gt;解决方法
 &lt;/h1&gt;&lt;p&gt;在软件设置的配置文件里找到了&lt;code&gt;customLink&lt;/code&gt;，和之前自己设置的链接对照了一下，认为这个就是实际的自定义链接，直接在此处修改，再上传自动复制的链接就正确了，而且绕过了必须包含$url。&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130094455.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130094651.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h1 id="结语"&gt;结语
 &lt;/h1&gt;&lt;p&gt;软件提供了自动使用时间戳重命名，所以我自定义链接中还是使用了&lt;code&gt;$filename&lt;/code&gt;变量，然后博客中的图片大部分都是使用 QQ 的截屏功能，出来的截图后缀都是&lt;code&gt;png&lt;/code&gt;格式，这个可以根据需要自己设定拼接，然后使用的 markdown 编辑器是 typora，想要添加图片直接&lt;code&gt;Crtl+Shift+i&lt;/code&gt;，把图片链接贴里面就彳亍了。~&lt;del&gt;白嫖真爽&lt;/del&gt;&lt;/p&gt;
@@ -55,6 +59,7 @@ loading="lazy"
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/202202032246055.png"
 loading="lazy"
 alt="image-20220203224558136"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;直接在自定义域名那里修改成 jsDeliver 对应的仓库路径，比如我的&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;

@@ -8,6 +8,7 @@
 &lt;p&gt;访问资源就会进行刷新，然后页面会返回刷新信息：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201120222419.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;划水收工。&lt;/p&gt;</description></item><item><title>jsDelivr加速静态博客</title><link>https://www.braindance.top/articles/2020/11/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link><pubDate>Wed, 11 Nov 2020 21:37:53 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/jsdelivr%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid><description>&lt;h2 id="前言"&gt;前言
 &lt;/h2&gt;&lt;p&gt;​ 这几天总感觉博客访问特别慢，最先是找到了 CDN 加速，但是在国内加速的话域名都是要备案的，又看了看境外加速。&lt;/p&gt;
@@ -19,12 +20,14 @@ loading="lazy"
 &lt;h2 id="1-新建仓库"&gt;1. 新建仓库
 &lt;/h2&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111202508.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 名字重了是因为我已经创建好了并且使用了以后才来写的博客。&lt;/p&gt;
 &lt;h2 id="2-克隆-git-仓库到本地"&gt;2. 克隆 Git 仓库到本地
 &lt;/h2&gt;&lt;p&gt;​ 在自己电脑建个文件夹然后打开 git 输入&lt;code&gt;git clone 你仓库的链接&lt;/code&gt;，把刚刚创建的仓库拉倒本地方便上传到仓库。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111203733.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;廖雪峰老师的 git 教程我当时看了一遍，觉得非常棒，哈哈哈就是自己太菜了又给忘了，帖出来：&lt;a class="link" href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000" target="_blank" rel="noopener"
 &gt;Git 简介&lt;/a&gt;。&lt;/p&gt;
@@ -49,6 +52,7 @@ loading="lazy"
 &gt;主题 github&lt;/a&gt;支持一下作者，直接在主题&lt;code&gt;theme/butterfly&lt;/code&gt;文件夹下面找到资源文件夹&lt;code&gt;source&lt;/code&gt;发现里面都是一些零碎的文件，但是在发布文件夹&lt;code&gt;public&lt;/code&gt;下是一个完整的 js 和 css，所以猜测生成的时候会把零碎的文件进行整合，然后主题配置文件里作者也写的很清楚&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed/artical/20201111205045.png"
 loading="lazy"
+data-zoomable
 &gt; 穷人流下了不争气的泪。传！(真加速还得选好服务器)&lt;/p&gt;
 &lt;p&gt;​ 这里我的分析是：由于引用的不是本地的资源文件，所以可能会产生自己在本地修改了某项配置，但是网页没有生效，这里就需要时刻记着自己引用的是 github 上的资源，如果本地配置大改的话，github 上的文件也要进行重新上传覆盖。&lt;/p&gt;
 &lt;p&gt;​ 做法：配置文件里找到引用的是本地资源的项，然后在生成网站的&lt;code&gt;public&lt;/code&gt;文件下找到对应的资源文件。&lt;/p&gt;
@@ -57,6 +61,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;​ 官网首页很清楚的写明了如何获取资源链接&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201111211357.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ &lt;code&gt;https://cdn.jsdelivr.net/gh/user/repo@version/file&lt;/code&gt;，&lt;code&gt;user&lt;/code&gt;就是你的 github 用户名，&lt;code&gt;repo@version&lt;/code&gt;，仓库加上版本号，&lt;code&gt;file&lt;/code&gt;就是仓库下的路径。&lt;/p&gt;
 &lt;p&gt;​ 这里我没有说版本号是因为网上的教程讲到了仓库需要发布，但是我后面无意间发现不用发布直接&lt;code&gt;reop@分支名&lt;/code&gt;，也可以访问到。并且我一开始也发布仓库了，但是后面想要修改已经上传的文件也出了一些问题，索性直接用简单的。&lt;/p&gt;

@@ -322,6 +322,7 @@
 &lt;/h1&gt;&lt;p&gt;源码找到&lt;code&gt;time.php?source&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210420175641.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -417,10 +418,12 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;页面查找flag，在environment中找到flag&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210420175822.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h1 id="easysearch"&gt;EasySearch
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210420171541.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;进入页面以后试了试sql注入发现没用。第一步是看了wp找到的：使用扫描器扫描到&lt;code&gt;index.php.swp&lt;/code&gt;文件：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -533,6 +536,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;分析源码登陆以后会创建一个欢迎页，使用POST请求，抓包可以在响应头里找到创建文件的位置和名称。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210417102904.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;看了看文件后缀是一格没有见过的：&lt;code&gt;shtml&lt;/code&gt;，然后学到到了shtml有一种漏洞：&lt;a class="link" href="https://blog.csdn.net/qq_40657585/article/details/84260844" target="_blank" rel="noopener"
 &gt;SSI注入漏洞&lt;/a&gt;&lt;/p&gt;
@@ -551,6 +555,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;我使用了反弹shell，自行修改一下命令即可。在/var/www/html目录下可以找到一个名为&lt;code&gt;flag_990c66bf85a09c664f0b6741840499b2&lt;/code&gt;的文件，获得flag&lt;/p&gt;</description></item><item><title>极客大挑战 2019 FinalSQL</title><link>https://www.braindance.top/articles/2021/04/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-finalsql/</link><pubDate>Sun, 18 Apr 2021 19:11:51 +0000</pubDate><guid>https://www.braindance.top/articles/2021/04/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-finalsql/</guid><description>&lt;p&gt;还是同一场比赛的界面&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210416224503.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;这次测试了下面的登陆框已经不能用了，无论怎么输入都是同一个回显：&lt;strong&gt;你可别被我逮住了，臭弟弟&lt;/strong&gt;，测试上面的序号，注意此时的url中有&lt;code&gt;?id=&lt;/code&gt;猜测是一个注入点，输入单引号一直报错，但是输入2-1时成功回显，判断是一个&lt;strong&gt;数字型&lt;/strong&gt;注入，数字型注入最多遇到的就是结合盲注，接下来是测试盲注的过滤。&lt;/p&gt;
 &lt;p&gt;发现if、union、and等被过滤，在整个字符串中如果出现空格会被拦下，ord、ascii等转换字符没有被过滤，if被过滤可以使用strcmp函数等代替，空格可以使用括号绕过。&lt;/p&gt;
@@ -620,6 +625,7 @@ loading="lazy"
 &lt;p&gt;在第九项可以查得到flag，上面的sql语句已经准备好了。第一个是查询表名的，第二个是查询字段名，第三个是得到flag&lt;/p&gt;</description></item><item><title>WUSTCTF2020 朴实无华</title><link>https://www.braindance.top/articles/2021/04/wustctf2020-%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/</link><pubDate>Fri, 16 Apr 2021 15:33:32 +0000</pubDate><guid>https://www.braindance.top/articles/2021/04/wustctf2020-%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/</guid><description>&lt;p&gt;进入页面直接报错&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210416103737.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;试试其他的地方，我的习惯是git泄露、请求头、robots.txt、hint.txt都看看。果然在robots下有内容&lt;/p&gt;
 &lt;blockquote&gt;
@@ -629,6 +635,7 @@ Disallow: /fAke_f1agggg.php&lt;/p&gt;
 &lt;p&gt;访问&lt;code&gt;fAke_f1agggg.php&lt;/code&gt;并且抓包，在响应头里有提示。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210416105630.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;访问&lt;code&gt;fl4g.php&lt;/code&gt;才正式开始，源码如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -755,18 +762,22 @@ loading="lazy"
 &lt;/div&gt;</description></item><item><title>SWPU2019 Web1</title><link>https://www.braindance.top/articles/2021/04/swpu2019-web1/</link><pubDate>Thu, 15 Apr 2021 09:55:17 +0000</pubDate><guid>https://www.braindance.top/articles/2021/04/swpu2019-web1/</guid><description>&lt;p&gt;一个登陆界面，再看下url地址为login.php，确认了使用的是php&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415091617.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;直接查看源码，在源码中找到了register.php。先注册一个进去看一看。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415091705.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;是一个发布广告的信息页，发布广告时需要输入广告的标题和内容，联想一下之前做过的发布文章的，应该是sql注入，输入广告标题输入一个单引号&lt;code&gt;'&lt;/code&gt;试一试&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415091924.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;广告详情中出现了数据库报错&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415091959.png"
 loading="lazy"
+data-zoomable
 &gt;猜测应该是二次注入，发布时加上一些转义字符没有出现错误，但是查看详情时再次从数据库中取出带有payload的数据，可以执行sql语句。而且上面的单引号测试出来了是&lt;strong&gt;字符型单引号闭合&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;接下来是尝试过滤。我试出来的有空格（使用&lt;code&gt;/**/&lt;/code&gt;绕过）、or，and（可以使用&amp;amp;&amp;amp;，||），同时or被过滤，就说明保存数据库表名的库&lt;strong&gt;information_schema&lt;/strong&gt;没有办法查询，并且&lt;strong&gt;orderby&lt;/strong&gt;也不能使用，需要使用其他办法获取表内容。&lt;/p&gt;
 &lt;p&gt;测试一下当前表的字段数，从1开始加，一直会报字段数不匹配，直到尝试到22。还需要主义的是执行的sql语句后面的 &lt;code&gt;LIMIT 0,1&lt;/code&gt;需要闭合，所以最后添加了一个单引号&lt;/p&gt;
@@ -780,6 +791,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415092716.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;说明回显位是2和3。&lt;/p&gt;
 &lt;p&gt;由于没有办法查询表名，所以需要我们自己猜测，CTF比赛中常见的表名就是flag、users、举办方的缩写啥的。&lt;del&gt;这种没有办法查询表名的题目表名应该都不会设置太难&lt;/del&gt;&lt;/p&gt;
@@ -797,18 +809,22 @@ loading="lazy"
 &lt;p&gt;先来个正常表（flag）的查询&lt;/p&gt;
 &lt;p&gt;&lt;img src="D:%5cDROPS%5cCTF%e6%af%94%e8%b5%9b%e9%a2%98%e8%a7%a3%5cBUUCTF%5cWeb%5c[SWPU2019]Web1%5c20210415094632.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;我们知道在sql语句查询的时候，可以给列名起别名形如&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415094059.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;使用联合查询的时候，只要前后表的字段数相同，前面查询的就会成为表名&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415094238.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;所以当我们不知道flag表的字段，并且想要查询里面的内容时，比如我想查询flag表的flag字段，可以构造&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210415094814.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;需要为子查询的结果再起一个别名（图中为&lt;code&gt;x&lt;/code&gt;），这样我们就不用列名查询到了字段。总结一下思路就是：自己构造一个表名并且联合查询想要查询的表名，再使用&lt;code&gt;group_concat&lt;/code&gt;函数输出自己构造的表名。&lt;/p&gt;
 &lt;p&gt;所以测试users表的字段数时，就通过形如上图的格式，改变联合查询的字段数判断。&lt;/p&gt;
@@ -831,6 +847,7 @@ loading="lazy"
 &lt;/h1&gt;&lt;p&gt;进到靶机一个硕大的滑稽，查看源码有提示source.php&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120101413.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -975,6 +992,7 @@ loading="lazy"
 &lt;h1 id="强网杯-2019随便注"&gt;[强网杯 2019]随便注
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120094248.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;根据题目尝试sql注入，单引号报错，单引号加注释无报错，说明存在sql注入，当测试输入select时返回过滤的黑名单：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1000,6 +1018,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120095211.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;查看当前库下的表&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1012,6 +1031,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120095339.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;查看两张表字段&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1024,6 +1044,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120095607.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;还有一种查看表的语句，在windows系统下，反单引号（`）是数据库、表、索引、列和别名用的引用符&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1036,6 +1057,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120095839.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;找到了flag在的字段，接下来就是如何获取该字段的值。顺带一提，根据表的结构，初步判断默认查询的是&lt;strong&gt;word&lt;/strong&gt;表中的字段，而flag在&lt;strong&gt;1919810931114514&lt;/strong&gt;表中。&lt;/p&gt;
 &lt;p&gt;网上找到的两种方法，分别是修改表名和使用预处理语句。&lt;/p&gt;
@@ -1123,6 +1145,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019easysql"&gt;[极客大挑战 2019]EasySQL
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120101528.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;用户名密码，尝试万能密码。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1140,6 +1163,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019havefun"&gt;[极客大挑战 2019]Havefun
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120101733.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;直接源码找到php代码。payload&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1154,6 +1178,7 @@ loading="lazy"
 &lt;h1 id="suctf-2019easysql"&gt;[SUCTF 2019]EasySQL
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120102317.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;单引号无报错，尝试堆叠注入可以回显。&lt;/p&gt;
 &lt;p&gt;和 [强网杯 2019]随便注这道题一样查库查表查字段&lt;/p&gt;
@@ -1249,18 +1274,22 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019secret-file"&gt;[极客大挑战 2019]Secret File
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120103724.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;查看源码，又一个背景是黑色的超链接跳转到 Archive_room.php。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120103842.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;查看源码SECRET跳转的是action.php。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120103907.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;但是跳转以后是url地址为end.php，所以中间跳过了一个页面，使用bp抓包查看。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120104246.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;stristr()函数返回字符串中子串第一次出现位置之后的内容，简而言之还是过滤。&lt;/p&gt;
 &lt;p&gt;同样使用php伪协议filter过滤器读取文件&lt;/p&gt;
@@ -1286,6 +1315,7 @@ loading="lazy"
 &lt;/h1&gt;&lt;p&gt;顶端の告诫：用 sqlmap 是没有灵魂的&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210120104703.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;尝试万能密码（其实没卵用）&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1356,6 +1386,7 @@ loading="lazy"
 &lt;h1 id="actf2020-新生赛exec"&gt;[ACTF2020 新生赛]Exec
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121090002.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;肯定是尝试管道符&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1408,6 +1439,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121091616.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;获得cookie_secret的值为&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1421,6 +1453,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;根据hints.txt的url验证一下是如何加密的。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121092122.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;选中的蓝色部分是&lt;code&gt;/hints.txt&lt;/code&gt;加密后的md5值。推断出filehash格式以后直接访问flag文件，payload：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1435,12 +1468,14 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019knife"&gt;[极客大挑战 2019]Knife
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121092431.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;一句话直接连。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="roarctf-2019easy-calc"&gt;[RoarCTF 2019]Easy Calc
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121092956.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;一个计算器随便试一试，当输入字母时会报错。查看网页源码，在script中发现了运行计算器的php文件：&lt;strong&gt;calc.php&lt;/strong&gt;，但是也有一句很重要的注释&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1453,6 +1488,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121093233.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;php的正则表达式中并没有过滤字母的条件，所以我们输入字母被过滤是因为&lt;strong&gt;WAF&lt;/strong&gt;，接下来是参考网上的wp自己的理解&lt;/p&gt;
 &lt;p&gt;可以在calc.php传参&lt;/p&gt;
@@ -1488,6 +1524,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019http"&gt;[极客大挑战 2019]Http
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121104213.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;查看源码在&amp;quot;氛围&amp;quot;这两个字上有隐藏的跳转Secret.php。进入以后页面显示&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1549,6 +1586,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019php"&gt;[极客大挑战 2019]PHP
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121105104.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;源码备份在&lt;code&gt;www.zip&lt;/code&gt;中。下载以后有五个文件&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1707,6 +1745,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019upload"&gt;[极客大挑战 2019]Upload
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121111429.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;先尝试上传一个gif图片马内容为&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1737,12 +1776,14 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;可以上传，文件在/upload目录下。尝试修改后缀上传，phtml上传成功，可以执行php和script代码，使用蚁剑连接。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121112135.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="20210128"&gt;2021.01.28
 &lt;/h1&gt;&lt;h1 id="极客大挑战-2019babysql"&gt;[极客大挑战 2019]BabySQL
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210128113412.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;尝试万能密码，发现报错了：1=1#&amp;rsquo; and password=&amp;lsquo;123&amp;rsquo;，也许是or被过滤了或者删掉了，尝试大小写无果，但是尝试双写通过了。需要注意的是爆表，爆数据库的语句中有&lt;strong&gt;information&lt;/strong&gt;这个词，其中的&lt;strong&gt;for&lt;/strong&gt;也会被过滤。其他过滤的词我遇到的有：union，select、from、where、and。&lt;/p&gt;
 &lt;p&gt;爆数据库（填密码）：&lt;/p&gt;
@@ -1776,6 +1817,7 @@ loading="lazy"
 &lt;h1 id="actf2020-新生赛upload"&gt;[ACTF2020 新生赛]Upload
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210128114257.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;指针放在灯泡上护显示上传文件的，图片马&lt;/p&gt;
 &lt;p&gt;233.gif&lt;/p&gt;
@@ -1918,6 +1960,7 @@ loading="lazy"
 &lt;h1 id="hctf-2018admin"&gt;[HCTF 2018]admin
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210202182820.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;可以在注释里找到&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1931,6 +1974,7 @@ loading="lazy"
 &lt;p&gt;修改密码抓到的包：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210202183647.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;感觉并没有什么下手的地方，唯一的就是session可能和身份有关。&lt;/p&gt;
 &lt;p&gt;以下的是看网上的wp&lt;/p&gt;
@@ -2138,6 +2182,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210306103214.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="解法二unicode欺骗"&gt;解法二：Unicode欺骗
 &lt;/h2&gt;&lt;p&gt;第二种方法是利用代码中的strlower()函数的使用不当。这个函数分别在注册、登陆、修改密码的地方出现三次。这个方法的思路就是unicode加密三层，在最后一层修改密码时执行函数strlower()后修改到admin的密码。过程为&lt;/p&gt;
@@ -2158,6 +2203,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019buyflag"&gt;[极客大挑战 2019]BuyFlag
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210121104213.png"
 loading="lazy"
+data-zoomable
 &gt;网站题直接去看源码，在源码也搜索php有两个：index.php、pay.php。前者是首页，直接看后面的那个，打开就有提示&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Only Cuit&amp;rsquo;s students can buy the FLAG&lt;/p&gt;
@@ -2232,6 +2278,7 @@ loading="lazy"
 &lt;h1 id="suctf-2019checkin"&gt;[SUCTF 2019]CheckIn
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210201103750.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;知识点&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2274,6 +2321,7 @@ array(5) { [0]=&amp;gt; string(1) &amp;ldquo;.&amp;rdquo; [1]=&amp;gt; string(2)
 &lt;h1 id="bjdctf2020easy-md5"&gt;[BJDCTF2020]Easy MD5
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210201105021.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;参考：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2337,9 +2385,11 @@ loading="lazy"
 &lt;p&gt;自己进行的测试：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210201113825.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210201113839.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;所以真正的解法是只要sql语句的格式为password=&amp;lsquo;xxxxxxxx&amp;rsquo; or &amp;lsquo;1xxxx&amp;rsquo;，即hex包含字符串&amp;quot;276f722731&amp;quot;（&amp;lsquo;or'1），其实or后面开头只要是数字即可，1-9的hex范围为31-39。&lt;/p&gt;
 &lt;p&gt;下面这个程序是这道题开头参考列表中的第三个链接。&lt;/p&gt;
@@ -2370,6 +2420,7 @@ loading="lazy"
 &lt;p&gt;自己写了一个python程序，放在学生服务器上跑了一个下午加一个晚上，出了两个答案，好家伙从1跑到52亿：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210203094304.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -2713,6 +2764,7 @@ loading="lazy"
 &lt;h1 id="ciscn2019-华北赛区-day2-web1hack-world"&gt;[CISCN2019 华北赛区 Day2 Web1]Hack World
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210307171921.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;很明显的sql注入，随便尝试一些语句有&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2790,6 +2842,7 @@ loading="lazy"
 &lt;h1 id="极客大挑战-2019hardsql"&gt;[极客大挑战 2019]HardSQL
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210307173126.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;还是sql注入题。尝试在输入框里输入&lt;code&gt;#&lt;/code&gt;、&lt;code&gt;--+&lt;/code&gt;时被拦下了，但是在url中使用%23通过了。尝试了union但是被过滤了，使用双写也不通过，和这道题同类型的题前面有Baby SQL、Easy SQL，考点还剩下的有盲注、报错注入、堆叠注入。尝试报错注入可以使用，我参考的&lt;a class="link" href="https://www.cnblogs.com/wocalieshenmegui/p/5917967.html" target="_blank" rel="noopener"
 &gt;十种MySQL报错注入&lt;/a&gt;。还需要注意空格是会被拦下的，url编码也不能通过，所以在语句中的表名需要使用&lt;code&gt;()&lt;/code&gt;隔开，具体payload如下：&lt;/p&gt;
@@ -2847,10 +2900,12 @@ loading="lazy"
 &lt;h1 id="网鼎杯-2018fakebook"&gt;[网鼎杯 2018]Fakebook
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210307174819.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;是一个展示自己博客网址的列表，先随便注册一个&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210307175313.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;我填的是baidu的网址23333。这时的url是：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -2875,6 +2930,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;先使用上面的语句查看回显点。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210307180356.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;找的了位置2的回显点，可以把函数替换在2的位置上。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -2972,6 +3028,7 @@ loading="lazy"
 &lt;/h1&gt;&lt;p&gt;部分图&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308102316.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;最下面有对于payload的限制：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -3081,6 +3138,7 @@ loading="lazy"
 &lt;h1 id="mrctf2020你传你呢"&gt;[MRCTF2020]你传你🐎呢
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308104930.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;测试后缀，php、phtml都被过滤了，htaccess可以，先传上特供的&lt;code&gt;.htaccess&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -3093,14 +3151,17 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308105247.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;传图片马，我一直用的是GIF马，几次尝试都没通过，后来修改了&lt;code&gt;Content-Type: image/jpeg&lt;/code&gt;可以了，说明Content-Type是GIF还不行，接下来直接传图片码&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308105652.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;根据地址访问图片马的地址，使用system读文件还没成，用蚁剑连了执行执行ret=127,disable_function了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308110126.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;不过根目录下的flag文件还是可以正常读取，至于disable_function可以参考&lt;a class="link" href="https://braindance.tk/2020/%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DRCE%20ME/" target="_blank" rel="noopener"
 &gt;【极客大挑战 2019】RCE ME&lt;/a&gt;。&lt;/p&gt;
@@ -3108,10 +3169,12 @@ loading="lazy"
 &lt;h1 id="bjdctf-2ndfake-google"&gt;[BJDCTF 2nd]fake google
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308110510.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;就一个输入框，随便输入一个去看看，跳转以后&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308110545.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;注释里有提示ssti，应该是模板注入，就在网上搜一个ssti的payload试试&lt;a class="link" href="https://blog.csdn.net/qq_40657585/article/details/83657220" target="_blank" rel="noopener"
 &gt;SSTI (服务器模板注入)&lt;/a&gt;&lt;/p&gt;
@@ -3126,11 +3189,13 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308110717.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="gyctf2020blacklist"&gt;[GYCTF2020]Blacklist
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308110821.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;sql注入，先试一试堆叠注入，可以执行，尝试select的时候返回了过滤内容&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -3178,11 +3243,13 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308111414.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="强网杯-2019高明的黑客"&gt;[强网杯 2019]高明的黑客
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210308112326.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;下载源码以后一堆不可读的源码，但是里面有很多shell，看不懂所以找了wp，思路就是用脚本匹配文件中的shell，然后传参试一试每一个shell是否能用，抄脚本&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -3563,6 +3630,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;执行指令时会创建一个sandbox文件夹，访问&lt;code&gt;$sandbox$/1.php&lt;/code&gt;，POST传参&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310110615.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -3574,12 +3642,14 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310110726.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="roarctf-2019easy-java"&gt;[RoarCTF 2019]Easy Java
 &lt;/h1&gt;&lt;p&gt;是java写的web程序&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310110821.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;考点是&lt;strong&gt;WEB-INF/web.xml泄露&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -3594,6 +3664,7 @@ loading="lazy"
 &lt;p&gt;重点不在登陆界面，而是那个Help按钮，可以下载文件。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310110934.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;首先尝试去读web.xml文档，添加POST请求&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -3717,6 +3788,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;class文件源码好多不可见字符&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310112205.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;我选中的那段就是flag在的地方，看到了&lt;code&gt;==&lt;/code&gt;就应该意识到是base64编码，但是base64编码里没有&lt;code&gt;&amp;lt;&lt;/code&gt;这个字符，所以flag的密文就是&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -5276,6 +5348,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;成功读取文件&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302110439.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;把路径改为/flag，获得flag&lt;/p&gt;
 &lt;hr&gt;
@@ -5293,11 +5366,13 @@ loading="lazy"
 &lt;p&gt;我选的是这个&lt;code&gt;፼&lt;/code&gt;数值是1w，直接传传不过去，使用url编码一次再传。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302113544.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="bjdctf2020cookie-is-so-stable"&gt;[BJDCTF2020]Cookie is so stable
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210304092035.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;这道题和The mystery of ip的网站一样，还有可能是ssti，hint.php的注释里有&lt;/p&gt;
 &lt;blockquote&gt;
@@ -5340,10 +5415,12 @@ loading="lazy"
 &lt;p&gt;我同样在题目的源码中找到了&lt;code&gt;render()&lt;/code&gt;方法和&lt;code&gt;Twig_Environment&lt;/code&gt;配置信息&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302160322.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;然后payload的具体原理在的&lt;code&gt;Environment.php&lt;/code&gt;中,贴一下和payload相关部分：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302160722.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;先执行&lt;code&gt;{{_self.env.registerUndefinedFilterCallback(&amp;quot;exec&amp;quot;)}}&lt;/code&gt;调用了&lt;code&gt;registerUndefinedFilterCallback()&lt;/code&gt;函数(图中884行)，注册了一个未定义的函数到&lt;code&gt;filterCallbacks&lt;/code&gt;全局变量中&lt;/li&gt;
@@ -5354,9 +5431,11 @@ loading="lazy"
 &lt;/h1&gt;&lt;p&gt;现在(2021年3月2日16:32:44)刚好做完题，想回到BUU上整理过程，发现502了，然后去群里就看到了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302163452.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210302163636.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;挺草的记一下。&lt;/p&gt;
 &lt;hr&gt;
@@ -5503,6 +5582,7 @@ loading="lazy"
 &lt;p&gt;发现有register就去注册个试试呗&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210309102253.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;注册成功就跳转到update.php界面了，是个修改信息的，查看源码，修改信息有手机号&lt;/p&gt;
 &lt;p&gt;邮箱、昵称、图片，还用了一些正则表达式过滤，如手机必须11位、邮箱有@和点、昵称长度不大于10、图片名称使用了md5进行加密。填写信息以后跳转到了profile.php页面。注意到图片所在的标签是：&lt;/p&gt;
@@ -5635,20 +5715,24 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;这种格式的，假如我们的payload是修改上面的upload，在一个字符串总长度s如上面的56读取所有变长的hacker以后，到了我们的payload地方，正常把我们构造的upload读取为对象，而后面真正的upload字符串就被舍去了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310103923.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;报错是因为nickname我们传入的是数组形式的，源代码里直接对数组进行操作肯定是报错的，但是我们需要的只有photo正常即可，可以看到后面我们文件更新成功了。&lt;/p&gt;
 &lt;p&gt;查看页面的图片内容&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310103720.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;base64解码&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310103747.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="suctf-2019pythonginx"&gt;[SUCTF 2019]Pythonginx
 &lt;/h1&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310100334.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;整理一下源码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -5701,6 +5785,7 @@ loading="lazy"
 &lt;p&gt;所以我们只需要找出随便一个host里字符的其他unicode值，这个值在经过编码以后还可以变成原来的字母。其他wp都找的是最后的字母&lt;code&gt;c&lt;/code&gt;，那么我就找第一个字母&lt;code&gt;s&lt;/code&gt;验证一下，贴一个unicode的网站：https://www.compart.com/en/unicode/U+0073，进入网站以后可以搜索，然后下面有相关的字符，&lt;strong&gt;需要多试几个&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310102326.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;我选出的是这个字符&lt;code&gt;𝐬&lt;/code&gt;，我们先使用url编码一下防止参数出现错误，尝试读一下passwd：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -5713,6 +5798,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310102513.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;flag并不在其中，并且也不再根目录下，根据题目中有&lt;code&gt;nginx&lt;/code&gt;应该是一个指路的，去读一读nginx的配置文件。从师傅那学到的nginx配置文件所在位置，以后说不定自己也用得到：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -5735,6 +5821,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310103257.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;读flag&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -5747,6 +5834,7 @@ loading="lazy"
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310103323.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;参考的博客链接：&lt;/p&gt;
 &lt;p&gt;&lt;a class="link" href="https://www.xmsec.cc/suctf19-wp/" target="_blank" rel="noopener"
@@ -5771,10 +5859,12 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;尝试输入flag会显示&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310175019.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;只能有&lt;code&gt;woofers&lt;/code&gt;和&lt;code&gt;meowers&lt;/code&gt;可以通过，尝试了下php的&lt;code&gt;filter&lt;/code&gt;伪协议读文件&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310175611.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;读出来了，但是解密以后狗狗和猫猫这两个网页没啥作用：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -5833,6 +5923,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;读出来以后解密即可获得flag&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20210310181106.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;搜索的时候学到了一个其他的截断&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -5933,10 +6024,12 @@ loading="lazy"
 &lt;p&gt;使用蚁剑连接，进后台在根目录找到了flag、readflag。打开flag内容为空，又打开readflag文件是一堆乱码，但是看到了文件头是&lt;code&gt;ELF&lt;/code&gt;是linux的可执行文件。那么很有可能就是执行readflag才能获得flag，但是在终端执行时出现了一些问题：无论输入什么，终端都只会返回&lt;code&gt;ret=127&lt;/code&gt;：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205201403.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;搜索了一波，原来是是&lt;strong&gt;disable_function&lt;/strong&gt;搞的鬼，这个表可以在phpinfo()中查看：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205201821.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;因为&lt;code&gt;system&lt;/code&gt;、&lt;code&gt;exec&lt;/code&gt;、&lt;code&gt;shell_exec&lt;/code&gt;等命令执行的函数都被禁止了，目前我理解的webshell就是通过这些函数才能在终端执行命令的，所以终端基本是个废的，所以就是寻找绕过&lt;strong&gt;disable_function&lt;/strong&gt;的方法，网上有很多其他方法，其中一个方法：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;利用环境变量LD_PRELOAD来绕过&lt;/strong&gt;&lt;/p&gt;
@@ -5948,10 +6041,12 @@ loading="lazy"
 &gt;as_bypass_php_disable_functions&lt;/a&gt;的插件，可以选择在插件市场安装或是手动安装（github有步骤）。安装以后右键shell选择加载插件：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204234337.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;插件的工作原理是自动上传几个绕过的文件，然后再用蚁剑连接上传的文件即可实现绕过，但是一开始的&lt;code&gt;/var/www/html&lt;/code&gt;目录是没有上传权限的，我右键以后发现能修改权限，改成0777：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204190508.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在这里我还遇到了问题，使用原来的shell执行插件功能以后，终端还是没有权限，但是我尝试了自己又上传了一个一句话木马，用这个新的一句话木马执行插件才成功，具体原因我也不清楚，如果有师傅知道原因求告知。&lt;/p&gt;
@@ -5970,14 +6065,17 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;再用一句话木马的shell执行插件：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204231514.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;进入shell，目录下面多了一个名为**.antproxy.php**的文件：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204234445.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;再使用蚁剑连接**.antproxy.php**，密码是运行插件的那个shell的密码，这时候就可以开开心心的去根目录下执行readflag获得flag辣。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201204233847.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;flag{a216900e-2427-48f7-9323-f65d0a3abdbf}&lt;/p&gt;</description></item><item><title>GXYCTF2019 Ping Ping Ping</title><link>https://www.braindance.top/articles/2020/12/gxyctf2019-ping-ping-ping/</link><pubDate>Fri, 04 Dec 2020 20:24:50 +0000</pubDate><guid>https://www.braindance.top/articles/2020/12/gxyctf2019-ping-ping-ping/</guid><description>&lt;h1 id="gxyctf2019ping-ping-ping"&gt;[GXYCTF2019]Ping Ping Ping
 &lt;/h1&gt;&lt;p&gt;题目链接：https://buuoj.cn/challenges#[GXYCTF2019]Ping%20Ping%20Ping&lt;/p&gt;
@@ -6075,6 +6173,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;这个payload的时候文件都已经输出了，我最后在网页源码找到了，原来是被注释了&lt;del&gt;我是傻逼&lt;/del&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201205110806.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;最后记录下学到的姿势和这道题目的其他思路&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
@@ -6158,18 +6257,21 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;真·有手就行&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130102716.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="fakezip"&gt;fakezip
 &lt;/h2&gt;&lt;p&gt;看到题目&lt;strong&gt;fakezip&lt;/strong&gt;翻译：假的压缩包，所以猜应该是伪加密，贴一个原理的博客：&lt;a class="link" href="https://blog.csdn.net/u011377996/article/details/79286958" target="_blank" rel="noopener"
 &gt;zip伪加密&lt;/a&gt;，使用010 Editor打开压缩包，&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130103932.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;找到01修改为00，再解压压缩包，虽然提示了压缩包错误但是直接无视，获得一个flag.txt&lt;/p&gt;
 &lt;p&gt;打开以后内容是：&lt;code&gt;♬♩¶♯♬♭♬♫♫♪♬∮♬♭‖♭♬♭♬∮♬♭‖♭♬♭♫♫♯=&lt;/code&gt;，音符加密虽然是第一次听说，但是百度还是可以简单找到：&lt;a class="link" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=yinyue" target="_blank" rel="noopener"
 &gt;文本加密为音乐符号&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130104321.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="base-family"&gt;Base family
 &lt;/h2&gt;&lt;p&gt;题目给出了是base家族，所以base所有种类都试一遍。base常见的种类有：&lt;code&gt;base16&lt;/code&gt;、&lt;code&gt;base32&lt;/code&gt;、&lt;code&gt;base58&lt;/code&gt;、&lt;code&gt;base64&lt;/code&gt;、&lt;code&gt;base91&lt;/code&gt;。还有几种没听过的base种类可以在这个网站找到：&lt;a class="link" href="http://ctf.ssleye.com/" target="_blank" rel="noopener"
@@ -6232,6 +6334,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;根据题目直接百度&lt;strong&gt;SlientEye&lt;/strong&gt;，下载以后打开图片&amp;ndash;&amp;gt;decode：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130105145.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;参数啥的都没动，密码为默认密码，直接Decode，得到一个flag.txt：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -6254,11 +6357,13 @@ loading="lazy"
 &lt;p&gt;解完以后直接出了一堆由：&lt;code&gt;[、]、!、+、(、)&lt;/code&gt;组成的符号，还是百度找到了这种编码叫JSfuck，可以直接浏览器控制台console输出获得flag&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130110943.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="jpgsteg"&gt;jpgsteg
 &lt;/h2&gt;&lt;p&gt;题目即是用到的工具，百度下载软件，使用jphide.exe打开图片&lt;code&gt;Tap code.jpg&lt;/code&gt;，选择seek功能解密，密码为123456（我蒙的）：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130111311.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;成功解密后获得一个文档，内容如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -6290,6 +6395,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;这里我思索了好久，刚开始以为是摩斯密码，但是又对不上号，最后找到了一个名为敲击码的，正好一行中的&lt;code&gt;.&lt;/code&gt;分成两部分代表坐标&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201130111538.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;解码得到：&lt;code&gt;ohhamazing&lt;/code&gt; ，加上括号就是：&lt;strong&gt;flag{ohhamazing}&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;事后多看了一眼图片命名：&lt;code&gt;Tap code.jpg&lt;/code&gt;。这用啥解密不就在脸上写着的&lt;del&gt;wosabi \0/&lt;/del&gt;。。。&lt;/p&gt;
@@ -6297,6 +6403,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;打开压缩包发现都是加密，但是原始大小都为4，只有CRC不一样：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201102424.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;所以很有可能是四位数据的CRC32碰撞，就去网上找了一个python脚本：&lt;a class="link" href="https://blog.csdn.net/weixin_45396639/article/details/103393759" target="_blank" rel="noopener"
 &gt;crc32碰撞 ctf python&lt;/a&gt;作者原创的脚本：&lt;/p&gt;
@@ -6441,6 +6548,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;题目的压缩包解压以后得到一个&lt;strong&gt;flag.zip&lt;/strong&gt;压缩包和&lt;strong&gt;secret.txt&lt;/strong&gt;，flag.zip中也含有secret.txt，将外面没有加密的secret.txt使用&lt;strong&gt;winrar&lt;/strong&gt;压缩（需要和原来的压缩软件一致哒）以后对比flag.zip里的文件发现CRC码相同的：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201103227.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;配合ARCHPR使用明文攻击，获得加密密钥： &lt;strong&gt;[b00df998 5bdbbde6 485fa1f8]&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我在进行明文攻击时虽然没有跑出来压缩包的密码，但是获得了上面的密钥，也是可以解压加密的压缩包的（具体原理不清楚）。解压明文攻击解开获得的压缩包&lt;strong&gt;flag_decrypted.zip&lt;/strong&gt;，打开flag.txt是颜文字表情加密，直接复制到浏览器console控制台运行获得flag：flag{kaomoj1_1s_cut3}&lt;/p&gt;
@@ -6503,12 +6611,14 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;题目即提示，Whitespace进行一波搜索以后了解到是一种用空白符编程的语言，在压缩包里面摸了好久，在注释里发现空白编码：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201104847.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;这也让我想到自己在网上下工具的压缩包时，网站经常在注释里附上密码，通常都是网站的网址。&lt;/p&gt;
 &lt;p&gt;在&lt;a class="link" href="https://vii5ard.github.io/whitespace" target="_blank" rel="noopener"
 &gt;whitespace&lt;/a&gt;网站中粘贴密文点上面的&lt;code&gt;run&lt;/code&gt;：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201105235.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;解密获得：&lt;strong&gt;password is BlindWaterMark!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;输入解压以后获得两张看着相同的罗翔老师.png图片和一个hint.txt：&lt;/p&gt;
@@ -6544,6 +6654,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;获得解密图片：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201105728.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;图片中的内容为：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -6572,6 +6683,7 @@ loading="lazy"
 &gt;一些CTF编码脚本&lt;/a&gt;，在里面找到了这两段：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201105901.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;心里一顿狂喜，因为都是&lt;code&gt;2965a&lt;/code&gt;这个几个字符组成的，应该就是找对了。根据博客代码自行修改脚本&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -6625,6 +6737,7 @@ loading="lazy"
 &gt;慢扫描电视SSTV&lt;/a&gt;，下载MMSSTV软件，把output.wav音频调制麦克风输出，我使用的方法是在声音设置里把立体声混音打开并且设为默认设备，然后电脑里播放的声音就会被录制到。等待图片绘制成功，获得flag：&lt;strong&gt;DMCTF{SSTV,yyds?}&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201201111538.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="simpleqrcode"&gt;SimpleQrcode
 &lt;/h2&gt;&lt;p&gt;​ 下载题目是一个gif图片都是二维码，使用使用stegSovle中的Frame Browser功能，一帧一帧播放，一帧一扫，有几帧图片是少了二维码的上边，有一张是少了右边，可以参考第一张完整的图片，把上面截取拼接上去，扫码后17张图片对应的内容（根据代码行号）：&lt;/p&gt;
@@ -6770,6 +6883,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 第一次用python的我在这里知道了&lt;code&gt;pip&lt;/code&gt;。这道题因为要不断的上传和访问文件，所以对在线靶场不友好，所以才选择了本地环境解题。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119090033.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="pass-18失手"&gt;Pass-18（失手）
 &lt;/h2&gt;&lt;p&gt;​ 18题失手了没有思路，如果使用&lt;code&gt;include.php&lt;/code&gt;文件包含的话还可以，看了看网上大部分的博客都是敷敷衍衍过去的，找到了一篇稍微有点思路的，使用的是&lt;code&gt;apache2.2.x的解析漏洞&lt;/code&gt;，这个漏洞的思路就是，apache服务器在解析有多个后缀名的文件时，从最后一个开始向前扫描，如果不认识就跳过，直到遇到一个认识的文件后缀，就把这个文件以这个能识别的后缀解析。&lt;/p&gt;
@@ -6840,14 +6954,17 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 源码第七行使用了&lt;strong&gt;POST&lt;/strong&gt;来接受文件的命名，前面有类似题的是使用了&lt;strong&gt;0x00截断上传&lt;/strong&gt;，后面也同样是&lt;code&gt;move_uploaded_file&lt;/code&gt;移动文件的函数，还使用了黑名单验证，方法就很明确，使用&lt;strong&gt;截断上传&lt;/strong&gt;。别忘了截断上传需要的特定条件：php版本需要低于&lt;code&gt;5.3.29&lt;/code&gt;、&lt;code&gt;magic_quotes_gpc&lt;/code&gt;需要为关闭状态。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119164220.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 同样是命名为&lt;code&gt;phpa&lt;/code&gt;方便在十六进制表里修改为&lt;code&gt;00&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119162729.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 打开图片把url链接&lt;code&gt;http://upload-labs/upload/upload-19.php�&lt;/code&gt;修改一下即可。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119164458.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 其实这道题还有一个思路，因为题目使用了&lt;strong&gt;黑名单验证&lt;/strong&gt;，分析源码没有设置大小写过滤，所以也可以使用大小写方法通过如&lt;code&gt;Php&lt;/code&gt;，不演示了。&lt;/p&gt;
 &lt;h2 id="pass-20"&gt;Pass-20
@@ -6929,14 +7046,17 @@ loading="lazy"
 &lt;p&gt;所以我们可以构造一个这样的数组用于绕过：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119170734.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 数组[2]用于绕过白名单，文件名为：&lt;code&gt;数组[0].数组[1]&lt;/code&gt;，但是数组[1]是空的所以只剩下&lt;code&gt;数组[0].&lt;/code&gt;（后面有个点）&lt;/p&gt;
 &lt;p&gt;​ 别忘了还要绕过&lt;strong&gt;MIME&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119172340.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119172415.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;完工&lt;/p&gt;
 &lt;h2 id="最后"&gt;最后
@@ -7057,11 +7177,13 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 需要准备只含有一句话木马的文件并命名为.jpg格式。直接上传。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116200050.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="文件包含验证"&gt;文件包含验证
 &lt;/h4&gt;&lt;p&gt;​ 上传以后我使用的在线靶场网页中题目部分直接消失了，这就说明函数执行过程中出错导致页面也没有正常返回。然后就可以使用&lt;code&gt;inclue.php&lt;/code&gt;文件包含访问刚刚上传的文件&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116200401.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="其他格式"&gt;其他格式
 &lt;/h3&gt;&lt;p&gt;​ 如图成功访问就是图片马上传成功了。但是这个方法我只有&lt;code&gt;jpg&lt;/code&gt;格式的文件上传成功了，另外两种格式的图片没有上传成功，这个我感觉需要了解&lt;code&gt;imagecreatefromjpeg&lt;/code&gt;、&lt;code&gt;imagecreatefrompng&lt;/code&gt;、&lt;code&gt;imagecreatefromgif&lt;/code&gt;，这三个函数的原理，让其报错即可。&lt;/p&gt;
@@ -7074,6 +7196,7 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 上传一个使用&lt;code&gt;copy /b&lt;/code&gt;指令制作的图片马，之前文章第13题用过。假设上传的图片马为&lt;strong&gt;yoo.gif&lt;/strong&gt;，上传成功以后再下载下载的文件名为&lt;strong&gt;2119840023.gif&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116203245.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="文件比较"&gt;文件比较
 &lt;/h4&gt;&lt;p&gt;​ 使用前面说的&lt;strong&gt;Beyond Compare 4&lt;/strong&gt;工具进行比较，左边是渲染前的文件，右边是渲染后的文件，图片中白色的地方就是两个文件&lt;strong&gt;相同&lt;/strong&gt;的地方，红色部分则是文件不同的地方。看的出来图片文件的前面一大部分二次渲染的时候都没有改变，所以我们可以直接将代码放在这一部分逃过二次渲染。&lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;的十六进制是&lt;code&gt;3C 3F 70 68 70 20 70 68 70 69 6E 66 6F 28 29 3B 20 3F 3E&lt;/code&gt;直接粘贴插入，在右边框中右键保存文件再进行上传。&lt;/p&gt;
@@ -7081,12 +7204,14 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 上传以后进行文件包含，代码执行成功。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116204104.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 为了验证我们的想法，我们可以刚刚把上传的图片再下载下载，查看插入的代码是否逃过了二次渲染（废话执行成功了代码肯定在）。&lt;/p&gt;
 &lt;h3 id="png格式"&gt;png格式
 &lt;/h3&gt;&lt;p&gt;​ 这题自己原来打算模仿gif的方法修改图片，但是上传以后下载，对比文件十六进制不同的时候我傻了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116204635.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 这不同还是一段一段的，根本不可能模仿gif的方法，上面那一段相同的还是图片的&lt;strong&gt;头标识&lt;/strong&gt;部分，修改的话就不是png格式图片，更过不了。&lt;/p&gt;
 &lt;p&gt;​ 所以我直接看答案了，还是前言里的&lt;a class="link" href="https://xz.aliyun.com/t/2657#toc-3" target="_blank" rel="noopener"
@@ -7546,12 +7671,14 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 使用脚本处理&lt;strong&gt;1.jpg&lt;/strong&gt;插入php代码，执行命令&lt;code&gt;php jpg_payload.php 1.jpg&lt;/code&gt;。php命令执行方法上面有。执行成功以后应该如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116212640.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 执行的目录下会多出一个名为&lt;code&gt;payload_1.jpg&lt;/code&gt;的文件，这就是制作好的图片马。大佬的源码我是修改了一下的，可以修改上面的第25行代码，自定义插入想要的代码。&lt;/p&gt;
 &lt;h4 id="上传并验证"&gt;上传并验证
 &lt;/h4&gt;&lt;p&gt;​ 上传以后同样先确定图片的名称和地址，适用文件包含进行验证&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116215008.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 如果如图所示，我们的图片马就上传成功了。&lt;strong&gt;需要提醒：有些图片不行可能需要多换几个图片试一试！！！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;呼，终于可以休息了。&lt;/p&gt;</description></item><item><title>Upload-Labs(三)</title><link>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%89/</link><pubDate>Mon, 16 Nov 2020 16:04:30 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%89/</guid><description>&lt;h2 id="前言"&gt;前言
@@ -7619,6 +7746,7 @@ loading="lazy"
 &gt;截断上传原理剖析&lt;/a&gt;。个人对于这道题的分析就是，上面文件的代码执行到第8行的时候，获取到了&lt;code&gt;$_GET['save_path']&lt;/code&gt;变量的值，但是我们在这个变量后面添加了&lt;code&gt;0x00截断&lt;/code&gt;，所以后面的代码便不会执行，文件也就不会被重命名。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115204109.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 文件成功上传，然后访问的时候记得改一下路径，因为文件名已经截断，所以访问路径由&lt;code&gt;..../upload/233.php�/5120201115205501.jpg&lt;/code&gt;变为&lt;code&gt;..../upload/233.php&lt;/code&gt;。完工&lt;/p&gt;
 &lt;h2 id="pass-12"&gt;Pass-12
@@ -7626,10 +7754,12 @@ loading="lazy"
 &lt;p&gt;​ 这题和上一题差不多一样，就是把&lt;code&gt;$_GET['save_path']&lt;/code&gt;变成了&lt;code&gt;$_POST['save_path']&lt;/code&gt;。由GET请求改成了POST请求，但是抓包修改的地方就不一样了，需要通过&lt;strong&gt;16进制修改&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115210935.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 这里我命名为&lt;code&gt;233.phpa&lt;/code&gt;是因为方便我在Hex表中找到这句话的位置和修改数据。&lt;code&gt;a&lt;/code&gt;的16进制是&lt;code&gt;61&lt;/code&gt;，需要改成截断的值：&lt;code&gt;00&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115211024.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 上传成功以后打开图片，和上一题一样，需要把路径中已经截断的后面删除掉。完工&lt;/p&gt;
 &lt;h2 id="pass-13"&gt;Pass-13
@@ -7648,6 +7778,7 @@ loading="lazy"
 &lt;p&gt;​ 这道题和前面题目都不一样了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115211509.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 题目说道需要&lt;strong&gt;上传图片马&lt;/strong&gt;，然后使用&lt;strong&gt;文件包含漏洞&lt;/strong&gt;进行测试，那么我们就先制作图片马。&lt;/p&gt;
 &lt;p&gt;​ 查看本题的提示&lt;code&gt;本pass检查图标内容开头2个字节！&lt;/code&gt;，意思就是只检测文件前面两个字节的标识，贴一个&lt;a class="link" href="https://blog.csdn.net/qq_37414405/article/details/84660148" target="_blank" rel="noopener"
@@ -7660,6 +7791,7 @@ loading="lazy"
 &gt;路径中的&amp;rsquo;.&amp;lsquo;和&amp;rsquo;..&amp;lsquo;还有&amp;rsquo;./&amp;lsquo;和&amp;rsquo;../&amp;lsquo;都是什么意思&lt;/a&gt;。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116152417.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="pass-14"&gt;Pass-14
 &lt;/h2&gt;&lt;p&gt;​ （Linux环境）&lt;/p&gt;
@@ -7668,6 +7800,7 @@ loading="lazy"
 &lt;p&gt;​ PS：听同学说&lt;code&gt;getimagesize()&lt;/code&gt;不过是检测了前八个字节，不过我没试。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116155407.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 因为是拼接的，所以要直接摸到图片最底部查看成功。完工&lt;/p&gt;
 &lt;h2 id="pass-15"&gt;Pass-15
@@ -7843,10 +7976,12 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 看源码发现少了&lt;code&gt;trim()&lt;/code&gt;函数&lt;strong&gt;对文件名前后的空格处理&lt;/strong&gt;，所以我们可以在上传文件时在后缀名后面添加空格使其成为.php (有空格)绕过黑名单数组。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb9jQe.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 上传以后访问文件执行成功。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb9xLd.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 这里说明一下，我前面是在&lt;a class="link" href="https://buuoj.cn/" target="_blank" rel="noopener"
 &gt;BUUCTF&lt;/a&gt;在线靶场上做的linux环境下的题目，但是这道题用了上面的方法怎么都访问不到，所以我在本地windows环境上搭建了一个靶机进行上传(而且后面有道题必须是在windows环境下才可以通过)。在github上下载的源码题目比在线靶场上的题目多了一道，对应的题目为 在线靶机pass-06&amp;ndash;&amp;gt;github下载的pass-07。默认使用的都是linux环境下的题目，有改变会提前说明。&lt;/p&gt;
@@ -7914,13 +8049,16 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 这道题少了&lt;strong&gt;删除文件名末尾的点&lt;/strong&gt;，我们可以通过构造&lt;strong&gt;2333.php. .&lt;/strong&gt;(末尾加 点 空格 点)，被解析后文件后缀就会成为&amp;quot;. &amp;ldquo;(一个点一个空格)，可以绕过黑名单，访问的文件名是&lt;code&gt;2333.php. .&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbCOkq.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 我又参考了其他博客，讲到windows环境下可以利用系统会自动删除后缀中最后的一个&amp;rdquo;.&amp;quot;，尝试在windows靶机上测试&lt;strong&gt;只添加一个点&lt;/strong&gt;，访问的文件名为&lt;code&gt;2333.php、2333.php.&lt;/code&gt;都可以，因为windows会删除最后一个点。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbMywV.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbKXq0.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 两种方式第一个在linux环境下的php服务器上，第二个在windows环境下的php服务器上，上传后都可以成功访问文件。完工&lt;/p&gt;
 &lt;h2 id="pass-08"&gt;Pass-08
@@ -7990,6 +8128,7 @@ loading="lazy"
 &lt;p&gt;​ 直接上传的时候抓包在文件名后面添加&lt;code&gt;::$DATA&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbP84P.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 上传访问。完工&lt;/p&gt;
 &lt;h2 id="pass-09"&gt;Pass-09
@@ -8106,6 +8245,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 这道题和前面不同的是&lt;code&gt;$file_name = str_ireplace($deny_ext,&amp;quot;&amp;quot;, $file_name)&lt;/code&gt;，对于这个函数：&lt;code&gt;str_ireplace(find,replace,string,count)&lt;/code&gt;，find是要查找的值，replace是要替换成的值，string是被搜索的字符串，count 可选。一个变量，对替换数进行计数。所以这行代码的作用就是把文件名中所有包含在黑名单后缀里的字符串替换成空串，但是这个函数只会执行一次，所以我们可以构造一个双写绕过，即构造文件名&lt;code&gt;2333.pphphp&lt;/code&gt;，只有一个&amp;quot;php&amp;quot;字符串被匹配到并被替换成空串，剩下的文件名就成了&lt;code&gt;2333.php&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb8yPf.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;上传并访问文件。完工&lt;/p&gt;</description></item><item><title>Upload-Labs(一)</title><link>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%80/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%80/</guid><description>&lt;h2 id="介绍"&gt;介绍
 &lt;/h2&gt;&lt;blockquote&gt;
@@ -8122,6 +8262,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;​ 尝试上传php木马，发现提示上传错误&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BTKbfs.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 提示只能上传&lt;code&gt;jpg、png、gif&lt;/code&gt;类型的图片。查看源码发现是一个前端的后缀过滤，那么我们尝试绕过前端的JS代码。&lt;/p&gt;
 &lt;p&gt;​ 源码：&lt;/p&gt;
@@ -8168,10 +8309,12 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 把文件后缀名改成jpg格式上传，使用&lt;strong&gt;burp suit&lt;/strong&gt;抓包。把&lt;code&gt;.jpg&lt;/code&gt;后缀重新改为&lt;code&gt;.php&lt;/code&gt;即可实现绕过前端JS代码。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BTM5g1.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 然后右键打开图片，代码成功执行。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BTQV8s.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 注：后面题目的php代码都使用&lt;code&gt;2333.php&lt;/code&gt;：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -8234,6 +8377,7 @@ loading="lazy"
 &lt;p&gt;​ 同样是burp抓包修改&lt;strong&gt;Content-Type&lt;/strong&gt;的值。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BT1EXq.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 打开图片，php代码成功执行。完工&lt;/p&gt;
 &lt;h2 id="pass-03"&gt;Pass-03
@@ -8302,6 +8446,7 @@ loading="lazy"
 &lt;p&gt;​ 直接把&lt;code&gt;2333.php&lt;/code&gt;改为&lt;code&gt;2333.php3&lt;/code&gt;上传打开，执行成功。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTq2cV.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="pass-04"&gt;Pass-04
 &lt;/h2&gt;&lt;p&gt;源码：&lt;/p&gt;
@@ -8379,9 +8524,11 @@ loading="lazy"
 &lt;p&gt;​ 接下来上传&lt;code&gt;2333.jpg&lt;/code&gt;图片木马，再打开就会被成功解析为&lt;code&gt;php&lt;/code&gt;文件并执行：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTqoN9.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTqqc6.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 完工&lt;/p&gt;
 &lt;h2 id="pass-05"&gt;Pass-05
@@ -8456,11 +8603,13 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;目标就很明确了，直接使用大小写绕过过滤。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTLmNj.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 打开图片成功执行。完工&lt;/p&gt;</description></item><item><title>Hackgame2020(二)</title><link>https://www.braindance.top/articles/2020/11/hackgame2020%E4%BA%8C/</link><pubDate>Thu, 05 Nov 2020 09:29:22 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/hackgame2020%E4%BA%8C/</guid><description>&lt;h3 id="一闪而过的flag"&gt;一闪而过的Flag
 &lt;/h3&gt;&lt;p&gt;​ 根据题目信息&lt;strong&gt;程序每次运行时隐约可见黑色控制台上有 flag 一闪而过&lt;/strong&gt;，我想到了应该能看程序的代码啥的找到，但是&lt;del&gt;天下武功，唯快不破&lt;/del&gt;，下载 运行 截图一气呵成。&lt;/p&gt;
 &lt;p&gt;​ &lt;img src="https://s1.ax1x.com/2020/11/09/B7TOUA.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 接下来让我康康哪一位是&lt;del&gt;瞎子&lt;/del&gt;，包括答案里也是满满的嘲讽。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：flag{Are_you_eyes1ght_g00D?_can_you_dIst1nguish_1iI?}&lt;/strong&gt;&lt;/p&gt;
@@ -8468,6 +8617,7 @@ loading="lazy"
 &lt;/h3&gt;&lt;p&gt;​ &lt;del&gt;npy&lt;/del&gt;给了我一张账单，让我计算账单上面的金额，flag就是由金额组成的。本以为是一个简单的Excel的表格函数解决，打开我傻了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2Flxf.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 原来是搞这个大小写金额的转换，没见过Excel有这种操作就去百度，转了一大圈，网上只有数字转大写金额的，没有反过来的。还去了github上找代码，发现运行的结果和自己想要的还是有些出入。卡了有足足半天，之后自己写了一个Java代码跑了一遍，代码如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -8573,6 +8723,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 程序用的控制台输入，直接表格两列从头拉倒尾粘贴，出答案。程序的思路就是把金额大写当做字符串处理，每一位用&lt;code&gt;switch&lt;/code&gt;判断数字或是个、十、百、千那一位上的数字。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2F7ee.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ Java渣轻喷。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：flag{19115.33}&lt;/strong&gt;&lt;/p&gt;
@@ -8582,12 +8733,14 @@ loading="lazy"
 &lt;/h3&gt;&lt;p&gt;​ 先看有意思的一个漫画&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2k9eg.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 一个人用石头模拟了一整个宇宙，斯巴拉西。&lt;/p&gt;
 &lt;p&gt;​ 打开题目以后是一个终端，然提示等待你输入一个&lt;strong&gt;15*15矩阵&lt;/strong&gt;（只能有0和1组成），看到这挺懵的，但是题目里有一个重要信息&lt;strong&gt;生命游戏&lt;/strong&gt;，百度百科看了一下这个&lt;a class="link" href="https://baike.baidu.com/item/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/2926434?fr=aladdin" target="_blank" rel="noopener"
 &gt;生命游戏&lt;/a&gt;，游戏的规则大致就是：&lt;strong&gt;一个细胞会根据周围的细胞数量判断存活和死亡&lt;/strong&gt;，然后细胞会不断演算，这个和前面的漫画有异曲同工之妙。&lt;/p&gt;
 &lt;p&gt;​ 返回终端里面一片白中间有几个框框&lt;img src="https://s1.ax1x.com/2020/11/05/B2ZFBT.png"
 loading="lazy"
+data-zoomable
 &gt;，题目中&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果被特殊标注的正方形内的细胞被“清除”，你将会得到对应的 flag：&lt;/p&gt;
@@ -8597,6 +8750,7 @@ loading="lazy"
 &gt;&lt;em&gt;生命游戏&lt;/em&gt;(Game of Life)有哪些图形? - 知乎&lt;/a&gt;，看了看内容更有趣了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2elzn.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 大师我悟了，就是提供一个初始的&lt;strong&gt;15*15矩阵&lt;/strong&gt;，根据&lt;strong&gt;生命游戏&lt;/strong&gt;的规则进行演算，然后去消除黑框框。我臭屁完了直接贴图形&lt;/p&gt;
 &lt;ul&gt;
@@ -8686,35 +8840,42 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;靶机地址：https://buuoj.cn/challenges#XSS-Lab&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/BsmJ5n.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="level-1"&gt;level 1
 &lt;/h2&gt;&lt;p&gt;​ &lt;img src="https://s1.ax1x.com/2020/11/03/BsmfKO.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 观察发现&lt;code&gt;欢迎用户test&lt;/code&gt;与URL中的&lt;code&gt;name=test&lt;/code&gt;字段对应，尝试修改发现可行。直接将&lt;code&gt;name&lt;/code&gt;字段改为&lt;code&gt;name=&amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt;&lt;/code&gt;，完工。&lt;/p&gt;
 &lt;h2 id="level-2"&gt;level 2
 &lt;/h2&gt;&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/BsnwWt.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 在搜索栏中的输入会回显到页面，查看网页源代码，发现值在&lt;code&gt;input&lt;/code&gt;的&lt;code&gt;value&lt;/code&gt;属性中&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/BsnLk9.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 构造闭合&lt;code&gt;&amp;quot;&amp;gt; &amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt; // &lt;/code&gt;，构造以后的标签会变成&lt;code&gt;.... value=&amp;quot;&amp;quot;&amp;gt; &amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt; // &amp;quot;&amp;gt;&lt;/code&gt;。完工&lt;/p&gt;
 &lt;h2 id="level-3"&gt;level 3
 &lt;/h2&gt;&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/BsKwKf.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 老样子构造&lt;code&gt;value&lt;/code&gt;属性闭合，尝试&lt;code&gt;&amp;quot;&amp;gt; &amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt; // &lt;/code&gt;构造闭合，查看网页源代码发现语句变成&lt;code&gt;&amp;amp;quot;&amp;amp;gt; &amp;amp;lt;script&amp;amp;gt;alert()&amp;amp;lt;/script&amp;amp;gt; // &lt;/code&gt;，说明把&lt;code&gt;&amp;quot;、&amp;lt;、&amp;gt;、&lt;/code&gt;进行了html编码过滤，尝试构造&lt;code&gt;onmouseover&lt;/code&gt;事件(鼠标移到事件)，构造语句&lt;code&gt;'onmouseover='alert()'&lt;/code&gt;。完工&lt;/p&gt;
 &lt;h2 id="level-4"&gt;level 4
 &lt;/h2&gt;&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/BsMWYd.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 构造闭合&lt;code&gt;&amp;quot;&amp;gt; &amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt; // &lt;/code&gt;，查看源代码发现进行了&lt;code&gt;&amp;gt;、&amp;lt;&lt;/code&gt;过滤，尝试构造事件&lt;code&gt;&amp;quot; onmouseover='alert()'&lt;/code&gt;。完工&lt;/p&gt;
 &lt;p&gt;​ 说明一下标签的事件有很多类型，可以自己试试别的事件响应。&lt;/p&gt;
 &lt;h2 id="level-5"&gt;level 5
 &lt;/h2&gt;&lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/03/Bs1Ci4.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 检查一下都有什么过滤。发现有一下过滤&lt;/p&gt;
 &lt;blockquote&gt;
@@ -8730,47 +8891,56 @@ loading="lazy"
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png"
 loading="lazy"
 alt="BwJbJs.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 随便拉了拉进度条发现初始是&lt;code&gt;0&lt;/code&gt;末尾是&lt;code&gt;1.5&lt;/code&gt;，然后中间的数值都是小数&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png"
 loading="lazy"
 alt="BwYAQx.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 我猜的题目可能是想让数值为&lt;code&gt;1&lt;/code&gt;时能提取到flag。&lt;/p&gt;
 &lt;p&gt;​ F12查看源代码，定位到进度条的标签，查看属性&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 确实和猜测一样最大最小值分别是&lt;code&gt;0&lt;/code&gt;、&lt;code&gt;1.5&lt;/code&gt;，注意到&lt;code&gt;step&lt;/code&gt;值为&lt;code&gt;0.00001&lt;/code&gt;，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code&gt;1&lt;/code&gt;个flag，就把网页上的&lt;code&gt;step&lt;/code&gt;值改为&lt;code&gt;1&lt;/code&gt;。然后随便拖动一下进度条得到&lt;code&gt;1&lt;/code&gt;，点击&lt;code&gt;提取&lt;/code&gt;按钮，完工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="2048"&gt;2048
 &lt;/h3&gt;&lt;p&gt;​ 打开题目是一个&lt;code&gt;2048&lt;/code&gt;的小游戏，第一个想法就是玩&lt;code&gt;2048&lt;/code&gt;达到一定分数以后会获得flag（&lt;del&gt;可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del&gt;）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del&gt;逃课废物&lt;/del&gt;是不可能努力哒！&lt;/p&gt;
 &lt;p&gt;F12开始翻网页资源&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 还好上次&lt;del&gt;摸鱼&lt;/del&gt;课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code&gt;animframe_polyfill&lt;/code&gt;应该就是管动画效果的，&lt;code&gt;keynpard...&lt;/code&gt;这个肯定是相应按键的，&lt;code&gt;local_storage_manager&lt;/code&gt;应该是保存游戏的，&lt;code&gt;game_manager&lt;/code&gt;感觉就是管理整个游戏的主要文件。&lt;/p&gt;
 &lt;p&gt;​ 打开&lt;code&gt;game_manager&lt;/code&gt;粗略的看了下变量，&lt;code&gt;score&lt;/code&gt; 分数、&lt;code&gt;over、won、keepPlaying&lt;/code&gt;游戏状态，想赢游戏肯定是和&lt;code&gt;score、won&lt;/code&gt;有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p&gt;
 &lt;p&gt;发现了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 只有这里修改了&lt;code&gt;won&lt;/code&gt;的状态，前面还有个&lt;code&gt;16384&lt;/code&gt;这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del&gt;小声bb&lt;/del&gt;&lt;a class="link" href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg" target="_blank" rel="noopener"
 &gt;截图为证&lt;/a&gt;），直接让&lt;code&gt;if&lt;/code&gt;里面的语句为真就可以获胜，直接修改&lt;code&gt;if(1) self.won = true&lt;/code&gt;，保存文件，按一个方向键让语句执行到，完工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h1 id="general"&gt;general
 &lt;/h1&gt;&lt;h3 id="猫咪问题"&gt;猫咪问题++
 &lt;/h3&gt;&lt;p&gt;​ 秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="第一题"&gt;第一题
 &lt;/h4&gt;&lt;blockquote&gt;
@@ -8784,6 +8954,7 @@ loading="lazy"
 &lt;p&gt;​ 一个比较有印象就是&lt;code&gt;FreeDOS&lt;/code&gt;这个标志就离谱，什么玩意&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案 ：12&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="第二题"&gt;第二题
@@ -8824,6 +8995,7 @@ loading="lazy"
 &lt;p&gt;​ 直接百度地图搜图书馆，然后全景地图房门口，视野拉到L型灌木那。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwvkdA.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：9&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="第五题"&gt;第五题
@@ -8847,18 +9019,21 @@ loading="lazy"
 &lt;p&gt;​ 根据题目提示，说明是一个单引号注入题目，构造一个带单引号的语句&lt;code&gt;?id=1'&lt;/code&gt;，发现数据库报错&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/04/BgERNd.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 通过后面的报错语句&lt;code&gt;1'' LIMIT 0,1&lt;/code&gt;的分析，我们的单引号被数据库解析，那么说明我们也可以使用连接查询&lt;code&gt;union&lt;/code&gt;插入我们想要查询的语句。&lt;/p&gt;
 &lt;p&gt;​ 推出数据库的查询的部分语句可能为&lt;code&gt;where id = '$id'LIMIT 0,1&lt;/code&gt;，那么通过构造闭合&lt;code&gt;?id=1' [这里添加语句] --+&lt;/code&gt;添加自己想要语句，语句后面的&lt;code&gt;--+&lt;/code&gt;作用是将后面的其他语句注释掉。&lt;/p&gt;
 &lt;p&gt;​ 首先是判断字段个数：&lt;code&gt;?id=1' order by 1 --+&lt;/code&gt;，页面显示正常，直到尝试&lt;code&gt;?id=1' order by 4 --+&lt;/code&gt;发现数据库报错&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/04/BgVsGn.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 说明数据库的字段值只有四个。&lt;/p&gt;
 &lt;p&gt;​ 接下来测试数据的回显位，构造语句&lt;code&gt;?id=' union select 1,2,3 --+&lt;/code&gt;，这里需要注意的有，前面&lt;code&gt;id&lt;/code&gt;的查询一定是要不存在的，因为数据库只会回显第一条查询的数据，如果第一条语句查询成功则后面&lt;code&gt;union&lt;/code&gt;构造的语句就不会显示；&lt;code&gt;union&lt;/code&gt;连接查询语句后面查询的字段数需要和前面的字段数相等，详细用法可以自行查询。&lt;/p&gt;
 &lt;p&gt;​ 执行后页面显示。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/04/BgZAeS.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 说明查询语句的&lt;code&gt;2,3&lt;/code&gt;是回显位，之后就可以将查询的语句进行替换。如：&lt;/p&gt;
 &lt;p&gt;​ 获取数据库版本，数据库路径，当前用户，当前数据库：
@@ -8866,6 +9041,7 @@ loading="lazy"
 &lt;p&gt;页面显示&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/04/BgZbfs.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 利用元数据库来爆表、爆数据&lt;/p&gt;
 &lt;p&gt;​ &lt;code&gt;?id=' union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() --+&lt;/code&gt;&lt;/p&gt;
@@ -8877,6 +9053,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;​ 看标题&lt;code&gt;Single quotes with twist&lt;/code&gt;，是在前面题的基础上加上了括号包裹，所以语句就成了&lt;code&gt;where id = ('id')&lt;/code&gt;所以我们闭合的方式也要改变。附源码&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/04/BgnO1A.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="less-4"&gt;less-4
 &lt;/h2&gt;&lt;p&gt;​ 标题&lt;code&gt;Double Quotes&lt;/code&gt;，说明是个引号注入，把前面题的单引号改成双引号构成闭合即可。&lt;/p&gt;

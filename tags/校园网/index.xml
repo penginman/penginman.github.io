@@ -49,6 +49,7 @@
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63450a2f460ac.png"
 loading="lazy"
 alt="ab3pm-21hcz.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来设置 wifi 名称和密码，可以勾选管理密码和 wifi 密码相同的框，保存以后会提示新的管理后台地址，通常是 &lt;code&gt;192.168.31.1&lt;/code&gt;，使用管理密码登陆以后，显示路由器界面就算初始化成功。&lt;/p&gt;
 &lt;h2 id="刷入不死-breed"&gt;刷入不死 Breed
@@ -91,6 +92,7 @@ alt="ab3pm-21hcz.png"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/6345188f255ec.png"
 loading="lazy"
 alt="创建session"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;ps：如果连接不成功就多运行几次 &lt;code&gt;0.start_main.bat&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id="备份原路由器信息"&gt;备份原路由器信息
@@ -112,6 +114,7 @@ alt="创建session"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63451aca4e1e0.png"
 loading="lazy"
 alt="连接 ftp"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;找到 &lt;code&gt;tmp&lt;/code&gt; 文件夹其中的三个文件：&lt;code&gt;all.bin&lt;/code&gt; 、&lt;code&gt;bootloader.bin&lt;/code&gt; 和 &lt;code&gt;eeprom.bin&lt;/code&gt;，复制到本地做备份，下载以后一定要看清楚三个文件的大小分别是 &lt;code&gt;16MB&lt;/code&gt; 、&lt;code&gt;64k&lt;/code&gt; 和 &lt;code&gt;64k&lt;/code&gt;，如果大小是 &lt;code&gt;1k&lt;/code&gt; 那就是错误的，再备份几次，也有可能是后门没写牢再执行 &lt;code&gt;0.start_main.bat&lt;/code&gt; 试试。&lt;/p&gt;
 &lt;h3 id="上传-breed-文件并刷入"&gt;上传 Breed 文件并刷入
@@ -130,6 +133,7 @@ alt="连接 ftp"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63451fb563c3a.png"
 loading="lazy"
 alt="Breed界面"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;如果你在之后有不可挽回的错误操作，都可以通过以上操作进行复位重置。&lt;/p&gt;
 &lt;h3 id="检查-mac-地址"&gt;检查 MAC 地址
@@ -137,6 +141,7 @@ alt="Breed界面"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/6345201b6c592.png"
 loading="lazy"
 alt="MAC 地址修改"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;进入&lt;strong&gt;固件更新&lt;/strong&gt; （界面同下面），勾选 &lt;strong&gt;EEPORM&lt;/strong&gt;，选择文件 &lt;code&gt;eeprom.bin&lt;/code&gt;，其他的都不要动，然后上传，根据提示更新，之后会重新回到 Breed 控制台。&lt;/p&gt;
 &lt;h2 id="刷入-openwrt"&gt;刷入 openwrt
@@ -144,11 +149,13 @@ alt="MAC 地址修改"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/634527710db18.png"
 loading="lazy"
 alt="固件更新"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;之后路由器灯会全灭，然后电源灯进入&lt;strong&gt;黄色闪烁&lt;/strong&gt;的状态，就是正在安装，等待安装成功以后等会变成&lt;strong&gt;蓝色&lt;/strong&gt;，之后就可以访问 &lt;code&gt;192.168.1.1&lt;/code&gt; 进入 openwrt 管理后台页面，默认密码为 &lt;code&gt;password&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/634524441d739.png"
 loading="lazy"
 alt="openwrt 界面"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;说一下 &lt;code&gt;Mi4C.bin&lt;/code&gt; 这个 openw 的固件。这个固件来自前面提到的广东工业大学项目中的 &lt;a class="link" href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27" target="_blank" rel="noopener"
 &gt;issue&lt;/a&gt;，是一位同学自己找人定制的一份固件并且免费分享出来了，其中已经内置了 Dr.com 插件（用来发送心跳包）及防检测插件（ttl，ipid，cookieflash，ua2f 最新版），非常感谢这位同学的分享。&lt;/p&gt;
@@ -159,6 +166,7 @@ alt="openwrt 界面"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63452a57015e9.png"
 loading="lazy"
 alt="网络接口配置"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;通信协议选择 &lt;code&gt;PPPoE&lt;/code&gt; 然后点击出现的&lt;strong&gt;切换协议&lt;/strong&gt;按钮。然后根据下表填入信息&lt;/p&gt;
 &lt;ul&gt;
@@ -169,6 +177,7 @@ alt="网络接口配置"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63452de3e1732.png"
 loading="lazy"
 alt="1665478137525.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;PPPoE 部分配置完成。但是校园网目前还不能用。&lt;/p&gt;
 &lt;h3 id="配置无线网络"&gt;配置无线网络
@@ -176,11 +185,13 @@ alt="1665478137525.png"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63452e4608e41.png"
 loading="lazy"
 alt="无线网名称配置"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;选择 无线安全 配置无线网密码，加密选择 &lt;code&gt;WPA2-PSK&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63452e93b28bc.png"
 loading="lazy"
 alt="无线网密码配置"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;无线网络部分配置完成。&lt;/p&gt;
 &lt;h3 id="配置管理后台密码"&gt;配置管理后台密码
@@ -199,11 +210,13 @@ alt="无线网密码配置"
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/6345354d1c8b6.png"
 loading="lazy"
 alt="ssh连接"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;MobaXterm 使用 ssh 连接以后左边会自己创建一个 ftp 连接，就是图中的框框部分&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/634535f1bcec4.png"
 loading="lazy"
 alt="1665480198855.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;上面蓝色选中的部分是当前的路径，可以修改当前所在路径，通过拖拽可以直接上传文件&lt;/p&gt;
 &lt;h3 id="安装-dogcom"&gt;安装 dogcom
@@ -333,12 +346,14 @@ alt="1665480198855.png"
 &lt;/div&gt;&lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63453a962923a.png"
 loading="lazy"
 alt="1665481387645.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="查看校园网是否成功认证"&gt;查看校园网是否成功认证
 &lt;/h3&gt;&lt;p&gt;配置完成后，重启路由器，并请耐心等待若干分钟（3 分钟内），重新回到 openwrt 管理页面的 网络 &amp;mdash;&amp;gt; 接口中，查看 &lt;code&gt;WAN&lt;/code&gt; 接口 PPPoE 是否拨号成功，如果运行时间、发送、接受均有数据，并且 IPv4 获得的一个地址，则说明路由器已经可以上网了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://img.braindance.top/article/2022/10/11/63453da03857e.png"
 loading="lazy"
 alt="拨号成功"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;wan 中，学号密码输入错误。&lt;/p&gt;

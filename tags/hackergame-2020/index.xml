@@ -2,6 +2,7 @@
 &lt;/h3&gt;&lt;p&gt;​ 根据题目信息&lt;strong&gt;程序每次运行时隐约可见黑色控制台上有 flag 一闪而过&lt;/strong&gt;，我想到了应该能看程序的代码啥的找到，但是&lt;del&gt;天下武功，唯快不破&lt;/del&gt;，下载 运行 截图一气呵成。&lt;/p&gt;
 &lt;p&gt;​ &lt;img src="https://s1.ax1x.com/2020/11/09/B7TOUA.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 接下来让我康康哪一位是&lt;del&gt;瞎子&lt;/del&gt;，包括答案里也是满满的嘲讽。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：flag{Are_you_eyes1ght_g00D?_can_you_dIst1nguish_1iI?}&lt;/strong&gt;&lt;/p&gt;
@@ -9,6 +10,7 @@ loading="lazy"
 &lt;/h3&gt;&lt;p&gt;​ &lt;del&gt;npy&lt;/del&gt;给了我一张账单，让我计算账单上面的金额，flag就是由金额组成的。本以为是一个简单的Excel的表格函数解决，打开我傻了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2Flxf.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 原来是搞这个大小写金额的转换，没见过Excel有这种操作就去百度，转了一大圈，网上只有数字转大写金额的，没有反过来的。还去了github上找代码，发现运行的结果和自己想要的还是有些出入。卡了有足足半天，之后自己写了一个Java代码跑了一遍，代码如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -114,6 +116,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 程序用的控制台输入，直接表格两列从头拉倒尾粘贴，出答案。程序的思路就是把金额大写当做字符串处理，每一位用&lt;code&gt;switch&lt;/code&gt;判断数字或是个、十、百、千那一位上的数字。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2F7ee.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ Java渣轻喷。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：flag{19115.33}&lt;/strong&gt;&lt;/p&gt;
@@ -123,12 +126,14 @@ loading="lazy"
 &lt;/h3&gt;&lt;p&gt;​ 先看有意思的一个漫画&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2k9eg.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 一个人用石头模拟了一整个宇宙，斯巴拉西。&lt;/p&gt;
 &lt;p&gt;​ 打开题目以后是一个终端，然提示等待你输入一个&lt;strong&gt;15*15矩阵&lt;/strong&gt;（只能有0和1组成），看到这挺懵的，但是题目里有一个重要信息&lt;strong&gt;生命游戏&lt;/strong&gt;，百度百科看了一下这个&lt;a class="link" href="https://baike.baidu.com/item/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/2926434?fr=aladdin" target="_blank" rel="noopener"
 &gt;生命游戏&lt;/a&gt;，游戏的规则大致就是：&lt;strong&gt;一个细胞会根据周围的细胞数量判断存活和死亡&lt;/strong&gt;，然后细胞会不断演算，这个和前面的漫画有异曲同工之妙。&lt;/p&gt;
 &lt;p&gt;​ 返回终端里面一片白中间有几个框框&lt;img src="https://s1.ax1x.com/2020/11/05/B2ZFBT.png"
 loading="lazy"
+data-zoomable
 &gt;，题目中&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果被特殊标注的正方形内的细胞被“清除”，你将会得到对应的 flag：&lt;/p&gt;
@@ -138,6 +143,7 @@ loading="lazy"
 &gt;&lt;em&gt;生命游戏&lt;/em&gt;(Game of Life)有哪些图形? - 知乎&lt;/a&gt;，看了看内容更有趣了。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/05/B2elzn.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 大师我悟了，就是提供一个初始的&lt;strong&gt;15*15矩阵&lt;/strong&gt;，根据&lt;strong&gt;生命游戏&lt;/strong&gt;的规则进行演算，然后去消除黑框框。我臭屁完了直接贴图形&lt;/p&gt;
 &lt;ul&gt;
@@ -231,47 +237,56 @@ loading="lazy"
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png"
 loading="lazy"
 alt="BwJbJs.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 随便拉了拉进度条发现初始是&lt;code&gt;0&lt;/code&gt;末尾是&lt;code&gt;1.5&lt;/code&gt;，然后中间的数值都是小数&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png"
 loading="lazy"
 alt="BwYAQx.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 我猜的题目可能是想让数值为&lt;code&gt;1&lt;/code&gt;时能提取到flag。&lt;/p&gt;
 &lt;p&gt;​ F12查看源代码，定位到进度条的标签，查看属性&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 确实和猜测一样最大最小值分别是&lt;code&gt;0&lt;/code&gt;、&lt;code&gt;1.5&lt;/code&gt;，注意到&lt;code&gt;step&lt;/code&gt;值为&lt;code&gt;0.00001&lt;/code&gt;，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code&gt;1&lt;/code&gt;个flag，就把网页上的&lt;code&gt;step&lt;/code&gt;值改为&lt;code&gt;1&lt;/code&gt;。然后随便拖动一下进度条得到&lt;code&gt;1&lt;/code&gt;，点击&lt;code&gt;提取&lt;/code&gt;按钮，完工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="2048"&gt;2048
 &lt;/h3&gt;&lt;p&gt;​ 打开题目是一个&lt;code&gt;2048&lt;/code&gt;的小游戏，第一个想法就是玩&lt;code&gt;2048&lt;/code&gt;达到一定分数以后会获得flag（&lt;del&gt;可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del&gt;）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del&gt;逃课废物&lt;/del&gt;是不可能努力哒！&lt;/p&gt;
 &lt;p&gt;F12开始翻网页资源&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 还好上次&lt;del&gt;摸鱼&lt;/del&gt;课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code&gt;animframe_polyfill&lt;/code&gt;应该就是管动画效果的，&lt;code&gt;keynpard...&lt;/code&gt;这个肯定是相应按键的，&lt;code&gt;local_storage_manager&lt;/code&gt;应该是保存游戏的，&lt;code&gt;game_manager&lt;/code&gt;感觉就是管理整个游戏的主要文件。&lt;/p&gt;
 &lt;p&gt;​ 打开&lt;code&gt;game_manager&lt;/code&gt;粗略的看了下变量，&lt;code&gt;score&lt;/code&gt; 分数、&lt;code&gt;over、won、keepPlaying&lt;/code&gt;游戏状态，想赢游戏肯定是和&lt;code&gt;score、won&lt;/code&gt;有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p&gt;
 &lt;p&gt;发现了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 只有这里修改了&lt;code&gt;won&lt;/code&gt;的状态，前面还有个&lt;code&gt;16384&lt;/code&gt;这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del&gt;小声bb&lt;/del&gt;&lt;a class="link" href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg" target="_blank" rel="noopener"
 &gt;截图为证&lt;/a&gt;），直接让&lt;code&gt;if&lt;/code&gt;里面的语句为真就可以获胜，直接修改&lt;code&gt;if(1) self.won = true&lt;/code&gt;，保存文件，按一个方向键让语句执行到，完工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h1 id="general"&gt;general
 &lt;/h1&gt;&lt;h3 id="猫咪问题"&gt;猫咪问题++
 &lt;/h3&gt;&lt;p&gt;​ 秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="第一题"&gt;第一题
 &lt;/h4&gt;&lt;blockquote&gt;
@@ -285,6 +300,7 @@ loading="lazy"
 &lt;p&gt;​ 一个比较有印象就是&lt;code&gt;FreeDOS&lt;/code&gt;这个标志就离谱，什么玩意&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案 ：12&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="第二题"&gt;第二题
@@ -325,6 +341,7 @@ loading="lazy"
 &lt;p&gt;​ 直接百度地图搜图书馆，然后全景地图房门口，视野拉到L型灌木那。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwvkdA.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：9&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="第五题"&gt;第五题

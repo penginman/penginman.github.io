@@ -6,47 +6,56 @@
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwJbJs.png"
 loading="lazy"
 alt="BwJbJs.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 随便拉了拉进度条发现初始是&lt;code&gt;0&lt;/code&gt;末尾是&lt;code&gt;1.5&lt;/code&gt;，然后中间的数值都是小数&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYAQx.png"
 loading="lazy"
 alt="BwYAQx.png"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 我猜的题目可能是想让数值为&lt;code&gt;1&lt;/code&gt;时能提取到flag。&lt;/p&gt;
 &lt;p&gt;​ F12查看源代码，定位到进度条的标签，查看属性&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwYoX6.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 确实和猜测一样最大最小值分别是&lt;code&gt;0&lt;/code&gt;、&lt;code&gt;1.5&lt;/code&gt;，注意到&lt;code&gt;step&lt;/code&gt;值为&lt;code&gt;0.00001&lt;/code&gt;，就是这个属性让我们拖动进度条时，递增的值是小数，想精准得到&lt;code&gt;1&lt;/code&gt;个flag，就把网页上的&lt;code&gt;step&lt;/code&gt;值改为&lt;code&gt;1&lt;/code&gt;。然后随便拖动一下进度条得到&lt;code&gt;1&lt;/code&gt;，点击&lt;code&gt;提取&lt;/code&gt;按钮，完工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwNVaD.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="2048"&gt;2048
 &lt;/h3&gt;&lt;p&gt;​ 打开题目是一个&lt;code&gt;2048&lt;/code&gt;的小游戏，第一个想法就是玩&lt;code&gt;2048&lt;/code&gt;达到一定分数以后会获得flag（&lt;del&gt;可恶这个比赛怎么知道最近我天天在玩2048的&lt;/del&gt;）,但是想比赛不可能让选手在线玩游戏吧，尤其对于我这种&lt;del&gt;逃课废物&lt;/del&gt;是不可能努力哒！&lt;/p&gt;
 &lt;p&gt;F12开始翻网页资源&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwUONF.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 还好上次&lt;del&gt;摸鱼&lt;/del&gt;课题做了一个网页版的2048，略微能看懂一点点结构，第一个&lt;code&gt;animframe_polyfill&lt;/code&gt;应该就是管动画效果的，&lt;code&gt;keynpard...&lt;/code&gt;这个肯定是相应按键的，&lt;code&gt;local_storage_manager&lt;/code&gt;应该是保存游戏的，&lt;code&gt;game_manager&lt;/code&gt;感觉就是管理整个游戏的主要文件。&lt;/p&gt;
 &lt;p&gt;​ 打开&lt;code&gt;game_manager&lt;/code&gt;粗略的看了下变量，&lt;code&gt;score&lt;/code&gt; 分数、&lt;code&gt;over、won、keepPlaying&lt;/code&gt;游戏状态，想赢游戏肯定是和&lt;code&gt;score、won&lt;/code&gt;有关，直接Ctrl+F搜索整个文档这两个变量出现的位置。&lt;/p&gt;
 &lt;p&gt;发现了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwdGdK.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 只有这里修改了&lt;code&gt;won&lt;/code&gt;的状态，前面还有个&lt;code&gt;16384&lt;/code&gt;这个应该就是获得胜利需要得到的分数，这个分数对于我来说还是简简单单（&lt;del&gt;小声bb&lt;/del&gt;&lt;a class="link" href="https://s1.ax1x.com/2020/11/01/BwUdte.jpg" target="_blank" rel="noopener"
 &gt;截图为证&lt;/a&gt;），直接让&lt;code&gt;if&lt;/code&gt;里面的语句为真就可以获胜，直接修改&lt;code&gt;if(1) self.won = true&lt;/code&gt;，保存文件，按一个方向键让语句执行到，完工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwwpTK.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h1 id="general"&gt;general
 &lt;/h1&gt;&lt;h3 id="猫咪问题"&gt;猫咪问题++
 &lt;/h3&gt;&lt;p&gt;​ 秉着前面题都是简单题，试着做了一下，看到题目提示的有往年的问题题解&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLtDs.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 题意思很明显的书考验同学的搜题技巧。那就开工。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwLD8U.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="第一题"&gt;第一题
 &lt;/h4&gt;&lt;blockquote&gt;
@@ -60,6 +69,7 @@ loading="lazy"
 &lt;p&gt;​ 一个比较有印象就是&lt;code&gt;FreeDOS&lt;/code&gt;这个标志就离谱，什么玩意&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://src.onlinedown.net/supply/sup_logo/logo-1122/46778_g.jpg"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案 ：12&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="第二题"&gt;第二题
@@ -100,6 +110,7 @@ loading="lazy"
 &lt;p&gt;​ 直接百度地图搜图书馆，然后全景地图房门口，视野拉到L型灌木那。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/01/BwvkdA.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参考答案：9&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id="第五题"&gt;第五题

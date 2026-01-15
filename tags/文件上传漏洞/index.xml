@@ -100,6 +100,7 @@
 &lt;/div&gt;&lt;p&gt;​ 第一次用python的我在这里知道了&lt;code&gt;pip&lt;/code&gt;。这道题因为要不断的上传和访问文件，所以对在线靶场不友好，所以才选择了本地环境解题。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119090033.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="pass-18失手"&gt;Pass-18（失手）
 &lt;/h2&gt;&lt;p&gt;​ 18题失手了没有思路，如果使用&lt;code&gt;include.php&lt;/code&gt;文件包含的话还可以，看了看网上大部分的博客都是敷敷衍衍过去的，找到了一篇稍微有点思路的，使用的是&lt;code&gt;apache2.2.x的解析漏洞&lt;/code&gt;，这个漏洞的思路就是，apache服务器在解析有多个后缀名的文件时，从最后一个开始向前扫描，如果不认识就跳过，直到遇到一个认识的文件后缀，就把这个文件以这个能识别的后缀解析。&lt;/p&gt;
@@ -170,14 +171,17 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 源码第七行使用了&lt;strong&gt;POST&lt;/strong&gt;来接受文件的命名，前面有类似题的是使用了&lt;strong&gt;0x00截断上传&lt;/strong&gt;，后面也同样是&lt;code&gt;move_uploaded_file&lt;/code&gt;移动文件的函数，还使用了黑名单验证，方法就很明确，使用&lt;strong&gt;截断上传&lt;/strong&gt;。别忘了截断上传需要的特定条件：php版本需要低于&lt;code&gt;5.3.29&lt;/code&gt;、&lt;code&gt;magic_quotes_gpc&lt;/code&gt;需要为关闭状态。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119164220.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 同样是命名为&lt;code&gt;phpa&lt;/code&gt;方便在十六进制表里修改为&lt;code&gt;00&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119162729.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 打开图片把url链接&lt;code&gt;http://upload-labs/upload/upload-19.php�&lt;/code&gt;修改一下即可。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119164458.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 其实这道题还有一个思路，因为题目使用了&lt;strong&gt;黑名单验证&lt;/strong&gt;，分析源码没有设置大小写过滤，所以也可以使用大小写方法通过如&lt;code&gt;Php&lt;/code&gt;，不演示了。&lt;/p&gt;
 &lt;h2 id="pass-20"&gt;Pass-20
@@ -259,14 +263,17 @@ loading="lazy"
 &lt;p&gt;所以我们可以构造一个这样的数组用于绕过：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119170734.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 数组[2]用于绕过白名单，文件名为：&lt;code&gt;数组[0].数组[1]&lt;/code&gt;，但是数组[1]是空的所以只剩下&lt;code&gt;数组[0].&lt;/code&gt;（后面有个点）&lt;/p&gt;
 &lt;p&gt;​ 别忘了还要绕过&lt;strong&gt;MIME&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119172340.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201119172415.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;完工&lt;/p&gt;
 &lt;h2 id="最后"&gt;最后
@@ -387,11 +394,13 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 需要准备只含有一句话木马的文件并命名为.jpg格式。直接上传。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116200050.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="文件包含验证"&gt;文件包含验证
 &lt;/h4&gt;&lt;p&gt;​ 上传以后我使用的在线靶场网页中题目部分直接消失了，这就说明函数执行过程中出错导致页面也没有正常返回。然后就可以使用&lt;code&gt;inclue.php&lt;/code&gt;文件包含访问刚刚上传的文件&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116200401.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h3 id="其他格式"&gt;其他格式
 &lt;/h3&gt;&lt;p&gt;​ 如图成功访问就是图片马上传成功了。但是这个方法我只有&lt;code&gt;jpg&lt;/code&gt;格式的文件上传成功了，另外两种格式的图片没有上传成功，这个我感觉需要了解&lt;code&gt;imagecreatefromjpeg&lt;/code&gt;、&lt;code&gt;imagecreatefrompng&lt;/code&gt;、&lt;code&gt;imagecreatefromgif&lt;/code&gt;，这三个函数的原理，让其报错即可。&lt;/p&gt;
@@ -404,6 +413,7 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 上传一个使用&lt;code&gt;copy /b&lt;/code&gt;指令制作的图片马，之前文章第13题用过。假设上传的图片马为&lt;strong&gt;yoo.gif&lt;/strong&gt;，上传成功以后再下载下载的文件名为&lt;strong&gt;2119840023.gif&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116203245.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h4 id="文件比较"&gt;文件比较
 &lt;/h4&gt;&lt;p&gt;​ 使用前面说的&lt;strong&gt;Beyond Compare 4&lt;/strong&gt;工具进行比较，左边是渲染前的文件，右边是渲染后的文件，图片中白色的地方就是两个文件&lt;strong&gt;相同&lt;/strong&gt;的地方，红色部分则是文件不同的地方。看的出来图片文件的前面一大部分二次渲染的时候都没有改变，所以我们可以直接将代码放在这一部分逃过二次渲染。&lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;的十六进制是&lt;code&gt;3C 3F 70 68 70 20 70 68 70 69 6E 66 6F 28 29 3B 20 3F 3E&lt;/code&gt;直接粘贴插入，在右边框中右键保存文件再进行上传。&lt;/p&gt;
@@ -411,12 +421,14 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 上传以后进行文件包含，代码执行成功。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116204104.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 为了验证我们的想法，我们可以刚刚把上传的图片再下载下载，查看插入的代码是否逃过了二次渲染（废话执行成功了代码肯定在）。&lt;/p&gt;
 &lt;h3 id="png格式"&gt;png格式
 &lt;/h3&gt;&lt;p&gt;​ 这题自己原来打算模仿gif的方法修改图片，但是上传以后下载，对比文件十六进制不同的时候我傻了&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116204635.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 这不同还是一段一段的，根本不可能模仿gif的方法，上面那一段相同的还是图片的&lt;strong&gt;头标识&lt;/strong&gt;部分，修改的话就不是png格式图片，更过不了。&lt;/p&gt;
 &lt;p&gt;​ 所以我直接看答案了，还是前言里的&lt;a class="link" href="https://xz.aliyun.com/t/2657#toc-3" target="_blank" rel="noopener"
@@ -876,12 +888,14 @@ loading="lazy"
 &lt;/h4&gt;&lt;p&gt;​ 使用脚本处理&lt;strong&gt;1.jpg&lt;/strong&gt;插入php代码，执行命令&lt;code&gt;php jpg_payload.php 1.jpg&lt;/code&gt;。php命令执行方法上面有。执行成功以后应该如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116212640.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 执行的目录下会多出一个名为&lt;code&gt;payload_1.jpg&lt;/code&gt;的文件，这就是制作好的图片马。大佬的源码我是修改了一下的，可以修改上面的第25行代码，自定义插入想要的代码。&lt;/p&gt;
 &lt;h4 id="上传并验证"&gt;上传并验证
 &lt;/h4&gt;&lt;p&gt;​ 上传以后同样先确定图片的名称和地址，适用文件包含进行验证&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116215008.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 如果如图所示，我们的图片马就上传成功了。&lt;strong&gt;需要提醒：有些图片不行可能需要多换几个图片试一试！！！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;呼，终于可以休息了。&lt;/p&gt;</description></item><item><title>Upload-Labs(三)</title><link>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%89/</link><pubDate>Mon, 16 Nov 2020 16:04:30 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%89/</guid><description>&lt;h2 id="前言"&gt;前言
@@ -949,6 +963,7 @@ loading="lazy"
 &gt;截断上传原理剖析&lt;/a&gt;。个人对于这道题的分析就是，上面文件的代码执行到第8行的时候，获取到了&lt;code&gt;$_GET['save_path']&lt;/code&gt;变量的值，但是我们在这个变量后面添加了&lt;code&gt;0x00截断&lt;/code&gt;，所以后面的代码便不会执行，文件也就不会被重命名。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115204109.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 文件成功上传，然后访问的时候记得改一下路径，因为文件名已经截断，所以访问路径由&lt;code&gt;..../upload/233.php�/5120201115205501.jpg&lt;/code&gt;变为&lt;code&gt;..../upload/233.php&lt;/code&gt;。完工&lt;/p&gt;
 &lt;h2 id="pass-12"&gt;Pass-12
@@ -956,10 +971,12 @@ loading="lazy"
 &lt;p&gt;​ 这题和上一题差不多一样，就是把&lt;code&gt;$_GET['save_path']&lt;/code&gt;变成了&lt;code&gt;$_POST['save_path']&lt;/code&gt;。由GET请求改成了POST请求，但是抓包修改的地方就不一样了，需要通过&lt;strong&gt;16进制修改&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115210935.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 这里我命名为&lt;code&gt;233.phpa&lt;/code&gt;是因为方便我在Hex表中找到这句话的位置和修改数据。&lt;code&gt;a&lt;/code&gt;的16进制是&lt;code&gt;61&lt;/code&gt;，需要改成截断的值：&lt;code&gt;00&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115211024.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 上传成功以后打开图片，和上一题一样，需要把路径中已经截断的后面删除掉。完工&lt;/p&gt;
 &lt;h2 id="pass-13"&gt;Pass-13
@@ -978,6 +995,7 @@ loading="lazy"
 &lt;p&gt;​ 这道题和前面题目都不一样了：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201115211509.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 题目说道需要&lt;strong&gt;上传图片马&lt;/strong&gt;，然后使用&lt;strong&gt;文件包含漏洞&lt;/strong&gt;进行测试，那么我们就先制作图片马。&lt;/p&gt;
 &lt;p&gt;​ 查看本题的提示&lt;code&gt;本pass检查图标内容开头2个字节！&lt;/code&gt;，意思就是只检测文件前面两个字节的标识，贴一个&lt;a class="link" href="https://blog.csdn.net/qq_37414405/article/details/84660148" target="_blank" rel="noopener"
@@ -990,6 +1008,7 @@ loading="lazy"
 &gt;路径中的&amp;rsquo;.&amp;lsquo;和&amp;rsquo;..&amp;lsquo;还有&amp;rsquo;./&amp;lsquo;和&amp;rsquo;../&amp;lsquo;都是什么意思&lt;/a&gt;。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116152417.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="pass-14"&gt;Pass-14
 &lt;/h2&gt;&lt;p&gt;​ （Linux环境）&lt;/p&gt;
@@ -998,6 +1017,7 @@ loading="lazy"
 &lt;p&gt;​ PS：听同学说&lt;code&gt;getimagesize()&lt;/code&gt;不过是检测了前八个字节，不过我没试。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/20201116155407.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 因为是拼接的，所以要直接摸到图片最底部查看成功。完工&lt;/p&gt;
 &lt;h2 id="pass-15"&gt;Pass-15
@@ -1173,10 +1193,12 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 看源码发现少了&lt;code&gt;trim()&lt;/code&gt;函数&lt;strong&gt;对文件名前后的空格处理&lt;/strong&gt;，所以我们可以在上传文件时在后缀名后面添加空格使其成为.php (有空格)绕过黑名单数组。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb9jQe.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 上传以后访问文件执行成功。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb9xLd.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 这里说明一下，我前面是在&lt;a class="link" href="https://buuoj.cn/" target="_blank" rel="noopener"
 &gt;BUUCTF&lt;/a&gt;在线靶场上做的linux环境下的题目，但是这道题用了上面的方法怎么都访问不到，所以我在本地windows环境上搭建了一个靶机进行上传(而且后面有道题必须是在windows环境下才可以通过)。在github上下载的源码题目比在线靶场上的题目多了一道，对应的题目为 在线靶机pass-06&amp;ndash;&amp;gt;github下载的pass-07。默认使用的都是linux环境下的题目，有改变会提前说明。&lt;/p&gt;
@@ -1244,13 +1266,16 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 这道题少了&lt;strong&gt;删除文件名末尾的点&lt;/strong&gt;，我们可以通过构造&lt;strong&gt;2333.php. .&lt;/strong&gt;(末尾加 点 空格 点)，被解析后文件后缀就会成为&amp;quot;. &amp;ldquo;(一个点一个空格)，可以绕过黑名单，访问的文件名是&lt;code&gt;2333.php. .&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbCOkq.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 我又参考了其他博客，讲到windows环境下可以利用系统会自动删除后缀中最后的一个&amp;rdquo;.&amp;quot;，尝试在windows靶机上测试&lt;strong&gt;只添加一个点&lt;/strong&gt;，访问的文件名为&lt;code&gt;2333.php、2333.php.&lt;/code&gt;都可以，因为windows会删除最后一个点。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbMywV.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbKXq0.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 两种方式第一个在linux环境下的php服务器上，第二个在windows环境下的php服务器上，上传后都可以成功访问文件。完工&lt;/p&gt;
 &lt;h2 id="pass-08"&gt;Pass-08
@@ -1320,6 +1345,7 @@ loading="lazy"
 &lt;p&gt;​ 直接上传的时候抓包在文件名后面添加&lt;code&gt;::$DATA&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BbP84P.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 上传访问。完工&lt;/p&gt;
 &lt;h2 id="pass-09"&gt;Pass-09
@@ -1436,6 +1462,7 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 这道题和前面不同的是&lt;code&gt;$file_name = str_ireplace($deny_ext,&amp;quot;&amp;quot;, $file_name)&lt;/code&gt;，对于这个函数：&lt;code&gt;str_ireplace(find,replace,string,count)&lt;/code&gt;，find是要查找的值，replace是要替换成的值，string是被搜索的字符串，count 可选。一个变量，对替换数进行计数。所以这行代码的作用就是把文件名中所有包含在黑名单后缀里的字符串替换成空串，但是这个函数只会执行一次，所以我们可以构造一个双写绕过，即构造文件名&lt;code&gt;2333.pphphp&lt;/code&gt;，只有一个&amp;quot;php&amp;quot;字符串被匹配到并被替换成空串，剩下的文件名就成了&lt;code&gt;2333.php&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/Bb8yPf.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;上传并访问文件。完工&lt;/p&gt;</description></item><item><title>Upload-Labs(一)</title><link>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%80/</link><pubDate>Sun, 08 Nov 2020 19:23:16 +0000</pubDate><guid>https://www.braindance.top/articles/2020/11/upload-labs%E4%B8%80/</guid><description>&lt;h2 id="介绍"&gt;介绍
 &lt;/h2&gt;&lt;blockquote&gt;
@@ -1452,6 +1479,7 @@ loading="lazy"
 &lt;/h2&gt;&lt;p&gt;​ 尝试上传php木马，发现提示上传错误&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BTKbfs.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 提示只能上传&lt;code&gt;jpg、png、gif&lt;/code&gt;类型的图片。查看源码发现是一个前端的后缀过滤，那么我们尝试绕过前端的JS代码。&lt;/p&gt;
 &lt;p&gt;​ 源码：&lt;/p&gt;
@@ -1498,10 +1526,12 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;​ 把文件后缀名改成jpg格式上传，使用&lt;strong&gt;burp suit&lt;/strong&gt;抓包。把&lt;code&gt;.jpg&lt;/code&gt;后缀重新改为&lt;code&gt;.php&lt;/code&gt;即可实现绕过前端JS代码。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BTM5g1.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 然后右键打开图片，代码成功执行。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BTQV8s.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 注：后面题目的php代码都使用&lt;code&gt;2333.php&lt;/code&gt;：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -1564,6 +1594,7 @@ loading="lazy"
 &lt;p&gt;​ 同样是burp抓包修改&lt;strong&gt;Content-Type&lt;/strong&gt;的值。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/08/BT1EXq.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 打开图片，php代码成功执行。完工&lt;/p&gt;
 &lt;h2 id="pass-03"&gt;Pass-03
@@ -1632,6 +1663,7 @@ loading="lazy"
 &lt;p&gt;​ 直接把&lt;code&gt;2333.php&lt;/code&gt;改为&lt;code&gt;2333.php3&lt;/code&gt;上传打开，执行成功。完工&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTq2cV.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;h2 id="pass-04"&gt;Pass-04
 &lt;/h2&gt;&lt;p&gt;源码：&lt;/p&gt;
@@ -1709,9 +1741,11 @@ loading="lazy"
 &lt;p&gt;​ 接下来上传&lt;code&gt;2333.jpg&lt;/code&gt;图片木马，再打开就会被成功解析为&lt;code&gt;php&lt;/code&gt;文件并执行：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTqoN9.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTqqc6.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 完工&lt;/p&gt;
 &lt;h2 id="pass-05"&gt;Pass-05
@@ -1786,5 +1820,6 @@ loading="lazy"
 &lt;/div&gt;&lt;p&gt;目标就很明确了，直接使用大小写绕过过滤。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s1.ax1x.com/2020/11/09/BTLmNj.png"
 loading="lazy"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;​ 打开图片成功执行。完工&lt;/p&gt;</description></item></channel></rss>

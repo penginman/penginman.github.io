@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客搬迁 on Braindance</title><link>https://www.braindance.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</link><description>Recent content in 博客搬迁 on Braindance</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 31 Jan 2022 11:31:54 +0800</lastBuildDate><atom:link href="https://www.braindance.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/index.xml" rel="self" type="application/rss+xml"/><item><title>博客搬迁</title><link>https://www.braindance.top/articles/2022/01/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</link><pubDate>Mon, 31 Jan 2022 11:31:54 +0800</pubDate><guid>https://www.braindance.top/articles/2022/01/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81/</guid><description>&lt;p&gt;&lt;img src="https://cdn.jsdelivr.net/gh/penginman/PicBed@master/artical/202201311142110.jpg"
 loading="lazy"
 alt="202201311142110"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;大四开始写毕业设计了，在学的过程中想记一记笔记，但是之前的 hexo 博客没动很久了，就想着把博客搬迁下顺便起个头，激起一些学习的劲头。&lt;/p&gt;
 &lt;h1 id="为什么选择-hugo"&gt;为什么选择 Hugo
@@ -14,10 +15,12 @@ alt="202201311142110"
 &lt;p&gt;&lt;img src="https://github-readme-stats.vercel.app/api/pin/?username=gohugoio&amp;amp;repo=hugo"
 loading="lazy"
 alt="Readme Card"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://github-readme-stats.vercel.app/api/pin/?username=hexojs&amp;amp;repo=hexo"
 loading="lazy"
 alt="Readme Card"
+data-zoomable
 &gt;&lt;/p&gt;
 &lt;p&gt;不过在迁移的过程中，最大的感受就是：&lt;strong&gt;Hugo 在国内的使用者不多&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;网上想要找个合适的教程非常难，然后就是去官网啃英文的文档。而且 hugo 框架和 hexo 比起来完全的不一样，鄙人 go 还没接触过，主要还是自己菜。一开始选了&lt;a class="link" href="https://github.com/luizdepra/hugo-coder" target="_blank" rel="noopener"
